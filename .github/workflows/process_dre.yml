@@ -1,0 +1,144 @@
+name: Process DRE Data
+
+# =============================================================================
+# WORKFLOW TEMPORARILY DISABLED
+# =============================================================================
+# This workflow is disabled during initial setup and debugging phase.
+# To enable the workflow, remove the 'if: false' condition from both jobs below.
+# =============================================================================
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+    inputs:
+      reference_year:
+        description: 'Reference year for date conversion'
+        required: false
+        default: '2025'
+
+jobs:
+  process-dre:
+    # REMOVE THIS LINE TO ENABLE THE WORKFLOW
+    if: false
+    name: Process DRE Financial Data
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Verify input file exists
+        run: |
+          if [ ! -f "DRE_BI(BaseDRE).csv" ]; then
+            echo "Error: Input file DRE_BI(BaseDRE).csv not found!"
+            exit 1
+          fi
+          echo "Input file found: DRE_BI(BaseDRE).csv"
+          head -n 10 "DRE_BI(BaseDRE).csv"
+
+      - name: Run DRE processing pipeline
+        run: python main.py
+        env:
+          PYTHONUNBUFFERED: "1"
+
+      - name: Verify output files
+        run: |
+          echo "Checking output files..."
+          ls -la output/
+          echo ""
+          echo "Categories JSON content:"
+          cat output/categories.json
+          echo ""
+          echo "Parquet file info:"
+          python -c "import pandas as pd; df = pd.read_parquet('output/processed_dre.parquet'); print(f'Rows: {len(df)}, Columns: {len(df.columns)}'); print(df.head())"
+
+      - name: Upload processed data artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: dre-processed-data
+          path: |
+            output/processed_dre.parquet
+            output/categories.json
+          retention-days: 30
+          if-no-files-found: error
+
+      - name: Upload processing logs
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: processing-logs
+          path: |
+            *.log
+          retention-days: 7
+          if-no-files-found: ignore
+
+  validate:
+    # REMOVE THIS LINE TO ENABLE THE WORKFLOW
+    if: false
+    name: Validate Processed Data
+    needs: process-dre
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pandas pyarrow
+
+      - name: Download processed artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: dre-processed-data
+          path: output/
+
+      - name: Validate data integrity
+        run: |
+          python -c "
+          import pandas as pd
+          import json
+
+          # Validate parquet file
+          df = pd.read_parquet('output/processed_dre.parquet')
+          print(f'✅ Parquet loaded successfully: {len(df)} records')
+          
+          # Check for required columns
+          required = ['Nome Grupo', 'cc_nome', 'Mês', 'Realizado']
+          missing = [c for c in required if c not in df.columns]
+          if missing:
+              raise ValueError(f'Missing columns: {missing}')
+          print('✅ All required columns present')
+          
+          # Validate categories JSON
+          with open('output/categories.json', 'r') as f:
+              categories = json.load(f)
+          print(f'✅ Categories loaded: {len(categories)} groups')
+          
+          # Validate data types
+          assert df['Realizado'].dtype in ['float64', 'float32'], 'Realizado should be float'
+          print('✅ Data types validated')
+          
+          print('\\n✅ All validations passed!')
+          "
+

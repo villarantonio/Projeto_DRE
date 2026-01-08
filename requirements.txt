@@ -1,0 +1,17 @@
+# DRE Financial Automation Project Dependencies
+# Core data processing
+pandas>=2.0.0
+numpy>=1.24.0
+openpyxl>=3.1.0
+pyarrow>=14.0.0
+
+# Future use - Forecasting
+prophet>=1.1.0
+
+# Future use - AI/LLM integration
+openai>=1.0.0
+
+# Testing
+pytest>=7.4.0
+pytest-cov>=4.1.0
+
