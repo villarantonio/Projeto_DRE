@@ -1,274 +1,274 @@
-# 📊 DRE Financial Automation Project
+# 📊 Projeto de Automação DRE
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Python-3.11+-blue.svg" alt="Python Version">
-  <img src="https://img.shields.io/badge/pandas-2.0+-green.svg" alt="Pandas Version">
-  <img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License">
+  <img src="https://img.shields.io/badge/Python-3.11+-blue.svg" alt="Versão Python">
+  <img src="https://img.shields.io/badge/pandas-2.0+-green.svg" alt="Versão Pandas">
+  <img src="https://img.shields.io/badge/Licen%C3%A7a-MIT-yellow.svg" alt="Licença">
   <img src="https://img.shields.io/badge/CI-GitHub%20Actions-orange.svg" alt="CI">
 </p>
 
-Automated ETL pipeline for processing **DRE (Demonstração do Resultado do Exercício)** financial statements. This project extracts, cleans, transforms, and structures Brazilian financial data for analysis, reporting, and future AI-powered predictions.
+Pipeline ETL automatizado para processamento de demonstrativos financeiros **DRE (Demonstração do Resultado do Exercício)**. Este projeto extrai, limpa, transforma e estrutura dados financeiros brasileiros para análise, relatórios e futuras previsões baseadas em IA.
 
 ---
 
-## 📋 Table of Contents
+## 📋 Índice
 
-- [Overview](#-overview)
-- [Features](#-features)
-- [Prerequisites](#-prerequisites)
-- [Installation](#-installation)
-- [Quick Start](#-quick-start)
-- [Project Structure](#-project-structure)
-- [Input Data Format](#-input-data-format)
-- [Output Files](#-output-files)
-- [Configuration](#%EF%B8%8F-configuration)
-- [Usage Examples](#-usage-examples)
-- [Testing](#-testing)
+- [Visão Geral](#-visão-geral)
+- [Funcionalidades](#-funcionalidades)
+- [Pré-requisitos](#-pré-requisitos)
+- [Instalação](#-instalação)
+- [Início Rápido](#-início-rápido)
+- [Estrutura do Projeto](#-estrutura-do-projeto)
+- [Formato dos Dados de Entrada](#-formato-dos-dados-de-entrada)
+- [Arquivos de Saída](#-arquivos-de-saída)
+- [Configuração](#%EF%B8%8F-configuração)
+- [Exemplos de Uso](#-exemplos-de-uso)
+- [Testes](#-testes)
 - [GitHub Actions CI/CD](#-github-actions-cicd)
-- [API Reference](#-api-reference)
-- [Troubleshooting](#-troubleshooting)
-- [Future Roadmap](#-future-roadmap)
-- [Contributing](#-contributing)
-- [License](#-license)
+- [Referência da API](#-referência-da-api)
+- [Solução de Problemas](#-solução-de-problemas)
+- [Roadmap Futuro](#-roadmap-futuro)
+- [Contribuindo](#-contribuindo)
+- [Licença](#-licença)
 
 ---
 
-## 🎯 Overview
+## 🎯 Visão Geral
 
-The DRE Financial Automation project is a modular Python pipeline designed to:
+O projeto de Automação DRE é um pipeline Python modular projetado para:
 
-1. **Extract** financial data from CSV exports (typically from BI tools)
-2. **Transform** Brazilian currency formats and Portuguese date abbreviations
-3. **Load** processed data into optimized Parquet format
-4. **Generate** category hierarchies for LLM-based classification
+1. **Extrair** dados financeiros de exportações CSV (geralmente de ferramentas de BI)
+2. **Transformar** formatos de moeda brasileira e abreviações de datas em português
+3. **Carregar** dados processados em formato Parquet otimizado
+4. **Gerar** hierarquias de categorias para classificação baseada em LLM
 
-This pipeline is production-ready with GitHub Actions CI/CD integration, comprehensive testing, and detailed logging.
+Este pipeline está pronto para produção com integração GitHub Actions CI/CD, testes abrangentes e logging detalhado.
 
-### Why This Project?
+### Por que este Projeto?
 
-- 🇧🇷 **Brazilian Format Handling**: Native support for R$ currency format and Portuguese month names
-- ⚡ **Performance**: Parquet output for 10x faster reads compared to CSV
-- 🤖 **AI-Ready**: Category extraction prepares data for LLM classification
-- 🔄 **Automated**: GitHub Actions workflow for continuous processing
-- 🧪 **Tested**: 35+ unit tests ensuring reliability
-
----
-
-## ✨ Features
-
-| Feature | Description |
-|---------|-------------|
-| **Currency Conversion** | Converts `R$ 1.234,56` → `1234.56` with negative value support |
-| **Month Parsing** | Maps Portuguese abbreviations (Jan, Fev, Mar...) to datetime |
-| **Category Extraction** | Builds hierarchical JSON of financial categories |
-| **Parquet Export** | Columnar storage for efficient analytics |
-| **Comprehensive Logging** | INFO/ERROR level logging with timestamps |
-| **Input Validation** | Checks for required columns and valid formats |
-| **CI/CD Pipeline** | Automated processing via GitHub Actions |
+- 🇧🇷 **Tratamento de Formato Brasileiro**: Suporte nativo para formato de moeda R$ e nomes de meses em português
+- ⚡ **Performance**: Saída em Parquet para leituras 10x mais rápidas comparado ao CSV
+- 🤖 **Pronto para IA**: Extração de categorias prepara dados para classificação LLM
+- 🔄 **Automatizado**: Workflow GitHub Actions para processamento contínuo
+- 🧪 **Testado**: 35+ testes unitários garantindo confiabilidade
 
 ---
 
-## 📦 Prerequisites
+## ✨ Funcionalidades
 
-### Required Software
+| Funcionalidade | Descrição |
+|----------------|-----------|
+| **Conversão de Moeda** | Converte `R$ 1.234,56` → `1234.56` com suporte a valores negativos |
+| **Parsing de Meses** | Mapeia abreviações em português (Jan, Fev, Mar...) para datetime |
+| **Extração de Categorias** | Constrói JSON hierárquico de categorias financeiras |
+| **Exportação Parquet** | Armazenamento colunar para análises eficientes |
+| **Logging Abrangente** | Logging em níveis INFO/ERROR com timestamps |
+| **Validação de Entrada** | Verifica colunas obrigatórias e formatos válidos |
+| **Pipeline CI/CD** | Processamento automatizado via GitHub Actions |
 
-- **Python**: 3.11 or higher
-- **pip**: Latest version recommended
-- **Git**: For version control and cloning
+---
 
-### System Requirements
+## 📦 Pré-requisitos
 
-- **OS**: Windows, macOS, or Linux
-- **RAM**: 4GB minimum (8GB recommended for large files)
-- **Disk**: 100MB for dependencies + space for data files
+### Software Necessário
 
-### Verify Prerequisites
+- **Python**: 3.11 ou superior
+- **pip**: Versão mais recente recomendada
+- **Git**: Para controle de versão e clonagem
+
+### Requisitos do Sistema
+
+- **SO**: Windows, macOS ou Linux
+- **RAM**: Mínimo 4GB (8GB recomendado para arquivos grandes)
+- **Disco**: 100MB para dependências + espaço para arquivos de dados
+
+### Verificar Pré-requisitos
 
 ```bash
-# Check Python version
-python --version  # Should be 3.11+
+# Verificar versão do Python
+python --version  # Deve ser 3.11+
 
-# Check pip
+# Verificar pip
 pip --version
 
-# Check Git
+# Verificar Git
 git --version
 ```
 
 ---
 
-## 🚀 Installation
+## 🚀 Instalação
 
-### Option 1: Clone from GitHub
+### Opção 1: Clonar do GitHub
 
 ```bash
-# Clone the repository
-git clone https://github.com/villarantonio/dre-financial-automation.git
-cd dre-financial-automation
+# Clonar o repositório
+git clone https://github.com/villarantonio/Projeto_DRE.git
+cd Projeto_DRE
 
-# Create virtual environment (recommended)
+# Criar ambiente virtual (recomendado)
 python -m venv venv
 
-# Activate virtual environment
-# On Windows:
+# Ativar ambiente virtual
+# No Windows:
 .\venv\Scripts\activate
-# On macOS/Linux:
+# No macOS/Linux:
 source venv/bin/activate
 
-# Install dependencies
+# Instalar dependências
 pip install -r requirements.txt
 ```
 
-### Option 2: Manual Setup
+### Opção 2: Configuração Manual
 
 ```bash
-# Create project directory
-mkdir dre-financial-automation
-cd dre-financial-automation
+# Criar diretório do projeto
+mkdir Projeto_DRE
+cd Projeto_DRE
 
-# Install dependencies manually
+# Instalar dependências manualmente
 pip install pandas>=2.0.0 numpy>=1.24.0 pyarrow>=14.0.0 pytest>=7.4.0
 ```
 
-### Verify Installation
+### Verificar Instalação
 
 ```bash
-# Run tests to verify everything is working
+# Executar testes para verificar se tudo está funcionando
 python -m pytest tests/ -v
 
-# Expected output: 35 passed
+# Saída esperada: 35 passed
 ```
 
 ---
 
-## ⚡ Quick Start
+## ⚡ Início Rápido
 
-### 1. Place Your Data File
+### 1. Coloque seu Arquivo de Dados
 
-Copy your DRE CSV file to the project root:
+Copie seu arquivo CSV DRE para a raiz do projeto:
 
 ```bash
-cp /path/to/your/DRE_BI(BaseDRE).csv .
+cp /caminho/para/seu/DRE_BI(BaseDRE).csv .
 ```
 
-### 2. Run the Pipeline
+### 2. Execute o Pipeline
 
 ```bash
 python main.py
 ```
 
-### 3. Check Output
+### 3. Verifique a Saída
 
 ```bash
-# View generated files
+# Visualizar arquivos gerados
 ls output/
-# Output: categories.json  processed_dre.parquet
+# Saída: categories.json  processed_dre.parquet
 
-# Preview categories
+# Pré-visualizar categorias
 cat output/categories.json
 ```
 
-### Expected Console Output
+### Saída Esperada no Console
 
 ```
 ============================================================
-DRE FINANCIAL AUTOMATION PIPELINE
+PIPELINE DE AUTOMAÇÃO DRE FINANCEIRO
 ============================================================
 
-📊 Records Processed: 560
-📅 Reference Year: 2025
+📊 Registros Processados: 560
+📅 Ano de Referência: 2025
 
-📁 Category Statistics:
-   - Macro Categories (Nome Grupo): 13
-   - Detail Categories (cc_nome): 116
+📁 Estatísticas de Categorias:
+   - Categorias Macro (Nome Grupo): 13
+   - Categorias Detalhadas (cc_nome): 116
 
-💰 Financial Summary:
-   - Total Value: R$ -3,927,512.00
-   - Total Positive (Receitas): R$ 5,767,098.00
-   - Total Negative (Custos): R$ -9,694,610.00
+💰 Resumo Financeiro:
+   - Valor Total: R$ -3.927.512,00
+   - Total Positivo (Receitas): R$ 5.767.098,00
+   - Total Negativo (Custos): R$ -9.694.610,00
 
-✅ PIPELINE COMPLETED SUCCESSFULLY
+✅ PIPELINE CONCLUÍDO COM SUCESSO
 ```
 
 ---
 
-## 📁 Project Structure
+## 📁 Estrutura do Projeto
 
 ```
-dre-financial-automation/
+Projeto_DRE/
 │
 ├── 📂 .github/
 │   └── 📂 workflows/
-│       └── 📄 process_dre.yml      # GitHub Actions CI/CD workflow
+│       └── 📄 process_dre.yml      # Workflow CI/CD GitHub Actions
 │
-├── 📂 src/                          # Source code modules
-│   ├── 📄 __init__.py              # Package initialization
-│   ├── 📄 data_cleaner.py          # Data cleaning functions
-│   └── 📄 category_engine.py       # Category management class
+├── 📂 src/                          # Módulos de código fonte
+│   ├── 📄 __init__.py              # Inicialização do pacote
+│   ├── 📄 data_cleaner.py          # Funções de limpeza de dados
+│   └── 📄 category_engine.py       # Classe de gerenciamento de categorias
 │
-├── 📂 tests/                        # Unit tests
+├── 📂 tests/                        # Testes unitários
 │   ├── 📄 __init__.py
-│   ├── 📄 test_data_cleaner.py     # Tests for data_cleaner (22 tests)
-│   └── 📄 test_category_engine.py  # Tests for category_engine (13 tests)
+│   ├── 📄 test_data_cleaner.py     # Testes para data_cleaner (22 testes)
+│   └── 📄 test_category_engine.py  # Testes para category_engine (13 testes)
 │
-├── 📂 output/                       # Generated output files (git-ignored)
-│   ├── 📄 processed_dre.parquet    # Processed financial data
-│   └── 📄 categories.json          # Category hierarchy
+├── 📂 output/                       # Arquivos de saída gerados (ignorados pelo git)
+│   ├── 📄 processed_dre.parquet    # Dados financeiros processados
+│   └── 📄 categories.json          # Hierarquia de categorias
 │
-├── 📄 config.py                     # Centralized configuration
-├── 📄 main.py                       # Main pipeline orchestrator
-├── 📄 requirements.txt              # Python dependencies
-├── 📄 .gitignore                    # Git ignore rules
-└── 📄 README.md                     # This documentation
+├── 📄 config.py                     # Configuração centralizada
+├── 📄 main.py                       # Orquestrador principal do pipeline
+├── 📄 requirements.txt              # Dependências Python
+├── 📄 .gitignore                    # Regras de ignore do Git
+└── 📄 README.md                     # Esta documentação
 ```
 
-### Module Descriptions
+### Descrição dos Módulos
 
-| Module | Lines | Description |
-|--------|-------|-------------|
-| `config.py` | ~70 | Centralized configuration (paths, encodings, column mappings) |
-| `src/data_cleaner.py` | ~300 | CSV loading, currency conversion, date parsing |
-| `src/category_engine.py` | ~240 | Category extraction and JSON persistence |
-| `main.py` | ~190 | Pipeline orchestration with logging and reporting |
+| Módulo | Linhas | Descrição |
+|--------|--------|-----------|
+| `config.py` | ~70 | Configuração centralizada (caminhos, encodings, mapeamento de colunas) |
+| `src/data_cleaner.py` | ~300 | Carregamento CSV, conversão de moeda, parsing de datas |
+| `src/category_engine.py` | ~240 | Extração de categorias e persistência JSON |
+| `main.py` | ~190 | Orquestração do pipeline com logging e relatórios |
 
 ---
 
-## 📊 Input Data Format
+## 📊 Formato dos Dados de Entrada
 
-### File Specifications
+### Especificações do Arquivo
 
-| Property | Value |
-|----------|-------|
-| **File Name** | `DRE_BI(BaseDRE).csv` (configurable) |
-| **Encoding** | Latin-1 (ISO-8859-1) or UTF-8 |
-| **Delimiter** | Semicolon (`;`) |
-| **Header Row** | Line 5 (rows 1-4 are metadata) |
+| Propriedade | Valor |
+|-------------|-------|
+| **Nome do Arquivo** | `DRE_BI(BaseDRE).csv` (configurável) |
+| **Encoding** | Latin-1 (ISO-8859-1) ou UTF-8 |
+| **Delimitador** | Ponto e vírgula (`;`) |
+| **Linha do Cabeçalho** | Linha 5 (linhas 1-4 são metadados) |
 
-### CSV Structure
+### Estrutura do CSV
 
 ```csv
-Ano Txt;2025;;;;;;                    ← Metadata (ignored)
-situacao;(Vários itens);;;;;;         ← Metadata (ignored)
-GrupoEmpresa;Grupo J+;;;;;;           ← Metadata (ignored)
-;;;;;;;                               ← Metadata (ignored)
-Loja;_key_centro_custo;cc_parent_nome;Nome Grupo;cc_nome;Camada03;Mês;Realizado  ← Header
+Ano Txt;2025;;;;;;                    ← Metadados (ignorados)
+situacao;(Vários itens);;;;;;         ← Metadados (ignorados)
+GrupoEmpresa;Grupo J+;;;;;;           ← Metadados (ignorados)
+;;;;;;;                               ← Metadados (ignorados)
+Loja;_key_centro_custo;cc_parent_nome;Nome Grupo;cc_nome;Camada03;Mês;Realizado  ← Cabeçalho
 CORPORATIVO J+;01.01.001;01.01;RECEITAS S/ VENDAS;DINHEIRO;DINHEIRO;Ago;R$ 63.713
 CORPORATIVO J+;02.01.001.01;02.01.001;( - ) CUSTOS VARIÁVEIS;BOVINOS;PROTEINAS;Nov;-R$ 1.351
 ```
 
-### Required Columns
+### Colunas Obrigatórias
 
-| Column | Type | Description | Example |
-|--------|------|-------------|---------|
-| `Nome Grupo` | string | Macro financial category | `"RECEITAS S/ VENDAS"` |
-| `cc_nome` | string | Detailed category name | `"DINHEIRO"`, `"BOVINOS"` |
-| `Mês` | string | Portuguese month abbreviation | `"Ago"`, `"Set"`, `"Dez"` |
-| `Realizado` | string | Brazilian currency format | `"R$ 63.713"`, `"-R$ 1.351"` |
+| Coluna | Tipo | Descrição | Exemplo |
+|--------|------|-----------|---------|
+| `Nome Grupo` | string | Categoria financeira macro | `"RECEITAS S/ VENDAS"` |
+| `cc_nome` | string | Nome da categoria detalhada | `"DINHEIRO"`, `"BOVINOS"` |
+| `Mês` | string | Abreviação do mês em português | `"Ago"`, `"Set"`, `"Dez"` |
+| `Realizado` | string | Formato de moeda brasileira | `"R$ 63.713"`, `"-R$ 1.351"` |
 
-### Month Abbreviation Mapping
+### Mapeamento de Abreviações de Meses
 
-| Abbreviation | Month | Number |
-|--------------|-------|--------|
+| Abreviação | Mês | Número |
+|------------|-----|--------|
 | Jan | Janeiro | 1 |
 | Fev | Fevereiro | 2 |
 | Mar | Março | 3 |
@@ -284,26 +284,26 @@ CORPORATIVO J+;02.01.001.01;02.01.001;( - ) CUSTOS VARIÁVEIS;BOVINOS;PROTEINAS;
 
 ---
 
-## 📤 Output Files
+## 📤 Arquivos de Saída
 
 ### 1. `processed_dre.parquet`
 
-Optimized columnar format containing all transformed data.
+Formato colunar otimizado contendo todos os dados transformados.
 
 **Schema:**
 
-| Column | Type | Description |
-|--------|------|-------------|
-| `Loja` | string | Store/branch name |
-| `_key_centro_custo` | string | Cost center key |
-| `cc_parent_nome` | string | Parent cost center |
-| `Nome Grupo` | string | Macro category |
-| `cc_nome` | string | Detail category |
-| `Camada03` | string | Layer 3 classification |
-| `Mês` | datetime64 | Transaction date (first of month) |
-| `Realizado` | float64 | Monetary value (converted) |
+| Coluna | Tipo | Descrição |
+|--------|------|-----------|
+| `Loja` | string | Nome da loja/filial |
+| `_key_centro_custo` | string | Chave do centro de custo |
+| `cc_parent_nome` | string | Centro de custo pai |
+| `Nome Grupo` | string | Categoria macro |
+| `cc_nome` | string | Categoria detalhada |
+| `Camada03` | string | Classificação camada 3 |
+| `Mês` | datetime64 | Data da transação (primeiro dia do mês) |
+| `Realizado` | float64 | Valor monetário (convertido) |
 
-**Reading the Parquet File:**
+**Lendo o Arquivo Parquet:**
 
 ```python
 import pandas as pd
@@ -315,9 +315,9 @@ print(df.dtypes)
 
 ### 2. `categories.json`
 
-Hierarchical mapping of financial categories for LLM context.
+Mapeamento hierárquico de categorias financeiras para contexto LLM.
 
-**Structure:**
+**Estrutura:**
 
 ```json
 {
@@ -338,7 +338,7 @@ Hierarchical mapping of financial categories for LLM context.
 }
 ```
 
-**Usage in Python:**
+**Uso em Python:**
 
 ```python
 import json
@@ -346,47 +346,47 @@ import json
 with open("output/categories.json", "r", encoding="utf-8") as f:
     categories = json.load(f)
 
-# Get all macro categories
+# Obter todas as categorias macro
 print(list(categories.keys()))
 
-# Get details for a specific category
+# Obter detalhes de uma categoria específica
 print(categories["RECEITAS S/ VENDAS"])
 ```
 
 ---
 
-## ⚙️ Configuration
+## ⚙️ Configuração
 
-All configuration is centralized in `config.py`:
+Toda a configuração está centralizada em `config.py`:
 
-### File Paths
+### Caminhos de Arquivos
 
 ```python
-# Base directory (project root)
+# Diretório base (raiz do projeto)
 BASE_DIR: Path = Path(__file__).parent
 
-# Input file
+# Arquivo de entrada
 INPUT_FILE_NAME: str = "DRE_BI(BaseDRE).csv"
 INPUT_FILE_PATH: Path = BASE_DIR / INPUT_FILE_NAME
 
-# Output directory and files
+# Diretório e arquivos de saída
 OUTPUT_DIR: Path = BASE_DIR / "output"
 PROCESSED_PARQUET_PATH: Path = OUTPUT_DIR / "processed_dre.parquet"
 CATEGORIES_JSON_PATH: Path = OUTPUT_DIR / "categories.json"
 ```
 
-### CSV Parsing
+### Parsing do CSV
 
 ```python
-CSV_SEPARATOR: str = ";"           # Column delimiter
-CSV_ENCODING: str = "latin-1"      # File encoding (latin-1 or utf-8)
-CSV_HEADER_ROW: int = 4            # 0-indexed header row position
+CSV_SEPARATOR: str = ";"           # Delimitador de colunas
+CSV_ENCODING: str = "latin-1"      # Encoding do arquivo (latin-1 ou utf-8)
+CSV_HEADER_ROW: int = 4            # Posição da linha do cabeçalho (índice 0)
 ```
 
-### Date Processing
+### Processamento de Datas
 
 ```python
-REFERENCE_YEAR: int = 2025         # Year for date conversion
+REFERENCE_YEAR: int = 2025         # Ano para conversão de datas
 
 MONTH_MAPPING: dict[str, int] = {
     "Jan": 1, "Fev": 2, "Mar": 3, "Abr": 4,
@@ -395,7 +395,7 @@ MONTH_MAPPING: dict[str, int] = {
 }
 ```
 
-### Column Names
+### Nomes das Colunas
 
 ```python
 COLUMN_NOME_GRUPO: str = "Nome Grupo"
@@ -413,43 +413,43 @@ LOG_FORMAT: str = "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
 
 ---
 
-## 💡 Usage Examples
+## 💡 Exemplos de Uso
 
-### Basic Pipeline Execution
+### Execução Básica do Pipeline
 
 ```bash
-# Standard execution
+# Execução padrão
 python main.py
 
-# With verbose output (DEBUG level)
-# Edit config.py: LOG_LEVEL = "DEBUG"
+# Com saída detalhada (nível DEBUG)
+# Edite config.py: LOG_LEVEL = "DEBUG"
 python main.py
 ```
 
-### Using Individual Modules
+### Usando Módulos Individuais
 
-#### Currency Conversion
+#### Conversão de Moeda
 
 ```python
 from src.data_cleaner import convert_brazilian_currency
 
-# Convert various formats
+# Converter vários formatos
 print(convert_brazilian_currency("R$ 1.234,56"))    # → 1234.56
 print(convert_brazilian_currency("-R$ 19.026"))     # → -19026.0
 print(convert_brazilian_currency("R$ 0,00"))        # → 0.0
 ```
 
-#### Month Conversion
+#### Conversão de Mês
 
 ```python
 from src.data_cleaner import convert_month_to_date
 
-# Convert Portuguese months to datetime
+# Converter meses em português para datetime
 date = convert_month_to_date("Ago", 2025)
 print(date)  # → 2025-08-01 00:00:00
 ```
 
-#### Load and Process CSV
+#### Carregar e Processar CSV
 
 ```python
 from src.data_cleaner import (
@@ -458,100 +458,100 @@ from src.data_cleaner import (
     apply_month_conversion,
 )
 
-# Load CSV
+# Carregar CSV
 df = load_dre_csv("DRE_BI(BaseDRE).csv")
 
-# Apply transformations
+# Aplicar transformações
 df = apply_currency_conversion(df, "Realizado")
 df = apply_month_conversion(df, "Mês", 2025)
 
 print(df.info())
 ```
 
-#### Extract Categories
+#### Extrair Categorias
 
 ```python
 from src.category_engine import CategoryManager
 
 manager = CategoryManager()
 
-# Extract hierarchy from DataFrame
+# Extrair hierarquia do DataFrame
 categories = manager.extract_category_hierarchy(df)
 
-# Save to JSON
+# Salvar em JSON
 manager.save_categories_json(categories, "output/categories.json")
 
-# Get summary statistics
+# Obter estatísticas resumidas
 summary = manager.get_category_summary(categories)
-print(f"Total groups: {summary['total_groups']}")
-print(f"Total details: {summary['total_details']}")
+print(f"Total de grupos: {summary['total_groups']}")
+print(f"Total de detalhes: {summary['total_details']}")
 ```
 
-### Analyzing Output Data
+### Analisando Dados de Saída
 
 ```python
 import pandas as pd
 
-# Load processed data
+# Carregar dados processados
 df = pd.read_parquet("output/processed_dre.parquet")
 
-# Group by category
+# Agrupar por categoria
 by_group = df.groupby("Nome Grupo")["Realizado"].sum()
 print(by_group.sort_values())
 
-# Monthly totals
+# Totais mensais
 by_month = df.groupby("Mês")["Realizado"].sum()
 print(by_month)
 
-# Filter revenues only
+# Filtrar apenas receitas
 revenues = df[df["Realizado"] > 0]
-print(f"Total revenue records: {len(revenues)}")
+print(f"Total de registros de receita: {len(revenues)}")
 ```
 
 ---
 
-## 🧪 Testing
+## 🧪 Testes
 
-### Run All Tests
+### Executar Todos os Testes
 
 ```bash
-# Basic test run
+# Execução básica de testes
 python -m pytest tests/ -v
 
-# With coverage report
+# Com relatório de cobertura
 python -m pytest tests/ -v --cov=src --cov-report=html
 
-# Run specific test file
+# Executar arquivo de teste específico
 python -m pytest tests/test_data_cleaner.py -v
 
-# Run specific test class
+# Executar classe de teste específica
 python -m pytest tests/test_data_cleaner.py::TestConvertBrazilianCurrency -v
 ```
 
-### Test Coverage
+### Cobertura de Testes
 
-| Module | Tests | Coverage |
-|--------|-------|----------|
-| `data_cleaner.py` | 22 | Currency conversion, month parsing, CSV loading |
-| `category_engine.py` | 13 | Hierarchy extraction, JSON I/O, summaries |
-| **Total** | **35** | All critical functions |
+| Módulo | Testes | Cobertura |
+|--------|--------|-----------|
+| `data_cleaner.py` | 22 | Conversão de moeda, parsing de mês, carregamento CSV |
+| `category_engine.py` | 13 | Extração de hierarquia, I/O JSON, resumos |
+| **Total** | **35** | Todas as funções críticas |
 
-### Test Examples
+### Exemplos de Testes
 
 ```python
-# Currency conversion tests
-def test_positive_value_with_cents():
+# Testes de conversão de moeda
+def test_valor_positivo_com_centavos():
     assert convert_brazilian_currency("R$ 1.234,56") == 1234.56
 
-def test_negative_value():
+def test_valor_negativo():
     assert convert_brazilian_currency("-R$ 1.234,56") == -1234.56
 
-# Month conversion tests
+# Testes de conversão de mês
 def test_agosto():
     result = convert_month_to_date("Ago", 2025)
     assert result == pd.Timestamp("2025-08-01")
 
-# Category extraction tests
+# Testes de extração de categorias
 def test_extract_category_hierarchy():
     hierarchy = manager.extract_category_hierarchy(df)
     assert "RECEITAS S/ VENDAS" in hierarchy
@@ -561,217 +561,217 @@ def test_extract_category_hierarchy():
 
 ## 🔄 GitHub Actions CI/CD
 
-### Workflow Overview
+### Visão Geral do Workflow
 
-The pipeline is configured to run automatically via GitHub Actions.
+O pipeline está configurado para executar automaticamente via GitHub Actions.
 
-**File:** `.github/workflows/process_dre.yml`
+**Arquivo:** `.github/workflows/process_dre.yml`
 
-### Triggers
+### Gatilhos
 
-| Trigger | Description |
-|---------|-------------|
-| `push` to `main` | Runs on every push to main branch |
-| `workflow_dispatch` | Manual trigger with optional parameters |
+| Gatilho | Descrição |
+|---------|-----------|
+| `push` para `main` | Executa em cada push para a branch main |
+| `workflow_dispatch` | Gatilho manual com parâmetros opcionais |
 
 ### Jobs
 
-1. **process-dre**: Main processing pipeline
-   - Checkout code
-   - Setup Python 3.11
-   - Install dependencies
-   - Run `main.py`
-   - Upload artifacts
+1. **process-dre**: Pipeline de processamento principal
+   - Checkout do código
+   - Configurar Python 3.11
+   - Instalar dependências
+   - Executar `main.py`
+   - Upload de artefatos
 
-2. **validate**: Data integrity validation
-   - Download processed artifacts
-   - Verify Parquet and JSON files
-   - Check required columns and data types
+2. **validate**: Validação de integridade dos dados
+   - Download de artefatos processados
+   - Verificar arquivos Parquet e JSON
+   - Checar colunas obrigatórias e tipos de dados
 
-### Artifacts
+### Artefatos
 
-| Artifact | Contents | Retention |
-|----------|----------|-----------|
-| `dre-processed-data` | Parquet + JSON | 30 days |
-| `processing-logs` | Log files | 7 days |
+| Artefato | Conteúdo | Retenção |
+|----------|----------|----------|
+| `dre-processed-data` | Parquet + JSON | 30 dias |
+| `processing-logs` | Arquivos de log | 7 dias |
 
-### Manual Trigger
+### Gatilho Manual
 
 ```bash
 # Via GitHub CLI
 gh workflow run process_dre.yml
 
-# With parameters
+# Com parâmetros
 gh workflow run process_dre.yml -f reference_year=2024
 ```
 
-> **Note:** The workflow is currently disabled for initial setup. To enable, remove the `if: false` condition from the workflow file.
+> **Nota:** O workflow está atualmente desabilitado para configuração inicial. Para habilitar, remova a condição `if: false` do arquivo do workflow.
 
 ---
 
-## 📚 API Reference
+## 📚 Referência da API
 
-### data_cleaner Module
+### Módulo data_cleaner
 
 #### `load_dre_csv(file_path: str | Path) -> pd.DataFrame`
 
-Load DRE CSV file with metadata handling.
+Carrega arquivo CSV DRE com tratamento de metadados.
 
-**Parameters:**
-- `file_path`: Path to CSV file
+**Parâmetros:**
+- `file_path`: Caminho para o arquivo CSV
 
-**Returns:** DataFrame with loaded data
+**Retorna:** DataFrame com dados carregados
 
-**Raises:**
-- `FileNotFoundError`: File doesn't exist
-- `ValueError`: Missing required columns
+**Exceções:**
+- `FileNotFoundError`: Arquivo não existe
+- `ValueError`: Colunas obrigatórias ausentes
 
 ---
 
 #### `convert_brazilian_currency(value: str) -> float`
 
-Convert Brazilian currency string to float.
+Converte string de moeda brasileira para float.
 
-**Parameters:**
-- `value`: Currency string (e.g., "R$ 1.234,56")
+**Parâmetros:**
+- `value`: String de moeda (ex: "R$ 1.234,56")
 
-**Returns:** Float value
+**Retorna:** Valor float
 
-**Raises:**
-- `ValueError`: Invalid format
-- `TypeError`: Non-string input
+**Exceções:**
+- `ValueError`: Formato inválido
+- `TypeError`: Entrada não é string
 
 ---
 
 #### `convert_month_to_date(month_str: str, reference_year: int) -> pd.Timestamp`
 
-Convert Portuguese month abbreviation to Timestamp.
+Converte abreviação de mês em português para Timestamp.
 
-**Parameters:**
-- `month_str`: Month abbreviation (e.g., "Ago")
-- `reference_year`: Year for the date
+**Parâmetros:**
+- `month_str`: Abreviação do mês (ex: "Ago")
+- `reference_year`: Ano para a data
 
-**Returns:** Pandas Timestamp
+**Retorna:** Pandas Timestamp
 
-**Raises:**
-- `ValueError`: Unknown month abbreviation
+**Exceções:**
+- `ValueError`: Abreviação de mês desconhecida
 
 ---
 
-### category_engine Module
+### Módulo category_engine
 
 #### `CategoryManager`
 
-Manager class for category hierarchy operations.
+Classe gerenciadora para operações de hierarquia de categorias.
 
-**Methods:**
+**Métodos:**
 
-| Method | Description |
-|--------|-------------|
-| `extract_category_hierarchy(df)` | Extract unique category hierarchy from DataFrame |
-| `save_categories_json(categories, path)` | Save hierarchy to JSON file |
-| `load_categories_json(path)` | Load hierarchy from JSON file |
-| `get_category_summary(categories)` | Generate summary statistics |
+| Método | Descrição |
+|--------|-----------|
+| `extract_category_hierarchy(df)` | Extrai hierarquia de categorias únicas do DataFrame |
+| `save_categories_json(categories, path)` | Salva hierarquia em arquivo JSON |
+| `load_categories_json(path)` | Carrega hierarquia de arquivo JSON |
+| `get_category_summary(categories)` | Gera estatísticas resumidas |
 
 ---
 
-## 🔧 Troubleshooting
+## 🔧 Solução de Problemas
 
-### Common Issues
+### Problemas Comuns
 
-#### 1. Encoding Error
+#### 1. Erro de Encoding
 
 ```
 UnicodeDecodeError: 'utf-8' codec can't decode byte...
 ```
 
-**Solution:** Change encoding in `config.py`:
+**Solução:** Altere o encoding em `config.py`:
 ```python
-CSV_ENCODING: str = "latin-1"  # Instead of "utf-8"
+CSV_ENCODING: str = "latin-1"  # Em vez de "utf-8"
 ```
 
-#### 2. Missing Columns
+#### 2. Colunas Ausentes
 
 ```
 ValueError: Missing required columns in CSV: ['Mês']
 ```
 
-**Solution:** Verify your CSV has the required columns. Check if column names match exactly (including accents).
+**Solução:** Verifique se seu CSV possui as colunas obrigatórias. Confira se os nomes das colunas correspondem exatamente (incluindo acentos).
 
-#### 3. Invalid Currency Format
+#### 3. Formato de Moeda Inválido
 
 ```
 ValueError: Invalid currency format...
 ```
 
-**Solution:** Ensure currency values follow the pattern `R$ X.XXX,XX` or `-R$ X.XXX,XX`.
+**Solução:** Certifique-se de que os valores de moeda seguem o padrão `R$ X.XXX,XX` ou `-R$ X.XXX,XX`.
 
-#### 4. File Not Found
+#### 4. Arquivo Não Encontrado
 
 ```
 FileNotFoundError: DRE file not found...
 ```
 
-**Solution:** Place the CSV file in the project root directory or update `INPUT_FILE_PATH` in `config.py`.
+**Solução:** Coloque o arquivo CSV no diretório raiz do projeto ou atualize `INPUT_FILE_PATH` em `config.py`.
 
-### Debug Mode
+### Modo Debug
 
-Enable detailed logging:
+Habilite logging detalhado:
 
 ```python
-# In config.py
+# Em config.py
 LOG_LEVEL: str = "DEBUG"
 ```
 
 ---
 
-## 🔮 Future Roadmap
+## 🔮 Roadmap Futuro
 
-### Phase 1: Forecasting (Q1 2025)
-- [ ] Integrate Facebook Prophet for time series forecasting
-- [ ] Monthly revenue predictions
-- [ ] Cost trend analysis
+### Fase 1: Previsões (T1 2025)
+- [ ] Integrar Facebook Prophet para previsão de séries temporais
+- [ ] Previsões de receita mensal
+- [ ] Análise de tendência de custos
 
-### Phase 2: AI Classification (Q2 2025)
-- [ ] OpenAI GPT integration for category classification
-- [ ] Automatic categorization of new expense items
-- [ ] RAG-based context using categories.json
+### Fase 2: Classificação por IA (T2 2025)
+- [ ] Integração OpenAI GPT para classificação de categorias
+- [ ] Categorização automática de novos itens de despesa
+- [ ] Contexto baseado em RAG usando categories.json
 
-### Phase 3: Dashboard (Q3 2025)
-- [ ] Streamlit interactive dashboard
-- [ ] Real-time data visualization
-- [ ] Export to Excel/PDF reports
+### Fase 3: Dashboard (T3 2025)
+- [ ] Dashboard interativo Streamlit
+- [ ] Visualização de dados em tempo real
+- [ ] Exportação para relatórios Excel/PDF
 
-### Phase 4: Multi-Company Support (Q4 2025)
-- [ ] Support for multiple company files
-- [ ] Consolidated financial reporting
-- [ ] Company comparison analytics
-
----
-
-## 🤝 Contributing
-
-Contributions are welcome! Please follow these steps:
-
-1. **Fork** the repository
-2. **Create** a feature branch (`git checkout -b feature/amazing-feature`)
-3. **Commit** your changes (`git commit -m 'Add amazing feature'`)
-4. **Push** to the branch (`git push origin feature/amazing-feature`)
-5. **Open** a Pull Request
-
-### Code Standards
-
-- Follow **PEP 8** style guidelines
-- Add **type hints** to all functions
-- Write **docstrings** in Google style
-- Include **unit tests** for new features
-- Update **README** for user-facing changes
+### Fase 4: Suporte Multi-Empresa (T4 2025)
+- [ ] Suporte para múltiplos arquivos de empresas
+- [ ] Relatórios financeiros consolidados
+- [ ] Análise comparativa entre empresas
 
 ---
 
-## 📄 License
+## 🤝 Contribuindo
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+Contribuições são bem-vindas! Por favor, siga estes passos:
+
+1. **Faça um Fork** do repositório
+2. **Crie** uma branch de feature (`git checkout -b feature/funcionalidade-incrivel`)
+3. **Commit** suas alterações (`git commit -m 'Adiciona funcionalidade incrível'`)
+4. **Push** para a branch (`git push origin feature/funcionalidade-incrivel`)
+5. **Abra** um Pull Request
+
+### Padrões de Código
+
+- Siga as diretrizes de estilo **PEP 8**
+- Adicione **type hints** em todas as funções
+- Escreva **docstrings** no estilo Google
+- Inclua **testes unitários** para novas funcionalidades
+- Atualize o **README** para alterações voltadas ao usuário
+
+---
+
+## 📄 Licença
+
+Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](LICENSE) para detalhes.
 
 ```
 MIT License
@@ -799,14 +799,14 @@ SOFTWARE.
 
 ---
 
-## 📞 Support
+## 📞 Suporte
 
-- **Issues**: [GitHub Issues](https://github.com/villarantonio/dre-financial-automation/issues)
+- **Issues**: [GitHub Issues](https://github.com/villarantonio/Projeto_DRE/issues)
 - **Email**: villar_antonio@discente.ufg.br
 
 ---
 
 <p align="center">
-  Made with ❤️ for Brazilian Financial Automation
+  Feito com ❤️ para Automação Financeira Brasileira
 </p>
 
