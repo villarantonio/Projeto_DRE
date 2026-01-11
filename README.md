@@ -37,7 +37,7 @@ Pipeline ETL automatizado para processamento de demonstrativos financeiros **DRE
 
 O projeto de Automação DRE é um pipeline Python modular projetado para:
 
-1. **Extrair** dados financeiros de exportações CSV (geralmente de ferramentas de BI)
+1. **Extrair** dados financeiros de exportações Excel/CSV (geralmente de ferramentas de BI)
 2. **Transformar** formatos de moeda brasileira e abreviações de datas em português
 3. **Carregar** dados processados em formato Parquet otimizado
 4. **Gerar** hierarquias de categorias para classificação baseada em LLM
@@ -46,11 +46,12 @@ Este pipeline está pronto para produção com integração GitHub Actions CI/CD
 
 ### Por que este Projeto?
 
+- 📊 **Suporte Excel/CSV**: Detecta automaticamente o formato do arquivo (Excel ou CSV)
 - 🇧🇷 **Tratamento de Formato Brasileiro**: Suporte nativo para formato de moeda R$ e nomes de meses em português
 - ⚡ **Performance**: Saída em Parquet para leituras 10x mais rápidas comparado ao CSV
 - 🤖 **Pronto para IA**: Extração de categorias prepara dados para classificação LLM
 - 🔄 **Automatizado**: Workflow GitHub Actions para processamento contínuo
-- 🧪 **Testado**: 35+ testes unitários garantindo confiabilidade
+- 🧪 **Testado**: 56+ testes unitários garantindo confiabilidade
 
 ---
 
@@ -144,13 +145,20 @@ python -m pytest tests/ -v
 
 ## ⚡ Início Rápido
 
-### 1. Coloque seu Arquivo de Dados
+### 1. Baixe o Arquivo de Dados
 
-Copie seu arquivo CSV DRE para a raiz do projeto:
+O arquivo DRE está disponível no SharePoint da empresa **Manda Picanha**:
+
+🔗 **Link do SharePoint**: [DRE_BI.xlsx](https://mandapicanha-my.sharepoint.com/:x:/r/personal/mandapicanha_mandapicanha_onmicrosoft_com/_layouts/15/Doc.aspx?sourcedoc=%7B7ACB5A4A-7326-4AA1-A820-551D1DDFE7CF%7D&file=DRE_BI.xlsx&action=default&mobileredirect=true&DefaultItemOpen=1)
+
+Baixe o arquivo e coloque na raiz do projeto:
 
 ```bash
-cp /caminho/para/seu/DRE_BI(BaseDRE).csv .
+# O arquivo deve estar na raiz do projeto como:
+# Projeto_DRE/DRE_BI.xlsx
 ```
+
+> **Nota**: O pipeline também suporta arquivos CSV legados. Basta renomear para `DRE_BI.csv` ou alterar `INPUT_FILE_NAME` em `config.py`.
 
 ### 2. Execute o Pipeline
 
@@ -254,23 +262,31 @@ Projeto_DRE/
 
 ### Especificações do Arquivo
 
-| Propriedade | Valor |
-|-------------|-------|
-| **Nome do Arquivo** | `DRE_BI(BaseDRE).csv` (configurável) |
-| **Encoding** | Latin-1 (ISO-8859-1) ou UTF-8 |
-| **Delimitador** | Ponto e vírgula (`;`) |
-| **Linha do Cabeçalho** | Linha 5 (linhas 1-4 são metadados) |
+O pipeline suporta dois formatos de arquivo, com detecção automática:
 
-### Estrutura do CSV
+| Propriedade | Excel (.xlsx) | CSV (.csv) |
+|-------------|---------------|------------|
+| **Nome do Arquivo** | `DRE_BI.xlsx` (padrão) | `DRE_BI.csv` ou `DRE_BI(BaseDRE).csv` |
+| **Encoding** | UTF-8 (automático) | Latin-1 (ISO-8859-1) |
+| **Delimitador** | N/A | Ponto e vírgula (`;`) |
+| **Linha do Cabeçalho** | Linha 5 (linhas 1-4 são metadados) | Linha 5 (linhas 1-4 são metadados) |
+| **Fonte** | SharePoint Manda Picanha | Exportação manual |
 
-```csv
-Ano Txt;2025;;;;;;                    ← Metadados (ignorados)
-situacao;(Vários itens);;;;;;         ← Metadados (ignorados)
-GrupoEmpresa;Grupo J+;;;;;;           ← Metadados (ignorados)
-;;;;;;;                               ← Metadados (ignorados)
-Loja;_key_centro_custo;cc_parent_nome;Nome Grupo;cc_nome;Camada03;Mês;Realizado  ← Cabeçalho
-CORPORATIVO J+;01.01.001;01.01;RECEITAS S/ VENDAS;DINHEIRO;DINHEIRO;Ago;R$ 63.713
-CORPORATIVO J+;02.01.001.01;02.01.001;( - ) CUSTOS VARIÁVEIS;BOVINOS;PROTEINAS;Nov;-R$ 1.351
+### Acesso ao Arquivo Excel (SharePoint)
+
+O arquivo DRE oficial está disponível no SharePoint da empresa:
+
+🔗 **Link**: [DRE_BI.xlsx no SharePoint](https://mandapicanha-my.sharepoint.com/:x:/r/personal/mandapicanha_mandapicanha_onmicrosoft_com/_layouts/15/Doc.aspx?sourcedoc=%7B7ACB5A4A-7326-4AA1-A820-551D1DDFE7CF%7D&file=DRE_BI.xlsx&action=default&mobileredirect=true&DefaultItemOpen=1)
+
+### Estrutura do Arquivo
+
+```
+Linha 1: Ano Txt    | 2025           |        |        |        |          |     |           ← Metadados
+Linha 2: situacao   | (Vários itens) |        |        |        |          |     |           ← Metadados
+Linha 3: GrupoEmpresa| Grupo J+      |        |        |        |          |     |           ← Metadados
+Linha 4:            |                |        |        |        |          |     |           ← Vazio
+Linha 5: Loja       | _key_centro_custo | cc_parent_nome | Nome Grupo | cc_nome | Camada03 | Mês | Realizado  ← Cabeçalho
+Linha 6: CORPORATIVO J+ | 01.01.001  | 01.01  | RECEITAS S/ VENDAS | DINHEIRO | DINHEIRO | Ago | R$ 63.713  ← Dados
 ```
 
 ### Colunas Obrigatórias
@@ -382,17 +398,25 @@ Toda a configuração está centralizada em `config.py`:
 # Diretório base (raiz do projeto)
 BASE_DIR: Path = Path(__file__).parent
 
-# Arquivo de entrada
-INPUT_FILE_NAME: str = "DRE_BI(BaseDRE).csv"
+# Arquivo de entrada (suporta .xlsx e .csv)
+INPUT_FILE_NAME: str = "DRE_BI.xlsx"  # Formato Excel (padrão)
 INPUT_FILE_PATH: Path = BASE_DIR / INPUT_FILE_NAME
 
 # Diretório e arquivos de saída
 OUTPUT_DIR: Path = BASE_DIR / "output"
 PROCESSED_PARQUET_PATH: Path = OUTPUT_DIR / "processed_dre.parquet"
 CATEGORIES_JSON_PATH: Path = OUTPUT_DIR / "categories.json"
+NARRATIVE_CSV_PATH: Path = OUTPUT_DIR / "relatorio_narrativo_ia.csv"
 ```
 
-### Parsing do CSV
+### Configurações de Leitura Excel
+
+```python
+EXCEL_HEADER_ROW: int = 4          # Posição da linha do cabeçalho (índice 0)
+EXCEL_SHEET_NAME: str | int = 0    # Nome ou índice da planilha (0 = primeira)
+```
+
+### Configurações de Leitura CSV (Legado)
 
 ```python
 CSV_SEPARATOR: str = ";"           # Delimitador de colunas
@@ -466,17 +490,23 @@ date = convert_month_to_date("Ago", 2025)
 print(date)  # → 2025-08-01 00:00:00
 ```
 
-#### Carregar e Processar CSV
+#### Carregar e Processar Arquivo DRE
 
 ```python
 from src.data_cleaner import (
-    load_dre_csv,
+    load_dre_file,      # Detecta formato automaticamente (recomendado)
+    load_dre_excel,     # Apenas Excel
+    load_dre_csv,       # Apenas CSV (legado)
     apply_currency_conversion,
     apply_month_conversion,
 )
 
-# Carregar CSV
-df = load_dre_csv("DRE_BI(BaseDRE).csv")
+# Carregar arquivo (detecta Excel ou CSV automaticamente)
+df = load_dre_file("DRE_BI.xlsx")  # ou "DRE_BI.csv"
+
+# Ou carregar formato específico
+df = load_dre_excel("DRE_BI.xlsx")  # Apenas Excel
+df = load_dre_csv("DRE_BI.csv")     # Apenas CSV
 
 # Aplicar transformações
 df = apply_currency_conversion(df, "Realizado")
@@ -549,9 +579,10 @@ python -m pytest tests/test_data_cleaner.py::TestConvertBrazilianCurrency -v
 
 | Módulo | Testes | Cobertura |
 |--------|--------|-----------|
-| `data_cleaner.py` | 22 | Conversão de moeda, parsing de mês, carregamento CSV |
-| `category_engine.py` | 13 | Extração de hierarquia, I/O JSON, resumos |
-| **Total** | **35** | Todas as funções críticas |
+| `data_cleaner.py` | 29 | Conversão de moeda, parsing de mês, carregamento CSV/Excel |
+| `category_engine.py` | 11 | Extração de hierarquia, I/O JSON, resumos |
+| `narrative_generator.py` | 15 | Geração de narrativas, limpeza de texto |
+| **Total** | **56** | Todas as funções críticas |
 
 ### Exemplos de Testes
 
@@ -630,9 +661,39 @@ gh workflow run process_dre.yml -f reference_year=2024
 
 ### Módulo data_cleaner
 
+#### `load_dre_file(file_path: str | Path) -> pd.DataFrame`
+
+Carrega arquivo DRE detectando formato automaticamente (Excel ou CSV). **Recomendado**.
+
+**Parâmetros:**
+- `file_path`: Caminho para o arquivo DRE (.xlsx, .xls ou .csv)
+
+**Retorna:** DataFrame com dados carregados
+
+**Exceções:**
+- `FileNotFoundError`: Arquivo não existe
+- `ValueError`: Formato não suportado ou colunas obrigatórias ausentes
+
+---
+
+#### `load_dre_excel(file_path: str | Path) -> pd.DataFrame`
+
+Carrega arquivo Excel DRE com tratamento de metadados.
+
+**Parâmetros:**
+- `file_path`: Caminho para o arquivo Excel (.xlsx ou .xls)
+
+**Retorna:** DataFrame com dados carregados
+
+**Exceções:**
+- `FileNotFoundError`: Arquivo não existe
+- `ValueError`: Colunas obrigatórias ausentes
+
+---
+
 #### `load_dre_csv(file_path: str | Path) -> pd.DataFrame`
 
-Carrega arquivo CSV DRE com tratamento de metadados.
+Carrega arquivo CSV DRE com tratamento de metadados. *(Legado - use `load_dre_file` preferencialmente)*
 
 **Parâmetros:**
 - `file_path`: Caminho para o arquivo CSV
@@ -710,10 +771,10 @@ CSV_ENCODING: str = "latin-1"  # Em vez de "utf-8"
 #### 2. Colunas Ausentes
 
 ```
-ValueError: Missing required columns in CSV: ['Mês']
+ValueError: Colunas obrigatórias ausentes no arquivo: ['Mês']
 ```
 
-**Solução:** Verifique se seu CSV possui as colunas obrigatórias. Confira se os nomes das colunas correspondem exatamente (incluindo acentos).
+**Solução:** Verifique se seu arquivo possui as colunas obrigatórias. Confira se os nomes das colunas correspondem exatamente (incluindo acentos).
 
 #### 3. Formato de Moeda Inválido
 
@@ -726,10 +787,21 @@ ValueError: Invalid currency format...
 #### 4. Arquivo Não Encontrado
 
 ```
-FileNotFoundError: DRE file not found...
+FileNotFoundError: Arquivo DRE não encontrado...
 ```
 
-**Solução:** Coloque o arquivo CSV no diretório raiz do projeto ou atualize `INPUT_FILE_PATH` em `config.py`.
+**Solução:** Baixe o arquivo do SharePoint ou coloque o arquivo na raiz do projeto. Atualize `INPUT_FILE_NAME` em `config.py` se necessário.
+
+#### 5. Módulo openpyxl Não Encontrado
+
+```
+ModuleNotFoundError: No module named 'openpyxl'
+```
+
+**Solução:** Instale o pacote openpyxl:
+```bash
+pip install openpyxl
+```
 
 ### Modo Debug
 
@@ -749,6 +821,7 @@ LOG_LEVEL: str = "DEBUG"
 - [x] Conversão de moeda brasileira
 - [x] Extração de categorias hierárquicas
 - [x] **Geração de narrativas para treinamento de LLM** *(contribuição: @LuccasJose)*
+- [x] **Suporte a arquivos Excel do SharePoint** *(Jan 2026)*
 
 ### Fase 1: Previsões (T1 2026)
 - [ ] Integrar Facebook Prophet para previsão de séries temporais

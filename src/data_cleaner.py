@@ -1,13 +1,15 @@
 """
-Data Cleaning Module for DRE Financial Automation.
+Módulo de Limpeza de Dados para Automação DRE.
 
-This module provides functions for loading, parsing, and cleaning
-DRE (Demonstração do Resultado do Exercício) data from CSV files.
+Este módulo fornece funções para carregar, analisar e limpar
+dados de DRE (Demonstração do Resultado do Exercício) de arquivos Excel e CSV.
 
-Functions:
-    load_dre_csv: Load DRE CSV file with proper configuration.
-    convert_brazilian_currency: Convert Brazilian currency strings to float.
-    convert_month_to_date: Convert Portuguese month abbreviations to datetime.
+Funções:
+    load_dre_excel: Carrega arquivo Excel DRE com configuração adequada.
+    load_dre_csv: Carrega arquivo CSV DRE com configuração adequada (legado).
+    load_dre_file: Carrega arquivo DRE detectando formato automaticamente.
+    convert_brazilian_currency: Converte strings de moeda brasileira para float.
+    convert_month_to_date: Converte abreviações de meses em português para datetime.
 """
 
 import logging
@@ -19,46 +21,168 @@ import pandas as pd
 
 import config
 
-# Configure module logger
+# Configura logger do módulo
 logger = logging.getLogger(__name__)
+
+
+def _validate_dre_dataframe(df: pd.DataFrame, file_path: Path) -> pd.DataFrame:
+    """
+    Valida o DataFrame carregado de arquivo DRE.
+
+    Args:
+        df: DataFrame carregado
+        file_path: Caminho do arquivo fonte (para mensagens de erro)
+
+    Returns:
+        pd.DataFrame: DataFrame validado
+
+    Raises:
+        ValueError: Se o DataFrame estiver vazio ou sem colunas obrigatórias
+    """
+    # Valida se o DataFrame não está vazio
+    if df.empty:
+        logger.error("DataFrame carregado está vazio")
+        raise ValueError("O arquivo não contém dados após o cabeçalho.")
+
+    # Valida se as colunas obrigatórias existem
+    missing_columns = [
+        col for col in config.REQUIRED_COLUMNS if col not in df.columns
+    ]
+    if missing_columns:
+        logger.error(f"Colunas obrigatórias ausentes: {missing_columns}")
+        raise ValueError(
+            f"Colunas obrigatórias ausentes no arquivo: {missing_columns}. "
+            f"Colunas disponíveis: {df.columns.tolist()}"
+        )
+
+    logger.info(f"Carregados com sucesso {len(df)} registros com {len(df.columns)} colunas")
+    return df
+
+
+def load_dre_excel(file_path: Union[str, Path]) -> pd.DataFrame:
+    """
+    Carrega arquivo Excel DRE ignorando linhas de metadados.
+
+    Esta função lê um arquivo Excel contendo dados DRE, pulando as primeiras
+    4 linhas de metadados e usando a 5ª linha como cabeçalho.
+
+    Args:
+        file_path: Caminho para o arquivo Excel. Pode ser string ou objeto Path.
+
+    Returns:
+        pd.DataFrame: DataFrame contendo os dados DRE carregados.
+
+    Raises:
+        FileNotFoundError: Se o arquivo especificado não existir.
+        ValueError: Se colunas obrigatórias estiverem ausentes.
+
+    Exemplo:
+        >>> df = load_dre_excel("DRE_BI.xlsx")
+        >>> print(df.columns.tolist())
+        ['Loja', '_key_centro_custo', 'cc_parent_nome', 'Nome Grupo', ...]
+    """
+    file_path = Path(file_path)
+
+    # Valida se o arquivo existe
+    if not file_path.exists():
+        logger.error(f"Arquivo não encontrado: {file_path}")
+        raise FileNotFoundError(f"Arquivo DRE não encontrado: {file_path}")
+
+    if not file_path.is_file():
+        logger.error(f"Caminho não é um arquivo: {file_path}")
+        raise ValueError(f"Caminho não é um arquivo válido: {file_path}")
+
+    logger.info(f"Carregando DRE Excel de: {file_path}")
+
+    try:
+        df = pd.read_excel(
+            file_path,
+            sheet_name=config.EXCEL_SHEET_NAME,
+            header=config.EXCEL_HEADER_ROW,
+            engine='openpyxl',  # Motor para arquivos .xlsx
+        )
+    except Exception as e:
+        logger.error(f"Erro ao ler arquivo Excel: {e}")
+        raise
+
+    return _validate_dre_dataframe(df, file_path)
+
+
+def load_dre_file(file_path: Union[str, Path]) -> pd.DataFrame:
+    """
+    Carrega arquivo DRE detectando o formato automaticamente.
+
+    Suporta arquivos Excel (.xlsx, .xls) e CSV (.csv).
+    Detecta o formato baseado na extensão do arquivo.
+
+    Args:
+        file_path: Caminho para o arquivo DRE.
+
+    Returns:
+        pd.DataFrame: DataFrame contendo os dados DRE carregados.
+
+    Raises:
+        FileNotFoundError: Se o arquivo não existir.
+        ValueError: Se o formato não for suportado ou colunas ausentes.
+
+    Exemplo:
+        >>> df = load_dre_file("DRE_BI.xlsx")  # Carrega Excel
+        >>> df = load_dre_file("DRE_BI.csv")   # Carrega CSV
+    """
+    file_path = Path(file_path)
+    extension = file_path.suffix.lower()
+
+    if extension in ['.xlsx', '.xls']:
+        logger.info(f"Formato Excel detectado: {extension}")
+        return load_dre_excel(file_path)
+    elif extension == '.csv':
+        logger.info("Formato CSV detectado")
+        return load_dre_csv(file_path)
+    else:
+        raise ValueError(
+            f"Formato de arquivo não suportado: '{extension}'. "
+            f"Use .xlsx, .xls ou .csv"
+        )
 
 
 def load_dre_csv(file_path: Union[str, Path]) -> pd.DataFrame:
     """
-    Load DRE CSV file ignoring metadata rows.
+    Carrega arquivo CSV DRE ignorando linhas de metadados.
 
-    This function reads a CSV file containing DRE data, skipping the first
-    4 lines of metadata and using the 5th line as the header.
+    Esta função lê um arquivo CSV contendo dados DRE, pulando as primeiras
+    4 linhas de metadados e usando a 5ª linha como cabeçalho.
+
+    Nota: Para novos projetos, prefira usar load_dre_excel() ou load_dre_file().
 
     Args:
-        file_path: Path to the CSV file. Can be a string or Path object.
+        file_path: Caminho para o arquivo CSV. Pode ser string ou objeto Path.
 
     Returns:
-        pd.DataFrame: DataFrame containing the loaded DRE data with all columns.
+        pd.DataFrame: DataFrame contendo os dados DRE carregados.
 
     Raises:
-        FileNotFoundError: If the specified file does not exist.
-        ValueError: If required columns are missing from the CSV.
-        pd.errors.EmptyDataError: If the file is empty or contains only metadata.
+        FileNotFoundError: Se o arquivo especificado não existir.
+        ValueError: Se colunas obrigatórias estiverem ausentes no CSV.
+        pd.errors.EmptyDataError: Se o arquivo estiver vazio ou só com metadados.
 
-    Example:
+    Exemplo:
         >>> df = load_dre_csv("DRE_BI(BaseDRE).csv")
         >>> print(df.columns.tolist())
         ['Loja', '_key_centro_custo', 'cc_parent_nome', 'Nome Grupo', ...]
     """
     file_path = Path(file_path)
-    
-    # Validate file exists
+
+    # Valida se o arquivo existe
     if not file_path.exists():
-        logger.error(f"File not found: {file_path}")
-        raise FileNotFoundError(f"DRE file not found: {file_path}")
-    
+        logger.error(f"Arquivo não encontrado: {file_path}")
+        raise FileNotFoundError(f"Arquivo DRE não encontrado: {file_path}")
+
     if not file_path.is_file():
-        logger.error(f"Path is not a file: {file_path}")
-        raise ValueError(f"Path is not a valid file: {file_path}")
-    
-    logger.info(f"Loading DRE CSV from: {file_path}")
-    
+        logger.error(f"Caminho não é um arquivo: {file_path}")
+        raise ValueError(f"Caminho não é um arquivo válido: {file_path}")
+
+    logger.info(f"Carregando DRE CSV de: {file_path}")
+
     try:
         df = pd.read_csv(
             file_path,
@@ -67,32 +191,15 @@ def load_dre_csv(file_path: Union[str, Path]) -> pd.DataFrame:
             encoding=config.CSV_ENCODING,
         )
     except pd.errors.EmptyDataError as e:
-        logger.error(f"Empty or corrupted file: {file_path}")
+        logger.error(f"Arquivo vazio ou corrompido: {file_path}")
         raise pd.errors.EmptyDataError(
-            f"The file {file_path} is empty or contains only metadata rows."
+            f"O arquivo {file_path} está vazio ou contém apenas linhas de metadados."
         ) from e
     except Exception as e:
-        logger.error(f"Error reading CSV file: {e}")
+        logger.error(f"Erro ao ler arquivo CSV: {e}")
         raise
-    
-    # Validate DataFrame is not empty
-    if df.empty:
-        logger.error("Loaded DataFrame is empty")
-        raise ValueError("The CSV file contains no data rows after the header.")
-    
-    # Validate required columns exist
-    missing_columns = [
-        col for col in config.REQUIRED_COLUMNS if col not in df.columns
-    ]
-    if missing_columns:
-        logger.error(f"Missing required columns: {missing_columns}")
-        raise ValueError(
-            f"Missing required columns in CSV: {missing_columns}. "
-            f"Available columns: {df.columns.tolist()}"
-        )
-    
-    logger.info(f"Successfully loaded {len(df)} records with {len(df.columns)} columns")
-    return df
+
+    return _validate_dre_dataframe(df, file_path)
 
 
 def convert_brazilian_currency(value: str) -> float:

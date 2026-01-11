@@ -1,12 +1,16 @@
 """
-DRE Financial Automation Source Package.
+Pacote de Automação Financeira DRE.
 
-This package contains modules for data cleaning, category management,
-narrative generation, and financial data processing for DRE
+Este pacote contém módulos para limpeza de dados, gerenciamento de categorias,
+geração de narrativas e processamento de dados financeiros para DRE
 (Demonstração do Resultado do Exercício).
+
+Suporta arquivos de entrada nos formatos Excel (.xlsx) e CSV (.csv).
 """
 
 from src.data_cleaner import (
+    load_dre_file,
+    load_dre_excel,
     load_dre_csv,
     convert_brazilian_currency,
     convert_month_to_date,
@@ -21,8 +25,11 @@ from src.narrative_generator import (
 )
 
 __all__ = [
-    # Data cleaner
-    "load_dre_csv",
+    # Data cleaner - Funções de carregamento
+    "load_dre_file",      # Detecta formato automaticamente (recomendado)
+    "load_dre_excel",     # Carrega arquivos Excel (.xlsx)
+    "load_dre_csv",       # Carrega arquivos CSV (legado)
+    # Data cleaner - Funções de conversão
     "convert_brazilian_currency",
     "convert_month_to_date",
     # Category engine

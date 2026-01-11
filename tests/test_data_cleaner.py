@@ -1,7 +1,7 @@
 """
-Unit tests for the data_cleaner module.
+Testes unitários para o módulo data_cleaner.
 
-Tests cover currency conversion, month parsing, and CSV loading functionality.
+Testes cobrem conversão de moeda, parsing de mês e carregamento de arquivos CSV/Excel.
 """
 
 import pytest
@@ -17,6 +17,8 @@ from src.data_cleaner import (
     convert_brazilian_currency,
     convert_month_to_date,
     load_dre_csv,
+    load_dre_excel,
+    load_dre_file,
 )
 
 
@@ -137,17 +139,17 @@ class TestConvertMonthToDate:
 
 
 class TestLoadDreCsv:
-    """Tests for the load_dre_csv function."""
+    """Testes para a função load_dre_csv."""
 
     def test_file_not_found_raises_error(self):
-        """Test that non-existent file raises FileNotFoundError."""
+        """Testa que arquivo inexistente levanta FileNotFoundError."""
         with pytest.raises(FileNotFoundError):
-            load_dre_csv("nonexistent_file.csv")
+            load_dre_csv("arquivo_inexistente.csv")
 
     def test_load_valid_csv(self):
-        """Test loading a valid CSV file."""
-        # Create a temporary CSV file with proper structure
-        # Using latin-1 encoding to match config.CSV_ENCODING
+        """Testa carregamento de arquivo CSV válido."""
+        # Cria um arquivo CSV temporário com estrutura adequada
+        # Usando encoding latin-1 para corresponder ao config.CSV_ENCODING
         csv_content = """Ano Txt;2025;;;;;;
 situacao;(Vários itens);;;;;;
 GrupoEmpresa;Grupo J+;;;;;;
@@ -169,6 +171,111 @@ TEST;01.01.002;01.01;RECEITAS S/ VENDAS;PIX;PIX;Set;R$ 10.000
             assert "cc_nome" in df.columns
             assert "Mês" in df.columns
             assert "Realizado" in df.columns
+        finally:
+            os.unlink(temp_path)
+
+
+class TestLoadDreExcel:
+    """Testes para a função load_dre_excel."""
+
+    def test_file_not_found_raises_error(self):
+        """Testa que arquivo inexistente levanta FileNotFoundError."""
+        with pytest.raises(FileNotFoundError):
+            load_dre_excel("arquivo_inexistente.xlsx")
+
+    def test_load_valid_excel(self):
+        """Testa carregamento de arquivo Excel válido."""
+        # Cria um DataFrame com a estrutura esperada do Excel DRE
+        # Linhas 0-3 são metadados, linha 4 é o cabeçalho, linhas 5+ são dados
+        rows = [
+            ['Ano Txt', '2025', '', '', '', '', '', ''],  # Linha 0 - Metadados
+            ['situacao', '(Vários)', '', '', '', '', '', ''],  # Linha 1 - Metadados
+            ['GrupoEmpresa', 'Grupo J+', '', '', '', '', '', ''],  # Linha 2 - Metadados
+            ['', '', '', '', '', '', '', ''],  # Linha 3 - Metadados vazio
+            ['Loja', '_key_centro_custo', 'cc_parent_nome', 'Nome Grupo', 'cc_nome', 'Camada03', 'Mês', 'Realizado'],  # Linha 4 - Cabeçalho
+            ['TEST', '01.01.001', '01.01', 'RECEITAS S/ VENDAS', 'DINHEIRO', 'DINHEIRO', 'Ago', 'R$ 63.713'],  # Linha 5 - Dados
+            ['TEST', '01.01.002', '01.01', 'RECEITAS S/ VENDAS', 'PIX', 'PIX', 'Set', 'R$ 10.000'],  # Linha 6 - Dados
+        ]
+
+        df_excel = pd.DataFrame(rows)
+
+        with tempfile.NamedTemporaryFile(suffix='.xlsx', delete=False) as f:
+            temp_path = f.name
+
+        # Salvar como Excel sem header e sem index
+        df_excel.to_excel(temp_path, index=False, header=False, engine='openpyxl')
+
+        try:
+            df = load_dre_excel(temp_path)
+            assert len(df) == 2
+            assert "Nome Grupo" in df.columns
+            assert "cc_nome" in df.columns
+            assert "Mês" in df.columns
+            assert "Realizado" in df.columns
+        finally:
+            os.unlink(temp_path)
+
+
+class TestLoadDreFile:
+    """Testes para a função load_dre_file (detecção automática de formato)."""
+
+    def test_detects_excel_format(self):
+        """Testa que formato Excel é detectado pela extensão .xlsx."""
+        # Cria arquivo Excel temporário com estrutura correta
+        rows = [
+            ['Ano Txt', '2025', '', '', '', '', '', ''],
+            ['situacao', '(Vários)', '', '', '', '', '', ''],
+            ['GrupoEmpresa', 'Grupo J+', '', '', '', '', '', ''],
+            ['', '', '', '', '', '', '', ''],
+            ['Loja', '_key_centro_custo', 'cc_parent_nome', 'Nome Grupo', 'cc_nome', 'Camada03', 'Mês', 'Realizado'],
+            ['TEST', '01.01.001', '01.01', 'RECEITAS S/ VENDAS', 'DINHEIRO', 'DINHEIRO', 'Ago', 'R$ 63.713'],
+        ]
+
+        df_excel = pd.DataFrame(rows)
+
+        with tempfile.NamedTemporaryFile(suffix='.xlsx', delete=False) as f:
+            temp_path = f.name
+
+        df_excel.to_excel(temp_path, index=False, header=False, engine='openpyxl')
+
+        try:
+            df = load_dre_file(temp_path)
+            assert len(df) == 1
+            assert "Nome Grupo" in df.columns
+        finally:
+            os.unlink(temp_path)
+
+    def test_detects_csv_format(self):
+        """Testa que formato CSV é detectado pela extensão .csv."""
+        csv_content = """Ano Txt;2025;;;;;;
+situacao;(Vários itens);;;;;;
+GrupoEmpresa;Grupo J+;;;;;;
+;;;;;;;
+Loja;_key_centro_custo;cc_parent_nome;Nome Grupo;cc_nome;Camada03;Mês;Realizado
+TEST;01.01.001;01.01;RECEITAS S/ VENDAS;DINHEIRO;DINHEIRO;Ago;R$ 63.713
+"""
+        with tempfile.NamedTemporaryFile(
+            mode='w', suffix='.csv', delete=False, encoding='latin-1'
+        ) as f:
+            f.write(csv_content)
+            temp_path = f.name
+
+        try:
+            df = load_dre_file(temp_path)
+            assert len(df) == 1
+            assert "Nome Grupo" in df.columns
+        finally:
+            os.unlink(temp_path)
+
+    def test_unsupported_format_raises_error(self):
+        """Testa que formato não suportado levanta ValueError."""
+        with tempfile.NamedTemporaryFile(suffix='.txt', delete=False) as f:
+            f.write(b"some content")
+            temp_path = f.name
+
+        try:
+            with pytest.raises(ValueError, match="não suportado"):
+                load_dre_file(temp_path)
         finally:
             os.unlink(temp_path)
 

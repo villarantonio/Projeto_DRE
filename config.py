@@ -1,37 +1,46 @@
 """
-Configuration module for DRE Financial Automation Project.
+Módulo de configuração para o Projeto de Automação DRE.
 
-This module contains all configurable parameters for the project,
-including file paths, reference year, and other settings.
+Este módulo contém todos os parâmetros configuráveis do projeto,
+incluindo caminhos de arquivos, ano de referência e outras configurações.
+
+Suporta arquivos de entrada nos formatos Excel (.xlsx) e CSV (.csv).
 """
 
 from pathlib import Path
 
 # =============================================================================
-# File Paths Configuration
+# Configuração de Caminhos de Arquivos
 # =============================================================================
 
-# Base directory (project root)
+# Diretório base (raiz do projeto)
 BASE_DIR: Path = Path(__file__).parent
 
-# Input file configuration
-INPUT_FILE_NAME: str = "DRE_BI(BaseDRE).csv"
+# Configuração do arquivo de entrada
+# Suporta tanto Excel (.xlsx) quanto CSV (.csv)
+# O arquivo pode ser baixado do SharePoint da empresa Manda Picanha
+INPUT_FILE_NAME: str = "DRE_BI.xlsx"
 INPUT_FILE_PATH: Path = BASE_DIR / INPUT_FILE_NAME
 
-# Output files configuration
+# Configuração de arquivos de saída
 OUTPUT_DIR: Path = BASE_DIR / "output"
 PROCESSED_PARQUET_PATH: Path = OUTPUT_DIR / "processed_dre.parquet"
 CATEGORIES_JSON_PATH: Path = OUTPUT_DIR / "categories.json"
 NARRATIVE_CSV_PATH: Path = OUTPUT_DIR / "relatorio_narrativo_ia.csv"
 
 # =============================================================================
-# Data Processing Configuration
+# Configuração de Processamento de Dados
 # =============================================================================
 
-# CSV parsing settings
+# Configurações para arquivos Excel (.xlsx)
+# Nota: Para Excel, encoding e separador não são necessários
+EXCEL_HEADER_ROW: int = 4  # Índice 0, cabeçalho real está na linha 5
+EXCEL_SHEET_NAME: str | int = 0  # Nome ou índice da planilha (0 = primeira)
+
+# Configurações para arquivos CSV (mantidas para compatibilidade)
 CSV_SEPARATOR: str = ";"
-CSV_ENCODING: str = "latin-1"  # Also known as ISO-8859-1 or Windows-1252
-CSV_HEADER_ROW: int = 4  # 0-indexed, actual header is at line 5
+CSV_ENCODING: str = "latin-1"  # Também conhecido como ISO-8859-1 ou Windows-1252
+CSV_HEADER_ROW: int = 4  # Índice 0, cabeçalho real está na linha 5
 
 # Reference year for date conversion
 REFERENCE_YEAR: int = 2025

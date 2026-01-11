@@ -1,17 +1,20 @@
 """
-Main Orchestrator for DRE Financial Automation Project.
+Orquestrador Principal do Projeto de Automação DRE.
 
-This script coordinates the data cleaning, transformation, and category
-extraction pipeline for DRE (Demonstração do Resultado do Exercício) data.
+Este script coordena o pipeline de limpeza, transformação e extração
+de categorias de dados DRE (Demonstração do Resultado do Exercício).
 
-Steps performed:
-    1. Load the DRE CSV file with proper configuration
-    2. Apply currency conversion to the Realizado column
-    3. Apply month conversion to the Mês column
-    4. Display DataFrame info and statistics for validation
-    5. Extract and save category hierarchy
-    6. Save processed data as Parquet file
-    7. Print summary statistics
+Suporta arquivos de entrada nos formatos Excel (.xlsx) e CSV (.csv).
+
+Etapas executadas:
+    1. Carregar arquivo DRE (Excel ou CSV) com configuração adequada
+    2. Aplicar conversão de moeda na coluna Realizado
+    3. Aplicar conversão de mês na coluna Mês
+    4. Exibir informações e estatísticas do DataFrame para validação
+    5. Extrair e salvar hierarquia de categorias
+    6. Salvar dados processados como arquivo Parquet
+    7. Gerar narrativas para treinamento de IA
+    8. Imprimir estatísticas resumidas
 """
 
 import logging
@@ -24,7 +27,7 @@ import config
 from src.data_cleaner import (
     apply_currency_conversion,
     apply_month_conversion,
-    load_dre_csv,
+    load_dre_file,
 )
 from src.category_engine import CategoryManager
 from src.narrative_generator import (
@@ -150,11 +153,11 @@ def main() -> int:
     try:
         # Step 1: Ensure output directory exists
         ensure_output_directory()
-        
-        # Step 2: Load the DRE CSV file
-        logger.info(f"Step 1: Loading DRE CSV from {config.INPUT_FILE_PATH}")
-        df = load_dre_csv(config.INPUT_FILE_PATH)
-        display_dataframe_info(df, "After Loading CSV")
+
+        # Step 2: Load the DRE file (Excel or CSV - auto-detected)
+        logger.info(f"Step 1: Loading DRE file from {config.INPUT_FILE_PATH}")
+        df = load_dre_file(config.INPUT_FILE_PATH)
+        display_dataframe_info(df, "After Loading File")
         
         # Step 3: Apply currency conversion
         logger.info("Step 2: Applying currency conversion to Realizado column")
