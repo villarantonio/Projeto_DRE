@@ -27,6 +27,11 @@ from src.data_cleaner import (
     load_dre_csv,
 )
 from src.category_engine import CategoryManager
+from src.narrative_generator import (
+    generate_narratives,
+    save_narrative_report,
+    get_narrative_summary,
+)
 
 
 def setup_logging() -> None:
@@ -74,6 +79,7 @@ def print_summary(
     df: pd.DataFrame,
     categories: dict,
     category_manager: CategoryManager,
+    narrative_summary: dict | None = None,
 ) -> None:
     """
     Print processing summary statistics.
@@ -82,39 +88,47 @@ def print_summary(
         df: Processed DataFrame.
         categories: Extracted category hierarchy.
         category_manager: CategoryManager instance for summary generation.
+        narrative_summary: Optional summary from narrative generator.
     """
     print(f"\n{'='*60}")
-    print("PROCESSING SUMMARY")
+    print("RESUMO DO PROCESSAMENTO")
     print(f"{'='*60}")
-    
-    print(f"\n📊 Records Processed: {len(df):,}")
-    print(f"📅 Reference Year: {config.REFERENCE_YEAR}")
-    
+
+    print(f"\n📊 Registros Processados: {len(df):,}")
+    print(f"📅 Ano de Referência: {config.REFERENCE_YEAR}")
+
     # Category summary
     summary = category_manager.get_category_summary(categories)
-    print(f"\n📁 Category Statistics:")
-    print(f"   - Macro Categories (Nome Grupo): {summary['total_groups']}")
-    print(f"   - Detail Categories (cc_nome): {summary['total_details']}")
-    
-    print(f"\n📁 Categories by Group:")
+    print(f"\n📁 Estatísticas de Categorias:")
+    print(f"   - Categorias Macro (Nome Grupo): {summary['total_groups']}")
+    print(f"   - Categorias Detalhadas (cc_nome): {summary['total_details']}")
+
+    print(f"\n📁 Categorias por Grupo:")
     for group, count in summary["details_per_group"].items():
-        print(f"   - {group}: {count} items")
-    
+        print(f"   - {group}: {count} itens")
+
     # Value statistics
     if config.COLUMN_REALIZADO in df.columns:
         total_value = df[config.COLUMN_REALIZADO].sum()
         positive_sum = df[df[config.COLUMN_REALIZADO] > 0][config.COLUMN_REALIZADO].sum()
         negative_sum = df[df[config.COLUMN_REALIZADO] < 0][config.COLUMN_REALIZADO].sum()
-        
-        print(f"\n💰 Financial Summary:")
-        print(f"   - Total Value: R$ {total_value:,.2f}")
-        print(f"   - Total Positive (Receitas): R$ {positive_sum:,.2f}")
-        print(f"   - Total Negative (Custos): R$ {negative_sum:,.2f}")
-    
+
+        print(f"\n💰 Resumo Financeiro:")
+        print(f"   - Valor Total: R$ {total_value:,.2f}")
+        print(f"   - Total Positivo (Receitas): R$ {positive_sum:,.2f}")
+        print(f"   - Total Negativo (Custos): R$ {negative_sum:,.2f}")
+
+    # Narrative summary
+    if narrative_summary:
+        print(f"\n📝 Narrativas para IA:")
+        print(f"   - Narrativas Geradas: {narrative_summary.get('narratives_generated', 0)}")
+        print(f"   - Tamanho Médio: {narrative_summary.get('avg_narrative_length', 0):.0f} caracteres")
+
     # Output files
-    print(f"\n📄 Output Files:")
+    print(f"\n📄 Arquivos de Saída:")
     print(f"   - Parquet: {config.PROCESSED_PARQUET_PATH}")
-    print(f"   - Categories JSON: {config.CATEGORIES_JSON_PATH}")
+    print(f"   - Categorias JSON: {config.CATEGORIES_JSON_PATH}")
+    print(f"   - Narrativas CSV: {config.NARRATIVE_CSV_PATH}")
 
 
 def main() -> int:
@@ -166,8 +180,14 @@ def main() -> int:
         logger.info(f"Step 6: Saving categories to {config.CATEGORIES_JSON_PATH}")
         category_manager.save_categories_json(categories, config.CATEGORIES_JSON_PATH)
 
-        # Step 8: Print summary
-        print_summary(df, categories, category_manager)
+        # Step 8: Generate AI narratives
+        logger.info("Step 7: Generating AI narratives")
+        df = generate_narratives(df)
+        save_narrative_report(df)
+        narrative_summary = get_narrative_summary(df)
+
+        # Step 9: Print summary
+        print_summary(df, categories, category_manager, narrative_summary)
 
         logger.info("DRE Processing Pipeline completed successfully!")
         print(f"\n{'='*60}")

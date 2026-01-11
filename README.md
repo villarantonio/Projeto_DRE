@@ -61,6 +61,7 @@ Este pipeline está pronto para produção com integração GitHub Actions CI/CD
 | **Conversão de Moeda** | Converte `R$ 1.234,56` → `1234.56` com suporte a valores negativos |
 | **Parsing de Meses** | Mapeia abreviações em português (Jan, Fev, Mar...) para datetime |
 | **Extração de Categorias** | Constrói JSON hierárquico de categorias financeiras |
+| **Geração de Narrativas** | 🆕 Cria descrições em linguagem natural para treinamento de IA/LLM |
 | **Exportação Parquet** | Armazenamento colunar para análises eficientes |
 | **Logging Abrangente** | Logging em níveis INFO/ERROR com timestamps |
 | **Validação de Entrada** | Verifica colunas obrigatórias e formatos válidos |
@@ -162,10 +163,13 @@ python main.py
 ```bash
 # Visualizar arquivos gerados
 ls output/
-# Saída: categories.json  processed_dre.parquet
+# Saída: categories.json  processed_dre.parquet  relatorio_narrativo_ia.csv
 
 # Pré-visualizar categorias
 cat output/categories.json
+
+# Pré-visualizar narrativas
+head output/relatorio_narrativo_ia.csv
 ```
 
 ### Saída Esperada no Console
@@ -187,6 +191,15 @@ PIPELINE DE AUTOMAÇÃO DRE FINANCEIRO
    - Total Positivo (Receitas): R$ 5.767.098,00
    - Total Negativo (Custos): R$ -9.694.610,00
 
+📝 Narrativas para IA:
+   - Narrativas Geradas: 560
+   - Tamanho Médio: 95 caracteres
+
+📄 Arquivos de Saída:
+   - Parquet: output/processed_dre.parquet
+   - Categorias JSON: output/categories.json
+   - Narrativas CSV: output/relatorio_narrativo_ia.csv
+
 ✅ PIPELINE CONCLUÍDO COM SUCESSO
 ```
 
@@ -204,16 +217,19 @@ Projeto_DRE/
 ├── 📂 src/                          # Módulos de código fonte
 │   ├── 📄 __init__.py              # Inicialização do pacote
 │   ├── 📄 data_cleaner.py          # Funções de limpeza de dados
-│   └── 📄 category_engine.py       # Classe de gerenciamento de categorias
+│   ├── 📄 category_engine.py       # Classe de gerenciamento de categorias
+│   └── 📄 narrative_generator.py   # 🆕 Gerador de narrativas para IA
 │
 ├── 📂 tests/                        # Testes unitários
 │   ├── 📄 __init__.py
 │   ├── 📄 test_data_cleaner.py     # Testes para data_cleaner (22 testes)
-│   └── 📄 test_category_engine.py  # Testes para category_engine (13 testes)
+│   ├── 📄 test_category_engine.py  # Testes para category_engine (13 testes)
+│   └── 📄 test_narrative_generator.py  # 🆕 Testes para narrative_generator
 │
 ├── 📂 output/                       # Arquivos de saída gerados (ignorados pelo git)
 │   ├── 📄 processed_dre.parquet    # Dados financeiros processados
-│   └── 📄 categories.json          # Hierarquia de categorias
+│   ├── 📄 categories.json          # Hierarquia de categorias
+│   └── 📄 relatorio_narrativo_ia.csv  # 🆕 Narrativas para treinamento IA
 │
 ├── 📄 config.py                     # Configuração centralizada
 ├── 📄 main.py                       # Orquestrador principal do pipeline
@@ -226,10 +242,11 @@ Projeto_DRE/
 
 | Módulo | Linhas | Descrição |
 |--------|--------|-----------|
-| `config.py` | ~70 | Configuração centralizada (caminhos, encodings, mapeamento de colunas) |
+| `config.py` | ~100 | Configuração centralizada (caminhos, encodings, mapeamento de colunas) |
 | `src/data_cleaner.py` | ~300 | Carregamento CSV, conversão de moeda, parsing de datas |
 | `src/category_engine.py` | ~240 | Extração de categorias e persistência JSON |
-| `main.py` | ~190 | Orquestração do pipeline com logging e relatórios |
+| `src/narrative_generator.py` | ~235 | 🆕 Geração de narrativas para IA/LLM |
+| `main.py` | ~210 | Orquestração do pipeline com logging e relatórios |
 
 ---
 
@@ -727,22 +744,28 @@ LOG_LEVEL: str = "DEBUG"
 
 ## 🔮 Roadmap Futuro
 
-### Fase 1: Previsões (T1 2025)
+### ✅ Fase 0: Preparação para IA (Concluído - Jan 2026)
+- [x] Pipeline ETL para processamento de DRE
+- [x] Conversão de moeda brasileira
+- [x] Extração de categorias hierárquicas
+- [x] **Geração de narrativas para treinamento de LLM** *(contribuição: @LuccasJose)*
+
+### Fase 1: Previsões (T1 2026)
 - [ ] Integrar Facebook Prophet para previsão de séries temporais
 - [ ] Previsões de receita mensal
 - [ ] Análise de tendência de custos
 
-### Fase 2: Classificação por IA (T2 2025)
+### Fase 2: Classificação por IA (T2 2026)
 - [ ] Integração OpenAI GPT para classificação de categorias
 - [ ] Categorização automática de novos itens de despesa
-- [ ] Contexto baseado em RAG usando categories.json
+- [ ] Contexto baseado em RAG usando categories.json e narrativas
 
-### Fase 3: Dashboard (T3 2025)
+### Fase 3: Dashboard (T3 2026)
 - [ ] Dashboard interativo Streamlit
 - [ ] Visualização de dados em tempo real
 - [ ] Exportação para relatórios Excel/PDF
 
-### Fase 4: Suporte Multi-Empresa (T4 2025)
+### Fase 4: Suporte Multi-Empresa (T4 2026)
 - [ ] Suporte para múltiplos arquivos de empresas
 - [ ] Relatórios financeiros consolidados
 - [ ] Análise comparativa entre empresas

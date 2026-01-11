@@ -22,6 +22,7 @@ INPUT_FILE_PATH: Path = BASE_DIR / INPUT_FILE_NAME
 OUTPUT_DIR: Path = BASE_DIR / "output"
 PROCESSED_PARQUET_PATH: Path = OUTPUT_DIR / "processed_dre.parquet"
 CATEGORIES_JSON_PATH: Path = OUTPUT_DIR / "categories.json"
+NARRATIVE_CSV_PATH: Path = OUTPUT_DIR / "relatorio_narrativo_ia.csv"
 
 # =============================================================================
 # Data Processing Configuration
@@ -70,6 +71,31 @@ MONTH_MAPPING: dict[str, int] = {
     "Out": 10,
     "Nov": 11,
     "Dez": 12,
+}
+
+# =============================================================================
+# Text Cleaning Configuration (for narrative generator)
+# =============================================================================
+
+# Common encoding errors in Brazilian CSV exports and their corrections
+# Note: The corrupted cedilla character may appear as different bytes depending on encoding
+TEXT_REPLACEMENTS: dict[str, str] = {
+    "Vrios": "Vários",
+    "Ms": "Mês",
+    "VARIVEIS": "VARIÁVEIS",
+    "DEDUES": "DEDUÇÕES",
+    "SERVIOS": "SERVIÇOS",
+    "CACHAA": "CACHAÇA",
+    "ALCLICAS": "ALCOÓLICAS",
+    "FRIAS": "FÉRIAS",
+    "SALRIO": "SALÁRIO",
+    "RESCISES": "RESCISÕES",
+    "Ã§": "ç",  # UTF-8 mojibake for cedilla
+    "Ã£": "ã",  # UTF-8 mojibake for a-tilde
+    "Ã©": "é",  # UTF-8 mojibake for e-acute
+    "Ã¡": "á",  # UTF-8 mojibake for a-acute
+    "Ã³": "ó",  # UTF-8 mojibake for o-acute
+    "Ãº": "ú",  # UTF-8 mojibake for u-acute
 }
 
 # =============================================================================

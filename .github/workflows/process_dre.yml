@@ -1,14 +1,17 @@
 name: Process DRE Data
 
 # =============================================================================
-# WORKFLOW TEMPORARILY DISABLED
+# DRE Financial Automation Pipeline - CI/CD Workflow
 # =============================================================================
-# This workflow is disabled during initial setup and debugging phase.
-# To enable the workflow, remove the 'if: false' condition from both jobs below.
+# This workflow processes DRE financial data on every push to main
+# and generates: processed_dre.parquet, categories.json, relatorio_narrativo_ia.csv
 # =============================================================================
 
 on:
   push:
+    branches:
+      - main
+  pull_request:
     branches:
       - main
   workflow_dispatch:
@@ -16,14 +19,37 @@ on:
       reference_year:
         description: 'Reference year for date conversion'
         required: false
-        default: '2025'
+        default: '2026'
 
 jobs:
-  process-dre:
-    # REMOVE THIS LINE TO ENABLE THE WORKFLOW
-    if: false
-    name: Process DRE Financial Data
+  test:
+    name: Run Tests
     runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install pytest
+
+      - name: Run tests
+        run: pytest tests/ -v --tb=short
+
+  process-dre:
+    name: Process DRE Financial Data
+    needs: test
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
     
     steps:
       - name: Checkout repository
@@ -62,6 +88,9 @@ jobs:
           echo "Categories JSON content:"
           cat output/categories.json
           echo ""
+          echo "Narrative report preview:"
+          head -n 5 output/relatorio_narrativo_ia.csv
+          echo ""
           echo "Parquet file info:"
           python -c "import pandas as pd; df = pd.read_parquet('output/processed_dre.parquet'); print(f'Rows: {len(df)}, Columns: {len(df.columns)}'); print(df.head())"
 
@@ -72,6 +101,7 @@ jobs:
           path: |
             output/processed_dre.parquet
             output/categories.json
+            output/relatorio_narrativo_ia.csv
           retention-days: 30
           if-no-files-found: error
 
@@ -86,8 +116,6 @@ jobs:
           if-no-files-found: ignore
 
   validate:
-    # REMOVE THIS LINE TO ENABLE THE WORKFLOW
-    if: false
     name: Validate Processed Data
     needs: process-dre
     runs-on: ubuntu-latest
