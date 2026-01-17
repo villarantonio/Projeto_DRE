@@ -3,7 +3,12 @@ name: Classificador Financeiro
 on:
   push:
     branches: [ "narrativa-ia" ]
+    paths:
+      - 'entrada.csv' # IMPORTANTE: O robô só acorda se você mexer neste arquivo!
   workflow_dispatch:
+
+permissions:
+  contents: write # IMPORTANTE: Dá permissão para o robô salvar o arquivo atualizado
 
 jobs:
   classificacao:
@@ -28,3 +33,15 @@ jobs:
       env:
         GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
       run: python classificador_ia.py
+
+    - name: Salvar Mudanças no GitHub
+      run: |
+        git config --global user.name "GitHub Actions Bot"
+        git config --global user.email "actions@github.com"
+        
+        # Adiciona o arquivo mestre atualizado (e o entrada.csv se quiser limpar)
+        git add *.csv
+        
+        # Comita e envia de volta para a branch
+        git commit -m "Auto: Atualiza relatório com novos dados classificados" || echo "Nenhuma mudança para commitar"
+        git push origin narrativa-ia
