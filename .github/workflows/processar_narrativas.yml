@@ -1,0 +1,39 @@
+name: Gerar Narrativas para IA
+
+on:
+  push:
+    paths:
+      - 'DRE_BI(BaseDRE).csv'
+      - 'src/narrative_generator.py'
+      - '.github/workflows/processar_narrativas.yml'
+  workflow_dispatch:
+
+jobs:
+  transformacao_dados:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout do código
+        uses: actions/checkout@v4
+
+      - name: Configurar Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Instalar dependências
+        run: pip install pandas
+
+      - name: Executar Gerador de Narrativas
+        # Roda o script que está dentro da pasta src
+        run: python src/narrative_generator.py
+
+      - name: Commit e Push do Relatório
+        run: |
+          git config --global user.name 'GitHub Action Bot'
+          git config --global user.email 'action@github.com'
+          git add relatorio_narrativo_ia.csv
+          # O comando abaixo evita erro se não houver mudanças
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Auto: Atualiza relatorio IA" && git push)
