@@ -7,7 +7,7 @@ import os
 # --- CONFIGURAÇÃO ESPECÍFICA DA BRANCH ---
 # URL Raw apontando para a branch 'narrativa-ia'
 # IMPORTANTE: Substitua 'SEU_ARQUIVO_BASE.csv' pelo nome real do arquivo no repo
-URL_CSV_GITHUB = "https://raw.githubusercontent.com/villarantonio/Projeto_DRE/narrativa-ia/SEU_ARQUIVO_BASE.csv"
+URL_CSV_GITHUB = "https://raw.githubusercontent.com/villarantonio/Projeto_DRE/narrativa-ia/relatorio_narrativo_ia.csv"
 
 COLUNA_CATEGORIA = "cc_nome"
 API_KEY = os.getenv("GEMINI_API_KEY")
