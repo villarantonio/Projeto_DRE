@@ -2,13 +2,13 @@ name: Classificador Financeiro
 
 on:
   push:
-    branches: [ "main",narrativa-ia" ]
+    branches: [ "main", "narrativa-ia" ] # Funciona na main e na de testes
     paths:
-      - 'entrada.csv' # IMPORTANTE: O robô só acorda se você mexer neste arquivo!
-  workflow_dispatch:
+      - 'entrada.csv' # Só acorda se mexer no arquivo de entrada
+  workflow_dispatch: # Permite rodar manualmente pelo botão
 
 permissions:
-  contents: write # IMPORTANTE: Dá permissão para o robô salvar o arquivo atualizado
+  contents: write # Permissão vital para salvar o arquivo
 
 jobs:
   classificacao:
@@ -17,8 +17,7 @@ jobs:
     steps:
     - name: Checkout do código
       uses: actions/checkout@v4
-      with:
-        ref: narrativa-ia
+      # CORREÇÃO: Removemos a linha "ref" para ele baixar a branch atual automaticamente
 
     - name: Configurar Python
       uses: actions/setup-python@v5
@@ -39,11 +38,11 @@ jobs:
         git config --global user.name "GitHub Actions Bot"
         git config --global user.email "actions@github.com"
         
-        # Adiciona os arquivos CSV modificados
+        # Adiciona todos os CSVs modificados (entrada e relatório)
         git add *.csv
         
         # Faz o commit (se houver mudanças)
-        git commit -m "Auto: Atualização via IA" || echo "⚠️ Nada a commitar"
+        git commit -m "Auto: Atualização via IA" || echo "⚠️ Nenhuma mudança detectada"
         
-        # O SEGREDO: Empurra o estado atual (HEAD) direto para a branch remota correta
+        # COMANDO MÁGICO: Envia para a branch exata que disparou o robô
         git push origin HEAD:${{ github.ref_name }}
