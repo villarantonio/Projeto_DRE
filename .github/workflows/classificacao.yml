@@ -39,14 +39,11 @@ jobs:
         git config --global user.name "GitHub Actions Bot"
         git config --global user.email "actions@github.com"
         
-        # Garante que estamos na branch correta antes de commitar
-        git checkout ${{ github.ref_name }}
-        
-        # Adiciona o arquivo CSV modificado
+        # Adiciona os arquivos CSV modificados
         git add *.csv
         
-        # Faz o commit
-        git commit -m "Auto: Atualização de dados via IA" || echo "Nada a commitar"
+        # Faz o commit (se houver mudanças)
+        git commit -m "Auto: Atualização via IA" || echo "⚠️ Nada a commitar"
         
-        # EMPURRA PARA A MESMA BRANCH QUE DISPAROU O ROBÔ
-        git push origin ${{ github.ref_name }}
+        # O SEGREDO: Empurra o estado atual (HEAD) direto para a branch remota correta
+        git push origin HEAD:${{ github.ref_name }}
