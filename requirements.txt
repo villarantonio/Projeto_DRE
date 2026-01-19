@@ -1,15 +1,20 @@
 # DRE Financial Automation Project Dependencies
+# =============================================
+
 # Core data processing
 pandas>=2.0.0
 numpy>=1.24.0
 openpyxl>=3.1.0
 pyarrow>=14.0.0
 
-# Future use - Forecasting
-prophet>=1.1.0
+# AI/LLM - Google Gemini (ATIVO - Fase 2)
+google-generativeai>=0.3.0
 
-# Future use - AI/LLM integration
-openai>=1.0.0
+# Future use - Forecasting (Fase 1)
+# prophet>=1.1.0  # Descomentrar quando implementar previsões
+
+# Future use - OpenAI (alternativa ao Gemini)
+# openai>=1.0.0  # Descomentrar se migrar para OpenAI
 
 # Testing
 pytest>=7.4.0

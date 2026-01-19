@@ -24,6 +24,22 @@ from src.narrative_generator import (
     create_narrative,
 )
 
+# Importações condicionais para módulos de IA (requerem google-generativeai)
+try:
+    from src.ai_classifier import (
+        classificar_gasto,
+        carregar_categorias_rag,
+        formatar_contexto_rag,
+        processar_classificacao,
+    )
+    from src.data_processor_ia import (
+        trava_seguranca_duplicidade,
+        processar_com_validacao,
+    )
+    _AI_AVAILABLE = True
+except ImportError:
+    _AI_AVAILABLE = False
+
 __all__ = [
     # Data cleaner - Funções de carregamento
     "load_dre_file",      # Detecta formato automaticamente (recomendado)
@@ -40,5 +56,13 @@ __all__ = [
     "get_narrative_summary",
     "clean_text",
     "create_narrative",
+    # AI Classifier (requer google-generativeai)
+    "classificar_gasto",
+    "carregar_categorias_rag",
+    "formatar_contexto_rag",
+    "processar_classificacao",
+    # Data Processor IA
+    "trava_seguranca_duplicidade",
+    "processar_com_validacao",
 ]
 
