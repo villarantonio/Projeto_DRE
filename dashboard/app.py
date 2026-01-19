@@ -1,7 +1,7 @@
 """
 Dashboard Interativo DRE - Manda Picanha.
 
-Aplicação Streamlit para visualização de dados financeiros
+Aplicacao Streamlit para visualizacao de dados financeiros
 processados pelo pipeline DRE.
 
 Uso:
@@ -28,10 +28,16 @@ from dashboard.components.styles import (
     render_page_indicator,
     COLORS,
 )
+from dashboard.components.auth import (
+    init_session_state,
+    is_authenticated,
+    render_login_page,
+    render_logout_button,
+)
 
 
 # =============================================================================
-# Configuração da Página
+# Configuracao da Pagina
 # =============================================================================
 
 st.set_page_config(
@@ -42,9 +48,16 @@ st.set_page_config(
     menu_items={
         "Get Help": "https://github.com/villarantonio/Projeto_DRE",
         "Report a bug": "https://github.com/villarantonio/Projeto_DRE/issues",
-        "About": "Dashboard de análise financeira DRE - Projeto Manda Picanha",
+        "About": "Dashboard de analise financeira DRE - Projeto Manda Picanha",
     }
 )
+
+
+# =============================================================================
+# Inicializar Session State de Autenticacao
+# =============================================================================
+
+init_session_state()
 
 
 # =============================================================================
@@ -52,6 +65,15 @@ st.set_page_config(
 # =============================================================================
 
 apply_styles()
+
+
+# =============================================================================
+# Verificacao de Autenticacao
+# =============================================================================
+
+if not is_authenticated():
+    render_login_page()
+    st.stop()
 
 
 # =============================================================================
@@ -130,9 +152,11 @@ with st.sidebar:
         df = None
         categories = {}
 
-    # Versão no rodapé da sidebar
-    st.markdown("<hr style='border-color: rgba(255,255,255,0.1); margin: 1.5rem 0 0.5rem 0;'>", unsafe_allow_html=True)
-    st.markdown("<p style='color: rgba(255,255,255,0.3); font-size: 0.7rem; text-align: center;'>v1.2.0 | Pipeline DRE</p>", unsafe_allow_html=True)
+    # Botao de logout
+    render_logout_button()
+
+    # Versao no rodape da sidebar
+    st.markdown("<p style='color: rgba(255,255,255,0.3); font-size: 0.7rem; text-align: center;'>v1.3.0 | Pipeline DRE</p>", unsafe_allow_html=True)
 
 
 # =============================================================================
