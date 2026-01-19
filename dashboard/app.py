@@ -21,6 +21,13 @@ sys.path.insert(0, str(ROOT_DIR))
 
 import config
 from dashboard.components.data_loader import load_processed_data, load_categories
+from dashboard.components.styles import (
+    apply_styles,
+    render_header,
+    render_footer,
+    render_page_indicator,
+    COLORS,
+)
 
 
 # =============================================================================
@@ -41,112 +48,135 @@ st.set_page_config(
 
 
 # =============================================================================
-# Estilos CSS Customizados
+# Aplicar Estilos CSS Globais
 # =============================================================================
 
-st.markdown("""
-<style>
-    .main-header {
-        font-size: 2.5rem;
-        font-weight: bold;
-        color: #1f77b4;
-        text-align: center;
-        margin-bottom: 1rem;
-    }
-    .metric-card {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        padding: 1rem;
-        border-radius: 10px;
-        color: white;
-    }
-    .stMetric > div {
-        background-color: #f0f2f6;
-        padding: 1rem;
-        border-radius: 10px;
-    }
-</style>
-""", unsafe_allow_html=True)
+apply_styles()
 
 
 # =============================================================================
 # Sidebar - Navegação e Filtros
 # =============================================================================
 
+# Páginas disponíveis com ícones
+PAGES = {
+    "overview": {"name": "Visao Geral", "icon": "📊", "desc": "Resumo executivo"},
+    "dre_mensal": {"name": "DRE Mensal", "icon": "📈", "desc": "Demonstrativo mensal"},
+    "evolucao": {"name": "Evolucao", "icon": "📉", "desc": "Tendencias temporais"},
+    "composicao": {"name": "Composicao", "icon": "🥧", "desc": "Analise de custos"},
+    "classificacao_ia": {"name": "Classificacao IA", "icon": "🤖", "desc": "Classificador inteligente"},
+}
+
 with st.sidebar:
-    st.markdown("## 🥩 Manda Picanha")
-    st.markdown("---")
-    
-    st.markdown("### 🧭 Navegação")
-    
-    # Páginas disponíveis
-    pages = {
-        "📊 Visão Geral": "overview",
-        "📈 DRE Mensal": "dre_mensal",
-        "📉 Evolução Temporal": "evolucao",
-        "🥧 Composição": "composicao",
-        "🤖 Classificação IA": "classificacao_ia",
-    }
-    
-    selected_page = st.radio(
-        "Selecione a página:",
-        options=list(pages.keys()),
+    # Logo e título
+    st.markdown("""
+        <div style="text-align: center; padding: 1rem 0;">
+            <span style="font-size: 3rem;">🥩</span>
+            <h2 style="color: white; margin: 0.5rem 0 0 0; font-weight: 700;">Manda Picanha</h2>
+            <p style="color: rgba(255,255,255,0.7); font-size: 0.8rem; margin: 0;">Dashboard Financeiro DRE</p>
+        </div>
+    """, unsafe_allow_html=True)
+
+    st.markdown("<hr style='border-color: rgba(255,255,255,0.1); margin: 1rem 0;'>", unsafe_allow_html=True)
+
+    # Navegação
+    st.markdown("<p style='color: rgba(255,255,255,0.5); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.5rem;'>NAVEGACAO</p>", unsafe_allow_html=True)
+
+    # Criar lista de opções formatadas
+    page_options = [f"{info['icon']} {info['name']}" for info in PAGES.values()]
+    page_keys = list(PAGES.keys())
+
+    selected_index = st.radio(
+        "Selecione a pagina:",
+        options=range(len(page_options)),
+        format_func=lambda i: page_options[i],
         label_visibility="collapsed",
     )
-    
-    st.markdown("---")
-    st.markdown("### 🔧 Configurações")
-    
+
+    selected_page_key = page_keys[selected_index]
+    selected_page_info = PAGES[selected_page_key]
+
+    st.markdown("<hr style='border-color: rgba(255,255,255,0.1); margin: 1rem 0;'>", unsafe_allow_html=True)
+
     # Status dos dados
+    st.markdown("<p style='color: rgba(255,255,255,0.5); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.5rem;'>STATUS DOS DADOS</p>", unsafe_allow_html=True)
+
     try:
         df = load_processed_data()
         categories = load_categories()
-        st.success(f"✅ {len(df):,} registros carregados")
-        st.info(f"📁 {len(categories)} grupos de categorias")
+
+        # Cards de status compactos
+        st.markdown(f"""
+            <div style="background: rgba(39, 174, 96, 0.2); border-left: 3px solid #27AE60; padding: 0.75rem; border-radius: 4px; margin-bottom: 0.5rem;">
+                <p style="color: #27AE60; font-size: 0.75rem; margin: 0; text-transform: uppercase;">Registros</p>
+                <p style="color: white; font-size: 1.25rem; font-weight: 700; margin: 0;">{len(df):,}</p>
+            </div>
+        """, unsafe_allow_html=True)
+
+        st.markdown(f"""
+            <div style="background: rgba(52, 152, 219, 0.2); border-left: 3px solid #3498DB; padding: 0.75rem; border-radius: 4px;">
+                <p style="color: #3498DB; font-size: 0.75rem; margin: 0; text-transform: uppercase;">Grupos DRE</p>
+                <p style="color: white; font-size: 1.25rem; font-weight: 700; margin: 0;">{len(categories)}</p>
+            </div>
+        """, unsafe_allow_html=True)
+
     except FileNotFoundError:
-        st.error("❌ Dados não encontrados")
-        st.warning("Execute `python main.py` primeiro")
+        st.markdown("""
+            <div style="background: rgba(231, 76, 60, 0.2); border-left: 3px solid #E74C3C; padding: 0.75rem; border-radius: 4px;">
+                <p style="color: #E74C3C; font-size: 0.85rem; margin: 0;">Dados nao encontrados</p>
+                <p style="color: rgba(255,255,255,0.7); font-size: 0.75rem; margin: 0.25rem 0 0 0;">Execute python main.py</p>
+            </div>
+        """, unsafe_allow_html=True)
         df = None
         categories = {}
+
+    # Versão no rodapé da sidebar
+    st.markdown("<hr style='border-color: rgba(255,255,255,0.1); margin: 1.5rem 0 0.5rem 0;'>", unsafe_allow_html=True)
+    st.markdown("<p style='color: rgba(255,255,255,0.3); font-size: 0.7rem; text-align: center;'>v1.2.0 | Pipeline DRE</p>", unsafe_allow_html=True)
 
 
 # =============================================================================
 # Conteúdo Principal
 # =============================================================================
 
-st.markdown('<p class="main-header">🥩 Dashboard DRE - Manda Picanha</p>', unsafe_allow_html=True)
+# Header principal
+render_header("Dashboard DRE", "Analise financeira em tempo real")
+
+# Indicador de página atual
+render_page_indicator(selected_page_info["name"])
 
 if df is None:
-    st.error("### ⚠️ Dados não disponíveis")
+    st.error("### Dados nao disponiveis")
     st.markdown("""
     Para visualizar o dashboard, execute primeiro o pipeline de processamento:
-    
+
     ```bash
     python main.py
     ```
-    
-    Isso irá gerar os arquivos necessários em `output/`.
+
+    Isso ira gerar os arquivos necessarios em `output/`.
     """)
     st.stop()
 
 
-# Importar páginas dinamicamente
-if pages[selected_page] == "overview":
+# Importar e renderizar página selecionada
+if selected_page_key == "overview":
     from dashboard.pages.overview import render_overview
     render_overview(df, categories)
 
-elif pages[selected_page] == "dre_mensal":
+elif selected_page_key == "dre_mensal":
     from dashboard.pages.dre_mensal import render_dre_mensal
     render_dre_mensal(df, categories)
 
-elif pages[selected_page] == "evolucao":
+elif selected_page_key == "evolucao":
     from dashboard.pages.evolucao import render_evolucao
     render_evolucao(df, categories)
 
-elif pages[selected_page] == "composicao":
+elif selected_page_key == "composicao":
     from dashboard.pages.composicao import render_composicao
     render_composicao(df, categories)
 
-elif pages[selected_page] == "classificacao_ia":
+elif selected_page_key == "classificacao_ia":
     from dashboard.pages.classificacao_ia import render_classificacao_ia
     render_classificacao_ia(df, categories)
 
@@ -155,13 +185,5 @@ elif pages[selected_page] == "classificacao_ia":
 # Footer
 # =============================================================================
 
-st.markdown("---")
-st.markdown(
-    """
-    <div style="text-align: center; color: #888; font-size: 0.8rem;">
-        Pipeline DRE v1.1.0 | Projeto Manda Picanha | 2026
-    </div>
-    """,
-    unsafe_allow_html=True,
-)
+render_footer()
 
