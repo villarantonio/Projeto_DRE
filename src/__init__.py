@@ -36,6 +36,10 @@ try:
         trava_seguranca_duplicidade,
         processar_com_validacao,
     )
+    from src.finetune_preparer import (
+        FineTuneDatasetBuilder,
+        build_finetune_dataset,
+    )
     _AI_AVAILABLE = True
 except ImportError:
     _AI_AVAILABLE = False
@@ -64,5 +68,8 @@ __all__ = [
     # Data Processor IA
     "trava_seguranca_duplicidade",
     "processar_com_validacao",
+    # Fine-tune Preparer
+    "FineTuneDatasetBuilder",
+    "build_finetune_dataset",
 ]
 

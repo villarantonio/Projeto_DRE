@@ -97,16 +97,16 @@ def print_summary(
     print("RESUMO DO PROCESSAMENTO")
     print(f"{'='*60}")
 
-    print(f"\n📊 Registros Processados: {len(df):,}")
-    print(f"📅 Ano de Referência: {config.REFERENCE_YEAR}")
+    print(f"\n[*] Registros Processados: {len(df):,}")
+    print(f"[*] Ano de Referencia: {config.REFERENCE_YEAR}")
 
     # Category summary
     summary = category_manager.get_category_summary(categories)
-    print(f"\n📁 Estatísticas de Categorias:")
+    print(f"\n[*] Estatisticas de Categorias:")
     print(f"   - Categorias Macro (Nome Grupo): {summary['total_groups']}")
     print(f"   - Categorias Detalhadas (cc_nome): {summary['total_details']}")
 
-    print(f"\n📁 Categorias por Grupo:")
+    print(f"\n[*] Categorias por Grupo:")
     for group, count in summary["details_per_group"].items():
         print(f"   - {group}: {count} itens")
 
@@ -116,19 +116,19 @@ def print_summary(
         positive_sum = df[df[config.COLUMN_REALIZADO] > 0][config.COLUMN_REALIZADO].sum()
         negative_sum = df[df[config.COLUMN_REALIZADO] < 0][config.COLUMN_REALIZADO].sum()
 
-        print(f"\n💰 Resumo Financeiro:")
+        print(f"\n[*] Resumo Financeiro:")
         print(f"   - Valor Total: R$ {total_value:,.2f}")
         print(f"   - Total Positivo (Receitas): R$ {positive_sum:,.2f}")
         print(f"   - Total Negativo (Custos): R$ {negative_sum:,.2f}")
 
     # Narrative summary
     if narrative_summary:
-        print(f"\n📝 Narrativas para IA:")
+        print(f"\n[*] Narrativas para IA:")
         print(f"   - Narrativas Geradas: {narrative_summary.get('narratives_generated', 0)}")
-        print(f"   - Tamanho Médio: {narrative_summary.get('avg_narrative_length', 0):.0f} caracteres")
+        print(f"   - Tamanho Medio: {narrative_summary.get('avg_narrative_length', 0):.0f} caracteres")
 
     # Output files
-    print(f"\n📄 Arquivos de Saída:")
+    print(f"\n[*] Arquivos de Saida:")
     print(f"   - Parquet: {config.PROCESSED_PARQUET_PATH}")
     print(f"   - Categorias JSON: {config.CATEGORIES_JSON_PATH}")
     print(f"   - Narrativas CSV: {config.NARRATIVE_CSV_PATH}")
@@ -194,22 +194,22 @@ def main() -> int:
 
         logger.info("DRE Processing Pipeline completed successfully!")
         print(f"\n{'='*60}")
-        print("✅ PIPELINE COMPLETED SUCCESSFULLY")
+        print("[OK] PIPELINE COMPLETED SUCCESSFULLY")
         print(f"{'='*60}\n")
 
         return 0
 
     except FileNotFoundError as e:
         logger.error(f"File not found error: {e}")
-        print(f"\n❌ ERROR: {e}")
+        print(f"\n[ERROR] {e}")
         return 1
     except ValueError as e:
         logger.error(f"Value error during processing: {e}")
-        print(f"\n❌ ERROR: {e}")
+        print(f"\n[ERROR] {e}")
         return 1
     except Exception as e:
         logger.exception(f"Unexpected error during processing: {e}")
-        print(f"\n❌ UNEXPECTED ERROR: {e}")
+        print(f"\n[ERROR] UNEXPECTED: {e}")
         return 1
 
 

@@ -188,8 +188,6 @@ def get_narrative_summary(df: pd.DataFrame) -> dict:
 
 # Standalone execution support
 if __name__ == "__main__":
-    import sys
-
     logging.basicConfig(
         level=logging.INFO,
         format=config.LOG_FORMAT,

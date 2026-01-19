@@ -3,6 +3,8 @@ name: Gerar Narrativas para IA
 on:
   push:
     paths:
+      # Suporta tanto Excel (.xlsx) quanto CSV (.csv)
+      - 'DRE_BI.xlsx'
       - 'DRE_BI(BaseDRE).csv'
       - 'src/narrative_generator.py'
       - '.github/workflows/processar_narrativas.yml'
@@ -19,12 +21,14 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Configurar Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: '3.11'
 
       - name: Instalar dependências
-        run: pip install pandas
+        run: |
+          pip install pandas openpyxl pyarrow
+          # openpyxl necessário para leitura de Excel (.xlsx)
 
       - name: Executar Gerador de Narrativas
         # Roda o script que está dentro da pasta src
@@ -34,6 +38,6 @@ jobs:
         run: |
           git config --global user.name 'GitHub Action Bot'
           git config --global user.email 'action@github.com'
-          git add relatorio_narrativo_ia.csv
+          git add relatorio_narrativo_ia.csv output/*.csv 2>/dev/null || true
           # O comando abaixo evita erro se não houver mudanças
           git diff --quiet && git diff --staged --quiet || (git commit -m "Auto: Atualiza relatorio IA" && git push)

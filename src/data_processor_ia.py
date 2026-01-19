@@ -4,24 +4,16 @@ Processador de Dados com IA e Trava de Segurança.
 Este módulo processa dados financeiros com validação contra duplicidade
 e classificação automática usando Google Gemini.
 
-Refatorado para seguir a estrutura do projeto (src/).
+Reutiliza funções do ai_classifier para evitar duplicação.
 
 Author: Projeto DRE - Manda Picanha
 """
 
 import logging
-import os
 import sys
 from pathlib import Path
 
 import pandas as pd
-
-try:
-    import google.generativeai as genai
-    GENAI_AVAILABLE = True
-except ImportError:
-    GENAI_AVAILABLE = False
-    genai = None
 
 # Import config from parent
 try:
@@ -30,64 +22,16 @@ except ImportError:
     sys.path.insert(0, str(Path(__file__).parent.parent))
     import config
 
+# Reutiliza funções do ai_classifier
+from src.ai_classifier import (
+    get_model,
+    carregar_dados,
+    GENAI_AVAILABLE,
+    API_KEY,
+    ARQUIVO_MESTRE,
+)
 
 logger = logging.getLogger(__name__)
-
-
-# --- CONFIGURAÇÕES ---
-ARQUIVO_MESTRE = Path("relatorio_narrativo_ia.csv")
-ARQUIVO_INPUT = Path("entrada.csv")
-
-API_KEY = os.getenv("GEMINI_API_KEY")
-
-# Modelo da IA (inicialização lazy)
-_model = None
-
-
-def get_model():
-    """Retorna instância do modelo Gemini (singleton)."""
-    global _model
-    if _model is None and API_KEY and GENAI_AVAILABLE:
-        genai.configure(api_key=API_KEY)
-        _model = genai.GenerativeModel('gemini-2.0-flash')
-    return _model
-
-
-def carregar_dados(mestre_path: Path = None, input_path: Path = None):
-    """
-    Carrega dados do arquivo mestre e entrada.
-
-    Args:
-        mestre_path: Caminho para o arquivo mestre.
-        input_path: Caminho para o arquivo de entrada.
-
-    Returns:
-        Tupla (df_mestre, df_novo).
-    """
-    mestre = mestre_path or ARQUIVO_MESTRE
-    entrada = input_path or ARQUIVO_INPUT
-
-    # Carrega o Mestre
-    if mestre.exists():
-        try:
-            df_mestre = pd.read_csv(mestre, sep=';', encoding='utf-8')
-        except Exception:
-            df_mestre = pd.read_csv(mestre, sep=',', encoding='utf-8')
-    else:
-        logger.error(f"Arquivo mestre '{mestre}' não encontrado.")
-        sys.exit(1)
-
-    # Carrega a Entrada
-    if entrada.exists():
-        try:
-            df_novo = pd.read_csv(entrada, sep=';', encoding='utf-8')
-        except Exception:
-            df_novo = pd.read_csv(entrada, sep=',', encoding='utf-8')
-    else:
-        logger.info("Arquivo de entrada não encontrado.")
-        sys.exit(0)
-
-    return df_mestre, df_novo
 
 
 def trava_seguranca_duplicidade(df_mestre: pd.DataFrame, df_novo: pd.DataFrame) -> None:
@@ -116,13 +60,13 @@ def trava_seguranca_duplicidade(df_mestre: pd.DataFrame, df_novo: pd.DataFrame) 
     duplicados = meses_novos.intersection(meses_existentes)
 
     if duplicados:
-        logger.error(f"⛔ BLOQUEIO: Mês(es) {list(duplicados)} já existe(m) no relatório.")
-        print(f"⛔ BLOQUEIO DE SEGURANÇA: O mês {list(duplicados)} já existe no Relatório Narrativo.")
-        print("A operação foi cancelada para evitar duplicidade de dados.")
+        logger.error(f"[BLOQUEIO] Mes(es) {list(duplicados)} ja existe(m) no relatorio.")
+        print(f"[BLOQUEIO] O mes {list(duplicados)} ja existe no Relatorio Narrativo.")
+        print("A operacao foi cancelada para evitar duplicidade de dados.")
         sys.exit(1)
 
-    logger.info("✅ Validação de Mês: OK (Dados novos detectados).")
-    print("✅ Validação de Mês: OK (Dados novos detectados).")
+    logger.info("[OK] Validacao de Mes: OK (Dados novos detectados).")
+    print("[OK] Validacao de Mes: OK (Dados novos detectados).")
 
 
 def classificar_gasto(descricao: str, categorias_validas: list) -> str:
@@ -230,5 +174,5 @@ if __name__ == "__main__":
     # Processar com validação
     df_final = processar_com_validacao(df_mestre, df_novo, ARQUIVO_MESTRE)
 
-    print(f"✅ SUCESSO: Relatório atualizado com {len(df_novo)} novos itens.")
+    print(f"[OK] SUCESSO: Relatorio atualizado com {len(df_novo)} novos itens.")
 

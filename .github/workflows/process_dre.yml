@@ -68,12 +68,19 @@ jobs:
 
       - name: Verify input file exists
         run: |
-          if [ ! -f "DRE_BI(BaseDRE).csv" ]; then
-            echo "Error: Input file DRE_BI(BaseDRE).csv not found!"
+          # Suporta tanto Excel (.xlsx) quanto CSV (.csv)
+          # Prioriza Excel conforme config.py (INPUT_FILE_NAME = "DRE_BI.xlsx")
+          if [ -f "DRE_BI.xlsx" ]; then
+            echo "✅ Input file found: DRE_BI.xlsx (Excel format)"
+            python -c "import pandas as pd; df = pd.read_excel('DRE_BI.xlsx', header=4, engine='openpyxl'); print(f'Rows: {len(df)}, Columns: {list(df.columns)[:5]}')"
+          elif [ -f "DRE_BI(BaseDRE).csv" ]; then
+            echo "✅ Input file found: DRE_BI(BaseDRE).csv (CSV format)"
+            head -n 10 "DRE_BI(BaseDRE).csv"
+          else
+            echo "❌ Error: No input file found!"
+            echo "Expected: DRE_BI.xlsx or DRE_BI(BaseDRE).csv"
             exit 1
           fi
-          echo "Input file found: DRE_BI(BaseDRE).csv"
-          head -n 10 "DRE_BI(BaseDRE).csv"
 
       - name: Run DRE processing pipeline
         run: python main.py

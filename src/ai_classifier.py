@@ -242,9 +242,9 @@ if __name__ == "__main__":
     contexto_rag = formatar_contexto_rag(categorias_dict)
 
     if categorias_dict:
-        print(f"✅ RAG carregado: {len(categorias_dict)} grupos")
+        print(f"[OK] RAG carregado: {len(categorias_dict)} grupos")
     else:
-        print("⚠️ Usando categorias do CSV como fallback")
+        print("[WARN] Usando categorias do CSV como fallback")
 
     if df_novo.empty:
         print("Entrada vazia. Nada a processar.")
@@ -258,4 +258,4 @@ if __name__ == "__main__":
     df_final = pd.concat([df_mestre, df_resultado], ignore_index=True)
     df_final.to_csv(ARQUIVO_MESTRE, sep=';', index=False, encoding='utf-8')
 
-    print(f"✅ SUCESSO: {len(df_resultado)} itens classificados e salvos.")
+    print(f"[OK] SUCESSO: {len(df_resultado)} itens classificados e salvos.")

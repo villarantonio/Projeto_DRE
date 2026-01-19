@@ -10,6 +10,10 @@ pyarrow>=14.0.0
 # AI/LLM - Google Gemini (ATIVO - Fase 2)
 google-generativeai>=0.3.0
 
+# Dashboard - Streamlit (ATIVO - Fase 3)
+streamlit>=1.30.0
+plotly>=5.18.0
+
 # Future use - Forecasting (Fase 1)
 # prophet>=1.1.0  # Descomentrar quando implementar previsões
 
