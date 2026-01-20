@@ -30,6 +30,9 @@ jobs:
           pip install pandas openpyxl pyarrow
           # openpyxl necessário para leitura de Excel (.xlsx)
 
+      - name: Criar diretório output
+        run: mkdir -p output
+
       - name: Executar Gerador de Narrativas
         # Roda o script que está dentro da pasta src
         run: python src/narrative_generator.py
