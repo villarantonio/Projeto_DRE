@@ -2,8 +2,8 @@
 # =============================================
 
 # Core data processing
-pandas>=2.0.0
-numpy>=1.24.0
+pandas>=2.0.0,<3.0.0
+numpy>=1.24.0,<2.0.0
 openpyxl>=3.1.0
 pyarrow>=14.0.0
 
@@ -15,7 +15,9 @@ streamlit>=1.30.0
 plotly>=5.18.0
 
 # Forecasting - Prophet (ATIVO - Fase 1)
-prophet>=1.1.0
+# Prophet requer dependências do sistema (ver packages.txt)
+prophet>=1.1.5,<2.0.0
+cmdstanpy>=1.2.0
 
 # Future use - OpenAI (alternativa ao Gemini)
 # openai>=1.0.0  # Descomentrar se migrar para OpenAI

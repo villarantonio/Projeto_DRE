@@ -11,7 +11,13 @@ Author: Projeto DRE - Manda Picanha
 """
 
 import sys
+import warnings
 from pathlib import Path
+
+# Suprimir warnings do Prophet e outras bibliotecas
+warnings.filterwarnings("ignore", category=FutureWarning)
+warnings.filterwarnings("ignore", category=DeprecationWarning)
+warnings.filterwarnings("ignore", message=".*cmdstan.*")
 
 import streamlit as st
 
