@@ -86,6 +86,7 @@ PAGES = {
     "dre_mensal": {"name": "DRE Mensal", "icon": "📈", "desc": "Demonstrativo mensal"},
     "evolucao": {"name": "Evolucao", "icon": "📉", "desc": "Tendencias temporais"},
     "composicao": {"name": "Composicao", "icon": "🥧", "desc": "Analise de custos"},
+    "previsoes": {"name": "Previsoes", "icon": "🔮", "desc": "Projecao com Prophet"},
     "classificacao_ia": {"name": "Classificacao IA", "icon": "🤖", "desc": "Classificador inteligente"},
 }
 
@@ -156,7 +157,7 @@ with st.sidebar:
     render_logout_button()
 
     # Versao no rodape da sidebar
-    st.markdown("<p style='color: rgba(255,255,255,0.3); font-size: 0.7rem; text-align: center;'>v1.3.0 | Pipeline DRE</p>", unsafe_allow_html=True)
+    st.markdown("<p style='color: rgba(255,255,255,0.3); font-size: 0.7rem; text-align: center;'>v1.4.0 | Pipeline DRE</p>", unsafe_allow_html=True)
 
 
 # =============================================================================
@@ -199,6 +200,10 @@ elif selected_page_key == "evolucao":
 elif selected_page_key == "composicao":
     from dashboard.pages.composicao import render_composicao
     render_composicao(df, categories)
+
+elif selected_page_key == "previsoes":
+    from dashboard.pages.previsoes import render
+    render()
 
 elif selected_page_key == "classificacao_ia":
     from dashboard.pages.classificacao_ia import render_classificacao_ia
