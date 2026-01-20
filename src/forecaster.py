@@ -263,7 +263,8 @@ class DREForecaster:
         """Retorna lista de grupos DRE disponiveis."""
         if self.df is None:
             self.load_data()
-        return sorted(self.df["Nome Grupo"].unique().tolist())
+        grupos = [g for g in self.df["Nome Grupo"].unique().tolist() if g is not None]
+        return sorted(grupos)
 
     def forecast_all_grupos(
         self,

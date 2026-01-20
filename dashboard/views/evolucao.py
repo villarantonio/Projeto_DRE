@@ -40,7 +40,7 @@ def render_evolucao(df: pd.DataFrame, categories: dict) -> None:
     col1, col2 = st.columns(2)
 
     with col1:
-        grupos_disponiveis = sorted(df[col_grupo].unique().tolist()) if col_grupo in df.columns else []
+        grupos_disponiveis = sorted([g for g in df[col_grupo].unique().tolist() if g is not None]) if col_grupo in df.columns else []
         grupos_selecionados = st.multiselect(
             "Grupos DRE",
             options=grupos_disponiveis,

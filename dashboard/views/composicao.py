@@ -38,7 +38,7 @@ def render_composicao(df: pd.DataFrame, categories: dict) -> None:
         </div>
     """, unsafe_allow_html=True)
 
-    meses = sorted(df[col_mes].unique().tolist()) if col_mes in df.columns else []
+    meses = sorted([m for m in df[col_mes].unique().tolist() if m is not None]) if col_mes in df.columns else []
     mes_selecionado = st.selectbox(
         "Mes",
         options=["Todos"] + meses,

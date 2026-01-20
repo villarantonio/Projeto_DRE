@@ -44,7 +44,7 @@ def render_dre_mensal(df: pd.DataFrame, categories: dict) -> None:
     col1, col2 = st.columns(2)
 
     with col1:
-        meses_disponiveis = sorted(df[col_mes].unique().tolist()) if col_mes in df.columns else []
+        meses_disponiveis = sorted([m for m in df[col_mes].unique().tolist() if m is not None]) if col_mes in df.columns else []
         mes_selecionado = st.selectbox(
             "Mes",
             options=["Todos"] + meses_disponiveis,
@@ -52,7 +52,7 @@ def render_dre_mensal(df: pd.DataFrame, categories: dict) -> None:
         )
 
     with col2:
-        grupos_disponiveis = sorted(df[col_grupo].unique().tolist()) if col_grupo in df.columns else []
+        grupos_disponiveis = sorted([g for g in df[col_grupo].unique().tolist() if g is not None]) if col_grupo in df.columns else []
         grupos_selecionados = st.multiselect(
             "Grupos DRE",
             options=grupos_disponiveis,

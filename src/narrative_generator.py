@@ -200,13 +200,26 @@ if __name__ == "__main__":
         sys.exit(1)
 
     try:
-        # Load CSV
-        df = pd.read_csv(
-            config.INPUT_FILE_PATH,
-            sep=config.CSV_SEPARATOR,
-            header=config.CSV_HEADER_ROW,
-            encoding=config.CSV_ENCODING,
-        )
+        # Detect file type and load accordingly
+        file_ext = config.INPUT_FILE_PATH.suffix.lower()
+
+        if file_ext == ".xlsx":
+            # Load Excel file
+            print(f"Carregando arquivo Excel: {config.INPUT_FILE_PATH}")
+            df = pd.read_excel(
+                config.INPUT_FILE_PATH,
+                sheet_name=config.EXCEL_SHEET_NAME,
+                header=config.EXCEL_HEADER_ROW,
+            )
+        else:
+            # Load CSV file
+            print(f"Carregando arquivo CSV: {config.INPUT_FILE_PATH}")
+            df = pd.read_csv(
+                config.INPUT_FILE_PATH,
+                sep=config.CSV_SEPARATOR,
+                header=config.CSV_HEADER_ROW,
+                encoding=config.CSV_ENCODING,
+            )
 
         # Clean columns
         df = df.dropna(how="all", axis=1)

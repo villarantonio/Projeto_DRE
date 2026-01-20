@@ -99,11 +99,60 @@ def get_css() -> str:
         [data-testid="stSidebar"] {
             background: linear-gradient(180deg, #2C3E50 0%, #1E1E1E 100%);
         }
-        
+
         [data-testid="stSidebar"] .stMarkdown {
             color: #FFFFFF;
         }
-        
+
+        [data-testid="stSidebar"] .stMarkdown p,
+        [data-testid="stSidebar"] .stMarkdown span,
+        [data-testid="stSidebar"] .stMarkdown h1,
+        [data-testid="stSidebar"] .stMarkdown h2,
+        [data-testid="stSidebar"] .stMarkdown h3 {
+            color: #FFFFFF !important;
+        }
+
+        /* Radio buttons na sidebar */
+        [data-testid="stSidebar"] .stRadio label {
+            color: #FFFFFF !important;
+        }
+
+        [data-testid="stSidebar"] .stRadio label span {
+            color: #FFFFFF !important;
+        }
+
+        [data-testid="stSidebar"] .stRadio > div[role="radiogroup"] > label {
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 0.5rem 1rem;
+            margin-bottom: 0.25rem;
+            transition: background-color 0.2s;
+        }
+
+        [data-testid="stSidebar"] .stRadio > div[role="radiogroup"] > label:hover {
+            background-color: rgba(255, 255, 255, 0.15);
+        }
+
+        [data-testid="stSidebar"] .stRadio > div[role="radiogroup"] > label[data-checked="true"] {
+            background-color: rgba(231, 76, 60, 0.3);
+            border-left: 3px solid #E74C3C;
+        }
+
+        /* Selectbox na sidebar */
+        [data-testid="stSidebar"] .stSelectbox label {
+            color: #FFFFFF !important;
+        }
+
+        /* Slider na sidebar */
+        [data-testid="stSidebar"] .stSlider label {
+            color: #FFFFFF !important;
+        }
+
+        /* Button na sidebar */
+        [data-testid="stSidebar"] .stButton button {
+            color: #FFFFFF !important;
+        }
+
         [data-testid="stSidebar"] hr {
             border-color: rgba(255,255,255,0.1);
         }

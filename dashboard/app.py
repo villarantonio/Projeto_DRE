@@ -88,6 +88,7 @@ PAGES = {
     "composicao": {"name": "Composição de Custos", "icon": "🥧", "desc": "Análise por categoria"},
     "previsoes": {"name": "Previsões Financeiras", "icon": "🔮", "desc": "Projeção com Prophet"},
     "classificacao_ia": {"name": "Classificação IA", "icon": "🤖", "desc": "Classificador inteligente"},
+    "tutorial": {"name": "Como Usar", "icon": "❓", "desc": "Tutorial e documentação"},
 }
 
 with st.sidebar:
@@ -208,6 +209,10 @@ elif selected_page_key == "previsoes":
 elif selected_page_key == "classificacao_ia":
     from dashboard.views.classificacao_ia import render_classificacao_ia
     render_classificacao_ia(df, categories)
+
+elif selected_page_key == "tutorial":
+    from dashboard.views.tutorial import render_tutorial
+    render_tutorial()
 
 
 # =============================================================================
