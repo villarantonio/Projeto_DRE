@@ -580,15 +580,31 @@ O dashboard implementa autenticação por credenciais com as seguintes caracter�
 
 | Campo | Valor |
 |:------|:------|
-| SHA | c85a11a (pendente: autenticação) |
-| Mensagem | refatorar: melhorar aparência e legibilidade do dashboard |
+| SHA | f80a226 |
+| Mensagem | feat: implementar sistema de autenticacao no dashboard |
 | Autor | Antonio Henrique (villarantonio) |
-| Data | 19/01/2026 |
+| Data | 20/01/2026 |
 | Branch | main |
 
 <br>
 
-### 5.2 Resultado do Workflow (GitHub Actions Run #5)
+### 7.2 Dataset Fine-tuning Gerado
+
+| Métrica | Valor |
+|:--------|:------|
+| Total de pares Q&A | 1.680 |
+| Pares de classificação | 560 |
+| Pares de consulta valor | 560 |
+| Pares de narrativa | 560 |
+| Categorias cobertas | 117 (100%) |
+| Grupos cobertos | 13 (100%) |
+| Formato | JSONL (Gemini Tuning API) |
+| Arquivo | output/finetune_dataset.jsonl |
+| Validação | ✅ Aprovado (min: 100 pares) |
+
+<br>
+
+### 7.3 Resultado do Workflow (GitHub Actions Run #5)
 
 | Job | Status | Duração |
 |:----|:------:|--------:|
@@ -598,7 +614,7 @@ O dashboard implementa autenticação por credenciais com as seguintes caracter�
 
 <br>
 
-### 5.3 Cobertura de Testes por Módulo
+### 7.4 Cobertura de Testes por Módulo
 
 | Arquivo de Teste | Testes | Status | Tempo |
 |:-----------------|-------:|:------:|------:|
@@ -609,7 +625,7 @@ O dashboard implementa autenticação por credenciais com as seguintes caracter�
 
 <br>
 
-### 5.4 Configurações Atuais do Pipeline
+### 7.5 Configurações Atuais do Pipeline
 
 | Parâmetro | Valor | Descrição |
 |:----------|:------|:----------|
@@ -629,20 +645,32 @@ O dashboard implementa autenticação por credenciais com as seguintes caracter�
 
 ### 8.1 Fase 1: Previsões com Prophet (T2 2026)
 
-**Estimativa: 25 horas de desenvolvimento**
+**STATUS: ⏸️ BLOQUEADO (dados insuficientes)**
 
-| Item | Prioridade | Esforço |
-|:-----|:----------:|--------:|
-| Instalar Prophet no requirements.txt | Alta | 1h |
-| Criar src/forecaster.py | Alta | 8h |
-| Previsão de receita mensal | Alta | 4h |
-| Previsão de custos por categoria | Média | 4h |
-| Visualização de tendências | Média | 4h |
-| Testes para forecaster | Alta | 4h |
+| Item | Prioridade | Esforço | Status |
+|:-----|:----------:|--------:|:------:|
+| Instalar Prophet no requirements.txt | Alta | 1h | ⏳ Aguardando |
+| Criar src/forecaster.py | Alta | 8h | ⏳ Aguardando |
+| Previsão de receita mensal | Alta | 4h | ⏳ Aguardando |
+| Previsão de custos por categoria | Média | 4h | ⏳ Aguardando |
+| Visualização de tendências | Média | 4h | ⏳ Aguardando |
+| Testes para forecaster | Alta | 4h | ⏳ Aguardando |
+
+**BLOQUEADOR IDENTIFICADO (20/01/2026):**
+
+| Requisito | Atual | Necessário | Status |
+|:----------|------:|-----------:|:------:|
+| Meses de histórico | 12 | 24 | ❌ Faltam 12 meses |
+| Período disponível | Jan-Dez/2025 | Jan/2024-Dez/2025 | ❌ Incompleto |
+
+**Ações necessárias:**
+1. Aguardar acúmulo de mais 12 meses de dados (até Jan/2026)
+2. OU obter dados históricos de 2024 para completar série
+3. Alternativa: usar modelo simplificado com 12 meses (menor precisão)
 
 **IMPORTANCIA DESTA FEATURE:**
 
-Prophet é uma biblioteca de previsão de séries temporais desenvolvida pelo Facebook/Meta. Sua integração permitirá:
+Prophet é uma biblioteca de previsão de séries temporais desenvolvida pelo Facebook/Meta.
 
 | Benefício | Impacto no Negócio |
 |:----------|:-------------------|
@@ -650,13 +678,6 @@ Prophet é uma biblioteca de previsão de séries temporais desenvolvida pelo Fa
 | Detecção de sazonalidade | Identificar padrões mensais de vendas |
 | Anomalias | Alertar sobre desvios significativos |
 | Projeção de custos | Antecipar necessidades de capital de giro |
-
-**Caso de uso prático:**
-"Com base nos últimos 12 meses, projetamos receita de R$ 850.000 para março/2026, com intervalo de confiança de R$ 780.000 a R$ 920.000."
-
-**Bloqueadores técnicos:**
-- Prophet requer histórico mínimo de 2 anos para previsões confiáveis
-- Dados atuais podem ter apenas 12 meses (necessário verificar)
 
 <br>
 
@@ -666,11 +687,11 @@ Prophet é uma biblioteca de previsão de séries temporais desenvolvida pelo Fa
 
 ### 8.2 Fase 2: Classificação por IA com Google Gemini (T1 2026)
 
-**STATUS: 🟡 EM ANDAMENTO (80% concluído)**
+**STATUS: 🟡 EM ANDAMENTO (90% concluído)**
 
 > **NOTA:** Esta fase foi implementada usando **Google Gemini 2.0 Flash** em vez de OpenAI GPT-4 conforme planejado originalmente. Veja seção "Decisão Arquitetural" abaixo.
 
-**Estimativa original: 51 horas | Executado: ~30 horas**
+**Estimativa original: 51 horas | Executado: ~45 horas**
 
 | Item | Prioridade | Esforço | Status |
 |:-----|:----------:|--------:|:------:|
@@ -678,8 +699,21 @@ Prophet é uma biblioteca de previsão de séries temporais desenvolvida pelo Fa
 | ~~Criar src/ai_classifier.py~~ | Alta | 12h | ✅ Concluído |
 | ~~RAG com categories.json~~ | Alta | 8h | ✅ Concluído |
 | ~~Classificação automática de novos itens~~ | Alta | 8h | ✅ Concluído |
-| Fine-tuning com narrativas | Baixa | 16h | ⏳ Pendente |
+| ~~Gerar dataset fine-tuning (JSONL)~~ | Alta | 4h | ✅ Concluído |
+| Executar fine-tuning na API Gemini | Média | 8h | ⏳ Próximo |
+| Validar modelo fine-tuned | Média | 4h | ⏳ Pendente |
 | ~~Testes para ai_classifier~~ | Alta | 6h | ✅ Concluído |
+
+**Dataset Fine-tuning Gerado (20/01/2026):**
+
+| Métrica | Valor |
+|:--------|------:|
+| Total pares Q&A | 1.680 |
+| Classificação | 560 |
+| Consulta valor | 560 |
+| Narrativa | 560 |
+| Cobertura categorias | 100% |
+| Arquivo | finetune_dataset.jsonl |
 
 **DECISÃO ARQUITETURAL - Gemini vs OpenAI:**
 
@@ -813,19 +847,19 @@ output/
 
 | Fase | Período | Horas | Status | Progresso |
 |:-----|:--------|------:|:------:|:---------:|
-| Fase 1 - Prophet | T2 2026 | 25h | Planejado | 0% |
-| **Fase 2 - IA/Gemini** | **T1 2026** | **51h** | **Em Andamento** | **80%** |
+| Fase 1 - Prophet | T2 2026 | 25h | ⏸️ Bloqueado | 0% |
+| **Fase 2 - IA/Gemini** | **T1 2026** | **51h** | **Em Andamento** | **90%** |
 | **Fase 3 - Dashboard** | **T1 2026** | **48h** | **✅ Concluído** | **100%** |
 | Fase 4 - Multi-Empresa | T4 2026 | 52h | Planejado | 0% |
-| **TOTAL** | **2026** | **176h** | **Em Progresso** | **~55%** |
+| **TOTAL** | **2026** | **176h** | **Em Progresso** | **~60%** |
 
-**Ordem de implementação (ATUALIZADA):**
+**Ordem de implementação (ATUALIZADA 20/01/2026):**
 
 | Ordem | Feature | Status | Próximos Passos |
 |:-----:|:--------|:------:|:----------------|
-| 1 | ~~IA/Gemini~~ | 🟡 80% | Completar fine-tuning |
+| 1 | ~~IA/Gemini~~ | 🟡 90% | Executar fine-tuning na API |
 | 2 | ~~Dashboard~~ | ✅ 100% | Deploy no Cloud |
-| 3 | Prophet | ⏳ | Aguardando mais dados |
+| 3 | Prophet | ⏸️ Bloqueado | Precisa 12 meses adicionais |
 | 4 | Multi-Empresa | ⏳ | Depende de demanda |
 
 <br>
