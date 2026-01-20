@@ -1,8 +1,11 @@
 [theme]
+# Tema escuro forçado - Manda Picanha
+# Melhor contraste para gráficos Plotly e sidebar com gradiente
+base = "dark"
 primaryColor = "#C41E3A"
-backgroundColor = "#FFFFFF"
-secondaryBackgroundColor = "#F8F9FA"
-textColor = "#2C3E50"
+backgroundColor = "#0E1117"
+secondaryBackgroundColor = "#262730"
+textColor = "#FAFAFA"
 font = "sans serif"
 
 [server]
@@ -13,4 +16,9 @@ enableXsrfProtection = true
 
 [browser]
 gatherUsageStats = false
+
+[client]
+# Desabilitar alternância de tema - forçar apenas dark mode
+showSidebarNavigation = true
+toolbarMode = "minimal"
 

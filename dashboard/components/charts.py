@@ -14,14 +14,14 @@ from dashboard.components.styles import COLORS, CHART_COLORS, format_currency
 
 
 # =============================================================================
-# Template Profissional Plotly
+# Template Profissional Plotly - Otimizado para Dark Mode
 # =============================================================================
 
 CHART_LAYOUT = {
     "font": {
         "family": "Inter, -apple-system, BlinkMacSystemFont, sans-serif",
         "size": 12,
-        "color": COLORS["text_dark"],
+        "color": COLORS["text_dark"],  # #FAFAFA no dark mode
     },
     "title": {
         "font": {"size": 16, "color": COLORS["text_dark"], "weight": 600},
@@ -37,15 +37,29 @@ CHART_LAYOUT = {
         "y": -0.2,
         "xanchor": "center",
         "x": 0.5,
-        "bgcolor": "rgba(255,255,255,0.8)",
+        "bgcolor": "rgba(30, 30, 46, 0.9)",  # Dark mode legend background
         "bordercolor": COLORS["text_muted"],
         "borderwidth": 1,
+        "font": {"color": COLORS["text_dark"]},  # Texto claro na legenda
     },
     "hoverlabel": {
-        "bgcolor": COLORS["secondary"],
+        "bgcolor": "#1E1E2E",  # Dark mode hover background
         "font_size": 12,
-        "font_color": "white",
-        "bordercolor": COLORS["secondary"],
+        "font_color": "#FAFAFA",
+        "bordercolor": COLORS["primary"],
+    },
+    # Eixos otimizados para dark mode
+    "xaxis": {
+        "gridcolor": "rgba(255, 255, 255, 0.1)",
+        "linecolor": "rgba(255, 255, 255, 0.2)",
+        "tickcolor": "rgba(255, 255, 255, 0.3)",
+        "tickfont": {"color": COLORS["text_muted"]},
+    },
+    "yaxis": {
+        "gridcolor": "rgba(255, 255, 255, 0.1)",
+        "linecolor": "rgba(255, 255, 255, 0.2)",
+        "tickcolor": "rgba(255, 255, 255, 0.3)",
+        "tickfont": {"color": COLORS["text_muted"]},
     },
 }
 
