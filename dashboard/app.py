@@ -82,12 +82,12 @@ if not is_authenticated():
 
 # Páginas disponíveis com ícones
 PAGES = {
-    "overview": {"name": "Visao Geral", "icon": "📊", "desc": "Resumo executivo"},
-    "dre_mensal": {"name": "DRE Mensal", "icon": "📈", "desc": "Demonstrativo mensal"},
-    "evolucao": {"name": "Evolucao", "icon": "📉", "desc": "Tendencias temporais"},
-    "composicao": {"name": "Composicao", "icon": "🥧", "desc": "Analise de custos"},
-    "previsoes": {"name": "Previsoes", "icon": "🔮", "desc": "Projecao com Prophet"},
-    "classificacao_ia": {"name": "Classificacao IA", "icon": "🤖", "desc": "Classificador inteligente"},
+    "overview": {"name": "Visão Geral", "icon": "📊", "desc": "Resumo executivo e KPIs"},
+    "dre_mensal": {"name": "DRE Mensal", "icon": "📈", "desc": "Demonstrativo por mês"},
+    "evolucao": {"name": "Evolução Temporal", "icon": "📉", "desc": "Tendências e comparativos"},
+    "composicao": {"name": "Composição de Custos", "icon": "🥧", "desc": "Análise por categoria"},
+    "previsoes": {"name": "Previsões Financeiras", "icon": "🔮", "desc": "Projeção com Prophet"},
+    "classificacao_ia": {"name": "Classificação IA", "icon": "🤖", "desc": "Classificador inteligente"},
 }
 
 with st.sidebar:
