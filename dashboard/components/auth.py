@@ -2,6 +2,7 @@
 Modulo de autenticacao do Dashboard.
 
 Gerencia login, logout e validacao de credenciais.
+Usa Streamlit Secrets para credenciais em producao.
 """
 
 import hashlib
@@ -12,9 +13,26 @@ import streamlit as st
 # Configuracoes de Autenticacao
 # =============================================================================
 
-# Credenciais (em producao, usar secrets management)
-VALID_USERNAME = "mandapicanha"
-VALID_PASSWORD_HASH = hashlib.sha256("MP@1234".encode()).hexdigest()
+def get_valid_credentials() -> tuple[str, str]:
+    """
+    Obtem credenciais validas de Streamlit Secrets ou fallback local.
+
+    Returns:
+        Tupla (username, password_hash).
+    """
+    try:
+        # Tentar obter do Streamlit Secrets (producao)
+        username = st.secrets["auth"]["username"]
+        password_hash = st.secrets["auth"]["password_hash"]
+        return username, password_hash
+    except (KeyError, FileNotFoundError):
+        # Fallback para desenvolvimento local
+        # AVISO: Em producao, sempre usar secrets
+        return "mandapicanha", hashlib.sha256("MP@1234".encode()).hexdigest()
+
+
+# Obter credenciais (avaliado uma vez no carregamento)
+VALID_USERNAME, VALID_PASSWORD_HASH = get_valid_credentials()
 
 
 # =============================================================================

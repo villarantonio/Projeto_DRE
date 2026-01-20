@@ -220,10 +220,13 @@ def render() -> None:
 
     try:
         # Carregar forecaster
-        forecaster = DREForecaster()
-        forecaster.load_data()
+        with st.spinner("Carregando dados..."):
+            forecaster = DREForecaster()
+            forecaster.load_data()
 
-        grupos = ["TODOS"] + forecaster.get_grupos_disponiveis()
+        # Obter grupos disponiveis (ja filtrado para remover None)
+        grupos_disponiveis = forecaster.get_grupos_disponiveis()
+        grupos = ["TODOS"] + grupos_disponiveis
 
         selected_grupo = st.sidebar.selectbox(
             "Grupo DRE",
@@ -235,10 +238,16 @@ def render() -> None:
 
         # Botao para gerar previsao
         if st.sidebar.button("Gerar Previsao", type="primary", use_container_width=True):
-            with st.spinner("Treinando modelo Prophet..."):
-                result = forecaster.forecast(periods=periods, grupo=grupo_param)
-                st.session_state["forecast_result"] = result
-                st.session_state["forecast_historical"] = forecaster.prepare_prophet_data(grupo=grupo_param)
+            with st.spinner("Treinando modelo Prophet... (pode levar alguns segundos)"):
+                try:
+                    result = forecaster.forecast(periods=periods, grupo=grupo_param)
+                    historical = forecaster.prepare_prophet_data(grupo=grupo_param)
+                    st.session_state["forecast_result"] = result
+                    st.session_state["forecast_historical"] = historical
+                    st.success("Previsao gerada com sucesso!")
+                except Exception as forecast_error:
+                    st.error(f"Erro ao gerar previsao: {forecast_error}")
+                    return
 
         # Exibir resultado se existir
         if "forecast_result" in st.session_state:

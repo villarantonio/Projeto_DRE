@@ -1,0 +1,561 @@
+﻿Narrativa_IA;Mês;Nome Grupo;cc_nome;Realizado
+Em Ago, o grupo 'RECEITAS S/ VENDAS' registrou um valor de R$ 63.713 referente ao item 'DINHEIRO'.;Ago;RECEITAS S/ VENDAS;DINHEIRO;R$ 63.713
+Em Ago, o grupo 'RECEITAS S/ VENDAS' registrou um valor de R$ 19.348 referente ao item 'IFOOD'.;Ago;RECEITAS S/ VENDAS;IFOOD;R$ 19.348
+Em Out, o grupo 'RECEITAS S/ VENDAS' registrou um valor de R$ 5 referente ao item 'IFOOD'.;Out;RECEITAS S/ VENDAS;IFOOD;R$ 5
+Em Dez, o grupo '( - ) CUSTOS VARIÁVEIS' registrou um valor de R$ 1.596 referente ao item 'MATERIA PRIMA' (Subcategoria: VENDAS INTERCOMPANY).;Dez;( - ) CUSTOS VARIÁVEIS;MATERIA PRIMA;R$ 1.596
+Em Set, o grupo 'RECEITAS S/ VENDAS' registrou um valor de R$ 18.515 referente ao item 'ROYALTES USO MARCA'.;Set;RECEITAS S/ VENDAS;ROYALTES USO MARCA;R$ 18.515
+Em Dez, o grupo 'RECEITAS S/ VENDAS' registrou um valor de R$ 64.081 referente ao item 'TED/DOC'.;Dez;RECEITAS S/ VENDAS;TED/DOC;R$ 64.081
+Em Nov, o grupo 'RECEITAS S/ VENDAS' registrou um valor de R$ 35.652 referente ao item 'TED/DOC'.;Nov;RECEITAS S/ VENDAS;TED/DOC;R$ 35.652
+Em Jun, o grupo 'RECEITAS S/ VENDAS' registrou um valor de R$ 20.180 referente ao item 'TED/DOC'.;Jun;RECEITAS S/ VENDAS;TED/DOC;R$ 20.180
+Em Set, o grupo 'RECEITAS S/ VENDAS' registrou um valor de R$ 13.965 referente ao item 'TED/DOC'.;Set;RECEITAS S/ VENDAS;TED/DOC;R$ 13.965
+Em Ago, o grupo 'RECEITAS S/ VENDAS' registrou um valor de R$ 9.667 referente ao item 'TED/DOC'.;Ago;RECEITAS S/ VENDAS;TED/DOC;R$ 9.667
+Em Fev, o grupo 'RECEITAS S/ VENDAS' registrou um valor de R$ 3.500 referente ao item 'TED/DOC'.;Fev;RECEITAS S/ VENDAS;TED/DOC;R$ 3.500
+Em Out, o grupo 'RECEITAS S/ VENDAS' registrou um valor de R$ 2.007 referente ao item 'TED/DOC'.;Out;RECEITAS S/ VENDAS;TED/DOC;R$ 2.007
+Em Nov, o grupo '( - ) CUSTOS VARIÁVEIS' registrou um valor de -R$ 1.351 referente ao item 'BOVINOS' (Subcategoria: PROTEINAS).;Nov;( - ) CUSTOS VARIÁVEIS;BOVINOS;-R$ 1.351
+Em Ago, o grupo '( - ) CUSTOS VARIÁVEIS' registrou um valor de -R$ 44 referente ao item 'AVES' (Subcategoria: PROTEINAS).;Ago;( - ) CUSTOS VARIÁVEIS;AVES;-R$ 44
+Em Nov, o grupo '( - ) CUSTOS VARIÁVEIS' registrou um valor de -R$ 300 referente ao item 'SUINOS' (Subcategoria: PROTEINAS).;Nov;( - ) CUSTOS VARIÁVEIS;SUINOS;-R$ 300
+Em Nov, o grupo '( - ) CUSTOS VARIÁVEIS' registrou um valor de -R$ 990 referente ao item 'QUEIJOS' (Subcategoria: ITENS CARDAPIO).;Nov;( - ) CUSTOS VARIÁVEIS;QUEIJOS;-R$ 990
+Em Dez, o grupo '( - ) CUSTOS VARIÁVEIS' registrou um valor de -R$ 69 referente ao item 'SOBREMESAS' (Subcategoria: ITENS CARDAPIO).;Dez;( - ) CUSTOS VARIÁVEIS;SOBREMESAS;-R$ 69
+Em Jun, o grupo '( - ) CUSTOS VARIÁVEIS' registrou um valor de -R$ 7 referente ao item 'EMBALAGENS' (Subcategoria: ITENS CARDAPIO).;Jun;( - ) CUSTOS VARIÁVEIS;EMBALAGENS;-R$ 7
+Em Dez, o grupo '( - ) CUSTOS VARIÁVEIS' registrou um valor de -R$ 70 referente ao item 'CACHAÇA' (Subcategoria: BEBIDAS ALCÓLICAS).;Dez;( - ) CUSTOS VARIÁVEIS;CACHAÇA;-R$ 70
+Em Set, o grupo '( - ) CUSTOS VARIÁVEIS' registrou um valor de -R$ 23 referente ao item 'REFRIGERANTES' (Subcategoria: BEBIDAS NÃO ALCÓLICAS).;Set;( - ) CUSTOS VARIÁVEIS;REFRIGERANTES;-R$ 23
+Em Dez, o grupo '( - ) CUSTOS VARIÁVEIS' registrou um valor de -R$ 220 referente ao item 'REFRIGERANTES' (Subcategoria: BEBIDAS NÃO ALCÓLICAS).;Dez;( - ) CUSTOS VARIÁVEIS;REFRIGERANTES;-R$ 220
+Em Nov, o grupo '( - ) CUSTOS VARIÁVEIS' registrou um valor de -R$ 1.767 referente ao item 'REFRIGERANTES' (Subcategoria: BEBIDAS NÃO ALCÓLICAS).;Nov;( - ) CUSTOS VARIÁVEIS;REFRIGERANTES;-R$ 1.767
+Em Nov, o grupo '( - ) CUSTOS VARIÁVEIS' registrou um valor de -R$ 26 referente ao item 'AGUAS' (Subcategoria: BEBIDAS NÃO ALCÓLICAS).;Nov;( - ) CUSTOS VARIÁVEIS;AGUAS;-R$ 26
+Em Out, o grupo '( - ) CUSTOS VARIÁVEIS' registrou um valor de -R$ 157 referente ao item 'AGUAS' (Subcategoria: BEBIDAS NÃO ALCÓLICAS).;Out;( - ) CUSTOS VARIÁVEIS;AGUAS;-R$ 157
+Em Dez, o grupo '( - ) CUSTOS VARIÁVEIS' registrou um valor de -R$ 258 referente ao item 'AGUAS' (Subcategoria: BEBIDAS NÃO ALCÓLICAS).;Dez;( - ) CUSTOS VARIÁVEIS;AGUAS;-R$ 258
+Em Set, o grupo '( - ) CUSTOS VARIÁVEIS' registrou um valor de -R$ 4.129 referente ao item 'AGUAS' (Subcategoria: BEBIDAS NÃO ALCÓLICAS).;Set;( - ) CUSTOS VARIÁVEIS;AGUAS;-R$ 4.129
+Em Nov, o grupo '( - ) CUSTOS VARIÁVEIS' registrou um valor de -R$ 26 referente ao item 'ENERGETICOS' (Subcategoria: BEBIDAS NÃO ALCÓLICAS).;Nov;( - ) CUSTOS VARIÁVEIS;ENERGETICOS;-R$ 26
+Em Set, o grupo '( - ) CUSTOS VARIÁVEIS' registrou um valor de -R$ 65 referente ao item 'ENERGETICOS' (Subcategoria: BEBIDAS NÃO ALCÓLICAS).;Set;( - ) CUSTOS VARIÁVEIS;ENERGETICOS;-R$ 65
+Em Out, o grupo '( - ) CUSTOS VARIÁVEIS' registrou um valor de -R$ 78 referente ao item 'ENERGETICOS' (Subcategoria: BEBIDAS NÃO ALCÓLICAS).;Out;( - ) CUSTOS VARIÁVEIS;ENERGETICOS;-R$ 78
+Em Set, o grupo '( - ) CUSTOS VARIÁVEIS' registrou um valor de -R$ 30 referente ao item 'CAFES E CHAS' (Subcategoria: BEBIDAS NÃO ALCÓLICAS).;Set;( - ) CUSTOS VARIÁVEIS;CAFES E CHAS;-R$ 30
+Em Out, o grupo '( - ) CUSTOS VARIÁVEIS' registrou um valor de -R$ 140 referente ao item 'UTENSILIOS' (Subcategoria: MERCEARIA/DEMAIS INSUMOS).;Out;( - ) CUSTOS VARIÁVEIS;UTENSILIOS;-R$ 140
+Em Set, o grupo '( - ) CUSTOS VARIÁVEIS' registrou um valor de -R$ 254 referente ao item 'TEMPEROS E CONDIMENTOS' (Subcategoria: MERCEARIA/DEMAIS INSUMOS).;Set;( - ) CUSTOS VARIÁVEIS;TEMPEROS E CONDIMENTOS;-R$ 254
+Em Jun, o grupo '( - ) CUSTOS VARIÁVEIS' registrou um valor de -R$ 39 referente ao item 'MOLHOS' (Subcategoria: MERCEARIA/DEMAIS INSUMOS).;Jun;( - ) CUSTOS VARIÁVEIS;MOLHOS;-R$ 39
+Em Nov, o grupo '( - ) CUSTOS VARIÁVEIS' registrou um valor de -R$ 225 referente ao item 'HORTFRUTIGRANJEIROS' (Subcategoria: MERCEARIA/DEMAIS INSUMOS).;Nov;( - ) CUSTOS VARIÁVEIS;HORTFRUTIGRANJEIROS;-R$ 225
+Em Mar, o grupo '( - ) CUSTOS VARIÁVEIS' registrou um valor de -R$ 90 referente ao item 'PAES E MASSAS' (Subcategoria: MERCEARIA/DEMAIS INSUMOS).;Mar;( - ) CUSTOS VARIÁVEIS;PAES E MASSAS;-R$ 90
+Em Nov, o grupo '( - ) CUSTOS VARIÁVEIS' registrou um valor de -R$ 5.158 referente ao item 'PAES E MASSAS' (Subcategoria: MERCEARIA/DEMAIS INSUMOS).;Nov;( - ) CUSTOS VARIÁVEIS;PAES E MASSAS;-R$ 5.158
+Em Out, o grupo '( - ) CUSTOS VARIÁVEIS' registrou um valor de -R$ 63 referente ao item 'DOCES' (Subcategoria: MERCEARIA/DEMAIS INSUMOS).;Out;( - ) CUSTOS VARIÁVEIS;DOCES;-R$ 63
+Em Jul, o grupo '( - ) CUSTOS VARIÁVEIS' registrou um valor de -R$ 192 referente ao item 'FARINACEOS/CAFE/ACUCAR' (Subcategoria: MERCEARIA/DEMAIS INSUMOS).;Jul;( - ) CUSTOS VARIÁVEIS;FARINACEOS/CAFE/ACUCAR;-R$ 192
+Em Nov, o grupo '( - ) CUSTOS VARIÁVEIS' registrou um valor de -R$ 586 referente ao item 'FARINACEOS/CAFE/ACUCAR' (Subcategoria: MERCEARIA/DEMAIS INSUMOS).;Nov;( - ) CUSTOS VARIÁVEIS;FARINACEOS/CAFE/ACUCAR;-R$ 586
+Em Mai, o grupo '( - ) CUSTOS VARIÁVEIS' registrou um valor de -R$ 32 referente ao item 'PETISCOS / PROCESSADOS' (Subcategoria: MERCEARIA/DEMAIS INSUMOS).;Mai;( - ) CUSTOS VARIÁVEIS;PETISCOS / PROCESSADOS;-R$ 32
+Em Abr, o grupo '( - ) CUSTOS VARIÁVEIS' registrou um valor de -R$ 38 referente ao item 'BOMBONIERE/CONFEITARIA' (Subcategoria: MERCEARIA/DEMAIS INSUMOS).;Abr;( - ) CUSTOS VARIÁVEIS;BOMBONIERE/CONFEITARIA;-R$ 38
+Em Out, o grupo '( - ) CUSTOS VARIÁVEIS' registrou um valor de -R$ 80 referente ao item 'BOMBONIERE/CONFEITARIA' (Subcategoria: MERCEARIA/DEMAIS INSUMOS).;Out;( - ) CUSTOS VARIÁVEIS;BOMBONIERE/CONFEITARIA;-R$ 80
+Em Jul, o grupo '( - ) CUSTOS VARIÁVEIS' registrou um valor de -R$ 140 referente ao item 'BOMBONIERE/CONFEITARIA' (Subcategoria: MERCEARIA/DEMAIS INSUMOS).;Jul;( - ) CUSTOS VARIÁVEIS;BOMBONIERE/CONFEITARIA;-R$ 140
+Em Jan, o grupo '( - ) CUSTOS VARIÁVEIS' registrou um valor de -R$ 183 referente ao item 'BOMBONIERE/CONFEITARIA' (Subcategoria: MERCEARIA/DEMAIS INSUMOS).;Jan;( - ) CUSTOS VARIÁVEIS;BOMBONIERE/CONFEITARIA;-R$ 183
+Em Mar, o grupo '( - ) CUSTOS VARIÁVEIS' registrou um valor de -R$ 188 referente ao item 'BOMBONIERE/CONFEITARIA' (Subcategoria: MERCEARIA/DEMAIS INSUMOS).;Mar;( - ) CUSTOS VARIÁVEIS;BOMBONIERE/CONFEITARIA;-R$ 188
+Em Mai, o grupo '( - ) DEDUÇÕES SOBRE RECEITA' registrou um valor de -R$ 44 referente ao item 'MOTOBOY E APPS DE ENTREGA' (Subcategoria: DELIVERY - SERVIÇOS E TAXAS).;Mai;( - ) DEDUÇÕES SOBRE RECEITA;MOTOBOY E APPS DE ENTREGA;-R$ 44
+Em Set, o grupo '( - ) CUSTOS VARIÁVEIS' registrou um valor de -R$ 2.816 referente ao item 'MATERIA PRIMA' (Subcategoria: COMPRA DE MERCADORIAS).;Set;( - ) CUSTOS VARIÁVEIS;MATERIA PRIMA;-R$ 2.816
+Em Dez, o grupo '( - ) CUSTOS VARIÁVEIS' registrou um valor de -R$ 2.844 referente ao item 'MATERIA PRIMA' (Subcategoria: COMPRA DE MERCADORIAS).;Dez;( - ) CUSTOS VARIÁVEIS;MATERIA PRIMA;-R$ 2.844
+Em Nov, o grupo '( - ) CUSTOS VARIÁVEIS' registrou um valor de -R$ 2.861 referente ao item 'MATERIA PRIMA' (Subcategoria: COMPRA DE MERCADORIAS).;Nov;( - ) CUSTOS VARIÁVEIS;MATERIA PRIMA;-R$ 2.861
+Em Out, o grupo '( - ) CUSTOS VARIÁVEIS' registrou um valor de -R$ 3.795 referente ao item 'MATERIA PRIMA' (Subcategoria: COMPRA DE MERCADORIAS).;Out;( - ) CUSTOS VARIÁVEIS;MATERIA PRIMA;-R$ 3.795
+Em Jan, o grupo '( - ) CUSTOS VARIÁVEIS' registrou um valor de -R$ 8 referente ao item 'EMBALAGENS' (Subcategoria: COMPRA DE MERCADORIAS).;Jan;( - ) CUSTOS VARIÁVEIS;EMBALAGENS;-R$ 8
+Em Out, o grupo '( - ) CUSTOS VARIÁVEIS' registrou um valor de -R$ 13 referente ao item 'EMBALAGENS' (Subcategoria: COMPRA DE MERCADORIAS).;Out;( - ) CUSTOS VARIÁVEIS;EMBALAGENS;-R$ 13
+Em Nov, o grupo '( - ) CUSTOS VARIÁVEIS' registrou um valor de -R$ 514 referente ao item 'EMBALAGENS' (Subcategoria: COMPRA DE MERCADORIAS).;Nov;( - ) CUSTOS VARIÁVEIS;EMBALAGENS;-R$ 514
+Em Jan, o grupo '( - ) CUSTOS VARIÁVEIS' registrou um valor de -R$ 33 referente ao item 'USO E CONSUMO' (Subcategoria: COMPRA DE MERCADORIAS).;Jan;( - ) CUSTOS VARIÁVEIS;USO E CONSUMO;-R$ 33
+Em Ago, o grupo '( - ) CUSTOS VARIÁVEIS' registrou um valor de -R$ 33 referente ao item 'USO E CONSUMO' (Subcategoria: COMPRA DE MERCADORIAS).;Ago;( - ) CUSTOS VARIÁVEIS;USO E CONSUMO;-R$ 33
+Em Jul, o grupo '( - ) CUSTOS VARIÁVEIS' registrou um valor de -R$ 64 referente ao item 'USO E CONSUMO' (Subcategoria: COMPRA DE MERCADORIAS).;Jul;( - ) CUSTOS VARIÁVEIS;USO E CONSUMO;-R$ 64
+Em Mai, o grupo '( - ) CUSTOS VARIÁVEIS' registrou um valor de -R$ 69 referente ao item 'USO E CONSUMO' (Subcategoria: COMPRA DE MERCADORIAS).;Mai;( - ) CUSTOS VARIÁVEIS;USO E CONSUMO;-R$ 69
+Em Dez, o grupo '( - ) CUSTOS VARIÁVEIS' registrou um valor de -R$ 155 referente ao item 'USO E CONSUMO' (Subcategoria: COMPRA DE MERCADORIAS).;Dez;( - ) CUSTOS VARIÁVEIS;USO E CONSUMO;-R$ 155
+Em Nov, o grupo '( - ) CUSTOS VARIÁVEIS' registrou um valor de -R$ 247 referente ao item 'USO E CONSUMO' (Subcategoria: COMPRA DE MERCADORIAS).;Nov;( - ) CUSTOS VARIÁVEIS;USO E CONSUMO;-R$ 247
+Em Set, o grupo '( - ) CUSTOS VARIÁVEIS' registrou um valor de -R$ 558 referente ao item 'USO E CONSUMO' (Subcategoria: COMPRA DE MERCADORIAS).;Set;( - ) CUSTOS VARIÁVEIS;USO E CONSUMO;-R$ 558
+Em Ago, o grupo '( - ) GASTOS COM PESSOAL' registrou um valor de -R$ 56.737 referente ao item 'SALARIOS E ORDENADOS'.;Ago;( - ) GASTOS COM PESSOAL;SALARIOS E ORDENADOS;-R$ 56.737
+Em Jan, o grupo '( - ) GASTOS COM PESSOAL' registrou um valor de -R$ 67.609 referente ao item 'SALARIOS E ORDENADOS'.;Jan;( - ) GASTOS COM PESSOAL;SALARIOS E ORDENADOS;-R$ 67.609
+Em Fev, o grupo '( - ) GASTOS COM PESSOAL' registrou um valor de -R$ 77.071 referente ao item 'SALARIOS E ORDENADOS'.;Fev;( - ) GASTOS COM PESSOAL;SALARIOS E ORDENADOS;-R$ 77.071
+Em Mar, o grupo '( - ) GASTOS COM PESSOAL' registrou um valor de -R$ 83.203 referente ao item 'SALARIOS E ORDENADOS'.;Mar;( - ) GASTOS COM PESSOAL;SALARIOS E ORDENADOS;-R$ 83.203
+Em Set, o grupo '( - ) GASTOS COM PESSOAL' registrou um valor de -R$ 93.279 referente ao item 'SALARIOS E ORDENADOS'.;Set;( - ) GASTOS COM PESSOAL;SALARIOS E ORDENADOS;-R$ 93.279
+Em Mai, o grupo '( - ) GASTOS COM PESSOAL' registrou um valor de -R$ 100.950 referente ao item 'SALARIOS E ORDENADOS'.;Mai;( - ) GASTOS COM PESSOAL;SALARIOS E ORDENADOS;-R$ 100.950
+Em Jul, o grupo '( - ) GASTOS COM PESSOAL' registrou um valor de -R$ 101.003 referente ao item 'SALARIOS E ORDENADOS'.;Jul;( - ) GASTOS COM PESSOAL;SALARIOS E ORDENADOS;-R$ 101.003
+Em Jun, o grupo '( - ) GASTOS COM PESSOAL' registrou um valor de -R$ 111.632 referente ao item 'SALARIOS E ORDENADOS'.;Jun;( - ) GASTOS COM PESSOAL;SALARIOS E ORDENADOS;-R$ 111.632
+Em Out, o grupo '( - ) GASTOS COM PESSOAL' registrou um valor de -R$ 113.451 referente ao item 'SALARIOS E ORDENADOS'.;Out;( - ) GASTOS COM PESSOAL;SALARIOS E ORDENADOS;-R$ 113.451
+Em Abr, o grupo '( - ) GASTOS COM PESSOAL' registrou um valor de -R$ 116.906 referente ao item 'SALARIOS E ORDENADOS'.;Abr;( - ) GASTOS COM PESSOAL;SALARIOS E ORDENADOS;-R$ 116.906
+Em Nov, o grupo '( - ) GASTOS COM PESSOAL' registrou um valor de -R$ 131.076 referente ao item 'SALARIOS E ORDENADOS'.;Nov;( - ) GASTOS COM PESSOAL;SALARIOS E ORDENADOS;-R$ 131.076
+Em Dez, o grupo '( - ) GASTOS COM PESSOAL' registrou um valor de -R$ 136.562 referente ao item 'SALARIOS E ORDENADOS'.;Dez;( - ) GASTOS COM PESSOAL;SALARIOS E ORDENADOS;-R$ 136.562
+Em Jan, o grupo '( - ) GASTOS COM PESSOAL' registrou um valor de -R$ 777 referente ao item 'FÉRIAS'.;Jan;( - ) GASTOS COM PESSOAL;FÉRIAS;-R$ 777
+Em Jun, o grupo '( - ) GASTOS COM PESSOAL' registrou um valor de -R$ 1.200 referente ao item 'FÉRIAS'.;Jun;( - ) GASTOS COM PESSOAL;FÉRIAS;-R$ 1.200
+Em Out, o grupo '( - ) GASTOS COM PESSOAL' registrou um valor de -R$ 2.205 referente ao item 'FÉRIAS'.;Out;( - ) GASTOS COM PESSOAL;FÉRIAS;-R$ 2.205
+Em Abr, o grupo '( - ) GASTOS COM PESSOAL' registrou um valor de -R$ 2.229 referente ao item 'FÉRIAS'.;Abr;( - ) GASTOS COM PESSOAL;FÉRIAS;-R$ 2.229
+Em Set, o grupo '( - ) GASTOS COM PESSOAL' registrou um valor de -R$ 2.269 referente ao item 'FÉRIAS'.;Set;( - ) GASTOS COM PESSOAL;FÉRIAS;-R$ 2.269
+Em Nov, o grupo '( - ) GASTOS COM PESSOAL' registrou um valor de -R$ 3.086 referente ao item 'FÉRIAS'.;Nov;( - ) GASTOS COM PESSOAL;FÉRIAS;-R$ 3.086
+Em Mai, o grupo '( - ) GASTOS COM PESSOAL' registrou um valor de -R$ 3.117 referente ao item 'FÉRIAS'.;Mai;( - ) GASTOS COM PESSOAL;FÉRIAS;-R$ 3.117
+Em Jul, o grupo '( - ) GASTOS COM PESSOAL' registrou um valor de -R$ 6.667 referente ao item 'FÉRIAS'.;Jul;( - ) GASTOS COM PESSOAL;FÉRIAS;-R$ 6.667
+Em Ago, o grupo '( - ) GASTOS COM PESSOAL' registrou um valor de -R$ 6.840 referente ao item 'FÉRIAS'.;Ago;( - ) GASTOS COM PESSOAL;FÉRIAS;-R$ 6.840
+Em Mar, o grupo '( - ) GASTOS COM PESSOAL' registrou um valor de -R$ 10.420 referente ao item 'FÉRIAS'.;Mar;( - ) GASTOS COM PESSOAL;FÉRIAS;-R$ 10.420
+Em Nov, o grupo '( - ) GASTOS COM PESSOAL' registrou um valor de -R$ 48.514 referente ao item 'DECIMO TERCEIRO SALÁRIO'.;Nov;( - ) GASTOS COM PESSOAL;DECIMO TERCEIRO SALÁRIO;-R$ 48.514
+Em Dez, o grupo '( - ) GASTOS COM PESSOAL' registrou um valor de -R$ 2.580 referente ao item 'RESCISÕES TRABALHISTAS'.;Dez;( - ) GASTOS COM PESSOAL;RESCISÕES TRABALHISTAS;-R$ 2.580
+Em Abr, o grupo '( - ) GASTOS COM PESSOAL' registrou um valor de -R$ 2.718 referente ao item 'RESCISÕES TRABALHISTAS'.;Abr;( - ) GASTOS COM PESSOAL;RESCISÕES TRABALHISTAS;-R$ 2.718
+Em Jul, o grupo '( - ) GASTOS COM PESSOAL' registrou um valor de -R$ 3.543 referente ao item 'RESCISÕES TRABALHISTAS'.;Jul;( - ) GASTOS COM PESSOAL;RESCISÕES TRABALHISTAS;-R$ 3.543
+Em Out, o grupo '( - ) GASTOS COM PESSOAL' registrou um valor de -R$ 3.941 referente ao item 'RESCISÕES TRABALHISTAS'.;Out;( - ) GASTOS COM PESSOAL;RESCISÕES TRABALHISTAS;-R$ 3.941
+Em Set, o grupo '( - ) GASTOS COM PESSOAL' registrou um valor de -R$ 5.627 referente ao item 'RESCISÕES TRABALHISTAS'.;Set;( - ) GASTOS COM PESSOAL;RESCISÕES TRABALHISTAS;-R$ 5.627
+Em Ago, o grupo '( - ) GASTOS COM PESSOAL' registrou um valor de -R$ 5.974 referente ao item 'RESCISÕES TRABALHISTAS'.;Ago;( - ) GASTOS COM PESSOAL;RESCISÕES TRABALHISTAS;-R$ 5.974
+Em Fev, o grupo '( - ) GASTOS COM PESSOAL' registrou um valor de -R$ 8.014 referente ao item 'RESCISÕES TRABALHISTAS'.;Fev;( - ) GASTOS COM PESSOAL;RESCISÕES TRABALHISTAS;-R$ 8.014
+Em Jan, o grupo '( - ) GASTOS COM PESSOAL' registrou um valor de -R$ 9.561 referente ao item 'RESCISÕES TRABALHISTAS'.;Jan;( - ) GASTOS COM PESSOAL;RESCISÕES TRABALHISTAS;-R$ 9.561
+Em Mar, o grupo '( - ) GASTOS COM PESSOAL' registrou um valor de -R$ 535 referente ao item 'IRPF S/ SALARIO'.;Mar;( - ) GASTOS COM PESSOAL;IRPF S/ SALARIO;-R$ 535
+Em Mar, o grupo '( - ) GASTOS COM PESSOAL' registrou um valor de -R$ 328 referente ao item 'HORAS EXTRAS'.;Mar;( - ) GASTOS COM PESSOAL;HORAS EXTRAS;-R$ 328
+Em Set, o grupo '( - ) GASTOS COM PESSOAL' registrou um valor de -R$ 817 referente ao item 'HORAS EXTRAS'.;Set;( - ) GASTOS COM PESSOAL;HORAS EXTRAS;-R$ 817
+Em Fev, o grupo '( - ) GASTOS COM PESSOAL' registrou um valor de -R$ 2.544 referente ao item 'HORAS EXTRAS'.;Fev;( - ) GASTOS COM PESSOAL;HORAS EXTRAS;-R$ 2.544
+Em Jun, o grupo '( - ) GASTOS COM PESSOAL' registrou um valor de -R$ 728 referente ao item 'GRATIFICAÇÕES E COMISSÕES'.;Jun;( - ) GASTOS COM PESSOAL;GRATIFICAÇÕES E COMISSÕES;-R$ 728
+Em Dez, o grupo '( - ) GASTOS COM PESSOAL' registrou um valor de -R$ 931 referente ao item 'GRATIFICAÇÕES E COMISSÕES'.;Dez;( - ) GASTOS COM PESSOAL;GRATIFICAÇÕES E COMISSÕES;-R$ 931
+Em Out, o grupo '( - ) GASTOS COM PESSOAL' registrou um valor de -R$ 1.084 referente ao item 'GRATIFICAÇÕES E COMISSÕES'.;Out;( - ) GASTOS COM PESSOAL;GRATIFICAÇÕES E COMISSÕES;-R$ 1.084
+Em Nov, o grupo '( - ) GASTOS COM PESSOAL' registrou um valor de -R$ 1.275 referente ao item 'GRATIFICAÇÕES E COMISSÕES'.;Nov;( - ) GASTOS COM PESSOAL;GRATIFICAÇÕES E COMISSÕES;-R$ 1.275
+Em Abr, o grupo '( - ) GASTOS COM PESSOAL' registrou um valor de -R$ 1.785 referente ao item 'GRATIFICAÇÕES E COMISSÕES'.;Abr;( - ) GASTOS COM PESSOAL;GRATIFICAÇÕES E COMISSÕES;-R$ 1.785
+Em Set, o grupo '( - ) GASTOS COM PESSOAL' registrou um valor de -R$ 2.700 referente ao item 'GRATIFICAÇÕES E COMISSÕES'.;Set;( - ) GASTOS COM PESSOAL;GRATIFICAÇÕES E COMISSÕES;-R$ 2.700
+Em Ago, o grupo '( - ) GASTOS COM PESSOAL' registrou um valor de -R$ 10.000 referente ao item 'INDENIZAÇÕES TRABALHISTAS'.;Ago;( - ) GASTOS COM PESSOAL;INDENIZAÇÕES TRABALHISTAS;-R$ 10.000
+Em Jul, o grupo '( - ) GASTOS COM PESSOAL' registrou um valor de -R$ 10.000 referente ao item 'INDENIZAÇÕES TRABALHISTAS'.;Jul;( - ) GASTOS COM PESSOAL;INDENIZAÇÕES TRABALHISTAS;-R$ 10.000
+Em Set, o grupo '( - ) GASTOS COM PESSOAL' registrou um valor de -R$ 10.000 referente ao item 'INDENIZAÇÕES TRABALHISTAS'.;Set;( - ) GASTOS COM PESSOAL;INDENIZAÇÕES TRABALHISTAS;-R$ 10.000
+Em Nov, o grupo '( - ) GASTOS COM PESSOAL' registrou um valor de -R$ 10.600 referente ao item 'INDENIZAÇÕES TRABALHISTAS'.;Nov;( - ) GASTOS COM PESSOAL;INDENIZAÇÕES TRABALHISTAS;-R$ 10.600
+Em Out, o grupo '( - ) GASTOS COM PESSOAL' registrou um valor de -R$ 16.907 referente ao item 'INDENIZAÇÕES TRABALHISTAS'.;Out;( - ) GASTOS COM PESSOAL;INDENIZAÇÕES TRABALHISTAS;-R$ 16.907
+Em Jan, o grupo '( - ) SERVIÇOS DE TERCEIROS' registrou um valor de -R$ 236 referente ao item 'TREINAMENTOS E CAPACITAÇÕES'.;Jan;( - ) SERVIÇOS DE TERCEIROS;TREINAMENTOS E CAPACITAÇÕES;-R$ 236
+Em Mar, o grupo '( - ) SERVIÇOS DE TERCEIROS' registrou um valor de -R$ 5.634 referente ao item 'TREINAMENTOS E CAPACITAÇÕES'.;Mar;( - ) SERVIÇOS DE TERCEIROS;TREINAMENTOS E CAPACITAÇÕES;-R$ 5.634
+Em Abr, o grupo '( - ) SERVIÇOS DE TERCEIROS' registrou um valor de -R$ 6.333 referente ao item 'TREINAMENTOS E CAPACITAÇÕES'.;Abr;( - ) SERVIÇOS DE TERCEIROS;TREINAMENTOS E CAPACITAÇÕES;-R$ 6.333
+Em Ago, o grupo '( - ) GASTOS COM PESSOAL' registrou um valor de -R$ 54 referente ao item 'UNIFORME E EPI'.;Ago;( - ) GASTOS COM PESSOAL;UNIFORME E EPI;-R$ 54
+Em Dez, o grupo '( - ) GASTOS COM PESSOAL' registrou um valor de -R$ 110 referente ao item 'UNIFORME E EPI'.;Dez;( - ) GASTOS COM PESSOAL;UNIFORME E EPI;-R$ 110
+Em Jul, o grupo '( - ) GASTOS COM PESSOAL' registrou um valor de -R$ 348 referente ao item 'UNIFORME E EPI'.;Jul;( - ) GASTOS COM PESSOAL;UNIFORME E EPI;-R$ 348
+Em Mai, o grupo '( - ) GASTOS COM PESSOAL' registrou um valor de -R$ 500 referente ao item 'UNIFORME E EPI'.;Mai;( - ) GASTOS COM PESSOAL;UNIFORME E EPI;-R$ 500
+Em Abr, o grupo '( - ) GASTOS COM PESSOAL' registrou um valor de -R$ 1.230 referente ao item 'UNIFORME E EPI'.;Abr;( - ) GASTOS COM PESSOAL;UNIFORME E EPI;-R$ 1.230
+Em Jan, o grupo '( - ) GASTOS COM PESSOAL' registrou um valor de -R$ 3.903 referente ao item 'UNIFORME E EPI'.;Jan;( - ) GASTOS COM PESSOAL;UNIFORME E EPI;-R$ 3.903
+Em Mar, o grupo '( - ) GASTOS COM PESSOAL' registrou um valor de -R$ 163 referente ao item 'VALE TRANSPORTE'.;Mar;( - ) GASTOS COM PESSOAL;VALE TRANSPORTE;-R$ 163
+Em Mai, o grupo '( - ) GASTOS COM PESSOAL' registrou um valor de -R$ 190 referente ao item 'VALE TRANSPORTE'.;Mai;( - ) GASTOS COM PESSOAL;VALE TRANSPORTE;-R$ 190
+Em Jun, o grupo '( - ) GASTOS COM PESSOAL' registrou um valor de -R$ 587 referente ao item 'PLANO DE SAÚDE'.;Jun;( - ) GASTOS COM PESSOAL;PLANO DE SAÚDE;-R$ 587
+Em Dez, o grupo '( - ) GASTOS COM PESSOAL' registrou um valor de -R$ 42 referente ao item 'VALE ALIMENTAÇÃO/REFEIÇÃO'.;Dez;( - ) GASTOS COM PESSOAL;VALE ALIMENTAÇÃO/REFEIÇÃO;-R$ 42
+Em Abr, o grupo '( - ) GASTOS COM PESSOAL' registrou um valor de -R$ 1.168 referente ao item 'OUTROS GASTOS COM PESSOAL'.;Abr;( - ) GASTOS COM PESSOAL;OUTROS GASTOS COM PESSOAL;-R$ 1.168
+Em Jan, o grupo '( - ) GASTOS COM PESSOAL' registrou um valor de -R$ 1.323 referente ao item 'OUTROS GASTOS COM PESSOAL'.;Jan;( - ) GASTOS COM PESSOAL;OUTROS GASTOS COM PESSOAL;-R$ 1.323
+Em Mar, o grupo '( - ) GASTOS COM PESSOAL' registrou um valor de -R$ 13.810 referente ao item 'INSS'.;Mar;( - ) GASTOS COM PESSOAL;INSS;-R$ 13.810
+Em Jun, o grupo '( - ) GASTOS COM PESSOAL' registrou um valor de -R$ 1.496 referente ao item 'FGTS'.;Jun;( - ) GASTOS COM PESSOAL;FGTS;-R$ 1.496
+Em Jan, o grupo '( - ) GASTOS COM PESSOAL' registrou um valor de -R$ 1.517 referente ao item 'FGTS'.;Jan;( - ) GASTOS COM PESSOAL;FGTS;-R$ 1.517
+Em Ago, o grupo '( - ) GASTOS COM PESSOAL' registrou um valor de -R$ 4.320 referente ao item 'FGTS'.;Ago;( - ) GASTOS COM PESSOAL;FGTS;-R$ 4.320
+Em Set, o grupo '( - ) GASTOS COM PESSOAL' registrou um valor de -R$ 8.470 referente ao item 'FGTS'.;Set;( - ) GASTOS COM PESSOAL;FGTS;-R$ 8.470
+Em Out, o grupo '( - ) GASTOS COM PESSOAL' registrou um valor de -R$ 11.827 referente ao item 'FGTS'.;Out;( - ) GASTOS COM PESSOAL;FGTS;-R$ 11.827
+Em Nov, o grupo '( - ) GASTOS COM PESSOAL' registrou um valor de -R$ 13.073 referente ao item 'FGTS'.;Nov;( - ) GASTOS COM PESSOAL;FGTS;-R$ 13.073
+Em Abr, o grupo '( - ) GASTOS COM PESSOAL' registrou um valor de -R$ 13.903 referente ao item 'FGTS'.;Abr;( - ) GASTOS COM PESSOAL;FGTS;-R$ 13.903
+Em Mar, o grupo '( - ) GASTOS COM PESSOAL' registrou um valor de -R$ 14.677 referente ao item 'FGTS'.;Mar;( - ) GASTOS COM PESSOAL;FGTS;-R$ 14.677
+Em Dez, o grupo '( - ) GASTOS COM PESSOAL' registrou um valor de -R$ 17.328 referente ao item 'FGTS'.;Dez;( - ) GASTOS COM PESSOAL;FGTS;-R$ 17.328
+Em Out, o grupo '( - ) GASTOS COM PESSOAL' registrou um valor de -R$ 164 referente ao item 'FGTS RESCISÓRIO'.;Out;( - ) GASTOS COM PESSOAL;FGTS RESCISÓRIO;-R$ 164
+Em Abr, o grupo '( - ) GASTOS COM PESSOAL' registrou um valor de -R$ 318 referente ao item 'FGTS RESCISÓRIO'.;Abr;( - ) GASTOS COM PESSOAL;FGTS RESCISÓRIO;-R$ 318
+Em Fev, o grupo '( - ) GASTOS COM PESSOAL' registrou um valor de -R$ 1.147 referente ao item 'FGTS RESCISÓRIO'.;Fev;( - ) GASTOS COM PESSOAL;FGTS RESCISÓRIO;-R$ 1.147
+Em Jul, o grupo '( - ) GASTOS COM PESSOAL' registrou um valor de -R$ 2.502 referente ao item 'FGTS RESCISÓRIO'.;Jul;( - ) GASTOS COM PESSOAL;FGTS RESCISÓRIO;-R$ 2.502
+Em Set, o grupo '( - ) GASTOS COM PESSOAL' registrou um valor de -R$ 2.595 referente ao item 'FGTS RESCISÓRIO'.;Set;( - ) GASTOS COM PESSOAL;FGTS RESCISÓRIO;-R$ 2.595
+Em Abr, o grupo '( - ) GASTOS COM PESSOAL' registrou um valor de -R$ 120 referente ao item 'FREELANCER'.;Abr;( - ) GASTOS COM PESSOAL;FREELANCER;-R$ 120
+Em Jun, o grupo '( - ) GASTOS COM PESSOAL' registrou um valor de -R$ 150 referente ao item 'FREELANCER'.;Jun;( - ) GASTOS COM PESSOAL;FREELANCER;-R$ 150
+Em Jan, o grupo '( - ) GASTOS COM PESSOAL' registrou um valor de -R$ 360 referente ao item 'FREELANCER'.;Jan;( - ) GASTOS COM PESSOAL;FREELANCER;-R$ 360
+Em Mai, o grupo '( - ) GASTOS COM PESSOAL' registrou um valor de -R$ 2.624 referente ao item 'FREELANCER'.;Mai;( - ) GASTOS COM PESSOAL;FREELANCER;-R$ 2.624
+Em Out, o grupo '( - ) GASTOS COM PESSOAL' registrou um valor de -R$ 33 referente ao item 'EXAME ADMISSIONAL/DEMISSIONAL'.;Out;( - ) GASTOS COM PESSOAL;EXAME ADMISSIONAL/DEMISSIONAL;-R$ 33
+Em Jul, o grupo '( - ) GASTOS COM PESSOAL' registrou um valor de -R$ 108 referente ao item 'EXAME ADMISSIONAL/DEMISSIONAL'.;Jul;( - ) GASTOS COM PESSOAL;EXAME ADMISSIONAL/DEMISSIONAL;-R$ 108
+Em Nov, o grupo '( - ) GASTOS COM PESSOAL' registrou um valor de -R$ 110 referente ao item 'EXAME ADMISSIONAL/DEMISSIONAL'.;Nov;( - ) GASTOS COM PESSOAL;EXAME ADMISSIONAL/DEMISSIONAL;-R$ 110
+Em Ago, o grupo '( - ) GASTOS COM PESSOAL' registrou um valor de -R$ 156 referente ao item 'EXAME ADMISSIONAL/DEMISSIONAL'.;Ago;( - ) GASTOS COM PESSOAL;EXAME ADMISSIONAL/DEMISSIONAL;-R$ 156
+Em Jun, o grupo '( - ) GASTOS COM PESSOAL' registrou um valor de -R$ 193 referente ao item 'EXAME ADMISSIONAL/DEMISSIONAL'.;Jun;( - ) GASTOS COM PESSOAL;EXAME ADMISSIONAL/DEMISSIONAL;-R$ 193
+Em Set, o grupo '( - ) GASTOS COM PESSOAL' registrou um valor de -R$ 1.135 referente ao item 'EXAME ADMISSIONAL/DEMISSIONAL'.;Set;( - ) GASTOS COM PESSOAL;EXAME ADMISSIONAL/DEMISSIONAL;-R$ 1.135
+Em Abr, o grupo '( - ) GASTOS COM PESSOAL' registrou um valor de -R$ 1.550 referente ao item 'EXAME ADMISSIONAL/DEMISSIONAL'.;Abr;( - ) GASTOS COM PESSOAL;EXAME ADMISSIONAL/DEMISSIONAL;-R$ 1.550
+Em Dez, o grupo '( - ) GASTOS COM PESSOAL' registrou um valor de -R$ 1.090 referente ao item 'AJUDA DE CUSTO'.;Dez;( - ) GASTOS COM PESSOAL;AJUDA DE CUSTO;-R$ 1.090
+Em Jan, o grupo '( - ) GASTOS COM PESSOAL' registrou um valor de -R$ 3.490 referente ao item 'AJUDA DE CUSTO'.;Jan;( - ) GASTOS COM PESSOAL;AJUDA DE CUSTO;-R$ 3.490
+Em Jun, o grupo '( - ) GASTOS COM PESSOAL' registrou um valor de -R$ 3.592 referente ao item 'AJUDA DE CUSTO'.;Jun;( - ) GASTOS COM PESSOAL;AJUDA DE CUSTO;-R$ 3.592
+Em Mar, o grupo '( - ) GASTOS COM PESSOAL' registrou um valor de -R$ 4.330 referente ao item 'AJUDA DE CUSTO'.;Mar;( - ) GASTOS COM PESSOAL;AJUDA DE CUSTO;-R$ 4.330
+Em Fev, o grupo '( - ) GASTOS COM PESSOAL' registrou um valor de -R$ 4.530 referente ao item 'AJUDA DE CUSTO'.;Fev;( - ) GASTOS COM PESSOAL;AJUDA DE CUSTO;-R$ 4.530
+Em Mai, o grupo '( - ) GASTOS COM PESSOAL' registrou um valor de -R$ 5.300 referente ao item 'AJUDA DE CUSTO'.;Mai;( - ) GASTOS COM PESSOAL;AJUDA DE CUSTO;-R$ 5.300
+Em Jul, o grupo '( - ) GASTOS COM PESSOAL' registrou um valor de -R$ 5.570 referente ao item 'AJUDA DE CUSTO'.;Jul;( - ) GASTOS COM PESSOAL;AJUDA DE CUSTO;-R$ 5.570
+Em Ago, o grupo '( - ) GASTOS COM PESSOAL' registrou um valor de -R$ 5.610 referente ao item 'AJUDA DE CUSTO'.;Ago;( - ) GASTOS COM PESSOAL;AJUDA DE CUSTO;-R$ 5.610
+Em Set, o grupo '( - ) GASTOS COM PESSOAL' registrou um valor de -R$ 6.019 referente ao item 'AJUDA DE CUSTO'.;Set;( - ) GASTOS COM PESSOAL;AJUDA DE CUSTO;-R$ 6.019
+Em Out, o grupo '( - ) GASTOS COM PESSOAL' registrou um valor de -R$ 7.622 referente ao item 'AJUDA DE CUSTO'.;Out;( - ) GASTOS COM PESSOAL;AJUDA DE CUSTO;-R$ 7.622
+Em Abr, o grupo '( - ) GASTOS COM PESSOAL' registrou um valor de -R$ 8.350 referente ao item 'AJUDA DE CUSTO'.;Abr;( - ) GASTOS COM PESSOAL;AJUDA DE CUSTO;-R$ 8.350
+Em Nov, o grupo '( - ) GASTOS COM PESSOAL' registrou um valor de -R$ 8.385 referente ao item 'AJUDA DE CUSTO'.;Nov;( - ) GASTOS COM PESSOAL;AJUDA DE CUSTO;-R$ 8.385
+Em Set, o grupo '( - ) SERVIÇOS DE TERCEIROS' registrou um valor de -R$ 86 referente ao item 'PRO-LABORE SOCIO PRINCIPAL'.;Set;( - ) SERVIÇOS DE TERCEIROS;PRO-LABORE SOCIO PRINCIPAL;-R$ 86
+Em Nov, o grupo '( - ) SERVIÇOS DE TERCEIROS' registrou um valor de -R$ 95 referente ao item 'PRO-LABORE SOCIO PRINCIPAL'.;Nov;( - ) SERVIÇOS DE TERCEIROS;PRO-LABORE SOCIO PRINCIPAL;-R$ 95
+Em Ago, o grupo '( - ) SERVIÇOS DE TERCEIROS' registrou um valor de -R$ 95 referente ao item 'PRO-LABORE SOCIO PRINCIPAL'.;Ago;( - ) SERVIÇOS DE TERCEIROS;PRO-LABORE SOCIO PRINCIPAL;-R$ 95
+Em Abr, o grupo '( - ) SERVIÇOS DE TERCEIROS' registrou um valor de -R$ 95 referente ao item 'PRO-LABORE SOCIO PRINCIPAL'.;Abr;( - ) SERVIÇOS DE TERCEIROS;PRO-LABORE SOCIO PRINCIPAL;-R$ 95
+Em Dez, o grupo '( - ) SERVIÇOS DE TERCEIROS' registrou um valor de -R$ 95 referente ao item 'PRO-LABORE SOCIO PRINCIPAL'.;Dez;( - ) SERVIÇOS DE TERCEIROS;PRO-LABORE SOCIO PRINCIPAL;-R$ 95
+Em Mai, o grupo '( - ) SERVIÇOS DE TERCEIROS' registrou um valor de -R$ 95 referente ao item 'PRO-LABORE SOCIO PRINCIPAL'.;Mai;( - ) SERVIÇOS DE TERCEIROS;PRO-LABORE SOCIO PRINCIPAL;-R$ 95
+Em Jun, o grupo '( - ) SERVIÇOS DE TERCEIROS' registrou um valor de -R$ 95 referente ao item 'PRO-LABORE SOCIO PRINCIPAL'.;Jun;( - ) SERVIÇOS DE TERCEIROS;PRO-LABORE SOCIO PRINCIPAL;-R$ 95
+Em Fev, o grupo '( - ) SERVIÇOS DE TERCEIROS' registrou um valor de -R$ 387 referente ao item 'PRO-LABORE SOCIO PRINCIPAL'.;Fev;( - ) SERVIÇOS DE TERCEIROS;PRO-LABORE SOCIO PRINCIPAL;-R$ 387
+Em Set, o grupo '( - ) GASTOS COM PESSOAL' registrou um valor de -R$ 38 referente ao item 'MEDICAMENTOS/CURATIVOS'.;Set;( - ) GASTOS COM PESSOAL;MEDICAMENTOS/CURATIVOS;-R$ 38
+Em Jul, o grupo '( - ) GASTOS COM PESSOAL' registrou um valor de -R$ 808 referente ao item 'MEDICAMENTOS/CURATIVOS'.;Jul;( - ) GASTOS COM PESSOAL;MEDICAMENTOS/CURATIVOS;-R$ 808
+Em Dez, o grupo '( - ) DEDUÇÕES SOBRE RECEITA' registrou um valor de -R$ 3.148 referente ao item 'GORJETAS'.;Dez;( - ) DEDUÇÕES SOBRE RECEITA;GORJETAS;-R$ 3.148
+Em Dez, o grupo '( - ) GASTOS COM PESSOAL' registrou um valor de -R$ 1.700 referente ao item 'EMPRESTIMO A FUNCIONARIO'.;Dez;( - ) GASTOS COM PESSOAL;EMPRESTIMO A FUNCIONARIO;-R$ 1.700
+Em Jul, o grupo '( - ) GASTOS COM PESSOAL' registrou um valor de -R$ 1.700 referente ao item 'EMPRESTIMO A FUNCIONARIO'.;Jul;( - ) GASTOS COM PESSOAL;EMPRESTIMO A FUNCIONARIO;-R$ 1.700
+Em Fev, o grupo '( - ) GASTOS COM PESSOAL' registrou um valor de -R$ 3.774 referente ao item 'EMPRESTIMO A FUNCIONARIO'.;Fev;( - ) GASTOS COM PESSOAL;EMPRESTIMO A FUNCIONARIO;-R$ 3.774
+Em Set, o grupo '( - ) GASTOS COM PESSOAL' registrou um valor de -R$ 240 referente ao item 'SINDICATO'.;Set;( - ) GASTOS COM PESSOAL;SINDICATO;-R$ 240
+Em Jul, o grupo '( - ) GASTOS COM PESSOAL' registrou um valor de -R$ 404 referente ao item 'SINDICATO'.;Jul;( - ) GASTOS COM PESSOAL;SINDICATO;-R$ 404
+Em Dez, o grupo '( - ) GASTOS COM PESSOAL' registrou um valor de -R$ 507 referente ao item 'SINDICATO'.;Dez;( - ) GASTOS COM PESSOAL;SINDICATO;-R$ 507
+Em Out, o grupo '( - ) GASTOS COM PESSOAL' registrou um valor de -R$ 1.109 referente ao item 'SINDICATO'.;Out;( - ) GASTOS COM PESSOAL;SINDICATO;-R$ 1.109
+Em Ago, o grupo '( - ) GASTOS COM PESSOAL' registrou um valor de -R$ 2.611 referente ao item 'SINDICATO'.;Ago;( - ) GASTOS COM PESSOAL;SINDICATO;-R$ 2.611
+Em Jun, o grupo '( - ) GASTOS COM PESSOAL' registrou um valor de -R$ 15.487 referente ao item 'SINDICATO'.;Jun;( - ) GASTOS COM PESSOAL;SINDICATO;-R$ 15.487
+Em Jun, o grupo '( - ) UTILIDADES E SERVIÇOS' registrou um valor de -R$ 900 referente ao item 'ALUGUEL DE IMOVEIS' (Subcategoria: ALUGUEL E CONDOMÍNIOS).;Jun;( - ) UTILIDADES E SERVIÇOS;ALUGUEL DE IMOVEIS;-R$ 900
+Em Abr, o grupo '( - ) UTILIDADES E SERVIÇOS' registrou um valor de -R$ 3.137 referente ao item 'ALUGUEL DE IMOVEIS' (Subcategoria: ALUGUEL E CONDOMÍNIOS).;Abr;( - ) UTILIDADES E SERVIÇOS;ALUGUEL DE IMOVEIS;-R$ 3.137
+Em Mar, o grupo '( - ) UTILIDADES E SERVIÇOS' registrou um valor de -R$ 4.489 referente ao item 'ALUGUEL DE IMOVEIS' (Subcategoria: ALUGUEL E CONDOMÍNIOS).;Mar;( - ) UTILIDADES E SERVIÇOS;ALUGUEL DE IMOVEIS;-R$ 4.489
+Em Jul, o grupo '( - ) UTILIDADES E SERVIÇOS' registrou um valor de -R$ 8.000 referente ao item 'ALUGUEL DE IMOVEIS' (Subcategoria: ALUGUEL E CONDOMÍNIOS).;Jul;( - ) UTILIDADES E SERVIÇOS;ALUGUEL DE IMOVEIS;-R$ 8.000
+Em Ago, o grupo '( - ) UTILIDADES E SERVIÇOS' registrou um valor de -R$ 8.900 referente ao item 'ALUGUEL DE IMOVEIS' (Subcategoria: ALUGUEL E CONDOMÍNIOS).;Ago;( - ) UTILIDADES E SERVIÇOS;ALUGUEL DE IMOVEIS;-R$ 8.900
+Em Dez, o grupo '( - ) UTILIDADES E SERVIÇOS' registrou um valor de -R$ 9.400 referente ao item 'ALUGUEL DE IMOVEIS' (Subcategoria: ALUGUEL E CONDOMÍNIOS).;Dez;( - ) UTILIDADES E SERVIÇOS;ALUGUEL DE IMOVEIS;-R$ 9.400
+Em Nov, o grupo '( - ) UTILIDADES E SERVIÇOS' registrou um valor de -R$ 9.400 referente ao item 'ALUGUEL DE IMOVEIS' (Subcategoria: ALUGUEL E CONDOMÍNIOS).;Nov;( - ) UTILIDADES E SERVIÇOS;ALUGUEL DE IMOVEIS;-R$ 9.400
+Em Set, o grupo '( - ) UTILIDADES E SERVIÇOS' registrou um valor de -R$ 9.400 referente ao item 'ALUGUEL DE IMOVEIS' (Subcategoria: ALUGUEL E CONDOMÍNIOS).;Set;( - ) UTILIDADES E SERVIÇOS;ALUGUEL DE IMOVEIS;-R$ 9.400
+Em Out, o grupo '( - ) UTILIDADES E SERVIÇOS' registrou um valor de -R$ 9.400 referente ao item 'ALUGUEL DE IMOVEIS' (Subcategoria: ALUGUEL E CONDOMÍNIOS).;Out;( - ) UTILIDADES E SERVIÇOS;ALUGUEL DE IMOVEIS;-R$ 9.400
+Em Mar, o grupo '( - ) UTILIDADES E SERVIÇOS' registrou um valor de -R$ 401 referente ao item 'CONDOMINIO' (Subcategoria: ALUGUEL E CONDOMÍNIOS).;Mar;( - ) UTILIDADES E SERVIÇOS;CONDOMINIO;-R$ 401
+Em Mai, o grupo '( - ) UTILIDADES E SERVIÇOS' registrou um valor de -R$ 102 referente ao item 'ENERGIA'.;Mai;( - ) UTILIDADES E SERVIÇOS;ENERGIA;-R$ 102
+Em Ago, o grupo '( - ) UTILIDADES E SERVIÇOS' registrou um valor de -R$ 131 referente ao item 'ENERGIA'.;Ago;( - ) UTILIDADES E SERVIÇOS;ENERGIA;-R$ 131
+Em Jul, o grupo '( - ) UTILIDADES E SERVIÇOS' registrou um valor de -R$ 689 referente ao item 'ENERGIA'.;Jul;( - ) UTILIDADES E SERVIÇOS;ENERGIA;-R$ 689
+Em Mar, o grupo '( - ) UTILIDADES E SERVIÇOS' registrou um valor de -R$ 919 referente ao item 'ENERGIA'.;Mar;( - ) UTILIDADES E SERVIÇOS;ENERGIA;-R$ 919
+Em Set, o grupo '( - ) UTILIDADES E SERVIÇOS' registrou um valor de -R$ 1.156 referente ao item 'ENERGIA'.;Set;( - ) UTILIDADES E SERVIÇOS;ENERGIA;-R$ 1.156
+Em Abr, o grupo '( - ) UTILIDADES E SERVIÇOS' registrou um valor de -R$ 1.831 referente ao item 'ENERGIA'.;Abr;( - ) UTILIDADES E SERVIÇOS;ENERGIA;-R$ 1.831
+Em Nov, o grupo '( - ) UTILIDADES E SERVIÇOS' registrou um valor de -R$ 1.895 referente ao item 'ENERGIA'.;Nov;( - ) UTILIDADES E SERVIÇOS;ENERGIA;-R$ 1.895
+Em Out, o grupo '( - ) UTILIDADES E SERVIÇOS' registrou um valor de -R$ 2.138 referente ao item 'ENERGIA'.;Out;( - ) UTILIDADES E SERVIÇOS;ENERGIA;-R$ 2.138
+Em Ago, o grupo '( - ) UTILIDADES E SERVIÇOS' registrou um valor de -R$ 138 referente ao item 'AGUA E ESGOTO'.;Ago;( - ) UTILIDADES E SERVIÇOS;AGUA E ESGOTO;-R$ 138
+Em Dez, o grupo '( - ) UTILIDADES E SERVIÇOS' registrou um valor de -R$ 156 referente ao item 'AGUA E ESGOTO'.;Dez;( - ) UTILIDADES E SERVIÇOS;AGUA E ESGOTO;-R$ 156
+Em Jul, o grupo '( - ) UTILIDADES E SERVIÇOS' registrou um valor de -R$ 158 referente ao item 'AGUA E ESGOTO'.;Jul;( - ) UTILIDADES E SERVIÇOS;AGUA E ESGOTO;-R$ 158
+Em Out, o grupo '( - ) UTILIDADES E SERVIÇOS' registrou um valor de -R$ 179 referente ao item 'AGUA E ESGOTO'.;Out;( - ) UTILIDADES E SERVIÇOS;AGUA E ESGOTO;-R$ 179
+Em Nov, o grupo '( - ) UTILIDADES E SERVIÇOS' registrou um valor de -R$ 226 referente ao item 'AGUA E ESGOTO'.;Nov;( - ) UTILIDADES E SERVIÇOS;AGUA E ESGOTO;-R$ 226
+Em Set, o grupo '( - ) UTILIDADES E SERVIÇOS' registrou um valor de -R$ 226 referente ao item 'AGUA E ESGOTO'.;Set;( - ) UTILIDADES E SERVIÇOS;AGUA E ESGOTO;-R$ 226
+Em Fev, o grupo '( - ) UTILIDADES E SERVIÇOS' registrou um valor de -R$ 67 referente ao item 'SERVICOS DE TELEFONIA FIXA/INERNET/TV'.;Fev;( - ) UTILIDADES E SERVIÇOS;SERVICOS DE TELEFONIA FIXA/INERNET/TV;-R$ 67
+Em Nov, o grupo '( - ) UTILIDADES E SERVIÇOS' registrou um valor de -R$ 1.090 referente ao item 'SERVICOS DE TELEFONIA FIXA/INERNET/TV'.;Nov;( - ) UTILIDADES E SERVIÇOS;SERVICOS DE TELEFONIA FIXA/INERNET/TV;-R$ 1.090
+Em Dez, o grupo '( - ) UTILIDADES E SERVIÇOS' registrou um valor de -R$ 1.090 referente ao item 'SERVICOS DE TELEFONIA FIXA/INERNET/TV'.;Dez;( - ) UTILIDADES E SERVIÇOS;SERVICOS DE TELEFONIA FIXA/INERNET/TV;-R$ 1.090
+Em Out, o grupo '( - ) UTILIDADES E SERVIÇOS' registrou um valor de -R$ 1.188 referente ao item 'SERVICOS DE TELEFONIA FIXA/INERNET/TV'.;Out;( - ) UTILIDADES E SERVIÇOS;SERVICOS DE TELEFONIA FIXA/INERNET/TV;-R$ 1.188
+Em Set, o grupo '( - ) UTILIDADES E SERVIÇOS' registrou um valor de -R$ 1.249 referente ao item 'SERVICOS DE TELEFONIA FIXA/INERNET/TV'.;Set;( - ) UTILIDADES E SERVIÇOS;SERVICOS DE TELEFONIA FIXA/INERNET/TV;-R$ 1.249
+Em Jun, o grupo '( - ) UTILIDADES E SERVIÇOS' registrou um valor de -R$ 1.310 referente ao item 'SERVICOS DE TELEFONIA FIXA/INERNET/TV'.;Jun;( - ) UTILIDADES E SERVIÇOS;SERVICOS DE TELEFONIA FIXA/INERNET/TV;-R$ 1.310
+Em Ago, o grupo '( - ) UTILIDADES E SERVIÇOS' registrou um valor de -R$ 1.579 referente ao item 'SERVICOS DE TELEFONIA FIXA/INERNET/TV'.;Ago;( - ) UTILIDADES E SERVIÇOS;SERVICOS DE TELEFONIA FIXA/INERNET/TV;-R$ 1.579
+Em Abr, o grupo '( - ) UTILIDADES E SERVIÇOS' registrou um valor de -R$ 2.292 referente ao item 'SERVICOS DE TELEFONIA FIXA/INERNET/TV'.;Abr;( - ) UTILIDADES E SERVIÇOS;SERVICOS DE TELEFONIA FIXA/INERNET/TV;-R$ 2.292
+Em Jul, o grupo '( - ) UTILIDADES E SERVIÇOS' registrou um valor de -R$ 3.392 referente ao item 'SERVICOS DE TELEFONIA FIXA/INERNET/TV'.;Jul;( - ) UTILIDADES E SERVIÇOS;SERVICOS DE TELEFONIA FIXA/INERNET/TV;-R$ 3.392
+Em Jul, o grupo '( - ) UTILIDADES E SERVIÇOS' registrou um valor de -R$ 29 referente ao item 'MANUTENÇÃO DE VEÍCULO'.;Jul;( - ) UTILIDADES E SERVIÇOS;MANUTENÇÃO DE VEÍCULO;-R$ 29
+Em Set, o grupo '( - ) UTILIDADES E SERVIÇOS' registrou um valor de -R$ 1.898 referente ao item 'MANUTENÇÃO DE VEÍCULO'.;Set;( - ) UTILIDADES E SERVIÇOS;MANUTENÇÃO DE VEÍCULO;-R$ 1.898
+Em Jun, o grupo '( - ) DESPESAS ADMINISTRATIVAS' registrou um valor de -R$ 567 referente ao item 'APÓLICES E SEGUROS'.;Jun;( - ) DESPESAS ADMINISTRATIVAS;APÓLICES E SEGUROS;-R$ 567
+Em Mai, o grupo '( - ) DESPESAS ADMINISTRATIVAS' registrou um valor de -R$ 1.133 referente ao item 'APÓLICES E SEGUROS'.;Mai;( - ) DESPESAS ADMINISTRATIVAS;APÓLICES E SEGUROS;-R$ 1.133
+Em Jul, o grupo '( - ) DESPESAS ADMINISTRATIVAS' registrou um valor de -R$ 2.606 referente ao item 'APÓLICES E SEGUROS'.;Jul;( - ) DESPESAS ADMINISTRATIVAS;APÓLICES E SEGUROS;-R$ 2.606
+Em Ago, o grupo '( - ) DESPESAS ADMINISTRATIVAS' registrou um valor de -R$ 4.046 referente ao item 'APÓLICES E SEGUROS'.;Ago;( - ) DESPESAS ADMINISTRATIVAS;APÓLICES E SEGUROS;-R$ 4.046
+Em Dez, o grupo '( - ) DESPESAS ADMINISTRATIVAS' registrou um valor de -R$ 4.165 referente ao item 'APÓLICES E SEGUROS'.;Dez;( - ) DESPESAS ADMINISTRATIVAS;APÓLICES E SEGUROS;-R$ 4.165
+Em Set, o grupo '( - ) DESPESAS ADMINISTRATIVAS' registrou um valor de -R$ 4.168 referente ao item 'APÓLICES E SEGUROS'.;Set;( - ) DESPESAS ADMINISTRATIVAS;APÓLICES E SEGUROS;-R$ 4.168
+Em Out, o grupo '( - ) DESPESAS ADMINISTRATIVAS' registrou um valor de -R$ 4.210 referente ao item 'APÓLICES E SEGUROS'.;Out;( - ) DESPESAS ADMINISTRATIVAS;APÓLICES E SEGUROS;-R$ 4.210
+Em Nov, o grupo '( - ) DESPESAS ADMINISTRATIVAS' registrou um valor de -R$ 4.214 referente ao item 'APÓLICES E SEGUROS'.;Nov;( - ) DESPESAS ADMINISTRATIVAS;APÓLICES E SEGUROS;-R$ 4.214
+Em Nov, o grupo '( - ) DESPESAS ADMINISTRATIVAS' registrou um valor de -R$ 300 referente ao item 'MATERIAIS DE INFORMÁTICA'.;Nov;( - ) DESPESAS ADMINISTRATIVAS;MATERIAIS DE INFORMÁTICA;-R$ 300
+Em Set, o grupo '( - ) DESPESAS ADMINISTRATIVAS' registrou um valor de -R$ 346 referente ao item 'MATERIAIS DE INFORMÁTICA'.;Set;( - ) DESPESAS ADMINISTRATIVAS;MATERIAIS DE INFORMÁTICA;-R$ 346
+Em Jan, o grupo '( - ) DESPESAS ADMINISTRATIVAS' registrou um valor de -R$ 763 referente ao item 'MATERIAIS DE INFORMÁTICA'.;Jan;( - ) DESPESAS ADMINISTRATIVAS;MATERIAIS DE INFORMÁTICA;-R$ 763
+Em Fev, o grupo '( - ) DESPESAS ADMINISTRATIVAS' registrou um valor de -R$ 1.013 referente ao item 'MATERIAIS DE INFORMÁTICA'.;Fev;( - ) DESPESAS ADMINISTRATIVAS;MATERIAIS DE INFORMÁTICA;-R$ 1.013
+Em Out, o grupo '( - ) DESPESAS ADMINISTRATIVAS' registrou um valor de -R$ 1.185 referente ao item 'MATERIAIS DE INFORMÁTICA'.;Out;( - ) DESPESAS ADMINISTRATIVAS;MATERIAIS DE INFORMÁTICA;-R$ 1.185
+Em Jun, o grupo '( - ) DESPESAS ADMINISTRATIVAS' registrou um valor de -R$ 1.305 referente ao item 'MATERIAIS DE INFORMÁTICA'.;Jun;( - ) DESPESAS ADMINISTRATIVAS;MATERIAIS DE INFORMÁTICA;-R$ 1.305
+Em Jul, o grupo '( - ) DESPESAS ADMINISTRATIVAS' registrou um valor de -R$ 1.702 referente ao item 'MATERIAIS DE INFORMÁTICA'.;Jul;( - ) DESPESAS ADMINISTRATIVAS;MATERIAIS DE INFORMÁTICA;-R$ 1.702
+Em Ago, o grupo '( - ) DESPESAS ADMINISTRATIVAS' registrou um valor de -R$ 1.866 referente ao item 'MATERIAIS DE INFORMÁTICA'.;Ago;( - ) DESPESAS ADMINISTRATIVAS;MATERIAIS DE INFORMÁTICA;-R$ 1.866
+Em Mar, o grupo '( - ) DESPESAS ADMINISTRATIVAS' registrou um valor de -R$ 6.323 referente ao item 'MATERIAIS DE INFORMÁTICA'.;Mar;( - ) DESPESAS ADMINISTRATIVAS;MATERIAIS DE INFORMÁTICA;-R$ 6.323
+Em Abr, o grupo '( - ) DESPESAS ADMINISTRATIVAS' registrou um valor de -R$ 7.522 referente ao item 'MATERIAIS DE INFORMÁTICA'.;Abr;( - ) DESPESAS ADMINISTRATIVAS;MATERIAIS DE INFORMÁTICA;-R$ 7.522
+Em Set, o grupo '( - ) DESPESAS ADMINISTRATIVAS' registrou um valor de -R$ 72 referente ao item 'MATERIAL DE ESCRITORIO'.;Set;( - ) DESPESAS ADMINISTRATIVAS;MATERIAL DE ESCRITORIO;-R$ 72
+Em Mar, o grupo '( - ) DESPESAS ADMINISTRATIVAS' registrou um valor de -R$ 340 referente ao item 'MATERIAL DE ESCRITORIO'.;Mar;( - ) DESPESAS ADMINISTRATIVAS;MATERIAL DE ESCRITORIO;-R$ 340
+Em Mai, o grupo '( - ) DESPESAS ADMINISTRATIVAS' registrou um valor de -R$ 432 referente ao item 'MATERIAL DE ESCRITORIO'.;Mai;( - ) DESPESAS ADMINISTRATIVAS;MATERIAL DE ESCRITORIO;-R$ 432
+Em Dez, o grupo '( - ) DESPESAS ADMINISTRATIVAS' registrou um valor de -R$ 452 referente ao item 'MATERIAL DE ESCRITORIO'.;Dez;( - ) DESPESAS ADMINISTRATIVAS;MATERIAL DE ESCRITORIO;-R$ 452
+Em Nov, o grupo '( - ) DESPESAS ADMINISTRATIVAS' registrou um valor de -R$ 455 referente ao item 'MATERIAL DE ESCRITORIO'.;Nov;( - ) DESPESAS ADMINISTRATIVAS;MATERIAL DE ESCRITORIO;-R$ 455
+Em Jan, o grupo '( - ) DESPESAS ADMINISTRATIVAS' registrou um valor de -R$ 508 referente ao item 'MATERIAL DE ESCRITORIO'.;Jan;( - ) DESPESAS ADMINISTRATIVAS;MATERIAL DE ESCRITORIO;-R$ 508
+Em Fev, o grupo '( - ) DESPESAS ADMINISTRATIVAS' registrou um valor de -R$ 597 referente ao item 'MATERIAL DE ESCRITORIO'.;Fev;( - ) DESPESAS ADMINISTRATIVAS;MATERIAL DE ESCRITORIO;-R$ 597
+Em Jul, o grupo '( - ) DESPESAS ADMINISTRATIVAS' registrou um valor de -R$ 908 referente ao item 'MATERIAL DE ESCRITORIO'.;Jul;( - ) DESPESAS ADMINISTRATIVAS;MATERIAL DE ESCRITORIO;-R$ 908
+Em Out, o grupo '( - ) DESPESAS ADMINISTRATIVAS' registrou um valor de -R$ 1.000 referente ao item 'MATERIAL DE ESCRITORIO'.;Out;( - ) DESPESAS ADMINISTRATIVAS;MATERIAL DE ESCRITORIO;-R$ 1.000
+Em Jun, o grupo '( - ) DESPESAS ADMINISTRATIVAS' registrou um valor de -R$ 1.365 referente ao item 'MATERIAL DE ESCRITORIO'.;Jun;( - ) DESPESAS ADMINISTRATIVAS;MATERIAL DE ESCRITORIO;-R$ 1.365
+Em Abr, o grupo '( - ) DESPESAS ADMINISTRATIVAS' registrou um valor de -R$ 1.410 referente ao item 'MATERIAL DE ESCRITORIO'.;Abr;( - ) DESPESAS ADMINISTRATIVAS;MATERIAL DE ESCRITORIO;-R$ 1.410
+Em Ago, o grupo '( - ) DESPESAS ADMINISTRATIVAS' registrou um valor de -R$ 2.310 referente ao item 'MATERIAL DE ESCRITORIO'.;Ago;( - ) DESPESAS ADMINISTRATIVAS;MATERIAL DE ESCRITORIO;-R$ 2.310
+Em Out, o grupo '( - ) CUSTOS VARIÁVEIS' registrou um valor de -R$ 25 referente ao item 'MATERIAIS DE USO E CONSUMO'.;Out;( - ) CUSTOS VARIÁVEIS;MATERIAIS DE USO E CONSUMO;-R$ 25
+Em Fev, o grupo '( - ) CUSTOS VARIÁVEIS' registrou um valor de -R$ 38 referente ao item 'MATERIAIS DE USO E CONSUMO'.;Fev;( - ) CUSTOS VARIÁVEIS;MATERIAIS DE USO E CONSUMO;-R$ 38
+Em Ago, o grupo '( - ) CUSTOS VARIÁVEIS' registrou um valor de -R$ 41 referente ao item 'MATERIAIS DE USO E CONSUMO'.;Ago;( - ) CUSTOS VARIÁVEIS;MATERIAIS DE USO E CONSUMO;-R$ 41
+Em Mai, o grupo '( - ) CUSTOS VARIÁVEIS' registrou um valor de -R$ 63 referente ao item 'MATERIAIS DE USO E CONSUMO'.;Mai;( - ) CUSTOS VARIÁVEIS;MATERIAIS DE USO E CONSUMO;-R$ 63
+Em Jun, o grupo '( - ) CUSTOS VARIÁVEIS' registrou um valor de -R$ 63 referente ao item 'MATERIAIS DE USO E CONSUMO'.;Jun;( - ) CUSTOS VARIÁVEIS;MATERIAIS DE USO E CONSUMO;-R$ 63
+Em Dez, o grupo '( - ) CUSTOS VARIÁVEIS' registrou um valor de -R$ 118 referente ao item 'MATERIAIS DE USO E CONSUMO'.;Dez;( - ) CUSTOS VARIÁVEIS;MATERIAIS DE USO E CONSUMO;-R$ 118
+Em Abr, o grupo '( - ) CUSTOS VARIÁVEIS' registrou um valor de -R$ 14 referente ao item 'MATERIAIS DE LIMPEZA / HIGIENE'.;Abr;( - ) CUSTOS VARIÁVEIS;MATERIAIS DE LIMPEZA / HIGIENE;-R$ 14
+Em Jun, o grupo '( - ) CUSTOS VARIÁVEIS' registrou um valor de -R$ 24 referente ao item 'MATERIAIS DE LIMPEZA / HIGIENE'.;Jun;( - ) CUSTOS VARIÁVEIS;MATERIAIS DE LIMPEZA / HIGIENE;-R$ 24
+Em Ago, o grupo '( - ) CUSTOS VARIÁVEIS' registrou um valor de -R$ 33 referente ao item 'MATERIAIS DE LIMPEZA / HIGIENE'.;Ago;( - ) CUSTOS VARIÁVEIS;MATERIAIS DE LIMPEZA / HIGIENE;-R$ 33
+Em Jul, o grupo '( - ) CUSTOS VARIÁVEIS' registrou um valor de -R$ 118 referente ao item 'MATERIAIS DE LIMPEZA / HIGIENE'.;Jul;( - ) CUSTOS VARIÁVEIS;MATERIAIS DE LIMPEZA / HIGIENE;-R$ 118
+Em Mai, o grupo '( - ) CUSTOS VARIÁVEIS' registrou um valor de -R$ 200 referente ao item 'MATERIAIS DE LIMPEZA / HIGIENE'.;Mai;( - ) CUSTOS VARIÁVEIS;MATERIAIS DE LIMPEZA / HIGIENE;-R$ 200
+Em Nov, o grupo '( - ) CUSTOS VARIÁVEIS' registrou um valor de -R$ 726 referente ao item 'MATERIAIS DE LIMPEZA / HIGIENE'.;Nov;( - ) CUSTOS VARIÁVEIS;MATERIAIS DE LIMPEZA / HIGIENE;-R$ 726
+Em Set, o grupo '( - ) CUSTOS VARIÁVEIS' registrou um valor de -R$ 220 referente ao item 'LOCACAO DE MAQUINAS EQUIPAMENTOS'.;Set;( - ) CUSTOS VARIÁVEIS;LOCACAO DE MAQUINAS EQUIPAMENTOS;-R$ 220
+Em Ago, o grupo '( - ) CUSTOS VARIÁVEIS' registrou um valor de -R$ 550 referente ao item 'LOCACAO DE MAQUINAS EQUIPAMENTOS'.;Ago;( - ) CUSTOS VARIÁVEIS;LOCACAO DE MAQUINAS EQUIPAMENTOS;-R$ 550
+Em Fev, o grupo '( - ) UTILIDADES E SERVIÇOS' registrou um valor de -R$ 250 referente ao item 'AR CONDICIONADO'.;Fev;( - ) UTILIDADES E SERVIÇOS;AR CONDICIONADO;-R$ 250
+Em Abr, o grupo '( - ) UTILIDADES E SERVIÇOS' registrou um valor de -R$ 300 referente ao item 'AR CONDICIONADO'.;Abr;( - ) UTILIDADES E SERVIÇOS;AR CONDICIONADO;-R$ 300
+Em Mai, o grupo '( - ) UTILIDADES E SERVIÇOS' registrou um valor de -R$ 300 referente ao item 'AR CONDICIONADO'.;Mai;( - ) UTILIDADES E SERVIÇOS;AR CONDICIONADO;-R$ 300
+Em Mar, o grupo '( - ) UTILIDADES E SERVIÇOS' registrou um valor de -R$ 320 referente ao item 'AR CONDICIONADO'.;Mar;( - ) UTILIDADES E SERVIÇOS;AR CONDICIONADO;-R$ 320
+Em Dez, o grupo '( - ) DESPESAS ADMINISTRATIVAS' registrou um valor de -R$ 137 referente ao item 'DEPESAS VIAGEM/HOSPEDAGEM/ALIMENTAÇÃO'.;Dez;( - ) DESPESAS ADMINISTRATIVAS;DEPESAS VIAGEM/HOSPEDAGEM/ALIMENTAÇÃO;-R$ 137
+Em Ago, o grupo '( - ) DESPESAS ADMINISTRATIVAS' registrou um valor de -R$ 358 referente ao item 'DEPESAS VIAGEM/HOSPEDAGEM/ALIMENTAÇÃO'.;Ago;( - ) DESPESAS ADMINISTRATIVAS;DEPESAS VIAGEM/HOSPEDAGEM/ALIMENTAÇÃO;-R$ 358
+Em Set, o grupo '( - ) DESPESAS ADMINISTRATIVAS' registrou um valor de -R$ 358 referente ao item 'DEPESAS VIAGEM/HOSPEDAGEM/ALIMENTAÇÃO'.;Set;( - ) DESPESAS ADMINISTRATIVAS;DEPESAS VIAGEM/HOSPEDAGEM/ALIMENTAÇÃO;-R$ 358
+Em Nov, o grupo '( - ) DESPESAS ADMINISTRATIVAS' registrou um valor de -R$ 684 referente ao item 'DEPESAS VIAGEM/HOSPEDAGEM/ALIMENTAÇÃO'.;Nov;( - ) DESPESAS ADMINISTRATIVAS;DEPESAS VIAGEM/HOSPEDAGEM/ALIMENTAÇÃO;-R$ 684
+Em Jul, o grupo '( - ) DESPESAS ADMINISTRATIVAS' registrou um valor de -R$ 1.074 referente ao item 'DEPESAS VIAGEM/HOSPEDAGEM/ALIMENTAÇÃO'.;Jul;( - ) DESPESAS ADMINISTRATIVAS;DEPESAS VIAGEM/HOSPEDAGEM/ALIMENTAÇÃO;-R$ 1.074
+Em Out, o grupo '( - ) DESPESAS ADMINISTRATIVAS' registrou um valor de -R$ 4.416 referente ao item 'DEPESAS VIAGEM/HOSPEDAGEM/ALIMENTAÇÃO'.;Out;( - ) DESPESAS ADMINISTRATIVAS;DEPESAS VIAGEM/HOSPEDAGEM/ALIMENTAÇÃO;-R$ 4.416
+Em Mar, o grupo '( - ) CUSTOS VARIÁVEIS' registrou um valor de -R$ 240 referente ao item 'SERVIÇOS DE LIMPEZA'.;Mar;( - ) CUSTOS VARIÁVEIS;SERVIÇOS DE LIMPEZA;-R$ 240
+Em Abr, o grupo '( - ) CUSTOS VARIÁVEIS' registrou um valor de -R$ 360 referente ao item 'SERVIÇOS DE LIMPEZA'.;Abr;( - ) CUSTOS VARIÁVEIS;SERVIÇOS DE LIMPEZA;-R$ 360
+Em Fev, o grupo '( - ) CUSTOS VARIÁVEIS' registrou um valor de -R$ 10.000 referente ao item 'SERVIÇOS DE LIMPEZA'.;Fev;( - ) CUSTOS VARIÁVEIS;SERVIÇOS DE LIMPEZA;-R$ 10.000
+Em Out, o grupo '( - ) SERVIÇOS DE TERCEIROS' registrou um valor de -R$ 1.800 referente ao item 'HONORÁRIOS ADVOCATICIOS'.;Out;( - ) SERVIÇOS DE TERCEIROS;HONORÁRIOS ADVOCATICIOS;-R$ 1.800
+Em Dez, o grupo '( - ) SERVIÇOS DE TERCEIROS' registrou um valor de -R$ 1.800 referente ao item 'HONORÁRIOS ADVOCATICIOS'.;Dez;( - ) SERVIÇOS DE TERCEIROS;HONORÁRIOS ADVOCATICIOS;-R$ 1.800
+Em Nov, o grupo '( - ) SERVIÇOS DE TERCEIROS' registrou um valor de -R$ 1.800 referente ao item 'HONORÁRIOS ADVOCATICIOS'.;Nov;( - ) SERVIÇOS DE TERCEIROS;HONORÁRIOS ADVOCATICIOS;-R$ 1.800
+Em Jun, o grupo '( - ) SERVIÇOS DE TERCEIROS' registrou um valor de -R$ 1.800 referente ao item 'HONORÁRIOS ADVOCATICIOS'.;Jun;( - ) SERVIÇOS DE TERCEIROS;HONORÁRIOS ADVOCATICIOS;-R$ 1.800
+Em Mai, o grupo '( - ) SERVIÇOS DE TERCEIROS' registrou um valor de -R$ 1.800 referente ao item 'HONORÁRIOS ADVOCATICIOS'.;Mai;( - ) SERVIÇOS DE TERCEIROS;HONORÁRIOS ADVOCATICIOS;-R$ 1.800
+Em Set, o grupo '( - ) SERVIÇOS DE TERCEIROS' registrou um valor de -R$ 1.800 referente ao item 'HONORÁRIOS ADVOCATICIOS'.;Set;( - ) SERVIÇOS DE TERCEIROS;HONORÁRIOS ADVOCATICIOS;-R$ 1.800
+Em Abr, o grupo '( - ) SERVIÇOS DE TERCEIROS' registrou um valor de -R$ 1.501 referente ao item 'SISTEMAS E SOFTWARES'.;Abr;( - ) SERVIÇOS DE TERCEIROS;SISTEMAS E SOFTWARES;-R$ 1.501
+Em Mai, o grupo '( - ) SERVIÇOS DE TERCEIROS' registrou um valor de -R$ 2.083 referente ao item 'SISTEMAS E SOFTWARES'.;Mai;( - ) SERVIÇOS DE TERCEIROS;SISTEMAS E SOFTWARES;-R$ 2.083
+Em Mar, o grupo '( - ) SERVIÇOS DE TERCEIROS' registrou um valor de -R$ 2.302 referente ao item 'SISTEMAS E SOFTWARES'.;Mar;( - ) SERVIÇOS DE TERCEIROS;SISTEMAS E SOFTWARES;-R$ 2.302
+Em Nov, o grupo '( - ) SERVIÇOS DE TERCEIROS' registrou um valor de -R$ 2.602 referente ao item 'SISTEMAS E SOFTWARES'.;Nov;( - ) SERVIÇOS DE TERCEIROS;SISTEMAS E SOFTWARES;-R$ 2.602
+Em Out, o grupo '( - ) SERVIÇOS DE TERCEIROS' registrou um valor de -R$ 4.266 referente ao item 'SISTEMAS E SOFTWARES'.;Out;( - ) SERVIÇOS DE TERCEIROS;SISTEMAS E SOFTWARES;-R$ 4.266
+Em Jul, o grupo '( - ) SERVIÇOS DE TERCEIROS' registrou um valor de -R$ 5.412 referente ao item 'SISTEMAS E SOFTWARES'.;Jul;( - ) SERVIÇOS DE TERCEIROS;SISTEMAS E SOFTWARES;-R$ 5.412
+Em Ago, o grupo '( - ) SERVIÇOS DE TERCEIROS' registrou um valor de -R$ 5.790 referente ao item 'SISTEMAS E SOFTWARES'.;Ago;( - ) SERVIÇOS DE TERCEIROS;SISTEMAS E SOFTWARES;-R$ 5.790
+Em Set, o grupo '( - ) SERVIÇOS DE TERCEIROS' registrou um valor de -R$ 5.871 referente ao item 'SISTEMAS E SOFTWARES'.;Set;( - ) SERVIÇOS DE TERCEIROS;SISTEMAS E SOFTWARES;-R$ 5.871
+Em Dez, o grupo '( - ) SERVIÇOS DE TERCEIROS' registrou um valor de -R$ 7.355 referente ao item 'SISTEMAS E SOFTWARES'.;Dez;( - ) SERVIÇOS DE TERCEIROS;SISTEMAS E SOFTWARES;-R$ 7.355
+Em Jun, o grupo '( - ) SERVIÇOS DE TERCEIROS' registrou um valor de -R$ 9.950 referente ao item 'SISTEMAS E SOFTWARES'.;Jun;( - ) SERVIÇOS DE TERCEIROS;SISTEMAS E SOFTWARES;-R$ 9.950
+Em Jul, o grupo '( - ) SERVIÇOS DE TERCEIROS' registrou um valor de -R$ 100 referente ao item 'SERVIÇOS DE MONITORAMENTO E SEGURANÇA'.;Jul;( - ) SERVIÇOS DE TERCEIROS;SERVIÇOS DE MONITORAMENTO E SEGURANÇA;-R$ 100
+Em Mar, o grupo '( - ) SERVIÇOS DE TERCEIROS' registrou um valor de -R$ 156 referente ao item 'SERVIÇOS DE MONITORAMENTO E SEGURANÇA'.;Mar;( - ) SERVIÇOS DE TERCEIROS;SERVIÇOS DE MONITORAMENTO E SEGURANÇA;-R$ 156
+Em Abr, o grupo '( - ) SERVIÇOS DE TERCEIROS' registrou um valor de -R$ 157 referente ao item 'SERVIÇOS DE MONITORAMENTO E SEGURANÇA'.;Abr;( - ) SERVIÇOS DE TERCEIROS;SERVIÇOS DE MONITORAMENTO E SEGURANÇA;-R$ 157
+Em Fev, o grupo '( - ) SERVIÇOS DE TERCEIROS' registrou um valor de -R$ 280 referente ao item 'SERVIÇOS DE MONITORAMENTO E SEGURANÇA'.;Fev;( - ) SERVIÇOS DE TERCEIROS;SERVIÇOS DE MONITORAMENTO E SEGURANÇA;-R$ 280
+Em Mai, o grupo '( - ) SERVIÇOS DE TERCEIROS' registrou um valor de -R$ 2.500 referente ao item 'CONSULTORIA FINANCEIRA'.;Mai;( - ) SERVIÇOS DE TERCEIROS;CONSULTORIA FINANCEIRA;-R$ 2.500
+Em Jan, o grupo '( - ) SERVIÇOS DE TERCEIROS' registrou um valor de -R$ 2.500 referente ao item 'CONSULTORIA FINANCEIRA'.;Jan;( - ) SERVIÇOS DE TERCEIROS;CONSULTORIA FINANCEIRA;-R$ 2.500
+Em Fev, o grupo '( - ) SERVIÇOS DE TERCEIROS' registrou um valor de -R$ 2.500 referente ao item 'CONSULTORIA FINANCEIRA'.;Fev;( - ) SERVIÇOS DE TERCEIROS;CONSULTORIA FINANCEIRA;-R$ 2.500
+Em Mar, o grupo '( - ) SERVIÇOS DE TERCEIROS' registrou um valor de -R$ 2.500 referente ao item 'CONSULTORIA FINANCEIRA'.;Mar;( - ) SERVIÇOS DE TERCEIROS;CONSULTORIA FINANCEIRA;-R$ 2.500
+Em Dez, o grupo '( - ) SERVIÇOS DE TERCEIROS' registrou um valor de -R$ 198.000 referente ao item 'CONSULTORIA FINANCEIRA'.;Dez;( - ) SERVIÇOS DE TERCEIROS;CONSULTORIA FINANCEIRA;-R$ 198.000
+Em Fev, o grupo '( - ) CUSTOS VARIÁVEIS' registrou um valor de -R$ 10 referente ao item 'FRETES E ESTACIONAMENTO'.;Fev;( - ) CUSTOS VARIÁVEIS;FRETES E ESTACIONAMENTO;-R$ 10
+Em Abr, o grupo '( - ) CUSTOS VARIÁVEIS' registrou um valor de -R$ 44 referente ao item 'FRETES E ESTACIONAMENTO'.;Abr;( - ) CUSTOS VARIÁVEIS;FRETES E ESTACIONAMENTO;-R$ 44
+Em Mai, o grupo '( - ) CUSTOS VARIÁVEIS' registrou um valor de -R$ 49 referente ao item 'FRETES E ESTACIONAMENTO'.;Mai;( - ) CUSTOS VARIÁVEIS;FRETES E ESTACIONAMENTO;-R$ 49
+Em Jan, o grupo '( - ) CUSTOS VARIÁVEIS' registrou um valor de -R$ 69 referente ao item 'FRETES E ESTACIONAMENTO'.;Jan;( - ) CUSTOS VARIÁVEIS;FRETES E ESTACIONAMENTO;-R$ 69
+Em Set, o grupo '( - ) CUSTOS VARIÁVEIS' registrou um valor de -R$ 197 referente ao item 'FRETES E ESTACIONAMENTO'.;Set;( - ) CUSTOS VARIÁVEIS;FRETES E ESTACIONAMENTO;-R$ 197
+Em Jul, o grupo '( - ) CUSTOS VARIÁVEIS' registrou um valor de -R$ 291 referente ao item 'FRETES E ESTACIONAMENTO'.;Jul;( - ) CUSTOS VARIÁVEIS;FRETES E ESTACIONAMENTO;-R$ 291
+Em Out, o grupo '( - ) CUSTOS VARIÁVEIS' registrou um valor de -R$ 300 referente ao item 'FRETES E ESTACIONAMENTO'.;Out;( - ) CUSTOS VARIÁVEIS;FRETES E ESTACIONAMENTO;-R$ 300
+Em Ago, o grupo '( - ) CUSTOS VARIÁVEIS' registrou um valor de -R$ 516 referente ao item 'FRETES E ESTACIONAMENTO'.;Ago;( - ) CUSTOS VARIÁVEIS;FRETES E ESTACIONAMENTO;-R$ 516
+Em Ago, o grupo '( - ) SERVIÇOS DE TERCEIROS' registrou um valor de -R$ 11 referente ao item 'SERVICOS TERCEIROS PF/PJ'.;Ago;( - ) SERVIÇOS DE TERCEIROS;SERVICOS TERCEIROS PF/PJ;-R$ 11
+Em Jan, o grupo '( - ) SERVIÇOS DE TERCEIROS' registrou um valor de -R$ 1.976 referente ao item 'SERVICOS TERCEIROS PF/PJ'.;Jan;( - ) SERVIÇOS DE TERCEIROS;SERVICOS TERCEIROS PF/PJ;-R$ 1.976
+Em Abr, o grupo '( - ) SERVIÇOS DE TERCEIROS' registrou um valor de -R$ 1.976 referente ao item 'SERVICOS TERCEIROS PF/PJ'.;Abr;( - ) SERVIÇOS DE TERCEIROS;SERVICOS TERCEIROS PF/PJ;-R$ 1.976
+Em Mar, o grupo '( - ) SERVIÇOS DE TERCEIROS' registrou um valor de -R$ 2.056 referente ao item 'SERVICOS TERCEIROS PF/PJ'.;Mar;( - ) SERVIÇOS DE TERCEIROS;SERVICOS TERCEIROS PF/PJ;-R$ 2.056
+Em Fev, o grupo '( - ) SERVIÇOS DE TERCEIROS' registrou um valor de -R$ 2.276 referente ao item 'SERVICOS TERCEIROS PF/PJ'.;Fev;( - ) SERVIÇOS DE TERCEIROS;SERVICOS TERCEIROS PF/PJ;-R$ 2.276
+Em Dez, o grupo '( - ) SERVIÇOS DE TERCEIROS' registrou um valor de -R$ 4.500 referente ao item 'SERVICOS TERCEIROS PF/PJ'.;Dez;( - ) SERVIÇOS DE TERCEIROS;SERVICOS TERCEIROS PF/PJ;-R$ 4.500
+Em Jul, o grupo '( - ) SERVIÇOS DE TERCEIROS' registrou um valor de -R$ 4.600 referente ao item 'SERVICOS TERCEIROS PF/PJ'.;Jul;( - ) SERVIÇOS DE TERCEIROS;SERVICOS TERCEIROS PF/PJ;-R$ 4.600
+Em Set, o grupo '( - ) SERVIÇOS DE TERCEIROS' registrou um valor de -R$ 6.329 referente ao item 'SERVICOS TERCEIROS PF/PJ'.;Set;( - ) SERVIÇOS DE TERCEIROS;SERVICOS TERCEIROS PF/PJ;-R$ 6.329
+Em Nov, o grupo '( - ) SERVIÇOS DE TERCEIROS' registrou um valor de -R$ 12.250 referente ao item 'SERVICOS TERCEIROS PF/PJ'.;Nov;( - ) SERVIÇOS DE TERCEIROS;SERVICOS TERCEIROS PF/PJ;-R$ 12.250
+Em Dez, o grupo 'nan' registrou um valor de -R$ 3.750 referente ao item 'CONSULTORIA EXPASAO'.;Dez;;CONSULTORIA EXPASAO;-R$ 3.750
+Em Out, o grupo 'nan' registrou um valor de -R$ 3.750 referente ao item 'CONSULTORIA EXPASAO'.;Out;;CONSULTORIA EXPASAO;-R$ 3.750
+Em Set, o grupo 'nan' registrou um valor de -R$ 3.750 referente ao item 'CONSULTORIA EXPASAO'.;Set;;CONSULTORIA EXPASAO;-R$ 3.750
+Em Abr, o grupo 'nan' registrou um valor de -R$ 3.750 referente ao item 'CONSULTORIA EXPASAO'.;Abr;;CONSULTORIA EXPASAO;-R$ 3.750
+Em Nov, o grupo 'nan' registrou um valor de -R$ 3.750 referente ao item 'CONSULTORIA EXPASAO'.;Nov;;CONSULTORIA EXPASAO;-R$ 3.750
+Em Mar, o grupo 'nan' registrou um valor de -R$ 3.750 referente ao item 'CONSULTORIA EXPASAO'.;Mar;;CONSULTORIA EXPASAO;-R$ 3.750
+Em Ago, o grupo 'nan' registrou um valor de -R$ 3.750 referente ao item 'CONSULTORIA EXPASAO'.;Ago;;CONSULTORIA EXPASAO;-R$ 3.750
+Em Jul, o grupo 'nan' registrou um valor de -R$ 3.750 referente ao item 'CONSULTORIA EXPASAO'.;Jul;;CONSULTORIA EXPASAO;-R$ 3.750
+Em Mai, o grupo 'nan' registrou um valor de -R$ 4.700 referente ao item 'CONSULTORIA EXPASAO'.;Mai;;CONSULTORIA EXPASAO;-R$ 4.700
+Em Jun, o grupo 'nan' registrou um valor de -R$ 8.450 referente ao item 'CONSULTORIA EXPASAO'.;Jun;;CONSULTORIA EXPASAO;-R$ 8.450
+Em Fev, o grupo '( - ) DESPESAS ADMINISTRATIVAS' registrou um valor de -R$ 271 referente ao item 'ASSINATURAS E ANUIDADES'.;Fev;( - ) DESPESAS ADMINISTRATIVAS;ASSINATURAS E ANUIDADES;-R$ 271
+Em Mar, o grupo '( - ) DESPESAS ADMINISTRATIVAS' registrou um valor de -R$ 277 referente ao item 'ASSINATURAS E ANUIDADES'.;Mar;( - ) DESPESAS ADMINISTRATIVAS;ASSINATURAS E ANUIDADES;-R$ 277
+Em Abr, o grupo '( - ) DESPESAS ADMINISTRATIVAS' registrou um valor de -R$ 373 referente ao item 'ASSINATURAS E ANUIDADES'.;Abr;( - ) DESPESAS ADMINISTRATIVAS;ASSINATURAS E ANUIDADES;-R$ 373
+Em Mai, o grupo '( - ) DESPESAS ADMINISTRATIVAS' registrou um valor de -R$ 634 referente ao item 'ASSINATURAS E ANUIDADES'.;Mai;( - ) DESPESAS ADMINISTRATIVAS;ASSINATURAS E ANUIDADES;-R$ 634
+Em Ago, o grupo '( - ) DESPESAS ADMINISTRATIVAS' registrou um valor de -R$ 926 referente ao item 'ASSINATURAS E ANUIDADES'.;Ago;( - ) DESPESAS ADMINISTRATIVAS;ASSINATURAS E ANUIDADES;-R$ 926
+Em Dez, o grupo '( - ) DESPESAS ADMINISTRATIVAS' registrou um valor de -R$ 1.144 referente ao item 'ASSINATURAS E ANUIDADES'.;Dez;( - ) DESPESAS ADMINISTRATIVAS;ASSINATURAS E ANUIDADES;-R$ 1.144
+Em Jun, o grupo '( - ) DESPESAS ADMINISTRATIVAS' registrou um valor de -R$ 2.630 referente ao item 'ASSINATURAS E ANUIDADES'.;Jun;( - ) DESPESAS ADMINISTRATIVAS;ASSINATURAS E ANUIDADES;-R$ 2.630
+Em Jul, o grupo '( - ) DESPESAS ADMINISTRATIVAS' registrou um valor de -R$ 3.398 referente ao item 'ASSINATURAS E ANUIDADES'.;Jul;( - ) DESPESAS ADMINISTRATIVAS;ASSINATURAS E ANUIDADES;-R$ 3.398
+Em Set, o grupo '( - ) DESPESAS ADMINISTRATIVAS' registrou um valor de -R$ 5.895 referente ao item 'ASSINATURAS E ANUIDADES'.;Set;( - ) DESPESAS ADMINISTRATIVAS;ASSINATURAS E ANUIDADES;-R$ 5.895
+Em Out, o grupo '( - ) DESPESAS ADMINISTRATIVAS' registrou um valor de -R$ 7.117 referente ao item 'ASSINATURAS E ANUIDADES'.;Out;( - ) DESPESAS ADMINISTRATIVAS;ASSINATURAS E ANUIDADES;-R$ 7.117
+Em Nov, o grupo '( - ) DESPESAS ADMINISTRATIVAS' registrou um valor de -R$ 7.322 referente ao item 'ASSINATURAS E ANUIDADES'.;Nov;( - ) DESPESAS ADMINISTRATIVAS;ASSINATURAS E ANUIDADES;-R$ 7.322
+Em Fev, o grupo '( - ) DESPESAS ADMINISTRATIVAS' registrou um valor de -R$ 179 referente ao item 'BENS DE PEQUENO VALOR'.;Fev;( - ) DESPESAS ADMINISTRATIVAS;BENS DE PEQUENO VALOR;-R$ 179
+Em Mar, o grupo '( - ) DESPESAS ADMINISTRATIVAS' registrou um valor de -R$ 1.236 referente ao item 'BENS DE PEQUENO VALOR'.;Mar;( - ) DESPESAS ADMINISTRATIVAS;BENS DE PEQUENO VALOR;-R$ 1.236
+Em Mar, o grupo '( - ) DESPESAS ADMINISTRATIVAS' registrou um valor de -R$ 71 referente ao item 'DESPESAS COM UBER/POP/INDRIVER'.;Mar;( - ) DESPESAS ADMINISTRATIVAS;DESPESAS COM UBER/POP/INDRIVER;-R$ 71
+Em Set, o grupo '( - ) DESPESAS ADMINISTRATIVAS' registrou um valor de -R$ 145 referente ao item 'DESPESAS COM UBER/POP/INDRIVER'.;Set;( - ) DESPESAS ADMINISTRATIVAS;DESPESAS COM UBER/POP/INDRIVER;-R$ 145
+Em Out, o grupo '( - ) DESPESAS ADMINISTRATIVAS' registrou um valor de -R$ 1.761 referente ao item 'DESPESAS COM UBER/POP/INDRIVER'.;Out;( - ) DESPESAS ADMINISTRATIVAS;DESPESAS COM UBER/POP/INDRIVER;-R$ 1.761
+Em Nov, o grupo '( - ) DESPESAS ADMINISTRATIVAS' registrou um valor de -R$ 2.781 referente ao item 'DESPESAS COM UBER/POP/INDRIVER'.;Nov;( - ) DESPESAS ADMINISTRATIVAS;DESPESAS COM UBER/POP/INDRIVER;-R$ 2.781
+Em Ago, o grupo '( - ) DESPESAS ADMINISTRATIVAS' registrou um valor de -R$ 3.051 referente ao item 'DESPESAS COM UBER/POP/INDRIVER'.;Ago;( - ) DESPESAS ADMINISTRATIVAS;DESPESAS COM UBER/POP/INDRIVER;-R$ 3.051
+Em Jan, o grupo '( - ) DESPESAS ADMINISTRATIVAS' registrou um valor de -R$ 3.192 referente ao item 'DESPESAS COM UBER/POP/INDRIVER'.;Jan;( - ) DESPESAS ADMINISTRATIVAS;DESPESAS COM UBER/POP/INDRIVER;-R$ 3.192
+Em Jul, o grupo '( - ) DESPESAS ADMINISTRATIVAS' registrou um valor de -R$ 3.501 referente ao item 'DESPESAS COM UBER/POP/INDRIVER'.;Jul;( - ) DESPESAS ADMINISTRATIVAS;DESPESAS COM UBER/POP/INDRIVER;-R$ 3.501
+Em Mai, o grupo '( - ) DESPESAS ADMINISTRATIVAS' registrou um valor de -R$ 4.282 referente ao item 'DESPESAS COM UBER/POP/INDRIVER'.;Mai;( - ) DESPESAS ADMINISTRATIVAS;DESPESAS COM UBER/POP/INDRIVER;-R$ 4.282
+Em Jun, o grupo '( - ) DESPESAS ADMINISTRATIVAS' registrou um valor de -R$ 4.293 referente ao item 'DESPESAS COM UBER/POP/INDRIVER'.;Jun;( - ) DESPESAS ADMINISTRATIVAS;DESPESAS COM UBER/POP/INDRIVER;-R$ 4.293
+Em Abr, o grupo '( - ) DESPESAS ADMINISTRATIVAS' registrou um valor de -R$ 4.463 referente ao item 'DESPESAS COM UBER/POP/INDRIVER'.;Abr;( - ) DESPESAS ADMINISTRATIVAS;DESPESAS COM UBER/POP/INDRIVER;-R$ 4.463
+Em Dez, o grupo '( - ) DESPESAS ADMINISTRATIVAS' registrou um valor de -R$ 4.901 referente ao item 'DESPESAS COM UBER/POP/INDRIVER'.;Dez;( - ) DESPESAS ADMINISTRATIVAS;DESPESAS COM UBER/POP/INDRIVER;-R$ 4.901
+Em Fev, o grupo '( - ) DESPESAS ADMINISTRATIVAS' registrou um valor de -R$ 7.609 referente ao item 'DESPESAS COM UBER/POP/INDRIVER'.;Fev;( - ) DESPESAS ADMINISTRATIVAS;DESPESAS COM UBER/POP/INDRIVER;-R$ 7.609
+Em Nov, o grupo '( - ) DESPESAS ADMINISTRATIVAS' registrou um valor de -R$ 2 referente ao item 'DESPESA POSTAL'.;Nov;( - ) DESPESAS ADMINISTRATIVAS;DESPESA POSTAL;-R$ 2
+Em Dez, o grupo '( - ) DESPESAS ADMINISTRATIVAS' registrou um valor de -R$ 2 referente ao item 'DESPESA POSTAL'.;Dez;( - ) DESPESAS ADMINISTRATIVAS;DESPESA POSTAL;-R$ 2
+Em Out, o grupo '( - ) DESPESAS ADMINISTRATIVAS' registrou um valor de -R$ 2 referente ao item 'DESPESA POSTAL'.;Out;( - ) DESPESAS ADMINISTRATIVAS;DESPESA POSTAL;-R$ 2
+Em Ago, o grupo '( - ) DESPESAS ADMINISTRATIVAS' registrou um valor de -R$ 39 referente ao item 'DESPESA POSTAL'.;Ago;( - ) DESPESAS ADMINISTRATIVAS;DESPESA POSTAL;-R$ 39
+Em Abr, o grupo '( - ) CUSTOS VARIÁVEIS' registrou um valor de -R$ 783 referente ao item 'FROTA - COMBUSTIVEL / MANUTENÇÃO'.;Abr;( - ) CUSTOS VARIÁVEIS;FROTA - COMBUSTIVEL / MANUTENÇÃO;-R$ 783
+Em Ago, o grupo '( - ) CUSTOS VARIÁVEIS' registrou um valor de -R$ 1.141 referente ao item 'FROTA - COMBUSTIVEL / MANUTENÇÃO'.;Ago;( - ) CUSTOS VARIÁVEIS;FROTA - COMBUSTIVEL / MANUTENÇÃO;-R$ 1.141
+Em Dez, o grupo '( - ) CUSTOS VARIÁVEIS' registrou um valor de -R$ 1.206 referente ao item 'FROTA - COMBUSTIVEL / MANUTENÇÃO'.;Dez;( - ) CUSTOS VARIÁVEIS;FROTA - COMBUSTIVEL / MANUTENÇÃO;-R$ 1.206
+Em Jun, o grupo '( - ) CUSTOS VARIÁVEIS' registrou um valor de -R$ 1.612 referente ao item 'FROTA - COMBUSTIVEL / MANUTENÇÃO'.;Jun;( - ) CUSTOS VARIÁVEIS;FROTA - COMBUSTIVEL / MANUTENÇÃO;-R$ 1.612
+Em Jan, o grupo '( - ) CUSTOS VARIÁVEIS' registrou um valor de -R$ 2.213 referente ao item 'FROTA - COMBUSTIVEL / MANUTENÇÃO'.;Jan;( - ) CUSTOS VARIÁVEIS;FROTA - COMBUSTIVEL / MANUTENÇÃO;-R$ 2.213
+Em Mar, o grupo '( - ) CUSTOS VARIÁVEIS' registrou um valor de -R$ 2.246 referente ao item 'FROTA - COMBUSTIVEL / MANUTENÇÃO'.;Mar;( - ) CUSTOS VARIÁVEIS;FROTA - COMBUSTIVEL / MANUTENÇÃO;-R$ 2.246
+Em Fev, o grupo '( - ) CUSTOS VARIÁVEIS' registrou um valor de -R$ 2.320 referente ao item 'FROTA - COMBUSTIVEL / MANUTENÇÃO'.;Fev;( - ) CUSTOS VARIÁVEIS;FROTA - COMBUSTIVEL / MANUTENÇÃO;-R$ 2.320
+Em Set, o grupo '( - ) CUSTOS VARIÁVEIS' registrou um valor de -R$ 3.094 referente ao item 'FROTA - COMBUSTIVEL / MANUTENÇÃO'.;Set;( - ) CUSTOS VARIÁVEIS;FROTA - COMBUSTIVEL / MANUTENÇÃO;-R$ 3.094
+Em Out, o grupo '( - ) CUSTOS VARIÁVEIS' registrou um valor de -R$ 3.267 referente ao item 'FROTA - COMBUSTIVEL / MANUTENÇÃO'.;Out;( - ) CUSTOS VARIÁVEIS;FROTA - COMBUSTIVEL / MANUTENÇÃO;-R$ 3.267
+Em Nov, o grupo '( - ) CUSTOS VARIÁVEIS' registrou um valor de -R$ 4.290 referente ao item 'FROTA - COMBUSTIVEL / MANUTENÇÃO'.;Nov;( - ) CUSTOS VARIÁVEIS;FROTA - COMBUSTIVEL / MANUTENÇÃO;-R$ 4.290
+Em Mai, o grupo '( - ) CUSTOS VARIÁVEIS' registrou um valor de -R$ 40.773 referente ao item 'FROTA - COMBUSTIVEL / MANUTENÇÃO'.;Mai;( - ) CUSTOS VARIÁVEIS;FROTA - COMBUSTIVEL / MANUTENÇÃO;-R$ 40.773
+Em Mar, o grupo '( = ) FLUXO DE CAIXA LIVRE PARA SÓCIOS' registrou um valor de -R$ 90 referente ao item 'BENFEITORIAS'.;Mar;( = ) FLUXO DE CAIXA LIVRE PARA SÓCIOS;BENFEITORIAS;-R$ 90
+Em Fev, o grupo '( = ) FLUXO DE CAIXA LIVRE PARA SÓCIOS' registrou um valor de -R$ 185 referente ao item 'BENFEITORIAS'.;Fev;( = ) FLUXO DE CAIXA LIVRE PARA SÓCIOS;BENFEITORIAS;-R$ 185
+Em Dez, o grupo '( = ) FLUXO DE CAIXA LIVRE PARA SÓCIOS' registrou um valor de -R$ 1.031 referente ao item 'BENFEITORIAS'.;Dez;( = ) FLUXO DE CAIXA LIVRE PARA SÓCIOS;BENFEITORIAS;-R$ 1.031
+Em Jul, o grupo '( = ) FLUXO DE CAIXA LIVRE PARA SÓCIOS' registrou um valor de -R$ 1.419 referente ao item 'BENFEITORIAS'.;Jul;( = ) FLUXO DE CAIXA LIVRE PARA SÓCIOS;BENFEITORIAS;-R$ 1.419
+Em Nov, o grupo '( = ) FLUXO DE CAIXA LIVRE PARA SÓCIOS' registrou um valor de -R$ 1.902 referente ao item 'BENFEITORIAS'.;Nov;( = ) FLUXO DE CAIXA LIVRE PARA SÓCIOS;BENFEITORIAS;-R$ 1.902
+Em Out, o grupo '( = ) FLUXO DE CAIXA LIVRE PARA SÓCIOS' registrou um valor de -R$ 3.800 referente ao item 'BENFEITORIAS'.;Out;( = ) FLUXO DE CAIXA LIVRE PARA SÓCIOS;BENFEITORIAS;-R$ 3.800
+Em Set, o grupo '( = ) FLUXO DE CAIXA LIVRE PARA SÓCIOS' registrou um valor de -R$ 5.442 referente ao item 'BENFEITORIAS'.;Set;( = ) FLUXO DE CAIXA LIVRE PARA SÓCIOS;BENFEITORIAS;-R$ 5.442
+Em Jan, o grupo '( = ) FLUXO DE CAIXA LIVRE PARA SÓCIOS' registrou um valor de -R$ 16.382 referente ao item 'BENFEITORIAS'.;Jan;( = ) FLUXO DE CAIXA LIVRE PARA SÓCIOS;BENFEITORIAS;-R$ 16.382
+Em Mai, o grupo '( = ) FLUXO DE CAIXA LIVRE PARA SÓCIOS' registrou um valor de -R$ 16.739 referente ao item 'BENFEITORIAS'.;Mai;( = ) FLUXO DE CAIXA LIVRE PARA SÓCIOS;BENFEITORIAS;-R$ 16.739
+Em Ago, o grupo '( = ) FLUXO DE CAIXA LIVRE PARA SÓCIOS' registrou um valor de -R$ 24.295 referente ao item 'BENFEITORIAS'.;Ago;( = ) FLUXO DE CAIXA LIVRE PARA SÓCIOS;BENFEITORIAS;-R$ 24.295
+Em Ago, o grupo '( - ) DEDUÇÕES SOBRE RECEITA' registrou um valor de -R$ 188 referente ao item 'BRINDES E CORTESIAS'.;Ago;( - ) DEDUÇÕES SOBRE RECEITA;BRINDES E CORTESIAS;-R$ 188
+Em Dez, o grupo '( - ) DESPESAS ADMINISTRATIVAS' registrou um valor de -R$ 340 referente ao item 'EVENTOS'.;Dez;( - ) DESPESAS ADMINISTRATIVAS;EVENTOS;-R$ 340
+Em Jul, o grupo '( - ) DESPESAS ADMINISTRATIVAS' registrou um valor de -R$ 13.500 referente ao item 'EVENTOS'.;Jul;( - ) DESPESAS ADMINISTRATIVAS;EVENTOS;-R$ 13.500
+Em Nov, o grupo '( - ) DESPESAS ADMINISTRATIVAS' registrou um valor de -R$ 28.246 referente ao item 'EVENTOS'.;Nov;( - ) DESPESAS ADMINISTRATIVAS;EVENTOS;-R$ 28.246
+Em Mai, o grupo '( - ) DEDUÇÕES SOBRE RECEITA' registrou um valor de -R$ 272 referente ao item 'CORTESIA - ANIVERSARIO'.;Mai;( - ) DEDUÇÕES SOBRE RECEITA;CORTESIA - ANIVERSARIO;-R$ 272
+Em Jul, o grupo '( - ) IMPOSTOS SOBRE RECEITA' registrou um valor de -R$ 1.901 referente ao item 'IR RETIDO NA FONTE'.;Jul;( - ) IMPOSTOS SOBRE RECEITA;IR RETIDO NA FONTE;-R$ 1.901
+Em Mar, o grupo '( - ) UTILIDADES E SERVIÇOS' registrou um valor de -R$ 18 referente ao item 'TAXAS E REGISTROS'.;Mar;( - ) UTILIDADES E SERVIÇOS;TAXAS E REGISTROS;-R$ 18
+Em Mai, o grupo '( - ) UTILIDADES E SERVIÇOS' registrou um valor de -R$ 129 referente ao item 'TAXAS E REGISTROS'.;Mai;( - ) UTILIDADES E SERVIÇOS;TAXAS E REGISTROS;-R$ 129
+Em Abr, o grupo '( - ) UTILIDADES E SERVIÇOS' registrou um valor de -R$ 130 referente ao item 'TAXAS E REGISTROS'.;Abr;( - ) UTILIDADES E SERVIÇOS;TAXAS E REGISTROS;-R$ 130
+Em Jun, o grupo '( - ) UTILIDADES E SERVIÇOS' registrou um valor de -R$ 271 referente ao item 'TAXAS E REGISTROS'.;Jun;( - ) UTILIDADES E SERVIÇOS;TAXAS E REGISTROS;-R$ 271
+Em Jul, o grupo '( - ) UTILIDADES E SERVIÇOS' registrou um valor de -R$ 298 referente ao item 'TAXAS E REGISTROS'.;Jul;( - ) UTILIDADES E SERVIÇOS;TAXAS E REGISTROS;-R$ 298
+Em Ago, o grupo '( - ) UTILIDADES E SERVIÇOS' registrou um valor de -R$ 443 referente ao item 'TAXAS E REGISTROS'.;Ago;( - ) UTILIDADES E SERVIÇOS;TAXAS E REGISTROS;-R$ 443
+Em Set, o grupo '( - ) UTILIDADES E SERVIÇOS' registrou um valor de -R$ 1.419 referente ao item 'TAXAS E REGISTROS'.;Set;( - ) UTILIDADES E SERVIÇOS;TAXAS E REGISTROS;-R$ 1.419
+Em Nov, o grupo '( - ) UTILIDADES E SERVIÇOS' registrou um valor de -R$ 1.491 referente ao item 'TAXAS E REGISTROS'.;Nov;( - ) UTILIDADES E SERVIÇOS;TAXAS E REGISTROS;-R$ 1.491
+Em Out, o grupo '( - ) UTILIDADES E SERVIÇOS' registrou um valor de -R$ 1.859 referente ao item 'TAXAS E REGISTROS'.;Out;( - ) UTILIDADES E SERVIÇOS;TAXAS E REGISTROS;-R$ 1.859
+Em Abr, o grupo '( - ) UTILIDADES E SERVIÇOS' registrou um valor de -R$ 608 referente ao item 'IPVA'.;Abr;( - ) UTILIDADES E SERVIÇOS;IPVA;-R$ 608
+Em Ago, o grupo '( - ) UTILIDADES E SERVIÇOS' registrou um valor de -R$ 2.558 referente ao item 'IPVA'.;Ago;( - ) UTILIDADES E SERVIÇOS;IPVA;-R$ 2.558
+Em Out, o grupo '( - ) UTILIDADES E SERVIÇOS' registrou um valor de -R$ 672 referente ao item 'IPTU/ITU'.;Out;( - ) UTILIDADES E SERVIÇOS;IPTU/ITU;-R$ 672
+Em Dez, o grupo '( - ) UTILIDADES E SERVIÇOS' registrou um valor de -R$ 672 referente ao item 'IPTU/ITU'.;Dez;( - ) UTILIDADES E SERVIÇOS;IPTU/ITU;-R$ 672
+Em Nov, o grupo '( - ) UTILIDADES E SERVIÇOS' registrou um valor de -R$ 672 referente ao item 'IPTU/ITU'.;Nov;( - ) UTILIDADES E SERVIÇOS;IPTU/ITU;-R$ 672
+Em Ago, o grupo '( - ) UTILIDADES E SERVIÇOS' registrou um valor de -R$ 672 referente ao item 'IPTU/ITU'.;Ago;( - ) UTILIDADES E SERVIÇOS;IPTU/ITU;-R$ 672
+Em Jul, o grupo '( - ) UTILIDADES E SERVIÇOS' registrou um valor de -R$ 672 referente ao item 'IPTU/ITU'.;Jul;( - ) UTILIDADES E SERVIÇOS;IPTU/ITU;-R$ 672
+Em Set, o grupo '( - ) UTILIDADES E SERVIÇOS' registrou um valor de -R$ 672 referente ao item 'IPTU/ITU'.;Set;( - ) UTILIDADES E SERVIÇOS;IPTU/ITU;-R$ 672
+Em Dez, o grupo '( - ) MARKETING / VENDAS / RESERVAS' registrou um valor de -R$ 3.000 referente ao item 'ASSESSORIAS EXTERNAS'.;Dez;( - ) MARKETING / VENDAS / RESERVAS;ASSESSORIAS EXTERNAS;-R$ 3.000
+Em Mai, o grupo '( - ) MARKETING / VENDAS / RESERVAS' registrou um valor de -R$ 50 referente ao item 'COMUNICAÇÃO VISUAL E AUDIOVISUAL'.;Mai;( - ) MARKETING / VENDAS / RESERVAS;COMUNICAÇÃO VISUAL E AUDIOVISUAL;-R$ 50
+Em Nov, o grupo '( - ) MARKETING / VENDAS / RESERVAS' registrou um valor de -R$ 80 referente ao item 'COMUNICAÇÃO VISUAL E AUDIOVISUAL'.;Nov;( - ) MARKETING / VENDAS / RESERVAS;COMUNICAÇÃO VISUAL E AUDIOVISUAL;-R$ 80
+Em Dez, o grupo '( - ) MARKETING / VENDAS / RESERVAS' registrou um valor de -R$ 80 referente ao item 'COMUNICAÇÃO VISUAL E AUDIOVISUAL'.;Dez;( - ) MARKETING / VENDAS / RESERVAS;COMUNICAÇÃO VISUAL E AUDIOVISUAL;-R$ 80
+Em Jul, o grupo '( - ) MARKETING / VENDAS / RESERVAS' registrou um valor de -R$ 80 referente ao item 'COMUNICAÇÃO VISUAL E AUDIOVISUAL'.;Jul;( - ) MARKETING / VENDAS / RESERVAS;COMUNICAÇÃO VISUAL E AUDIOVISUAL;-R$ 80
+Em Mar, o grupo '( - ) MARKETING / VENDAS / RESERVAS' registrou um valor de -R$ 132 referente ao item 'COMUNICAÇÃO VISUAL E AUDIOVISUAL'.;Mar;( - ) MARKETING / VENDAS / RESERVAS;COMUNICAÇÃO VISUAL E AUDIOVISUAL;-R$ 132
+Em Ago, o grupo '( - ) MARKETING / VENDAS / RESERVAS' registrou um valor de -R$ 199 referente ao item 'COMUNICAÇÃO VISUAL E AUDIOVISUAL'.;Ago;( - ) MARKETING / VENDAS / RESERVAS;COMUNICAÇÃO VISUAL E AUDIOVISUAL;-R$ 199
+Em Set, o grupo '( - ) MARKETING / VENDAS / RESERVAS' registrou um valor de -R$ 275 referente ao item 'COMUNICAÇÃO VISUAL E AUDIOVISUAL'.;Set;( - ) MARKETING / VENDAS / RESERVAS;COMUNICAÇÃO VISUAL E AUDIOVISUAL;-R$ 275
+Em Abr, o grupo '( - ) MARKETING / VENDAS / RESERVAS' registrou um valor de -R$ 419 referente ao item 'COMUNICAÇÃO VISUAL E AUDIOVISUAL'.;Abr;( - ) MARKETING / VENDAS / RESERVAS;COMUNICAÇÃO VISUAL E AUDIOVISUAL;-R$ 419
+Em Out, o grupo '( - ) MARKETING / VENDAS / RESERVAS' registrou um valor de -R$ 660 referente ao item 'COMUNICAÇÃO VISUAL E AUDIOVISUAL'.;Out;( - ) MARKETING / VENDAS / RESERVAS;COMUNICAÇÃO VISUAL E AUDIOVISUAL;-R$ 660
+Em Jan, o grupo '( - ) MARKETING / VENDAS / RESERVAS' registrou um valor de -R$ 700 referente ao item 'COMUNICAÇÃO VISUAL E AUDIOVISUAL'.;Jan;( - ) MARKETING / VENDAS / RESERVAS;COMUNICAÇÃO VISUAL E AUDIOVISUAL;-R$ 700
+Em Abr, o grupo '( - ) MARKETING / VENDAS / RESERVAS' registrou um valor de -R$ 320 referente ao item 'ENDOMARKETING'.;Abr;( - ) MARKETING / VENDAS / RESERVAS;ENDOMARKETING;-R$ 320
+Em Ago, o grupo '( - ) MARKETING / VENDAS / RESERVAS' registrou um valor de -R$ 365 referente ao item 'ENDOMARKETING'.;Ago;( - ) MARKETING / VENDAS / RESERVAS;ENDOMARKETING;-R$ 365
+Em Nov, o grupo '( - ) MARKETING / VENDAS / RESERVAS' registrou um valor de -R$ 479 referente ao item 'ENDOMARKETING'.;Nov;( - ) MARKETING / VENDAS / RESERVAS;ENDOMARKETING;-R$ 479
+Em Set, o grupo '( - ) MARKETING / VENDAS / RESERVAS' registrou um valor de -R$ 652 referente ao item 'ENDOMARKETING'.;Set;( - ) MARKETING / VENDAS / RESERVAS;ENDOMARKETING;-R$ 652
+Em Mai, o grupo '( - ) MARKETING / VENDAS / RESERVAS' registrou um valor de -R$ 718 referente ao item 'ENDOMARKETING'.;Mai;( - ) MARKETING / VENDAS / RESERVAS;ENDOMARKETING;-R$ 718
+Em Out, o grupo '( - ) MARKETING / VENDAS / RESERVAS' registrou um valor de -R$ 863 referente ao item 'ENDOMARKETING'.;Out;( - ) MARKETING / VENDAS / RESERVAS;ENDOMARKETING;-R$ 863
+Em Jan, o grupo '( - ) MARKETING / VENDAS / RESERVAS' registrou um valor de -R$ 1.316 referente ao item 'ENDOMARKETING'.;Jan;( - ) MARKETING / VENDAS / RESERVAS;ENDOMARKETING;-R$ 1.316
+Em Fev, o grupo '( - ) MARKETING / VENDAS / RESERVAS' registrou um valor de -R$ 1.471 referente ao item 'ENDOMARKETING'.;Fev;( - ) MARKETING / VENDAS / RESERVAS;ENDOMARKETING;-R$ 1.471
+Em Dez, o grupo '( - ) MARKETING / VENDAS / RESERVAS' registrou um valor de -R$ 1.792 referente ao item 'ENDOMARKETING'.;Dez;( - ) MARKETING / VENDAS / RESERVAS;ENDOMARKETING;-R$ 1.792
+Em Jun, o grupo '( - ) MARKETING / VENDAS / RESERVAS' registrou um valor de -R$ 2.931 referente ao item 'ENDOMARKETING'.;Jun;( - ) MARKETING / VENDAS / RESERVAS;ENDOMARKETING;-R$ 2.931
+Em Jul, o grupo '( - ) MARKETING / VENDAS / RESERVAS' registrou um valor de -R$ 2.962 referente ao item 'ENDOMARKETING'.;Jul;( - ) MARKETING / VENDAS / RESERVAS;ENDOMARKETING;-R$ 2.962
+Em Mar, o grupo '( - ) MARKETING / VENDAS / RESERVAS' registrou um valor de -R$ 3.872 referente ao item 'ENDOMARKETING'.;Mar;( - ) MARKETING / VENDAS / RESERVAS;ENDOMARKETING;-R$ 3.872
+Em Out, o grupo '( - ) MARKETING / VENDAS / RESERVAS' registrou um valor de -R$ 18 referente ao item 'FEIRAS E EVENTOS'.;Out;( - ) MARKETING / VENDAS / RESERVAS;FEIRAS E EVENTOS;-R$ 18
+Em Jun, o grupo '( - ) MARKETING / VENDAS / RESERVAS' registrou um valor de -R$ 100 referente ao item 'FEIRAS E EVENTOS'.;Jun;( - ) MARKETING / VENDAS / RESERVAS;FEIRAS E EVENTOS;-R$ 100
+Em Ago, o grupo '( - ) MARKETING / VENDAS / RESERVAS' registrou um valor de -R$ 63.163 referente ao item 'FEIRAS E EVENTOS'.;Ago;( - ) MARKETING / VENDAS / RESERVAS;FEIRAS E EVENTOS;-R$ 63.163
+Em Mai, o grupo '( - ) CUSTOS VARIÁVEIS' registrou um valor de -R$ 282 referente ao item 'IMPRESSOS E SERVIÇOS GRAFICOS'.;Mai;( - ) CUSTOS VARIÁVEIS;IMPRESSOS E SERVIÇOS GRAFICOS;-R$ 282
+Em Nov, o grupo '( - ) CUSTOS VARIÁVEIS' registrou um valor de -R$ 755 referente ao item 'IMPRESSOS E SERVIÇOS GRAFICOS'.;Nov;( - ) CUSTOS VARIÁVEIS;IMPRESSOS E SERVIÇOS GRAFICOS;-R$ 755
+Em Jan, o grupo '( - ) CUSTOS VARIÁVEIS' registrou um valor de -R$ 1.234 referente ao item 'IMPRESSOS E SERVIÇOS GRAFICOS'.;Jan;( - ) CUSTOS VARIÁVEIS;IMPRESSOS E SERVIÇOS GRAFICOS;-R$ 1.234
+Em Mai, o grupo '( - ) MARKETING / VENDAS / RESERVAS' registrou um valor de -R$ 55 referente ao item 'MIDIAS'.;Mai;( - ) MARKETING / VENDAS / RESERVAS;MIDIAS;-R$ 55
+Em Fev, o grupo '( - ) MARKETING / VENDAS / RESERVAS' registrou um valor de -R$ 1.879 referente ao item 'MIDIAS'.;Fev;( - ) MARKETING / VENDAS / RESERVAS;MIDIAS;-R$ 1.879
+Em Dez, o grupo '( - ) MARKETING / VENDAS / RESERVAS' registrou um valor de -R$ 2.055 referente ao item 'MIDIAS'.;Dez;( - ) MARKETING / VENDAS / RESERVAS;MIDIAS;-R$ 2.055
+Em Nov, o grupo '( - ) MARKETING / VENDAS / RESERVAS' registrou um valor de -R$ 7.730 referente ao item 'MIDIAS'.;Nov;( - ) MARKETING / VENDAS / RESERVAS;MIDIAS;-R$ 7.730
+Em Abr, o grupo '( - ) MARKETING / VENDAS / RESERVAS' registrou um valor de -R$ 750 referente ao item 'DOAÇÕES'.;Abr;( - ) MARKETING / VENDAS / RESERVAS;DOAÇÕES;-R$ 750
+Em Nov, o grupo '( - ) MARKETING / VENDAS / RESERVAS' registrou um valor de -R$ 800 referente ao item 'DOAÇÕES'.;Nov;( - ) MARKETING / VENDAS / RESERVAS;DOAÇÕES;-R$ 800
+Em Out, o grupo '( - ) MARKETING / VENDAS / RESERVAS' registrou um valor de -R$ 800 referente ao item 'DOAÇÕES'.;Out;( - ) MARKETING / VENDAS / RESERVAS;DOAÇÕES;-R$ 800
+Em Ago, o grupo '( - ) MARKETING / VENDAS / RESERVAS' registrou um valor de -R$ 800 referente ao item 'DOAÇÕES'.;Ago;( - ) MARKETING / VENDAS / RESERVAS;DOAÇÕES;-R$ 800
+Em Dez, o grupo '( - ) MARKETING / VENDAS / RESERVAS' registrou um valor de -R$ 800 referente ao item 'DOAÇÕES'.;Dez;( - ) MARKETING / VENDAS / RESERVAS;DOAÇÕES;-R$ 800
+Em Set, o grupo '( - ) MARKETING / VENDAS / RESERVAS' registrou um valor de -R$ 800 referente ao item 'DOAÇÕES'.;Set;( - ) MARKETING / VENDAS / RESERVAS;DOAÇÕES;-R$ 800
+Em Mar, o grupo '( - ) MARKETING / VENDAS / RESERVAS' registrou um valor de -R$ 26 referente ao item 'FUNDO DE PROMOÇÃO'.;Mar;( - ) MARKETING / VENDAS / RESERVAS;FUNDO DE PROMOÇÃO;-R$ 26
+Em Mai, o grupo '(/) RATEIOS COMPORATIVO' registrou um valor de -R$ 26.536 referente ao item 'EMPRÉSTIMOS BANCOS'.;Mai;(/) RATEIOS COMPORATIVO;EMPRÉSTIMOS BANCOS;-R$ 26.536
+Em Set, o grupo '(/) RATEIOS COMPORATIVO' registrou um valor de -R$ 43.178 referente ao item 'EMPRÉSTIMOS BANCOS'.;Set;(/) RATEIOS COMPORATIVO;EMPRÉSTIMOS BANCOS;-R$ 43.178
+Em Dez, o grupo '(/) RATEIOS COMPORATIVO' registrou um valor de -R$ 44.086 referente ao item 'EMPRÉSTIMOS BANCOS'.;Dez;(/) RATEIOS COMPORATIVO;EMPRÉSTIMOS BANCOS;-R$ 44.086
+Em Out, o grupo '(/) RATEIOS COMPORATIVO' registrou um valor de -R$ 55.762 referente ao item 'EMPRÉSTIMOS BANCOS'.;Out;(/) RATEIOS COMPORATIVO;EMPRÉSTIMOS BANCOS;-R$ 55.762
+Em Abr, o grupo '(/) RATEIOS COMPORATIVO' registrou um valor de -R$ 91.664 referente ao item 'EMPRÉSTIMOS BANCOS'.;Abr;(/) RATEIOS COMPORATIVO;EMPRÉSTIMOS BANCOS;-R$ 91.664
+Em Fev, o grupo '(/) RATEIOS COMPORATIVO' registrou um valor de -R$ 96.618 referente ao item 'EMPRÉSTIMOS BANCOS'.;Fev;(/) RATEIOS COMPORATIVO;EMPRÉSTIMOS BANCOS;-R$ 96.618
+Em Mar, o grupo '(/) RATEIOS COMPORATIVO' registrou um valor de -R$ 131.385 referente ao item 'EMPRÉSTIMOS BANCOS'.;Mar;(/) RATEIOS COMPORATIVO;EMPRÉSTIMOS BANCOS;-R$ 131.385
+Em Jun, o grupo '(/) RATEIOS COMPORATIVO' registrou um valor de -R$ 154.189 referente ao item 'EMPRÉSTIMOS BANCOS'.;Jun;(/) RATEIOS COMPORATIVO;EMPRÉSTIMOS BANCOS;-R$ 154.189
+Em Nov, o grupo '(/) RATEIOS COMPORATIVO' registrou um valor de -R$ 181.191 referente ao item 'EMPRÉSTIMOS BANCOS'.;Nov;(/) RATEIOS COMPORATIVO;EMPRÉSTIMOS BANCOS;-R$ 181.191
+Em Jul, o grupo '(/) RATEIOS COMPORATIVO' registrou um valor de -R$ 218.925 referente ao item 'EMPRÉSTIMOS BANCOS'.;Jul;(/) RATEIOS COMPORATIVO;EMPRÉSTIMOS BANCOS;-R$ 218.925
+Em Ago, o grupo '(/) RATEIOS COMPORATIVO' registrou um valor de -R$ 227.534 referente ao item 'EMPRÉSTIMOS BANCOS'.;Ago;(/) RATEIOS COMPORATIVO;EMPRÉSTIMOS BANCOS;-R$ 227.534
+Em Fev, o grupo '(/) RATEIOS COMPORATIVO' registrou um valor de -R$ 400 referente ao item 'COMBUSTIVEL CORPORATIVO'.;Fev;(/) RATEIOS COMPORATIVO;COMBUSTIVEL CORPORATIVO;-R$ 400
+Em Mar, o grupo '(/) RATEIOS COMPORATIVO' registrou um valor de -R$ 676 referente ao item 'COMBUSTIVEL CORPORATIVO'.;Mar;(/) RATEIOS COMPORATIVO;COMBUSTIVEL CORPORATIVO;-R$ 676
+Em Mai, o grupo '(/) RATEIOS COMPORATIVO' registrou um valor de -R$ 1.345 referente ao item 'COMBUSTIVEL CORPORATIVO'.;Mai;(/) RATEIOS COMPORATIVO;COMBUSTIVEL CORPORATIVO;-R$ 1.345
+Em Jul, o grupo '(/) RATEIOS COMPORATIVO' registrou um valor de -R$ 1.527 referente ao item 'COMBUSTIVEL CORPORATIVO'.;Jul;(/) RATEIOS COMPORATIVO;COMBUSTIVEL CORPORATIVO;-R$ 1.527
+Em Dez, o grupo '(/) RATEIOS COMPORATIVO' registrou um valor de -R$ 1.559 referente ao item 'COMBUSTIVEL CORPORATIVO'.;Dez;(/) RATEIOS COMPORATIVO;COMBUSTIVEL CORPORATIVO;-R$ 1.559
+Em Set, o grupo '(/) RATEIOS COMPORATIVO' registrou um valor de -R$ 2.384 referente ao item 'COMBUSTIVEL CORPORATIVO'.;Set;(/) RATEIOS COMPORATIVO;COMBUSTIVEL CORPORATIVO;-R$ 2.384
+Em Jun, o grupo '(/) RATEIOS COMPORATIVO' registrou um valor de -R$ 2.691 referente ao item 'COMBUSTIVEL CORPORATIVO'.;Jun;(/) RATEIOS COMPORATIVO;COMBUSTIVEL CORPORATIVO;-R$ 2.691
+Em Out, o grupo '(/) RATEIOS COMPORATIVO' registrou um valor de -R$ 2.698 referente ao item 'COMBUSTIVEL CORPORATIVO'.;Out;(/) RATEIOS COMPORATIVO;COMBUSTIVEL CORPORATIVO;-R$ 2.698
+Em Ago, o grupo '(/) RATEIOS COMPORATIVO' registrou um valor de -R$ 3.225 referente ao item 'COMBUSTIVEL CORPORATIVO'.;Ago;(/) RATEIOS COMPORATIVO;COMBUSTIVEL CORPORATIVO;-R$ 3.225
+Em Nov, o grupo '(/) RATEIOS COMPORATIVO' registrou um valor de -R$ 3.447 referente ao item 'COMBUSTIVEL CORPORATIVO'.;Nov;(/) RATEIOS COMPORATIVO;COMBUSTIVEL CORPORATIVO;-R$ 3.447
+Em Jan, o grupo '(/) RATEIOS COMPORATIVO' registrou um valor de -R$ 65.861 referente ao item 'PRO-LABORE'.;Jan;(/) RATEIOS COMPORATIVO;PRO-LABORE;-R$ 65.861
+Em Mai, o grupo '(/) RATEIOS COMPORATIVO' registrou um valor de -R$ 82.365 referente ao item 'PRO-LABORE'.;Mai;(/) RATEIOS COMPORATIVO;PRO-LABORE;-R$ 82.365
+Em Jun, o grupo '(/) RATEIOS COMPORATIVO' registrou um valor de -R$ 110.453 referente ao item 'PRO-LABORE'.;Jun;(/) RATEIOS COMPORATIVO;PRO-LABORE;-R$ 110.453
+Em Fev, o grupo '(/) RATEIOS COMPORATIVO' registrou um valor de -R$ 130.449 referente ao item 'PRO-LABORE'.;Fev;(/) RATEIOS COMPORATIVO;PRO-LABORE;-R$ 130.449
+Em Mar, o grupo '(/) RATEIOS COMPORATIVO' registrou um valor de -R$ 287.903 referente ao item 'PRO-LABORE'.;Mar;(/) RATEIOS COMPORATIVO;PRO-LABORE;-R$ 287.903
+Em Ago, o grupo '(/) RATEIOS COMPORATIVO' registrou um valor de -R$ 297.993 referente ao item 'PRO-LABORE'.;Ago;(/) RATEIOS COMPORATIVO;PRO-LABORE;-R$ 297.993
+Em Set, o grupo '(/) RATEIOS COMPORATIVO' registrou um valor de -R$ 378.335 referente ao item 'PRO-LABORE'.;Set;(/) RATEIOS COMPORATIVO;PRO-LABORE;-R$ 378.335
+Em Dez, o grupo '(/) RATEIOS COMPORATIVO' registrou um valor de -R$ 423.760 referente ao item 'PRO-LABORE'.;Dez;(/) RATEIOS COMPORATIVO;PRO-LABORE;-R$ 423.760
+Em Abr, o grupo '(/) RATEIOS COMPORATIVO' registrou um valor de -R$ 692.821 referente ao item 'PRO-LABORE'.;Abr;(/) RATEIOS COMPORATIVO;PRO-LABORE;-R$ 692.821
+Em Nov, o grupo '(/) RATEIOS COMPORATIVO' registrou um valor de -R$ 866.983 referente ao item 'PRO-LABORE'.;Nov;(/) RATEIOS COMPORATIVO;PRO-LABORE;-R$ 866.983
+Em Out, o grupo '(/) RATEIOS COMPORATIVO' registrou um valor de -R$ 949.054 referente ao item 'PRO-LABORE'.;Out;(/) RATEIOS COMPORATIVO;PRO-LABORE;-R$ 949.054
+Em Jul, o grupo '(/) RATEIOS COMPORATIVO' registrou um valor de -R$ 968.133 referente ao item 'PRO-LABORE'.;Jul;(/) RATEIOS COMPORATIVO;PRO-LABORE;-R$ 968.133
+Em Fev, o grupo '(/) RATEIOS COMPORATIVO' registrou um valor de -R$ 3.500 referente ao item 'CONSULTORIA RH - TREINAMENTOS'.;Fev;(/) RATEIOS COMPORATIVO;CONSULTORIA RH - TREINAMENTOS;-R$ 3.500
+Em Mai, o grupo '( - ) UTILIDADES E SERVIÇOS' registrou um valor de -R$ 68 referente ao item 'MANUTENÇÃO CORRETIVA'.;Mai;( - ) UTILIDADES E SERVIÇOS;MANUTENÇÃO CORRETIVA;-R$ 68
+Em Jul, o grupo '( - ) UTILIDADES E SERVIÇOS' registrou um valor de -R$ 403 referente ao item 'MANUTENÇÃO CORRETIVA'.;Jul;( - ) UTILIDADES E SERVIÇOS;MANUTENÇÃO CORRETIVA;-R$ 403
+Em Mar, o grupo '( - ) UTILIDADES E SERVIÇOS' registrou um valor de -R$ 417 referente ao item 'MANUTENÇÃO CORRETIVA'.;Mar;( - ) UTILIDADES E SERVIÇOS;MANUTENÇÃO CORRETIVA;-R$ 417
+Em Ago, o grupo '( - ) UTILIDADES E SERVIÇOS' registrou um valor de -R$ 873 referente ao item 'MANUTENÇÃO CORRETIVA'.;Ago;( - ) UTILIDADES E SERVIÇOS;MANUTENÇÃO CORRETIVA;-R$ 873
+Em Out, o grupo '( - ) UTILIDADES E SERVIÇOS' registrou um valor de -R$ 1.439 referente ao item 'MANUTENÇÃO CORRETIVA'.;Out;( - ) UTILIDADES E SERVIÇOS;MANUTENÇÃO CORRETIVA;-R$ 1.439
+Em Set, o grupo '( - ) UTILIDADES E SERVIÇOS' registrou um valor de -R$ 1.828 referente ao item 'MANUTENÇÃO CORRETIVA'.;Set;( - ) UTILIDADES E SERVIÇOS;MANUTENÇÃO CORRETIVA;-R$ 1.828
+Em Abr, o grupo '( - ) UTILIDADES E SERVIÇOS' registrou um valor de -R$ 1.874 referente ao item 'MANUTENÇÃO CORRETIVA'.;Abr;( - ) UTILIDADES E SERVIÇOS;MANUTENÇÃO CORRETIVA;-R$ 1.874
+Em Jun, o grupo '( - ) UTILIDADES E SERVIÇOS' registrou um valor de -R$ 5.353 referente ao item 'MANUTENÇÃO CORRETIVA'.;Jun;( - ) UTILIDADES E SERVIÇOS;MANUTENÇÃO CORRETIVA;-R$ 5.353
+Em Set, o grupo '( - ) UTILIDADES E SERVIÇOS' registrou um valor de -R$ 194 referente ao item 'MANUTENÇÃO PREVENTIVA'.;Set;( - ) UTILIDADES E SERVIÇOS;MANUTENÇÃO PREVENTIVA;-R$ 194
+Em Dez, o grupo '( - ) UTILIDADES E SERVIÇOS' registrou um valor de -R$ 300 referente ao item 'MANUTENÇÃO PREVENTIVA'.;Dez;( - ) UTILIDADES E SERVIÇOS;MANUTENÇÃO PREVENTIVA;-R$ 300
+Em Jan, o grupo '( - ) UTILIDADES E SERVIÇOS' registrou um valor de -R$ 300 referente ao item 'MANUTENÇÃO PREVENTIVA'.;Jan;( - ) UTILIDADES E SERVIÇOS;MANUTENÇÃO PREVENTIVA;-R$ 300
+Em Jul, o grupo '( - ) SERVIÇOS DE TERCEIROS' registrou um valor de -R$ 590 referente ao item 'PRESTAÇÃO DE SERVIÇO'.;Jul;( - ) SERVIÇOS DE TERCEIROS;PRESTAÇÃO DE SERVIÇO;-R$ 590
+Em Jan, o grupo '( - ) SERVIÇOS DE TERCEIROS' registrou um valor de -R$ 1.330 referente ao item 'PRESTAÇÃO DE SERVIÇO'.;Jan;( - ) SERVIÇOS DE TERCEIROS;PRESTAÇÃO DE SERVIÇO;-R$ 1.330
+Em Ago, o grupo '( - ) SERVIÇOS DE TERCEIROS' registrou um valor de -R$ 1.735 referente ao item 'PRESTAÇÃO DE SERVIÇO'.;Ago;( - ) SERVIÇOS DE TERCEIROS;PRESTAÇÃO DE SERVIÇO;-R$ 1.735
+Em Set, o grupo '( - ) SERVIÇOS DE TERCEIROS' registrou um valor de -R$ 2.111 referente ao item 'PRESTAÇÃO DE SERVIÇO'.;Set;( - ) SERVIÇOS DE TERCEIROS;PRESTAÇÃO DE SERVIÇO;-R$ 2.111
+Em Mai, o grupo '( - ) SERVIÇOS DE TERCEIROS' registrou um valor de -R$ 3.000 referente ao item 'DESPESAS LOCACAO MAQUINAS POS'.;Mai;( - ) SERVIÇOS DE TERCEIROS;DESPESAS LOCACAO MAQUINAS POS;-R$ 3.000
+Em Abr, o grupo '( - ) DESPESAS FINANCEIRAS' registrou um valor de -R$ 21 referente ao item 'TAXAS BANCARIAS'.;Abr;( - ) DESPESAS FINANCEIRAS;TAXAS BANCARIAS;-R$ 21
+Em Ago, o grupo '( - ) DESPESAS FINANCEIRAS' registrou um valor de -R$ 21 referente ao item 'TAXAS BANCARIAS'.;Ago;( - ) DESPESAS FINANCEIRAS;TAXAS BANCARIAS;-R$ 21
+Em Set, o grupo '( - ) DESPESAS FINANCEIRAS' registrou um valor de -R$ 50 referente ao item 'TAXAS BANCARIAS'.;Set;( - ) DESPESAS FINANCEIRAS;TAXAS BANCARIAS;-R$ 50
+Em Fev, o grupo '( - ) DESPESAS FINANCEIRAS' registrou um valor de -R$ 63 referente ao item 'TAXAS BANCARIAS'.;Fev;( - ) DESPESAS FINANCEIRAS;TAXAS BANCARIAS;-R$ 63
+Em Out, o grupo '( - ) DESPESAS FINANCEIRAS' registrou um valor de -R$ 194 referente ao item 'TAXAS BANCARIAS'.;Out;( - ) DESPESAS FINANCEIRAS;TAXAS BANCARIAS;-R$ 194
+Em Jul, o grupo '( - ) DESPESAS FINANCEIRAS' registrou um valor de -R$ 282 referente ao item 'TAXAS BANCARIAS'.;Jul;( - ) DESPESAS FINANCEIRAS;TAXAS BANCARIAS;-R$ 282
+Em Mai, o grupo '( - ) DESPESAS FINANCEIRAS' registrou um valor de -R$ 289 referente ao item 'TAXAS BANCARIAS'.;Mai;( - ) DESPESAS FINANCEIRAS;TAXAS BANCARIAS;-R$ 289
+Em Jun, o grupo '( - ) DESPESAS FINANCEIRAS' registrou um valor de -R$ 712 referente ao item 'TAXAS BANCARIAS'.;Jun;( - ) DESPESAS FINANCEIRAS;TAXAS BANCARIAS;-R$ 712
+Em Nov, o grupo '( - ) DESPESAS FINANCEIRAS' registrou um valor de -R$ 1.568 referente ao item 'TAXAS BANCARIAS'.;Nov;( - ) DESPESAS FINANCEIRAS;TAXAS BANCARIAS;-R$ 1.568
+Em Dez, o grupo '( - ) DESPESAS FINANCEIRAS' registrou um valor de -R$ 2.673 referente ao item 'TAXAS BANCARIAS'.;Dez;( - ) DESPESAS FINANCEIRAS;TAXAS BANCARIAS;-R$ 2.673
+Em Nov, o grupo '( - ) DESPESAS FINANCEIRAS' registrou um valor de -R$ 5.693 referente ao item 'TX SOBRE ANTECIPACAO RECEBIVEIS (CARTOES'.;Nov;( - ) DESPESAS FINANCEIRAS;TX SOBRE ANTECIPACAO RECEBIVEIS (CARTOES;-R$ 5.693
+Em Ago, o grupo '( - ) DESPESAS FINANCEIRAS' registrou um valor de -R$ 111 referente ao item 'JUROS/MULTAS'.;Ago;( - ) DESPESAS FINANCEIRAS;JUROS/MULTAS;-R$ 111
+Em Dez, o grupo '( - ) DESPESAS FINANCEIRAS' registrou um valor de -R$ 534 referente ao item 'JUROS/MULTAS'.;Dez;( - ) DESPESAS FINANCEIRAS;JUROS/MULTAS;-R$ 534
+Em Nov, o grupo '( - ) DESPESAS FINANCEIRAS' registrou um valor de -R$ 590 referente ao item 'JUROS/MULTAS'.;Nov;( - ) DESPESAS FINANCEIRAS;JUROS/MULTAS;-R$ 590
+Em Jul, o grupo '( - ) DESPESAS FINANCEIRAS' registrou um valor de -R$ 971 referente ao item 'JUROS/MULTAS'.;Jul;( - ) DESPESAS FINANCEIRAS;JUROS/MULTAS;-R$ 971
+Em Out, o grupo '( - ) DESPESAS FINANCEIRAS' registrou um valor de -R$ 4.358 referente ao item 'JUROS/MULTAS'.;Out;( - ) DESPESAS FINANCEIRAS;JUROS/MULTAS;-R$ 4.358
+Em Set, o grupo '( - ) DESPESAS FINANCEIRAS' registrou um valor de -R$ 7.357 referente ao item 'JUROS/MULTAS'.;Set;( - ) DESPESAS FINANCEIRAS;JUROS/MULTAS;-R$ 7.357
+Em Out, o grupo '(+) OUTRAS RECEITAS OPERACIONAIS' registrou um valor de R$ 1.530.592 referente ao item 'APORTE DE CAPITAL'.;Out;(+) OUTRAS RECEITAS OPERACIONAIS;APORTE DE CAPITAL;R$ 1.530.592
+Em Nov, o grupo '(+) OUTRAS RECEITAS OPERACIONAIS' registrou um valor de R$ 1.140.632 referente ao item 'APORTE DE CAPITAL'.;Nov;(+) OUTRAS RECEITAS OPERACIONAIS;APORTE DE CAPITAL;R$ 1.140.632
+Em Out, o grupo '(+) OUTRAS RECEITAS OPERACIONAIS' registrou um valor de R$ 1.500 referente ao item 'REVENDA DE OLEO / FLIPERAMA / ESTORNO'.;Out;(+) OUTRAS RECEITAS OPERACIONAIS;REVENDA DE OLEO / FLIPERAMA / ESTORNO;R$ 1.500
+Em Ago, o grupo '(+) OUTRAS RECEITAS OPERACIONAIS' registrou um valor de R$ 6 referente ao item 'REVENDA DE OLEO / FLIPERAMA / ESTORNO'.;Ago;(+) OUTRAS RECEITAS OPERACIONAIS;REVENDA DE OLEO / FLIPERAMA / ESTORNO;R$ 6
+Em Jun, o grupo '(+) OUTRAS RECEITAS OPERACIONAIS' registrou um valor de R$ 2.839.395 referente ao item 'ENTRADA DE EMPRÉSTIMO TERCEIROS'.;Jun;(+) OUTRAS RECEITAS OPERACIONAIS;ENTRADA DE EMPRÉSTIMO TERCEIROS;R$ 2.839.395
+Em Out, o grupo '(+) OUTRAS RECEITAS OPERACIONAIS' registrou um valor de R$ 2.744 referente ao item 'ENTRADA DE EMPRÉSTIMO TERCEIROS'.;Out;(+) OUTRAS RECEITAS OPERACIONAIS;ENTRADA DE EMPRÉSTIMO TERCEIROS;R$ 2.744
+Em Mai, o grupo '( = ) FLUXO DE CAIXA LIVRE PARA SÓCIOS' registrou um valor de -R$ 553 referente ao item 'MAQUINAS E EQUIPAMENTOS OPERACAO'.;Mai;( = ) FLUXO DE CAIXA LIVRE PARA SÓCIOS;MAQUINAS E EQUIPAMENTOS OPERACAO;-R$ 553
+Em Nov, o grupo '( = ) FLUXO DE CAIXA LIVRE PARA SÓCIOS' registrou um valor de -R$ 709 referente ao item 'MAQUINAS E EQUIPAMENTOS OPERACAO'.;Nov;( = ) FLUXO DE CAIXA LIVRE PARA SÓCIOS;MAQUINAS E EQUIPAMENTOS OPERACAO;-R$ 709
+Em Ago, o grupo '( = ) FLUXO DE CAIXA LIVRE PARA SÓCIOS' registrou um valor de -R$ 847 referente ao item 'MAQUINAS E EQUIPAMENTOS OPERACAO'.;Ago;( = ) FLUXO DE CAIXA LIVRE PARA SÓCIOS;MAQUINAS E EQUIPAMENTOS OPERACAO;-R$ 847
+Em Abr, o grupo '( = ) FLUXO DE CAIXA LIVRE PARA SÓCIOS' registrou um valor de -R$ 1.293 referente ao item 'MAQUINAS E EQUIPAMENTOS OPERACAO'.;Abr;( = ) FLUXO DE CAIXA LIVRE PARA SÓCIOS;MAQUINAS E EQUIPAMENTOS OPERACAO;-R$ 1.293
+Em Jun, o grupo '( = ) FLUXO DE CAIXA LIVRE PARA SÓCIOS' registrou um valor de -R$ 1.400 referente ao item 'MAQUINAS E EQUIPAMENTOS OPERACAO'.;Jun;( = ) FLUXO DE CAIXA LIVRE PARA SÓCIOS;MAQUINAS E EQUIPAMENTOS OPERACAO;-R$ 1.400
+Em Dez, o grupo '( = ) FLUXO DE CAIXA LIVRE PARA SÓCIOS' registrou um valor de -R$ 3.000 referente ao item 'MAQUINAS E EQUIPAMENTOS OPERACAO'.;Dez;( = ) FLUXO DE CAIXA LIVRE PARA SÓCIOS;MAQUINAS E EQUIPAMENTOS OPERACAO;-R$ 3.000
+Em Set, o grupo '( = ) FLUXO DE CAIXA LIVRE PARA SÓCIOS' registrou um valor de -R$ 3.919 referente ao item 'MAQUINAS E EQUIPAMENTOS OPERACAO'.;Set;( = ) FLUXO DE CAIXA LIVRE PARA SÓCIOS;MAQUINAS E EQUIPAMENTOS OPERACAO;-R$ 3.919
+Em Mai, o grupo '( = ) FLUXO DE CAIXA LIVRE PARA SÓCIOS' registrou um valor de -R$ 633 referente ao item 'COMPUTADORES, PERIFERICOS E SOFTWARES'.;Mai;( = ) FLUXO DE CAIXA LIVRE PARA SÓCIOS;COMPUTADORES, PERIFERICOS E SOFTWARES;-R$ 633
+Em Fev, o grupo '( = ) FLUXO DE CAIXA LIVRE PARA SÓCIOS' registrou um valor de -R$ 680 referente ao item 'COMPUTADORES, PERIFERICOS E SOFTWARES'.;Fev;( = ) FLUXO DE CAIXA LIVRE PARA SÓCIOS;COMPUTADORES, PERIFERICOS E SOFTWARES;-R$ 680
+Em Mar, o grupo '( = ) FLUXO DE CAIXA LIVRE PARA SÓCIOS' registrou um valor de -R$ 1.054 referente ao item 'COMPUTADORES, PERIFERICOS E SOFTWARES'.;Mar;( = ) FLUXO DE CAIXA LIVRE PARA SÓCIOS;COMPUTADORES, PERIFERICOS E SOFTWARES;-R$ 1.054
+Em Jun, o grupo '( = ) FLUXO DE CAIXA LIVRE PARA SÓCIOS' registrou um valor de -R$ 1.075 referente ao item 'COMPUTADORES, PERIFERICOS E SOFTWARES'.;Jun;( = ) FLUXO DE CAIXA LIVRE PARA SÓCIOS;COMPUTADORES, PERIFERICOS E SOFTWARES;-R$ 1.075
+Em Out, o grupo '( = ) FLUXO DE CAIXA LIVRE PARA SÓCIOS' registrou um valor de -R$ 2.130 referente ao item 'COMPUTADORES, PERIFERICOS E SOFTWARES'.;Out;( = ) FLUXO DE CAIXA LIVRE PARA SÓCIOS;COMPUTADORES, PERIFERICOS E SOFTWARES;-R$ 2.130
+Em Ago, o grupo '( = ) FLUXO DE CAIXA LIVRE PARA SÓCIOS' registrou um valor de -R$ 6.306 referente ao item 'COMPUTADORES, PERIFERICOS E SOFTWARES'.;Ago;( = ) FLUXO DE CAIXA LIVRE PARA SÓCIOS;COMPUTADORES, PERIFERICOS E SOFTWARES;-R$ 6.306
+Em Abr, o grupo '( = ) FLUXO DE CAIXA LIVRE PARA SÓCIOS' registrou um valor de -R$ 6.312 referente ao item 'COMPUTADORES, PERIFERICOS E SOFTWARES'.;Abr;( = ) FLUXO DE CAIXA LIVRE PARA SÓCIOS;COMPUTADORES, PERIFERICOS E SOFTWARES;-R$ 6.312
+Em Jan, o grupo '( = ) FLUXO DE CAIXA LIVRE PARA SÓCIOS' registrou um valor de -R$ 7.573 referente ao item 'COMPUTADORES, PERIFERICOS E SOFTWARES'.;Jan;( = ) FLUXO DE CAIXA LIVRE PARA SÓCIOS;COMPUTADORES, PERIFERICOS E SOFTWARES;-R$ 7.573
+Em Set, o grupo '( = ) FLUXO DE CAIXA LIVRE PARA SÓCIOS' registrou um valor de -R$ 21.509 referente ao item 'COMPUTADORES, PERIFERICOS E SOFTWARES'.;Set;( = ) FLUXO DE CAIXA LIVRE PARA SÓCIOS;COMPUTADORES, PERIFERICOS E SOFTWARES;-R$ 21.509
+Em Jan, o grupo '( = ) FLUXO DE CAIXA LIVRE PARA SÓCIOS' registrou um valor de -R$ 600 referente ao item 'MOVEIS E UTENSÍLIOS'.;Jan;( = ) FLUXO DE CAIXA LIVRE PARA SÓCIOS;MOVEIS E UTENSÍLIOS;-R$ 600
+Em Out, o grupo '( = ) FLUXO DE CAIXA LIVRE PARA SÓCIOS' registrou um valor de -R$ 5.280 referente ao item 'MOVEIS E UTENSÍLIOS'.;Out;( = ) FLUXO DE CAIXA LIVRE PARA SÓCIOS;MOVEIS E UTENSÍLIOS;-R$ 5.280
+Em Jun, o grupo '( = ) FLUXO DE CAIXA LIVRE PARA SÓCIOS' registrou um valor de -R$ 9.072 referente ao item 'MOVEIS E UTENSÍLIOS'.;Jun;( = ) FLUXO DE CAIXA LIVRE PARA SÓCIOS;MOVEIS E UTENSÍLIOS;-R$ 9.072
+Em Set, o grupo '( = ) FLUXO DE CAIXA LIVRE PARA SÓCIOS' registrou um valor de -R$ 10.855 referente ao item 'MOVEIS E UTENSÍLIOS'.;Set;( = ) FLUXO DE CAIXA LIVRE PARA SÓCIOS;MOVEIS E UTENSÍLIOS;-R$ 10.855
+Em Ago, o grupo '( = ) FLUXO DE CAIXA LIVRE PARA SÓCIOS' registrou um valor de -R$ 12.798 referente ao item 'MOVEIS E UTENSÍLIOS'.;Ago;( = ) FLUXO DE CAIXA LIVRE PARA SÓCIOS;MOVEIS E UTENSÍLIOS;-R$ 12.798
+Em Jun, o grupo '( = ) FLUXO DE CAIXA LIVRE PARA SÓCIOS' registrou um valor de -R$ 129 referente ao item 'EDIFICAÇOES E INSTALAÇOES'.;Jun;( = ) FLUXO DE CAIXA LIVRE PARA SÓCIOS;EDIFICAÇOES E INSTALAÇOES;-R$ 129
+Em Set, o grupo '( = ) FLUXO DE CAIXA LIVRE PARA SÓCIOS' registrou um valor de -R$ 1.858 referente ao item 'VEÍCULOS'.;Set;( = ) FLUXO DE CAIXA LIVRE PARA SÓCIOS;VEÍCULOS;-R$ 1.858
+Em Dez, o grupo '( = ) FLUXO DE CAIXA LIVRE PARA SÓCIOS' registrou um valor de -R$ 4.039 referente ao item 'VEÍCULOS'.;Dez;( = ) FLUXO DE CAIXA LIVRE PARA SÓCIOS;VEÍCULOS;-R$ 4.039
+Em Nov, o grupo '( = ) FLUXO DE CAIXA LIVRE PARA SÓCIOS' registrou um valor de -R$ 4.039 referente ao item 'VEÍCULOS'.;Nov;( = ) FLUXO DE CAIXA LIVRE PARA SÓCIOS;VEÍCULOS;-R$ 4.039
+Em Out, o grupo '( = ) FLUXO DE CAIXA LIVRE PARA SÓCIOS' registrou um valor de -R$ 4.129 referente ao item 'VEÍCULOS'.;Out;( = ) FLUXO DE CAIXA LIVRE PARA SÓCIOS;VEÍCULOS;-R$ 4.129
+Em Ago, o grupo '( = ) FLUXO DE CAIXA LIVRE PARA SÓCIOS' registrou um valor de -R$ 5.600 referente ao item 'VEÍCULOS'.;Ago;( = ) FLUXO DE CAIXA LIVRE PARA SÓCIOS;VEÍCULOS;-R$ 5.600
+Em Abr, o grupo '( = ) FLUXO DE CAIXA LIVRE PARA SÓCIOS' registrou um valor de -R$ 6.670 referente ao item 'VEÍCULOS'.;Abr;( = ) FLUXO DE CAIXA LIVRE PARA SÓCIOS;VEÍCULOS;-R$ 6.670
+Em Jan, o grupo '( = ) FLUXO DE CAIXA LIVRE PARA SÓCIOS' registrou um valor de -R$ 8.799 referente ao item 'VEÍCULOS'.;Jan;( = ) FLUXO DE CAIXA LIVRE PARA SÓCIOS;VEÍCULOS;-R$ 8.799
+Em Mai, o grupo '( = ) FLUXO DE CAIXA LIVRE PARA SÓCIOS' registrou um valor de -R$ 16.327 referente ao item 'VEÍCULOS'.;Mai;( = ) FLUXO DE CAIXA LIVRE PARA SÓCIOS;VEÍCULOS;-R$ 16.327
+Em Jun, o grupo '( = ) FLUXO DE CAIXA LIVRE PARA SÓCIOS' registrou um valor de -R$ 22.518 referente ao item 'VEÍCULOS'.;Jun;( = ) FLUXO DE CAIXA LIVRE PARA SÓCIOS;VEÍCULOS;-R$ 22.518
+Em Out, o grupo '( = ) FLUXO DE CAIXA LIVRE PARA SÓCIOS' registrou um valor de -R$ 2.188 referente ao item 'AQUISIÇÕES E INCORPORAÇÕES'.;Out;( = ) FLUXO DE CAIXA LIVRE PARA SÓCIOS;AQUISIÇÕES E INCORPORAÇÕES;-R$ 2.188
+Em Jan, o grupo '( = ) FLUXO DE CAIXA LIVRE PARA SÓCIOS' registrou um valor de -R$ 20.781 referente ao item 'AQUISIÇÕES E INCORPORAÇÕES'.;Jan;( = ) FLUXO DE CAIXA LIVRE PARA SÓCIOS;AQUISIÇÕES E INCORPORAÇÕES;-R$ 20.781
+Em Set, o grupo '( = ) FLUXO DE CAIXA LIVRE PARA SÓCIOS' registrou um valor de -R$ 7.454 referente ao item 'EMPRESTIMOS'.;Set;( = ) FLUXO DE CAIXA LIVRE PARA SÓCIOS;EMPRESTIMOS;-R$ 7.454
+Em Out, o grupo '( = ) FLUXO DE CAIXA LIVRE PARA SÓCIOS' registrou um valor de -R$ 7.580 referente ao item 'EMPRESTIMOS'.;Out;( = ) FLUXO DE CAIXA LIVRE PARA SÓCIOS;EMPRESTIMOS;-R$ 7.580
+Em Jul, o grupo '( = ) FLUXO DE CAIXA LIVRE PARA SÓCIOS' registrou um valor de -R$ 10.496 referente ao item 'EMPRESTIMOS'.;Jul;( = ) FLUXO DE CAIXA LIVRE PARA SÓCIOS;EMPRESTIMOS;-R$ 10.496
+Em Jan, o grupo '( = ) FLUXO DE CAIXA LIVRE PARA SÓCIOS' registrou um valor de -R$ 17.376 referente ao item 'EMPRESTIMOS'.;Jan;( = ) FLUXO DE CAIXA LIVRE PARA SÓCIOS;EMPRESTIMOS;-R$ 17.376
+Em Abr, o grupo '( = ) FLUXO DE CAIXA LIVRE PARA SÓCIOS' registrou um valor de -R$ 17.926 referente ao item 'EMPRESTIMOS'.;Abr;( = ) FLUXO DE CAIXA LIVRE PARA SÓCIOS;EMPRESTIMOS;-R$ 17.926
+Em Dez, o grupo '( = ) FLUXO DE CAIXA LIVRE PARA SÓCIOS' registrou um valor de -R$ 19.026 referente ao item 'EMPRESTIMOS'.;Dez;( = ) FLUXO DE CAIXA LIVRE PARA SÓCIOS;EMPRESTIMOS;-R$ 19.026
+Em Nov, o grupo '( = ) FLUXO DE CAIXA LIVRE PARA SÓCIOS' registrou um valor de -R$ 20.880 referente ao item 'EMPRESTIMOS'.;Nov;( = ) FLUXO DE CAIXA LIVRE PARA SÓCIOS;EMPRESTIMOS;-R$ 20.880
+Em Mar, o grupo '( = ) FLUXO DE CAIXA LIVRE PARA SÓCIOS' registrou um valor de -R$ 24.426 referente ao item 'EMPRESTIMOS'.;Mar;( = ) FLUXO DE CAIXA LIVRE PARA SÓCIOS;EMPRESTIMOS;-R$ 24.426
+Em Ago, o grupo '( = ) FLUXO DE CAIXA LIVRE PARA SÓCIOS' registrou um valor de -R$ 36.606 referente ao item 'EMPRESTIMOS'.;Ago;( = ) FLUXO DE CAIXA LIVRE PARA SÓCIOS;EMPRESTIMOS;-R$ 36.606
+Em Mai, o grupo '( = ) FLUXO DE CAIXA LIVRE PARA SÓCIOS' registrou um valor de -R$ 46.076 referente ao item 'EMPRESTIMOS'.;Mai;( = ) FLUXO DE CAIXA LIVRE PARA SÓCIOS;EMPRESTIMOS;-R$ 46.076
+Em Fev, o grupo '( = ) FLUXO DE CAIXA LIVRE PARA SÓCIOS' registrou um valor de -R$ 46.201 referente ao item 'EMPRESTIMOS'.;Fev;( = ) FLUXO DE CAIXA LIVRE PARA SÓCIOS;EMPRESTIMOS;-R$ 46.201
+Em Jun, o grupo '( = ) FLUXO DE CAIXA LIVRE PARA SÓCIOS' registrou um valor de -R$ 82.086 referente ao item 'EMPRESTIMOS'.;Jun;( = ) FLUXO DE CAIXA LIVRE PARA SÓCIOS;EMPRESTIMOS;-R$ 82.086
+Em Nov, o grupo '( = ) FLUXO DE CAIXA LIVRE PARA SÓCIOS' registrou um valor de -R$ 5.000 referente ao item 'TITULO EXTRAJUDICIAL'.;Nov;( = ) FLUXO DE CAIXA LIVRE PARA SÓCIOS;TITULO EXTRAJUDICIAL;-R$ 5.000
+Em Jul, o grupo '( = ) FLUXO DE CAIXA LIVRE PARA SÓCIOS' registrou um valor de -R$ 5.000 referente ao item 'TITULO EXTRAJUDICIAL'.;Jul;( = ) FLUXO DE CAIXA LIVRE PARA SÓCIOS;TITULO EXTRAJUDICIAL;-R$ 5.000
+Em Dez, o grupo '( = ) FLUXO DE CAIXA LIVRE PARA SÓCIOS' registrou um valor de -R$ 5.000 referente ao item 'TITULO EXTRAJUDICIAL'.;Dez;( = ) FLUXO DE CAIXA LIVRE PARA SÓCIOS;TITULO EXTRAJUDICIAL;-R$ 5.000
+Em Ago, o grupo '( = ) FLUXO DE CAIXA LIVRE PARA SÓCIOS' registrou um valor de -R$ 5.000 referente ao item 'TITULO EXTRAJUDICIAL'.;Ago;( = ) FLUXO DE CAIXA LIVRE PARA SÓCIOS;TITULO EXTRAJUDICIAL;-R$ 5.000
+Em Set, o grupo '( = ) FLUXO DE CAIXA LIVRE PARA SÓCIOS' registrou um valor de -R$ 5.000 referente ao item 'TITULO EXTRAJUDICIAL'.;Set;( = ) FLUXO DE CAIXA LIVRE PARA SÓCIOS;TITULO EXTRAJUDICIAL;-R$ 5.000
+Em Out, o grupo '( = ) FLUXO DE CAIXA LIVRE PARA SÓCIOS' registrou um valor de -R$ 7.853 referente ao item 'TITULO EXTRAJUDICIAL'.;Out;( = ) FLUXO DE CAIXA LIVRE PARA SÓCIOS;TITULO EXTRAJUDICIAL;-R$ 7.853

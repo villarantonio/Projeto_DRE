@@ -127,8 +127,13 @@ cython_debug/
 # Project Specific
 # =============================================================================
 
-# Output directory (generated files)
-output/
+# Output directory - Incluido para deploy no Streamlit Cloud
+# Os arquivos abaixo sao necessarios para o dashboard funcionar:
+# - output/processed_dre.parquet (dados processados)
+# - output/categories.json (hierarquia de categorias)
+# - output/relatorio_narrativo_ia.csv (narrativas para IA)
+# Descomente a linha abaixo se quiser ignorar output/ localmente:
+# output/
 
 # Log files
 *.log
@@ -148,6 +153,7 @@ Thumbs.db
 .env.*.local
 secrets.yaml
 credentials.json
+.streamlit/secrets.toml
 
 # =============================================================================
 # OS Generated Files
