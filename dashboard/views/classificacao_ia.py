@@ -69,10 +69,15 @@ def render_classificacao_ia(df: pd.DataFrame, categories: dict) -> None:
                     categorias_dict = carregar_categorias_rag()
                     contexto = formatar_contexto_rag(categorias_dict)
 
+                    # Extrair todas as categorias (não apenas os grupos)
+                    todas_categorias = []
+                    for cats in categorias_dict.values():
+                        todas_categorias.extend(cats)
+
                     with st.spinner("Classificando com IA..."):
                         resultado = classificar_gasto(
                             descricao,
-                            categorias_validas=list(categorias_dict.keys()),
+                            categorias_validas=todas_categorias,
                             contexto_rag=contexto,
                         )
 
@@ -83,8 +88,8 @@ def render_classificacao_ia(df: pd.DataFrame, categories: dict) -> None:
                         </div>
                     """, unsafe_allow_html=True)
 
-                except ImportError:
-                    st.warning("Modulo de IA nao disponivel. Usando simulacao.")
+                except ImportError as import_err:
+                    st.warning(f"Modulo de IA nao disponivel ({import_err}). Usando simulacao.")
                     if "carne" in descricao.lower() or "picanha" in descricao.lower():
                         cat_result = "BOVINOS"
                     elif "bebida" in descricao.lower() or "coca" in descricao.lower():

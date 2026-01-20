@@ -34,27 +34,32 @@ def create_forecast_chart(
 ) -> go.Figure:
     """
     Cria grafico de previsao com historico e intervalos de confianca.
-    
+
     Args:
         result: Resultado da previsao.
         historical_df: Dados historicos.
-        
+
     Returns:
         Figura Plotly.
     """
     forecast = result.forecast_df
-    
+
     # Separar historico e futuro
     last_date = historical_df["ds"].max()
     historical_forecast = forecast[forecast["ds"] <= last_date]
     future_forecast = forecast[forecast["ds"] > last_date]
-    
+
     fig = go.Figure()
-    
+
     # Intervalo de confianca (futuro)
+    # Converter para lista para evitar erro de Timestamp com [::-1]
+    future_ds = future_forecast["ds"].tolist()
+    future_upper = future_forecast["yhat_upper"].tolist()
+    future_lower = future_forecast["yhat_lower"].tolist()
+
     fig.add_trace(go.Scatter(
-        x=pd.concat([future_forecast["ds"], future_forecast["ds"][::-1]]),
-        y=pd.concat([future_forecast["yhat_upper"], future_forecast["yhat_lower"][::-1]]),
+        x=future_ds + future_ds[::-1],
+        y=future_upper + future_lower[::-1],
         fill="toself",
         fillcolor="rgba(52, 152, 219, 0.2)",
         line=dict(color="rgba(255,255,255,0)"),
