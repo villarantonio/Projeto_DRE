@@ -5,8 +5,8 @@
 
 | **Informação** | **Valor** |
 |----------------|-----------|
-| Última atualização | 19 de Janeiro de 2026 |
-| Versão | 1.3.0 |
+| Última atualização | 20 de Janeiro de 2026 |
+| Versão | 1.4.0 |
 | Repositório | github.com/villarantonio/Projeto_DRE |
 | Linguagem | Python 3.11+ |
 | IA | Google Gemini 2.0 Flash |
@@ -197,7 +197,7 @@ O **Pipeline DRE Manda Picanha** é um sistema de automação para processamento
 | **google-generativeai** | **>=0.3.0** | **API Google Gemini (IA)** | **Ativo** |
 | **streamlit** | **>=1.30.0** | **Dashboard interativo** | **Ativo** |
 | **plotly** | **>=5.18.0** | **Gráficos interativos** | **Ativo** |
-| prophet | >=1.1.0 | Previsões (Prophet) | Futuro |
+| **prophet** | **>=1.1.0** | **Previsões (Prophet)** | **Ativo** |
 | openai | >=1.0.0 | OpenAI (alternativa) | Futuro |
 
 <br>
@@ -643,30 +643,34 @@ O dashboard implementa autenticação por credenciais com as seguintes caracter�
 
 ## 8. ROADMAP FUTURO E IMPORTANCIA DAS FEATURES
 
-### 8.1 Fase 1: Previsões com Prophet (T2 2026)
+### 8.1 Fase 1: Previsões com Prophet (T1 2026)
 
-**STATUS: ⏸️ BLOQUEADO (dados insuficientes)**
+**STATUS: ✅ IMPLEMENTADO (modelo simplificado)**
 
 | Item | Prioridade | Esforço | Status |
 |:-----|:----------:|--------:|:------:|
-| Instalar Prophet no requirements.txt | Alta | 1h | ⏳ Aguardando |
-| Criar src/forecaster.py | Alta | 8h | ⏳ Aguardando |
-| Previsão de receita mensal | Alta | 4h | ⏳ Aguardando |
-| Previsão de custos por categoria | Média | 4h | ⏳ Aguardando |
-| Visualização de tendências | Média | 4h | ⏳ Aguardando |
-| Testes para forecaster | Alta | 4h | ⏳ Aguardando |
+| Instalar Prophet no requirements.txt | Alta | 1h | ✅ Concluído |
+| Criar src/forecaster.py | Alta | 8h | ✅ Concluído |
+| Previsão de receita mensal | Alta | 4h | ✅ Concluído |
+| Previsão de custos por categoria | Média | 4h | ✅ Concluído |
+| Visualização de tendências | Média | 4h | ✅ Concluído |
+| Testes para forecaster | Alta | 4h | ⏳ Pendente |
 
-**BLOQUEADOR IDENTIFICADO (20/01/2026):**
+**IMPLEMENTAÇÃO (20/01/2026):**
 
-| Requisito | Atual | Necessário | Status |
-|:----------|------:|-----------:|:------:|
-| Meses de histórico | 12 | 24 | ❌ Faltam 12 meses |
-| Período disponível | Jan-Dez/2025 | Jan/2024-Dez/2025 | ❌ Incompleto |
+Optou-se pelo modelo simplificado com 12 meses de histórico para entrega rápida.
 
-**Ações necessárias:**
-1. Aguardar acúmulo de mais 12 meses de dados (até Jan/2026)
-2. OU obter dados históricos de 2024 para completar série
-3. Alternativa: usar modelo simplificado com 12 meses (menor precisão)
+| Componente | Arquivo | Descrição |
+|:-----------|:--------|:----------|
+| DREForecaster | `src/forecaster.py` | Classe principal de previsão |
+| Página Dashboard | `dashboard/pages/previsoes.py` | Visualização interativa |
+| Configuração | `requirements.txt` | Prophet ativado |
+
+**Limitações do modelo simplificado:**
+- Precisão reduzida vs 24+ meses de histórico
+- Intervalos de confiança mais amplos (80%)
+- Avisos exibidos ao usuário sobre limitações
+- Recomendado usar como indicativo, não valor exato
 
 **IMPORTANCIA DESTA FEATURE:**
 
@@ -847,11 +851,11 @@ output/
 
 | Fase | Período | Horas | Status | Progresso |
 |:-----|:--------|------:|:------:|:---------:|
-| Fase 1 - Prophet | T2 2026 | 25h | ⏸️ Bloqueado | 0% |
+| **Fase 1 - Prophet** | **T1 2026** | **25h** | **✅ Concluído** | **95%** |
 | **Fase 2 - IA/Gemini** | **T1 2026** | **51h** | **Em Andamento** | **90%** |
 | **Fase 3 - Dashboard** | **T1 2026** | **48h** | **✅ Concluído** | **100%** |
 | Fase 4 - Multi-Empresa | T4 2026 | 52h | Planejado | 0% |
-| **TOTAL** | **2026** | **176h** | **Em Progresso** | **~60%** |
+| **TOTAL** | **2026** | **176h** | **Em Progresso** | **~75%** |
 
 **Ordem de implementação (ATUALIZADA 20/01/2026):**
 
@@ -859,7 +863,7 @@ output/
 |:-----:|:--------|:------:|:----------------|
 | 1 | ~~IA/Gemini~~ | 🟡 90% | Executar fine-tuning na API |
 | 2 | ~~Dashboard~~ | ✅ 100% | Deploy no Cloud |
-| 3 | Prophet | ⏸️ Bloqueado | Precisa 12 meses adicionais |
+| 3 | ~~Prophet~~ | ✅ 95% | Adicionar testes unitários |
 | 4 | Multi-Empresa | ⏳ | Depende de demanda |
 
 <br>
