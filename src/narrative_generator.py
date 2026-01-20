@@ -224,10 +224,10 @@ if __name__ == "__main__":
         output_path = save_narrative_report(df)
 
         summary = get_narrative_summary(df)
-        print(f"\n✅ Sucesso! Arquivo '{output_path}' gerado.")
+        print(f"\n[OK] Sucesso! Arquivo '{output_path}' gerado.")
         print(f"   - Total de registros: {summary['total_records']}")
         print(f"   - Narrativas geradas: {summary['narratives_generated']}")
 
     except Exception as e:
-        print(f"Erro fatal: {e}")
+        print(f"[ERROR] Erro fatal: {e}")
         sys.exit(1)

@@ -186,27 +186,27 @@ if df is None:
 
 # Importar e renderizar página selecionada
 if selected_page_key == "overview":
-    from dashboard.pages.overview import render_overview
+    from dashboard.views.overview import render_overview
     render_overview(df, categories)
 
 elif selected_page_key == "dre_mensal":
-    from dashboard.pages.dre_mensal import render_dre_mensal
+    from dashboard.views.dre_mensal import render_dre_mensal
     render_dre_mensal(df, categories)
 
 elif selected_page_key == "evolucao":
-    from dashboard.pages.evolucao import render_evolucao
+    from dashboard.views.evolucao import render_evolucao
     render_evolucao(df, categories)
 
 elif selected_page_key == "composicao":
-    from dashboard.pages.composicao import render_composicao
+    from dashboard.views.composicao import render_composicao
     render_composicao(df, categories)
 
 elif selected_page_key == "previsoes":
-    from dashboard.pages.previsoes import render
+    from dashboard.views.previsoes import render
     render()
 
 elif selected_page_key == "classificacao_ia":
-    from dashboard.pages.classificacao_ia import render_classificacao_ia
+    from dashboard.views.classificacao_ia import render_classificacao_ia
     render_classificacao_ia(df, categories)
 
 
