@@ -17,31 +17,147 @@ def render_tutorial() -> None:
     # Introdução
     st.markdown("""
     Bem-vindo ao **Dashboard Financeiro DRE** do Manda Picanha! 🥩
-    
-    Este guia vai ajudá-lo a aproveitar ao máximo todas as funcionalidades 
+
+    Este guia vai ajudá-lo a aproveitar ao máximo todas as funcionalidades
     disponíveis para análise dos dados financeiros.
+
+    | Funcionalidade | Descrição |
+    |----------------|-----------|
+    | 📊 **Visão Geral** | KPIs e métricas principais em tempo real |
+    | 📈 **DRE Mensal** | Tabelas detalhadas por período |
+    | 📉 **Evolução** | Gráficos de tendência temporal |
+    | 🥧 **Composição** | Distribuição de receitas e custos |
+    | 🔮 **Previsões** | Projeções com Prophet (Machine Learning) |
+    | 🤖 **Classificação IA** | Classificação automática com Gemini AI |
     """)
 
     st.divider()
 
     # Pré-requisitos
-    st.subheader("📋 Pré-requisitos")
-    st.markdown("""
-    Antes de usar o dashboard, certifique-se de que:
-    
-    1. **Processou os dados**: Execute `python main.py` na raiz do projeto
-    2. **Arquivos gerados**: Verifique se existem os arquivos:
-       - `output/processed_dre.parquet`
-       - `output/categories.json`
-    3. **Dependências instaladas**: Execute `pip install -r requirements.txt`
-    """)
+    with st.expander("📋 Pré-requisitos e Configuração", expanded=False):
+        st.markdown("""
+        ### Requisitos do Sistema
 
-    with st.expander("🔐 Credenciais de Acesso", expanded=True):
+        | Requisito | Especificação |
+        |-----------|---------------|
+        | **Python** | 3.10 ou superior |
+        | **Navegador** | Chrome, Edge, Firefox (versões recentes) |
+        | **Memória RAM** | Mínimo 4GB (8GB recomendado) |
+        | **Sistema** | Windows, Linux ou macOS |
+
+        ### Arquivos Necessários
+
+        Antes de usar o dashboard, certifique-se de que os arquivos existem:
+
+        ```
+        projeto_dre/
+        ├── output/
+        │   ├── processed_dre.parquet  ← Dados processados
+        │   └── categories.json        ← Hierarquia de categorias
+        ```
+
+        ### Como Gerar os Arquivos
+
+        Se os arquivos não existirem, execute o pipeline ETL:
+
+        ```bash
+        # 1. Navegue até a raiz do projeto
+        cd projeto_dre
+
+        # 2. Execute o pipeline principal
+        python main.py
+        ```
+
+        ### Iniciando o Dashboard
+
+        ```bash
+        # Iniciar o servidor Streamlit
+        streamlit run dashboard/app.py
+
+        # O dashboard abrirá automaticamente em http://localhost:8501
+        ```
+        """)
+
+    # Autenticação
+    with st.expander("🔐 Autenticação (Login/Logout)", expanded=True):
         col1, col2 = st.columns(2)
         with col1:
             st.info("**Usuário:** `mandapicanha`")
         with col2:
             st.info("**Senha:** `MP@1234`")
+
+        st.markdown("""
+        ### Passo a Passo para Login
+
+        1. Digite o usuário: `mandapicanha`
+        2. Digite a senha: `MP@1234`
+        3. Clique no botão **"🔓 Entrar"**
+        4. Aguarde o redirecionamento para o dashboard
+
+        ### Sistema de Segurança
+
+        | Recurso | Descrição |
+        |---------|-----------|
+        | **Hash SHA-256** | Senhas armazenadas com criptografia |
+        | **Limite de tentativas** | Após 3 falhas, aviso é exibido |
+        | **Session State** | Sessão mantida até logout |
+
+        ### Como Fazer Logout
+
+        1. No menu lateral (sidebar), localize a seção inferior
+        2. Você verá "Logado como: 👤 mandapicanha"
+        3. Clique no botão **"🚪 Sair"**
+        """)
+
+    # Navegação Principal
+    with st.expander("🧭 Navegação Principal", expanded=False):
+        st.markdown("""
+        ### Estrutura da Interface
+
+        ```
+        ┌─────────────────────────────────────────────────────────────────┐
+        │ ┌─────────────────┐ ┌─────────────────────────────────────────┐ │
+        │ │    SIDEBAR      │ │            ÁREA PRINCIPAL               │ │
+        │ │                 │ │                                         │ │
+        │ │ 🥩 Manda Picanha│ │  Dashboard DRE                          │ │
+        │ │                 │ │  Análise financeira em tempo real       │ │
+        │ │ ─────────────── │ │                                         │ │
+        │ │ NAVEGAÇÃO       │ │  ┌─────────────────────────────────────┐│ │
+        │ │ ○ 📊 Visão Geral│ │  │       CONTEÚDO DA PÁGINA           ││ │
+        │ │ ○ 📈 DRE Mensal │ │  │                                     ││ │
+        │ │ ○ 📉 Evolução   │ │  │  (KPIs, gráficos, tabelas, etc.)    ││ │
+        │ │ ○ 🥧 Composição │ │  │                                     ││ │
+        │ │ ○ 🔮 Previsões  │ │  └─────────────────────────────────────┘│ │
+        │ │ ○ 🤖 Classif. IA│ │                                         │ │
+        │ │ ○ ❓ Como Usar  │ │  ─────────────────────────────────────  │ │
+        │ │                 │ │  © 2026 Manda Picanha | v1.4.0          │ │
+        │ │ ─────────────── │ └─────────────────────────────────────────┘ │
+        │ │ STATUS DADOS    │                                             │
+        │ │ 📊 15,500 Reg.  │                                             │
+        │ │ 📁 13 Grupos    │                                             │
+        │ │                 │                                             │
+        │ │ ─────────────── │                                             │
+        │ │ 👤 mandapicanha │                                             │
+        │ │ [🚪 Sair]       │                                             │
+        │ └─────────────────┘                                             │
+        └─────────────────────────────────────────────────────────────────┘
+        ```
+
+        ### Como Navegar Entre Páginas
+
+        1. Localize o menu **"NAVEGAÇÃO"** na sidebar (lado esquerdo)
+        2. Clique no botão de rádio (○) ao lado da página desejada
+        3. A página será carregada automaticamente na área principal
+
+        ### Indicadores na Sidebar
+
+        | Indicador | Significado |
+        |-----------|-------------|
+        | **Registros** | Total de lançamentos financeiros carregados |
+        | **Grupos DRE** | Número de categorias macro |
+        | **Status Verde** | Dados carregados corretamente |
+        | **Status Vermelho** | Dados não encontrados |
+        """)
 
     st.divider()
 
@@ -51,195 +167,412 @@ def render_tutorial() -> None:
     # Visão Geral
     with st.expander("📊 Visão Geral", expanded=False):
         st.markdown("""
-        **Função:** Resumo executivo dos principais indicadores financeiros do negócio.
+        ### Propósito
 
-        **Como foi implementada:**
-        - **Tecnologia:** Streamlit + Plotly para visualizações interativas
-        - **Processamento:** Agregação de dados do arquivo `processed_dre.parquet`
-        - **Métricas:** Cálculo automático de KPIs com comparação temporal
-        - **Gráficos:** Plotly Express para gráficos de linha e barras responsivos
+        A página **Visão Geral** fornece um resumo executivo dos principais indicadores
+        financeiros do negócio. É a página inicial recomendada para obter uma visão
+        rápida da saúde financeira.
 
-        **O que você encontra:**
-        - KPIs principais (Receita Total, Custos Totais, Lucro Operacional)
-        - Gráficos de tendência mensal com evolução temporal
-        - Comparativo de períodos (mês atual vs. mês anterior)
-        - Cards coloridos com indicadores visuais de performance
+        ### Layout da Página
 
-        **Importância para a empresa:**
-        - ✅ **Visão rápida** do desempenho financeiro sem precisar abrir planilhas
-        - ✅ **Tomada de decisão ágil** baseada em dados consolidados
-        - ✅ **Identificação imediata** de tendências positivas ou negativas
-        - ✅ **Comunicação eficaz** com stakeholders através de visualizações claras
+        ```
+        ┌────────────────────────────────────────────────────────────────┐
+        │                     VISÃO GERAL                                │
+        ├────────────────────────────────────────────────────────────────┤
+        │  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐         │
+        │  │ 💚 RECEITAS  │  │ 🔴 CUSTOS    │  │ 📊 RESULTADO │         │
+        │  │ R$ 72.1M     │  │ R$ 70.8M     │  │ R$ 1.31M     │         │
+        │  │ ▲ +5.2%      │  │ ▲ +3.1%      │  │ ▲ +12.4%     │         │
+        │  └──────────────┘  └──────────────┘  └──────────────┘         │
+        │                                                                │
+        │  ┌─────────────────────────────────────────────────────────┐  │
+        │  │                 GRÁFICO DE EVOLUÇÃO                     │  │
+        │  │        ╱╲    ╱╲                                         │  │
+        │  │   ╱╲  ╱  ╲  ╱  ╲╱                                       │  │
+        │  │  ╱  ╲╱    ╲╱                                            │  │
+        │  │ Jan  Fev  Mar  Abr  Mai  Jun  Jul  Ago  Set  Out  Nov   │  │
+        │  └─────────────────────────────────────────────────────────┘  │
+        └────────────────────────────────────────────────────────────────┘
+        ```
 
-        **Como interpretar:**
-        - 📈 Setas verdes indicam crescimento positivo em relação ao período anterior
-        - 📉 Setas vermelhas indicam queda em relação ao período anterior
-        - Os valores percentuais mostram a variação exata
+        ### KPI Cards (Cartões de Métricas)
+
+        | Card | Descrição | Interpretação |
+        |------|-----------|---------------|
+        | 💚 **Receitas** | Total de entradas | Valor em verde = saudável |
+        | 🔴 **Custos** | Total de saídas | Monitorar tendência |
+        | 📊 **Resultado** | Receitas - Custos | Positivo = lucro |
+        | ▲/▼ **Delta** | Variação vs período anterior | Verde = melhoria |
+
+        ### Como Usar
+
+        1. **Navegue** até "📊 Visão Geral" na sidebar
+        2. **Analise** os KPIs principais no topo
+        3. **Observe** as setas de tendência (▲ verde = bom, ▼ vermelho = atenção)
+        4. **Explore** o gráfico passando o mouse sobre os pontos
+        5. **Compare** receitas vs custos para avaliar margem
+
+        ### Casos de Uso
+
+        | Cenário | O que fazer |
+        |---------|-------------|
+        | Reunião executiva | Mostre os KPIs principais |
+        | Análise mensal | Verifique tendências no gráfico |
+        | Identificar problemas | Procure setas vermelhas (▼) |
         """)
 
     # DRE Mensal
     with st.expander("📈 DRE Mensal", expanded=False):
         st.markdown("""
-        **Função:** Demonstrativo de Resultado do Exercício (DRE) detalhado por mês.
+        ### Propósito
 
-        **Como foi implementada:**
-        - **Tecnologia:** Pandas para manipulação de dados + Streamlit DataFrames
-        - **Filtros dinâmicos:** Widgets interativos (selectbox, multiselect)
-        - **Formatação:** Funções customizadas para exibição de valores monetários (R$)
-        - **Estrutura:** Hierarquia DRE padrão (Receitas → Custos → Despesas → Resultado)
+        A página **DRE Mensal** exibe o Demonstrativo de Resultado do Exercício
+        completo, permitindo análise detalhada por mês e categoria.
 
-        **Funcionalidades:**
-        - Filtro por mês específico (dropdown com todos os meses disponíveis)
-        - Filtro por grupos DRE (Receitas, Custos Variáveis, Despesas, etc.)
-        - Tabela formatada com valores monetários em padrão brasileiro
-        - Drill-down por categoria e subcategoria
+        ### Layout da Página
 
-        **Importância para a empresa:**
-        - ✅ **Análise detalhada** de cada linha do DRE por período
-        - ✅ **Identificação de anomalias** em categorias específicas
-        - ✅ **Comparação mensal** para detectar variações sazonais
-        - ✅ **Auditoria facilitada** com dados organizados e rastreáveis
+        ```
+        ┌────────────────────────────────────────────────────────────────┐
+        │                     DRE MENSAL                                 │
+        ├────────────────────────────────────────────────────────────────┤
+        │  ┌─ FILTROS ─────────────────────────────────────────────────┐│
+        │  │  Mês: [Todos ▼]        Grupo: [Todos ▼]                   ││
+        │  └───────────────────────────────────────────────────────────┘│
+        │                                                                │
+        │  ┌─ DEMONSTRATIVO DE RESULTADO ─────────────────────────────┐ │
+        │  │  Grupo                              │  Valor Formatado   │ │
+        │  │  ───────────────────────────────────────────────────────  │ │
+        │  │  RECEITAS S/ VENDAS                 │  R$ 6.010.000,00   │ │
+        │  │  (+) OUTRAS RECEITAS                │  R$ 121.000,00     │ │
+        │  │  ( - ) CUSTOS VARIÁVEIS             │  -R$ 3.200.000,00  │ │
+        │  │  ( - ) GASTOS COM PESSOAL           │  -R$ 1.500.000,00  │ │
+        │  │  ...                                │  ...               │ │
+        │  └───────────────────────────────────────────────────────────┘│
+        │                                                                │
+        │  ┌─ VISUALIZAÇÃO POR GRUPO ─────────────────────────────────┐ │
+        │  │  [Gráfico de Barras Horizontal]                          │ │
+        │  │  RECEITAS S/ VENDAS      ████████████████████  R$ 6.01M  │ │
+        │  │  CUSTOS VARIÁVEIS        ████████████  -R$ 3.2M          │ │
+        │  └───────────────────────────────────────────────────────────┘│
+        └────────────────────────────────────────────────────────────────┘
+        ```
 
-        **Dica:** Use os filtros para comparar meses específicos e
-        identificar variações sazonais (ex: dezembro vs. outros meses).
+        ### Filtros Disponíveis
+
+        | Filtro | Opções | Uso |
+        |--------|--------|-----|
+        | **Mês** | "Todos" ou mês específico | Analisar período específico |
+        | **Grupo** | "Todos" ou grupo DRE | Focar em categoria |
+
+        ### Interpretação da Tabela DRE
+
+        | Tipo de Linha | Prefixo | Cor | Significado |
+        |---------------|---------|-----|-------------|
+        | Receitas | sem prefixo | Verde | Entradas de dinheiro |
+        | Outras Receitas | (+) | Verde | Receitas complementares |
+        | Custos | ( - ) | Vermelho | Saídas operacionais |
+        | Resultado | ( = ) | Azul | Totalizadores |
+
+        ### Passo a Passo
+
+        1. Acesse "📈 DRE Mensal" na sidebar
+        2. Defina o filtro de **Mês** (ex: "Set" para setembro)
+        3. Observe os 3 KPIs no topo (Receitas, Custos, Resultado)
+        4. Role para baixo e analise a **tabela DRE**
+        5. Use o **gráfico de barras** para comparação visual
         """)
 
     # Evolução Temporal
     with st.expander("📉 Evolução Temporal", expanded=False):
         st.markdown("""
-        **Função:** Análise de tendências e evolução de indicadores ao longo do tempo.
+        ### Propósito
 
-        **Como foi implementada:**
-        - **Tecnologia:** Plotly Graph Objects para gráficos interativos avançados
-        - **Agregação temporal:** Pandas groupby com resample para séries temporais
-        - **Múltiplas visualizações:** Alternância entre tipos de gráfico (linha, barra, área)
-        - **Responsividade:** Layout adaptativo para diferentes tamanhos de tela
+        A página **Evolução Temporal** mostra tendências e padrões ao longo do tempo,
+        permitindo identificar sazonalidades e comparar períodos.
 
-        **Tipos de visualização:**
-        - **Gráfico de Linha:** Ideal para identificar tendências e padrões temporais
-        - **Gráfico de Barras:** Melhor para comparar valores absolutos entre períodos
-        - **Gráfico de Área:** Visualização de volume acumulado ao longo do tempo
+        ### Layout da Página
 
-        **Interatividade:**
-        - Passe o mouse sobre os pontos para ver valores detalhados e datas
-        - Use o zoom (arrastar) para focar em períodos específicos
-        - Duplo clique para resetar o zoom
-        - Clique na legenda para ocultar/exibir séries específicas
+        ```
+        ┌────────────────────────────────────────────────────────────────┐
+        │                   EVOLUÇÃO TEMPORAL                            │
+        ├────────────────────────────────────────────────────────────────┤
+        │  ┌─ CONFIGURAÇÕES ───────────────────────────────────────────┐│
+        │  │  Grupos: [Selecione múltiplos ▼]                          ││
+        │  │  Tipo de Gráfico: ○ Linha  ○ Barras                       ││
+        │  └───────────────────────────────────────────────────────────┘│
+        │                                                                │
+        │  ┌─ EVOLUÇÃO POR GRUPO ─────────────────────────────────────┐ │
+        │  │    ^                          ╱╲                         │ │
+        │  │    │     ╱╲    ╱╲    ╱╲     ╱  ╲                        │ │
+        │  │ R$ │    ╱  ╲  ╱  ╲  ╱  ╲   ╱    ╲╱                      │ │
+        │  │    │   ╱    ╲╱    ╲╱    ╲ ╱                              │ │
+        │  │    └────────────────────────────────────────────────►    │ │
+        │  │       Jan  Fev  Mar  Abr  Mai  Jun  Jul  Ago  Set  Out   │ │
+        │  └──────────────────────────────────────────────────────────┘ │
+        │                                                                │
+        │  ┌─ ANÁLISE DE VARIAÇÃO ────────────────────────────────────┐ │
+        │  │  Mês     │ Resultado       │ Variação %                  │ │
+        │  │  ───────────────────────────────────────────────────────  │ │
+        │  │  Jan     │ R$ 95.000       │ -                           │ │
+        │  │  Fev     │ R$ 102.000      │ +7.4%                       │ │
+        │  │  Mar     │ R$ 98.000       │ -3.9%                       │ │
+        │  └──────────────────────────────────────────────────────────┘ │
+        └────────────────────────────────────────────────────────────────┘
+        ```
 
-        **Importância para a empresa:**
-        - ✅ **Identificação de tendências** de crescimento ou queda
-        - ✅ **Detecção de sazonalidade** (picos e vales recorrentes)
-        - ✅ **Planejamento estratégico** baseado em padrões históricos
-        - ✅ **Previsão informal** de comportamentos futuros
+        ### Tipos de Gráfico
+
+        | Tipo | Quando Usar | Vantagem |
+        |------|-------------|----------|
+        | **Linha** | Identificar tendências | Mostra continuidade |
+        | **Barras** | Comparar valores absolutos | Facilita comparação |
+
+        ### Interatividade dos Gráficos
+
+        | Ação | Como Fazer | Resultado |
+        |------|------------|-----------|
+        | **Ver detalhes** | Passe o mouse | Tooltip com valor |
+        | **Zoom** | Clique e arraste | Amplia região |
+        | **Reset zoom** | Duplo clique | Volta à visualização |
+        | **Ocultar série** | Clique na legenda | Esconde/mostra linha |
+
+        ### Tabela de Variação
+
+        - **Positivo (+):** Crescimento em relação ao mês anterior
+        - **Negativo (-):** Queda em relação ao mês anterior
+        - **Cores:** Verde para positivo, vermelho para negativo
         """)
 
     # Composição de Custos
     with st.expander("🥧 Composição de Custos", expanded=False):
         st.markdown("""
-        **Função:** Entender a distribuição proporcional de custos, despesas e receitas.
+        ### Propósito
 
-        **Como foi implementada:**
-        - **Tecnologia:** Plotly Express para gráficos de pizza e treemap
-        - **Cálculo de proporções:** Agregação percentual por categoria
-        - **Paleta de cores:** Esquema de cores consistente e acessível
-        - **Hierarquia visual:** Treemap com níveis (Grupo → Categoria → Subcategoria)
+        A página **Composição de Custos** permite visualizar a distribuição percentual
+        de receitas e despesas, identificando quais categorias representam maior
+        impacto no resultado financeiro.
 
-        **Visualizações:**
-        - **Gráfico de Pizza (Pie Chart):** Proporção percentual de cada categoria
-        - **Treemap:** Hierarquia visual dos custos com áreas proporcionais
-        - **Gráfico de Barras Empilhadas:** Composição ao longo do tempo
+        ### Layout da Página
 
-        **Análise:**
-        - Identifique quais categorias consomem mais recursos (maiores fatias/áreas)
-        - Descubra oportunidades de otimização (categorias com crescimento desproporcional)
-        - Compare a estrutura de custos com benchmarks do setor
+        ```
+        ┌────────────────────────────────────────────────────────────────┐
+        │                   COMPOSIÇÃO DE CUSTOS                          │
+        ├────────────────────────────────────────────────────────────────┤
+        │  ┌─ PERÍODO ────────────────────────────────────────────────┐  │
+        │  │  Mês: [Todos ▼]                                          │  │
+        │  └──────────────────────────────────────────────────────────┘  │
+        │                                                                │
+        │  ┌─────────────────┬─────────────────┬─────────────────┐      │
+        │  │  💚 Receitas   │  🔴 Custos      │  🗺️ Hierarquia  │      │
+        │  └─────────────────┴─────────────────┴─────────────────┘      │
+        │                                                                │
+        │  ┌─ TAB SELECIONADA ────────────────────────────────────────┐ │
+        │  │                                                          │ │
+        │  │           [Gráfico de Pizza]                             │ │
+        │  │                                                          │ │
+        │  │        Top 10 Fontes de Receita                          │ │
+        │  │                    ┌────┐                                │ │
+        │  │                 ┌──┤ A  ├──┐                             │ │
+        │  │              ┌──┤  └────┘  ├──┐                          │ │
+        │  │           ┌──┤ B │        │ C ├──┐                       │ │
+        │  │           └──────┴────────┴──────┘                       │ │
+        │  │                                                          │ │
+        │  │  📋 Detalhamento das Receitas  [▼ Expandir]              │ │
+        │  └──────────────────────────────────────────────────────────┘ │
+        └────────────────────────────────────────────────────────────────┘
+        ```
 
-        **Importância para a empresa:**
-        - ✅ **Gestão de custos** baseada em dados visuais claros
-        - ✅ **Priorização de ações** focando nas categorias mais relevantes
-        - ✅ **Negociação com fornecedores** usando dados de volume por categoria
-        - ✅ **Controle de margem** identificando custos que impactam a lucratividade
+        ### Abas Disponíveis
+
+        | Aba | Ícone | Conteúdo |
+        |-----|-------|----------|
+        | **Receitas** | 💚 | Top 10 fontes de receita |
+        | **Custos/Despesas** | 🔴 | Top 10 maiores custos |
+        | **Hierarquia Completa** | 🗺️ | Treemap com Grupo → Categoria |
+
+        ### Treemap (Aba Hierarquia)
+
+        ```
+        ┌────────────────────────────────────────────────────────┐
+        │ RECEITAS S/ VENDAS                                      │
+        │ ┌─────────────┬───────────┬──────────┬────────────┐    │
+        │ │ Vendas Loja │ Delivery  │ iFood    │ Outros     │    │
+        │ │ (45%)       │ (25%)     │ (20%)    │ (10%)      │    │
+        │ └─────────────┴───────────┴──────────┴────────────┘    │
+        ├────────────────────────────────────────────────────────┤
+        │ CUSTOS VARIÁVEIS                                        │
+        │ ┌──────────────────┬─────────────┬───────────────┐     │
+        │ │ CMV              │ Embalagens  │ Delivery Tax  │     │
+        │ └──────────────────┴─────────────┴───────────────┘     │
+        └────────────────────────────────────────────────────────┘
+        ```
+
+        - **Retângulo maior:** Grupo DRE (ex: RECEITAS, CUSTOS)
+        - **Retângulos internos:** Categorias dentro do grupo
+        - **Área:** Proporcional ao valor
+
+        ### Passo a Passo
+
+        1. Acesse "🥧 Composição de Custos" na sidebar
+        2. Selecione o período no filtro **Mês**
+        3. Navegue entre as abas (Receitas, Custos, Hierarquia)
+        4. Clique em **"📋 Detalhamento"** para expandir tabela
         """)
 
     # Previsões Financeiras
     with st.expander("🔮 Previsões Financeiras", expanded=False):
         st.markdown("""
-        **Função:** Projeção estatística de receitas e custos para os próximos meses.
+        ### Propósito
 
-        **Como foi implementada:**
-        - **Tecnologia:** Facebook Prophet (biblioteca de forecasting de séries temporais)
-        - **Algoritmo:** Modelo aditivo com componentes de tendência e sazonalidade
-        - **Treinamento:** Ajuste automático aos dados históricos mensais
-        - **Validação:** Cálculo de MAPE (Mean Absolute Percentage Error) para avaliar precisão
-        - **Visualização:** Plotly para gráficos com intervalos de confiança (80%)
+        A página **Previsões Financeiras** utiliza machine learning (Prophet) para
+        projetar valores futuros de receitas e custos, auxiliando no planejamento.
 
-        **⚠️ Limitações:**
-        - Modelo simplificado com apenas 12 meses de histórico disponível
-        - Para maior precisão, são recomendados 24+ meses de dados
-        - Não considera eventos externos (crises, mudanças de mercado, etc.)
-        - Use como **indicativo**, não como valor exato ou garantido
+        ### Layout da Página
 
-        **Como usar:**
-        1. Ajuste o número de meses a prever (1-12) usando o slider
-        2. Selecione um grupo DRE específico ou "TODOS" para previsão agregada
-        3. Clique em "Gerar Previsão" e aguarde o treinamento do modelo
-        4. Analise os intervalos de confiança (área sombreada azul no gráfico)
-        5. Consulte a tabela de previsões detalhadas com valores mínimos e máximos
+        ```
+        ┌────────────────────────────────────────────────────────────────┐
+        │                   PREVISÕES FINANCEIRAS                        │
+        ├────────────────────────────────────────────────────────────────┤
+        │  ┌─ CONFIGURAÇÕES ─────────────────────────────────────────┐  │
+        │  │  Meses para prever: [========○====] 6                   │  │
+        │  │  Grupo: [TODOS ▼]                                       │  │
+        │  │  [🔮 Gerar Previsão]                                    │  │
+        │  └─────────────────────────────────────────────────────────┘  │
+        │                                                                │
+        │  ┌──────────────┐ ┌──────────────┐ ┌──────────────┐           │
+        │  │ 📅 Histórico │ │ 📈 Tendência │ │ 🎯 Próxima   │           │
+        │  │ 12 meses     │ │ ▲ Alta       │ │ R$ 6.2M      │           │
+        │  └──────────────┘ └──────────────┘ └──────────────┘           │
+        │                                                                │
+        │  ┌─ GRÁFICO DE PREVISÃO ───────────────────────────────────┐  │
+        │  │                         ░░░░░░░░  (intervalo 80%)       │  │
+        │  │    ╱╲    ╱╲    ╱╲     ╱░░░░░░░░░                        │  │
+        │  │   ╱  ╲  ╱  ╲  ╱  ╲╲╲╱░░░░░░░░░░░                        │  │
+        │  │  ╱    ╲╱    ╲╱      ░░░░░░░░░░░░░                        │  │
+        │  │  ─────────────────|─────────────────────────────────    │  │
+        │  │  Histórico        │ Previsão                            │  │
+        │  │        Jan  Fev  Mar│ Abr  Mai  Jun  Jul  Ago  Set       │  │
+        │  └─────────────────────────────────────────────────────────┘  │
+        │                                                                │
+        │  ┌─ TABELA DE PREVISÕES ───────────────────────────────────┐  │
+        │  │  Mês      │ Previsão      │ Mínimo       │ Máximo       │  │
+        │  │  Abr/2026 │ R$ 6.010.000  │ R$ 5.800.000 │ R$ 6.220.000 │  │
+        │  │  Mai/2026 │ R$ 6.150.000  │ R$ 5.900.000 │ R$ 6.400.000 │  │
+        │  └─────────────────────────────────────────────────────────┘  │
+        └────────────────────────────────────────────────────────────────┘
+        ```
 
-        **Importância para a empresa:**
-        - ✅ **Planejamento financeiro** com base em projeções estatísticas
-        - ✅ **Gestão de fluxo de caixa** antecipando receitas e despesas
-        - ✅ **Tomada de decisão estratégica** (investimentos, contratações, etc.)
-        - ✅ **Preparação para cenários** usando intervalos de confiança (melhor/pior caso)
-        - ✅ **Comunicação com investidores** apresentando projeções fundamentadas
+        ### Configurações do Modelo
 
-        **Métricas exibidas:**
-        - **Meses de Histórico:** Quantidade de dados usados no treinamento
-        - **Tendência:** Direção geral da previsão (alta, baixa, estável)
-        - **Próxima Previsão:** Valor projetado para o próximo mês
-        - **Intervalo 80%:** Faixa de valores com 80% de probabilidade
+        | Parâmetro | Opções | Descrição |
+        |-----------|--------|-----------|
+        | **Meses** | 1-12 | Horizonte de previsão |
+        | **Grupo** | "TODOS" ou específico | Filtrar por categoria |
+        | **Botão** | 🔮 Gerar Previsão | Inicia o treinamento |
+
+        ### Métricas Exibidas
+
+        | Card | Descrição | Interpretação |
+        |------|-----------|---------------|
+        | **📅 Histórico** | Meses de dados | Mais dados = mais preciso |
+        | **📈 Tendência** | Direção geral | ▲ Alta, ▼ Baixa, ─ Estável |
+        | **🎯 Próxima** | Valor projetado | Estimativa para próximo mês |
+
+        ### Interpretação do Gráfico
+
+        | Elemento | Significado |
+        |----------|-------------|
+        | **Linha contínua** | Dados históricos reais |
+        | **Linha tracejada** | Previsão futura |
+        | **Área sombreada** | Intervalo de confiança 80% |
+        | **Linha vertical** | Divisão histórico/previsão |
+
+        ### ⚠️ Limitações
+
+        - Modelo simplificado com 12 meses de histórico
+        - Para maior precisão: 24+ meses recomendados
+        - Não considera eventos externos (crises, promoções)
+        - Use como **indicativo**, não como valor garantido
         """)
 
     # Classificação IA
     with st.expander("🤖 Classificação IA", expanded=False):
         st.markdown("""
-        **Função:** Classificação automática e inteligente de lançamentos financeiros.
+        ### Propósito
 
-        **Como foi implementada:**
-        - **Tecnologia:** Google Gemini 2.0 Flash (modelo de linguagem generativa)
-        - **Técnica RAG:** Retrieval-Augmented Generation usando `categories.json` como contexto
-        - **Prompt Engineering:** Prompts otimizados para classificação financeira de restaurantes
-        - **Fallback:** Sistema de simulação quando API não está disponível
-        - **Validação:** Verificação de categorias válidas antes de retornar resultado
+        A página **Classificação IA** utiliza inteligência artificial (Google Gemini 2.0 Flash)
+        para classificar automaticamente descrições de gastos nas categorias DRE corretas.
 
-        **Funcionalidades:**
-        - Classificação automática de descrições de gastos em categorias DRE
-        - Sugestão inteligente baseada em contexto semântico (não apenas palavras-chave)
-        - Visualização da hierarquia completa de categorias disponíveis
-        - Métricas simuladas de performance do modelo (acurácia, precisão, recall, F1-score)
-        - Interface de teste manual para validar classificações
+        ### Layout da Página
 
-        **Como funciona o RAG:**
-        1. Sistema carrega todas as categorias do arquivo `categories.json`
-        2. Formata as categorias em contexto estruturado (Grupo → Categorias)
-        3. Envia descrição + contexto para o modelo Gemini
-        4. Modelo retorna a categoria mais adequada baseado em semântica
+        ```
+        ┌────────────────────────────────────────────────────────────────┐
+        │                   CLASSIFICAÇÃO IA                             │
+        ├────────────────────────────────────────────────────────────────┤
+        │  ┌──────────────┐ ┌──────────────┐ ┌──────────────┐           │
+        │  │ 🤖 Modelo    │ │ 📊 Categorias│ │ ✅ Acurácia  │           │
+        │  │ Gemini 2.0   │ │ 120          │ │ 94.5%        │           │
+        │  └──────────────┘ └──────────────┘ └──────────────┘           │
+        │                                                                │
+        │  ┌─ TESTE DE CLASSIFICAÇÃO ────────────────────────────────┐  │
+        │  │  Descrição do gasto:                                    │  │
+        │  │  ┌──────────────────────────────────────────────────┐   │  │
+        │  │  │ Compra de picanha para churrasco                 │   │  │
+        │  │  └──────────────────────────────────────────────────┘   │  │
+        │  │                                                         │  │
+        │  │  [🤖 Classificar com IA]                                │  │
+        │  │                                                         │  │
+        │  │  ┌─ RESULTADO ────────────────────────────────────────┐ │  │
+        │  │  │  ✅ Classificação: BOVINOS                         │ │  │
+        │  │  │  📂 Grupo: CUSTOS VARIÁVEIS                        │ │  │
+        │  │  │  💡 Confiança: Alta                                 │ │  │
+        │  │  └────────────────────────────────────────────────────┘ │  │
+        │  └─────────────────────────────────────────────────────────┘  │
+        │                                                                │
+        │  ▶ 📂 Hierarquia de Categorias [Expandir]                     │
+        └────────────────────────────────────────────────────────────────┘
+        ```
 
-        **Importância para a empresa:**
-        - ✅ **Automação de processos** reduzindo trabalho manual de classificação
-        - ✅ **Consistência** nas classificações (sem variação humana)
-        - ✅ **Velocidade** processando centenas de lançamentos em segundos
-        - ✅ **Aprendizado contínuo** melhorando com feedback e novos exemplos
-        - ✅ **Redução de erros** em categorização de despesas e receitas
+        ### Como Funciona o RAG
 
-        **Exemplo de uso:**
-        - Digite: "Compra de picanha para churrasco"
-        - IA classifica: "BOVINOS" (dentro do grupo "CUSTOS VARIÁVEIS")
+        **RAG** = Retrieval-Augmented Generation
 
-        **Requisitos:**
-        - Variável de ambiente `GEMINI_API_KEY` configurada
-        - Arquivo `output/categories.json` disponível
-        - Biblioteca `google-generativeai` instalada
+        ```
+        ┌─────────────┐    ┌─────────────┐    ┌─────────────┐
+        │ Descrição   │───▶│ Contexto    │───▶│ Gemini 2.0  │
+        │ do Gasto    │    │ categories  │    │   Flash     │
+        │             │    │ .json       │    │             │
+        └─────────────┘    └─────────────┘    └──────┬──────┘
+                                                     │
+                                                     ▼
+                                             ┌─────────────┐
+                                             │ Categoria   │
+                                             │ Sugerida    │
+                                             └─────────────┘
+        ```
+
+        ### Exemplos de Classificação
+
+        | Descrição | Categoria | Grupo |
+        |-----------|-----------|-------|
+        | "Compra de picanha" | BOVINOS | CUSTOS VARIÁVEIS |
+        | "Pagamento de aluguel" | ALUGUEL | OCUPAÇÃO |
+        | "Salário funcionário" | SALÁRIOS | GASTOS COM PESSOAL |
+        | "Conta de energia" | ENERGIA | UTILIDADES |
+
+        ### Passo a Passo
+
+        1. Acesse "🤖 Classificação IA" na sidebar
+        2. Digite a descrição do gasto no campo de texto
+        3. Clique em **"🤖 Classificar com IA"**
+        4. Veja a categoria sugerida e o grupo DRE
+        5. Expanda **"📂 Hierarquia"** para ver todas as categorias
+
+        ### Requisitos
+
+        - ⚙️ Variável `GEMINI_API_KEY` configurada
+        - 📁 Arquivo `output/categories.json` disponível
+        - 📦 Biblioteca `google-generativeai` instalada
         """)
 
     st.divider()
@@ -353,4 +686,57 @@ def render_tutorial() -> None:
     - Logs do ETL: Arquivo `logs/pipeline.log` (se configurado)
     - Versão do Python: 3.10+ recomendado
     """)
+
+    st.divider()
+
+    # Glossário
+    st.subheader("📚 Glossário de Termos")
+
+    with st.expander("📊 Termos DRE (Financeiros)", expanded=False):
+        st.markdown("""
+        | Termo | Definição |
+        |-------|-----------|
+        | **DRE** | Demonstração do Resultado do Exercício - relatório contábil |
+        | **Receita** | Entradas de dinheiro (vendas, serviços) |
+        | **Custo** | Gastos diretamente ligados à produção |
+        | **Despesa** | Gastos administrativos e operacionais |
+        | **CMV** | Custo da Mercadoria Vendida |
+        | **Margem** | Diferença entre receita e custos |
+        | **Lucro Bruto** | Receita - CMV |
+        | **Lucro Operacional** | Lucro Bruto - Despesas Operacionais |
+        | **EBITDA** | Lucro antes de juros, impostos, depreciação e amortização |
+        | **Resultado** | Lucro ou prejuízo final |
+        """)
+
+    with st.expander("💻 Termos Técnicos", expanded=False):
+        st.markdown("""
+        | Termo | Definição |
+        |-------|-----------|
+        | **Prophet** | Biblioteca de forecasting (previsão) do Facebook/Meta |
+        | **RAG** | Retrieval-Augmented Generation - técnica de IA |
+        | **Gemini** | Modelo de linguagem do Google (IA generativa) |
+        | **Parquet** | Formato de arquivo colunar otimizado |
+        | **ETL** | Extract, Transform, Load - pipeline de dados |
+        | **KPI** | Key Performance Indicator - indicador de desempenho |
+        | **Treemap** | Gráfico hierárquico com retângulos proporcionais |
+        | **Streamlit** | Framework Python para dashboards |
+        | **Plotly** | Biblioteca de visualização interativa |
+        | **API** | Interface de Programação de Aplicações |
+        """)
+
+    with st.expander("🔤 Abreviações Comuns", expanded=False):
+        st.markdown("""
+        | Abreviação | Significado |
+        |------------|-------------|
+        | **IA** | Inteligência Artificial |
+        | **ML** | Machine Learning (Aprendizado de Máquina) |
+        | **CC** | Centro de Custo |
+        | **R$** | Reais (moeda brasileira) |
+        | **%** | Percentual |
+        | **vs** | Versus (comparação) |
+        | **YoY** | Year over Year (ano a ano) |
+        | **MoM** | Month over Month (mês a mês) |
+        | **MAPE** | Mean Absolute Percentage Error |
+        | **JSON** | JavaScript Object Notation |
+        """)
 
