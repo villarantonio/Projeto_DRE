@@ -19,7 +19,7 @@ BASE_DIR: Path = Path(__file__).parent
 # Configuração do arquivo de entrada
 # Suporta tanto Excel (.xlsx) quanto CSV (.csv)
 # O arquivo pode ser baixado do SharePoint da empresa Manda Picanha
-INPUT_FILE_NAME: str = "DRE_BI.xlsx"
+INPUT_FILE_NAME: str = "DRE_BI(BaseDRE).csv"
 INPUT_FILE_PATH: Path = BASE_DIR / INPUT_FILE_NAME
 
 # Configuração de arquivos de saída
