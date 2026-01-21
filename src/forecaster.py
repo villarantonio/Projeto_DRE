@@ -199,8 +199,15 @@ class DREForecaster:
             warnings.simplefilter("ignore")
             model.fit(prophet_df)
 
-        # Gerar datas futuras
-        future = model.make_future_dataframe(periods=periods, freq="MS")
+        # Gerar datas futuras manualmente para evitar erro de Timestamp
+        # (compatibilidade com pandas >= 2.0)
+        last_date = prophet_df["ds"].max()
+        future_dates = pd.date_range(
+            start=prophet_df["ds"].min(),
+            periods=len(prophet_df) + periods,
+            freq="MS"
+        )
+        future = pd.DataFrame({"ds": future_dates})
 
         # Fazer previsao
         forecast_df = model.predict(future)

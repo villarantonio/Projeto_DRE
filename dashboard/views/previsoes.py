@@ -117,14 +117,28 @@ def create_forecast_chart(
     )
     
     # Linha vertical separando historico/futuro
-    fig.add_vline(
-        x=last_date,
-        line_dash="dash",
-        line_color="gray",
-        annotation_text="Inicio Previsao",
-        annotation_position="top",
+    # Usar add_shape para evitar problemas de compatibilidade com Timestamp
+    fig.add_shape(
+        type="line",
+        x0=last_date,
+        x1=last_date,
+        y0=0,
+        y1=1,
+        yref="paper",
+        line=dict(color="gray", width=2, dash="dash"),
     )
-    
+
+    # Adicionar annotation separadamente
+    fig.add_annotation(
+        x=last_date,
+        y=1,
+        yref="paper",
+        text="Inicio Previsao",
+        showarrow=False,
+        yshift=10,
+        font=dict(color="gray", size=10),
+    )
+
     return fig
 
 

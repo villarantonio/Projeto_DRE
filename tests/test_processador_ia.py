@@ -1,5 +1,5 @@
 """
-Testes unitários para o módulo processador_ia.
+Testes unitários para o módulo data_processor_ia (src/).
 
 Este módulo contém testes para as funções de processamento de dados
 com trava de segurança contra duplicidade e classificação IA.
@@ -70,14 +70,14 @@ class TestTravaSegurancaDuplicidade:
 
     def test_trava_permite_meses_novos(self, sample_mestre_df, sample_entrada_df):
         """Testa que meses novos são permitidos sem erro."""
-        from processador_ia import trava_seguranca_duplicidade
+        from src.data_processor_ia import trava_seguranca_duplicidade
 
         # Não deve lançar exceção
         trava_seguranca_duplicidade(sample_mestre_df, sample_entrada_df)
 
     def test_trava_bloqueia_meses_duplicados(self, sample_mestre_df, sample_entrada_duplicada_df):
         """Testa que meses duplicados são bloqueados."""
-        from processador_ia import trava_seguranca_duplicidade
+        from src.data_processor_ia import trava_seguranca_duplicidade
 
         with pytest.raises(SystemExit) as exc_info:
             trava_seguranca_duplicidade(sample_mestre_df, sample_entrada_duplicada_df)
@@ -86,7 +86,7 @@ class TestTravaSegurancaDuplicidade:
 
     def test_trava_sem_coluna_mes(self, sample_mestre_df):
         """Testa comportamento quando coluna 'Mes' não existe."""
-        from processador_ia import trava_seguranca_duplicidade
+        from src.data_processor_ia import trava_seguranca_duplicidade
 
         df_sem_mes = pd.DataFrame({
             'Data': ['15/01/2026'],
@@ -99,7 +99,7 @@ class TestTravaSegurancaDuplicidade:
 
     def test_trava_multiplos_meses_novos(self, sample_mestre_df):
         """Testa com múltiplos meses novos."""
-        from processador_ia import trava_seguranca_duplicidade
+        from src.data_processor_ia import trava_seguranca_duplicidade
 
         df_multiplos_meses = pd.DataFrame({
             'Data': ['15/11/2026', '20/12/2026', '25/01/2027'],
@@ -113,7 +113,7 @@ class TestTravaSegurancaDuplicidade:
 
     def test_trava_parcialmente_duplicado(self, sample_mestre_df):
         """Testa quando alguns meses são novos e outros duplicados."""
-        from processador_ia import trava_seguranca_duplicidade
+        from src.data_processor_ia import trava_seguranca_duplicidade
 
         df_parcial = pd.DataFrame({
             'Data': ['15/11/2026', '20/08/2026'],  # Nov=novo, Ago=duplicado
@@ -135,50 +135,62 @@ class TestTravaSegurancaDuplicidade:
 class TestClassificarGastoProcessador:
     """Testes para a função classificar_gasto() do processador."""
 
-    @patch('processador_ia.model')
-    def test_classificar_gasto_retorna_categoria(self, mock_model):
+    @patch('src.data_processor_ia.get_model')
+    def test_classificar_gasto_retorna_categoria(self, mock_get_model):
         """Testa que classificação retorna categoria correta."""
+        mock_model = MagicMock()
         mock_response = MagicMock()
         mock_response.text = "REFRIGERANTES"
         mock_model.generate_content.return_value = mock_response
+        mock_get_model.return_value = mock_model
 
-        from processador_ia import classificar_gasto
+        from src.data_processor_ia import classificar_gasto
 
+        categorias = ['DINHEIRO', 'REFRIGERANTES']
+        resultado = classificar_gasto("Compra de coca-cola", categorias)
 
-    @patch('processador_ia.model')
-    def test_classificar_gasto_erro_retorna_fallback(self, mock_model):
+        assert resultado == "REFRIGERANTES"
+
+    @patch('src.data_processor_ia.get_model')
+    def test_classificar_gasto_erro_retorna_fallback(self, mock_get_model):
         """Testa fallback quando IA falha."""
+        mock_model = MagicMock()
         mock_model.generate_content.side_effect = Exception("API Error")
+        mock_get_model.return_value = mock_model
 
-        from processador_ia import classificar_gasto
+        from src.data_processor_ia import classificar_gasto
 
         categorias = ['DINHEIRO', 'BOVINOS']
         resultado = classificar_gasto("Descrição qualquer", categorias)
 
         assert resultado == "ERRO_IA"
 
-    @patch('processador_ia.model')
-    def test_classificar_gasto_strip_whitespace(self, mock_model):
+    @patch('src.data_processor_ia.get_model')
+    def test_classificar_gasto_strip_whitespace(self, mock_get_model):
         """Testa que whitespace é removido da resposta."""
+        mock_model = MagicMock()
         mock_response = MagicMock()
         mock_response.text = "  BOVINOS  \n"
         mock_model.generate_content.return_value = mock_response
+        mock_get_model.return_value = mock_model
 
-        from processador_ia import classificar_gasto
+        from src.data_processor_ia import classificar_gasto
 
         categorias = ['DINHEIRO', 'BOVINOS']
         resultado = classificar_gasto("Carne", categorias)
 
         assert resultado == "BOVINOS"
 
-    @patch('processador_ia.model')
-    def test_classificar_gasto_categoria_outros(self, mock_model):
+    @patch('src.data_processor_ia.get_model')
+    def test_classificar_gasto_categoria_outros(self, mock_get_model):
         """Testa quando IA não consegue classificar."""
+        mock_model = MagicMock()
         mock_response = MagicMock()
         mock_response.text = "OUTROS"
         mock_model.generate_content.return_value = mock_response
+        mock_get_model.return_value = mock_model
 
-        from processador_ia import classificar_gasto
+        from src.data_processor_ia import classificar_gasto
 
         categorias = ['DINHEIRO', 'BOVINOS']
         resultado = classificar_gasto("Item desconhecido xyz", categorias)
@@ -193,34 +205,32 @@ class TestClassificarGastoProcessador:
 class TestIntegracaoProcessador:
     """Testes de integração do processador."""
 
-    @patch('processador_ia.API_KEY', 'fake_key')
-    @patch('processador_ia.model')
-    @patch('processador_ia.carregar_dados')
-    def test_main_fluxo_completo(self, mock_carregar, mock_model, sample_mestre_df, sample_entrada_df, tmp_path):
-        """Testa fluxo completo do main()."""
-        mock_carregar.return_value = (sample_mestre_df, sample_entrada_df)
-
+    @patch('src.data_processor_ia.get_model')
+    def test_processar_com_validacao(self, mock_get_model, sample_mestre_df, sample_entrada_df, tmp_path):
+        """Testa fluxo completo do processamento com validação."""
+        mock_model = MagicMock()
         mock_response = MagicMock()
         mock_response.text = "BOVINOS"
         mock_model.generate_content.return_value = mock_response
+        mock_get_model.return_value = mock_model
 
-        with patch('processador_ia.ARQUIVO_MESTRE', str(tmp_path / "output.csv")):
-            from processador_ia import main
+        from src.data_processor_ia import processar_com_validacao
 
-            try:
-                main()
-            except SystemExit:
-                pass  # Ignora sys.exit()
+        output_path = tmp_path / "output.csv"
 
-            # Verifica que arquivo foi criado
-            output_path = tmp_path / "output.csv"
-            if output_path.exists():
-                df_resultado = pd.read_csv(output_path, sep=';')
-                assert len(df_resultado) >= len(sample_mestre_df)
+        df_resultado = processar_com_validacao(
+            sample_mestre_df,
+            sample_entrada_df,
+            output_path
+        )
 
-    def test_constantes_configuradas(self):
-        """Verifica que constantes estão configuradas corretamente."""
-        from processador_ia import ARQUIVO_MESTRE, ARQUIVO_INPUT
+        assert len(df_resultado) >= len(sample_mestre_df)
+        assert output_path.exists()
 
-        assert ARQUIVO_MESTRE == "relatorio_narrativo_ia.csv"
-        assert ARQUIVO_INPUT == "entrada.csv"
+    def test_constantes_importadas_de_ai_classifier(self):
+        """Verifica que constantes são importadas de ai_classifier."""
+        from src.data_processor_ia import ARQUIVO_MESTRE
+        from src.ai_classifier import ARQUIVO_MESTRE as ARQUIVO_MESTRE_ORIGINAL
+
+        # Deve ser o mesmo objeto (importado)
+        assert ARQUIVO_MESTRE == ARQUIVO_MESTRE_ORIGINAL
