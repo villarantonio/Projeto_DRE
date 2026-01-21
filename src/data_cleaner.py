@@ -25,6 +25,44 @@ import config
 logger = logging.getLogger(__name__)
 
 
+def _fix_column_encoding(df: pd.DataFrame) -> pd.DataFrame:
+    """
+    Corrige nomes de colunas com problemas de encoding.
+
+    Arquivos CSV exportados com encoding misto podem ter caracteres
+    corrompidos nos nomes das colunas (ex: 'Mï¿½s' em vez de 'Mês').
+
+    Args:
+        df: DataFrame com possíveis problemas de encoding nos nomes
+
+    Returns:
+        pd.DataFrame: DataFrame com nomes de colunas corrigidos
+    """
+    # Mapeamento de nomes corrompidos para corretos
+    column_fixes = {
+        "Mï¿½s": "Mês",
+        "M\ufffd\ufffds": "Mês",
+        "M\\xc3\\xaas": "Mês",
+        "Mês": "Mês",  # Já correto
+        "Mes": "Mês",  # Sem acento
+    }
+
+    # Renomear colunas se necessário
+    new_columns = {}
+    for col in df.columns:
+        # Verificar se o nome da coluna precisa de correção
+        for wrong, correct in column_fixes.items():
+            if wrong in str(col) or col == wrong:
+                new_columns[col] = correct
+                logger.info(f"Coluna '{col}' renomeada para '{correct}'")
+                break
+
+    if new_columns:
+        df = df.rename(columns=new_columns)
+
+    return df
+
+
 def _validate_dre_dataframe(df: pd.DataFrame, file_path: Path) -> pd.DataFrame:
     """
     Valida o DataFrame carregado de arquivo DRE.
@@ -43,6 +81,9 @@ def _validate_dre_dataframe(df: pd.DataFrame, file_path: Path) -> pd.DataFrame:
     if df.empty:
         logger.error("DataFrame carregado está vazio")
         raise ValueError("O arquivo não contém dados após o cabeçalho.")
+
+    # Corrige problemas de encoding nos nomes das colunas
+    df = _fix_column_encoding(df)
 
     # Valida se as colunas obrigatórias existem
     missing_columns = [

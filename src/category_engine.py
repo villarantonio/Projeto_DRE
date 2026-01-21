@@ -22,6 +22,73 @@ import config
 logger = logging.getLogger(__name__)
 
 
+def _clean_encoding(text: str) -> str:
+    """
+    Limpa problemas de encoding em textos.
+
+    Arquivos CSV exportados com encoding misto podem ter caracteres
+    corrompidos (mojibake). Esta função corrige os mais comuns.
+
+    Args:
+        text: Texto com possíveis problemas de encoding
+
+    Returns:
+        str: Texto com encoding corrigido
+    """
+    if not isinstance(text, str):
+        return str(text)
+
+    import re
+
+    # Remove caracteres de replacement character (U+FFFD) e mojibake comum
+    # O padrão "ï¿½" é a representação UTF-8 de caracteres inválidos
+    result = re.sub(r'[ï¿½∩┐╜\ufffd]+', '', text)
+
+    # Correções específicas para categorias DRE conhecidas (após remoção de caracteres ruins)
+    specific_fixes = {
+        "CUSTOS VARIVEIS": "CUSTOS VARIÁVEIS",
+        "CUSTOS VARI VEIS": "CUSTOS VARIÁVEIS",
+        "DEDUES SOBRE RECEITA": "DEDUÇÕES SOBRE RECEITA",
+        "DEDU ES SOBRE RECEITA": "DEDUÇÕES SOBRE RECEITA",
+        "SERVIOS DE TERCEIROS": "SERVIÇOS DE TERCEIROS",
+        "SERVI OS DE TERCEIROS": "SERVIÇOS DE TERCEIROS",
+        "UTILIDADES E SERVIOS": "UTILIDADES E SERVIÇOS",
+        "UTILIDADES E SERVI OS": "UTILIDADES E SERVIÇOS",
+        "FLUXO DE CAIXA LIVRE PARA SCIOS": "FLUXO DE CAIXA LIVRE PARA SÓCIOS",
+        "FLUXO DE CAIXA LIVRE PARA S CIOS": "FLUXO DE CAIXA LIVRE PARA SÓCIOS",
+        "CACHAA": "CACHAÇA",
+        "CACHA A": "CACHAÇA",
+        "CONSERVAO": "CONSERVAÇÃO",
+        "CONSERVA O": "CONSERVAÇÃO",
+        "ALIMENTAO": "ALIMENTAÇÃO",
+        "ALIMENTA O": "ALIMENTAÇÃO",
+        "NEGCIOS": "NEGÓCIOS",
+        "NEG CIOS": "NEGÓCIOS",
+        "APLICES": "APÓLICES",
+        "AP LICES": "APÓLICES",
+        "CRDITO": "CRÉDITO",
+        "CR DITO": "CRÉDITO",
+        "DBITO": "DÉBITO",
+        "D BITO": "DÉBITO",
+        "FRIAS": "FÉRIAS",
+        "F RIAS": "FÉRIAS",
+        "SALRIO": "SALÁRIO",
+        "SAL RIO": "SALÁRIO",
+        "RESCISES": "RESCISÕES",
+        "RESCIS ES": "RESCISÕES",
+        "ALCOLICAS": "ALCOÓLICAS",
+        "ALCOLI CAS": "ALCOÓLICAS",
+    }
+
+    for wrong, correct in specific_fixes.items():
+        result = result.replace(wrong, correct)
+
+    # Limpar espaços duplos
+    result = re.sub(r'\s+', ' ', result).strip()
+
+    return result
+
+
 class CategoryManager:
     """
     Manager class for DRE category hierarchy extraction and persistence.
@@ -119,11 +186,13 @@ class CategoryManager:
         grouped = df.groupby(self.group_column)[self.detail_column].unique()
 
         for group_name, detail_values in grouped.items():
-            # Convert numpy array to sorted list and ensure all values are strings
+            # Convert numpy array to sorted list, clean encoding, and ensure all values are strings
             unique_details = sorted([
-                str(val) for val in detail_values if pd.notna(val)
+                _clean_encoding(str(val)) for val in detail_values if pd.notna(val)
             ])
-            hierarchy[str(group_name)] = unique_details
+            # Clean encoding in group name as well
+            clean_group_name = _clean_encoding(str(group_name))
+            hierarchy[clean_group_name] = unique_details
 
         # Sort by group name for consistent output
         hierarchy = dict(sorted(hierarchy.items()))
