@@ -357,27 +357,320 @@ def create_styled_dataframe(
     value_columns: list[str] | None = None,
     hide_index: bool = True,
 ) -> None:
-    """
-    Renderiza DataFrame com formatação profissional.
+    """Renderiza DataFrame com apariência de planilha.
+
+    Usa ``st.dataframe`` com configuração de colunas numéricas
+    formatadas como moeda brasileira (R$).
 
     Args:
-        df: DataFrame para exibir.
+        df: DataFrame para exibir (idealmente com colunas numéricas).
         value_columns: Colunas de valor para formatar como moeda.
-        hide_index: Ocultar índice.
+        hide_index: Se True, oculta o índice.
     """
     df_display = df.copy()
 
-    # Formatar colunas de valor
+    column_config: dict[str, st.column_config.Column] = {}
+
     if value_columns:
         for col in value_columns:
             if col in df_display.columns:
-                df_display[col] = df_display[col].apply(
-                    lambda x: format_currency(x) if pd.notna(x) else "-"
+                column_config[col] = st.column_config.NumberColumn(
+                    col,
+                    format="R$ %,.2f",
                 )
 
     st.dataframe(
         df_display,
         use_container_width=True,
         hide_index=hide_index,
+        column_config=column_config or None,
     )
+
+
+# =============================================================================
+# Tabela Hierárquica DRE
+# =============================================================================
+
+def calculate_rob_percentage(
+    value: float,
+    rob_total: float,
+    decimals: int = 2
+) -> str:
+    """
+    Calcula percentual sobre Receita Operacional Bruta (ROB).
+
+    Args:
+        value: Valor da linha.
+        rob_total: Total da Receita Operacional Bruta.
+        decimals: Casas decimais.
+
+    Returns:
+        String formatada com percentual.
+    """
+    if rob_total == 0 or pd.isna(rob_total) or pd.isna(value):
+        return "0,00%"
+
+    percentage = (value / rob_total) * 100
+    formatted = f"{percentage:.{decimals}f}".replace(".", ",")
+    return f"{formatted}%"
+
+
+def create_hierarchical_dre_table(
+    df: pd.DataFrame,
+    group_column: str = "Nome Grupo",
+    store_column: str = "Loja",
+    value_column: str = "Realizado",
+    show_percentages: bool = True,
+    max_stores: int = 15,
+    format_values: bool = True,
+) -> pd.DataFrame:
+    """
+    Cria tabela DRE hierárquica com colunas por loja.
+
+    Args:
+        df: DataFrame com dados DRE.
+        group_column: Coluna de grupo/categoria.
+        store_column: Coluna de loja.
+        value_column: Coluna de valores.
+        show_percentages: Se True, adiciona linhas de % ROB.
+        max_stores: Número máximo de lojas a exibir.
+
+    Returns:
+        DataFrame formatado com estrutura hierárquica e colunas pivotadas.
+    """
+    # Validar colunas necessárias
+    required_cols = [group_column, store_column, value_column]
+    missing_cols = [col for col in required_cols if col not in df.columns]
+    if missing_cols:
+        st.error(f"Colunas não encontradas: {', '.join(missing_cols)}")
+        return pd.DataFrame()
+
+    # Agregar dados por grupo e loja
+    pivot_data = df.groupby([group_column, store_column])[value_column].sum().reset_index()
+
+    # Criar tabela pivotada
+    pivot_table = pivot_data.pivot_table(
+        index=group_column,
+        columns=store_column,
+        values=value_column,
+        aggfunc='sum',
+        fill_value=0
+    )
+
+    # Limitar número de lojas
+    if len(pivot_table.columns) > max_stores:
+        # Selecionar top lojas por receita total
+        store_totals = pivot_table.sum().sort_values(ascending=False)
+        top_stores = store_totals.head(max_stores).index.tolist()
+        pivot_table = pivot_table[top_stores]
+
+    # Adicionar coluna Total Mês
+    pivot_table.insert(0, 'Total Mês', pivot_table.sum(axis=1))
+
+    # Resetar índice para ter "Conta" como coluna
+    pivot_table = pivot_table.reset_index()
+    pivot_table = pivot_table.rename(columns={group_column: 'Conta'})
+
+    # Opcionalmente formatar valores como moeda para exibição direta
+    if format_values:
+        value_cols = [col for col in pivot_table.columns if col != 'Conta']
+        for col in value_cols:
+            pivot_table[col] = pivot_table[col].apply(
+                lambda x: format_currency(x) if pd.notna(x) else "R$ 0,00"
+            )
+
+    return pivot_table
+
+
+def create_styled_dre_html_table(
+    df: pd.DataFrame,
+    group_column: str = "Nome Grupo",
+    store_column: str = "Loja",
+    value_column: str = "Realizado",
+    max_stores: int = 15,
+    height: int = 500,
+) -> None:
+    """
+    Renderiza tabela DRE estilizada com HTML/CSS customizado.
+
+    Inclui:
+    - Zebra striping para facilitar leitura
+    - Destaque visual para linhas de totalizadores
+    - Valores negativos em vermelho
+    - Formatação de moeda brasileira (R$ 1.234,56)
+    - Coluna "Conta" fixa à esquerda
+    - Cabeçalho fixo ao rolar verticalmente
+
+    Args:
+        df: DataFrame com dados DRE.
+        group_column: Coluna de grupo/categoria.
+        store_column: Coluna de loja.
+        value_column: Coluna de valores.
+        max_stores: Número máximo de lojas a exibir.
+        height: Altura máxima da tabela em pixels.
+    """
+    # Validar colunas necessárias
+    required_cols = [group_column, store_column, value_column]
+    missing_cols = [col for col in required_cols if col not in df.columns]
+    if missing_cols:
+        st.error(f"Colunas não encontradas: {', '.join(missing_cols)}")
+        return
+
+    # Agregar dados por grupo e loja
+    pivot_data = df.groupby([group_column, store_column])[value_column].sum().reset_index()
+
+    # Criar tabela pivotada
+    pivot_table = pivot_data.pivot_table(
+        index=group_column,
+        columns=store_column,
+        values=value_column,
+        aggfunc='sum',
+        fill_value=0
+    )
+
+    # Limitar número de lojas
+    if len(pivot_table.columns) > max_stores:
+        store_totals = pivot_table.sum().sort_values(ascending=False)
+        top_stores = store_totals.head(max_stores).index.tolist()
+        pivot_table = pivot_table[top_stores]
+
+    # Adicionar coluna Total Mês
+    pivot_table.insert(0, 'Total Mês', pivot_table.sum(axis=1))
+
+    # Resetar índice
+    pivot_table = pivot_table.reset_index()
+    pivot_table = pivot_table.rename(columns={group_column: 'Conta'})
+
+    # Palavras-chave para identificar tipos de linha
+    totalizadores = [
+        'RECEITA LÍQUIDA', 'RECEITA LIQUIDA', 'RESULTADO BRUTO',
+        'RESULTADO OPERACIONAL', 'LUCRO LÍQUIDO', 'LUCRO LIQUIDO',
+        'LUCRO BRUTO', 'EBITDA', 'RESULTADO ANTES', 'RESULTADO FINAL',
+        'TOTAL', 'SUBTOTAL'
+    ]
+    resultados = [
+        'LUCRO LÍQUIDO', 'LUCRO LIQUIDO', 'RESULTADO FINAL',
+        'RESULTADO DO EXERCÍCIO', 'RESULTADO DO EXERCICIO'
+    ]
+    receitas = ['RECEITA', 'VENDA', 'FATURAMENTO', 'ROB']
+    custos = [
+        '( - )', '(-)', 'CUSTO', 'DESPESA', 'GASTO', 'DEDUCAO',
+        'DEDUÇÃO', 'IMPOSTO', 'SERVIÇO', 'SERVICO'
+    ]
+
+    def classify_row(conta: str) -> str:
+        """Classifica o tipo de linha baseado no nome da conta."""
+        conta_upper = str(conta).upper()
+        for r in resultados:
+            if r in conta_upper:
+                return 'result'
+        for t in totalizadores:
+            if t in conta_upper:
+                return 'total'
+        for rec in receitas:
+            if rec in conta_upper and not any(c in conta_upper for c in custos):
+                return 'receita'
+        for c in custos:
+            if c in conta_upper:
+                return 'custo'
+        return 'normal'
+
+    def format_value_html(value: float) -> str:
+        """Formata valor como moeda brasileira com classe CSS."""
+        if pd.isna(value):
+            value = 0.0
+        # Formatar como moeda brasileira
+        abs_val = abs(value)
+        formatted = f"R$ {abs_val:,.2f}".replace(",", "X").replace(".", ",").replace("X", ".")
+        if value < 0:
+            return f'<span class="valor-negativo">({formatted})</span>'
+        return f'<span class="valor-positivo">{formatted}</span>'
+
+    # Construir HTML da tabela
+    html_parts = ['<div class="dre-styled-container" style="max-height: {}px; overflow-y: auto;">'.format(height)]
+    html_parts.append('<table class="dre-styled-table">')
+
+    # Cabeçalho
+    html_parts.append('<thead><tr>')
+    for col in pivot_table.columns:
+        html_parts.append(f'<th>{col}</th>')
+    html_parts.append('</tr></thead>')
+
+    # Corpo da tabela
+    html_parts.append('<tbody>')
+    for _, row in pivot_table.iterrows():
+        conta = row['Conta']
+        row_type = classify_row(conta)
+
+        # Definir classe CSS da linha
+        row_class = ''
+        if row_type == 'result':
+            row_class = 'dre-result-row'
+        elif row_type == 'total':
+            row_class = 'dre-total-row'
+        elif row_type == 'receita':
+            row_class = 'dre-receita-row'
+        elif row_type == 'custo':
+            row_class = 'dre-custo-row'
+
+        html_parts.append(f'<tr class="{row_class}">')
+
+        for col in pivot_table.columns:
+            if col == 'Conta':
+                html_parts.append(f'<td>{row[col]}</td>')
+            else:
+                html_parts.append(f'<td>{format_value_html(row[col])}</td>')
+
+        html_parts.append('</tr>')
+
+    html_parts.append('</tbody>')
+    html_parts.append('</table>')
+    html_parts.append('</div>')
+
+    # Renderizar
+    st.markdown(''.join(html_parts), unsafe_allow_html=True)
+
+
+def render_store_filter(
+    df: pd.DataFrame,
+    store_column: str = "Loja",
+    key: str = "store_filter",
+    label: str = "Filtrar por Loja(s)"
+) -> list[str]:
+    """
+    Renderiza filtro de seleção de lojas.
+
+    Args:
+        df: DataFrame com dados DRE.
+        store_column: Nome da coluna de loja.
+        key: Chave única para o widget.
+        label: Label do filtro.
+
+    Returns:
+        Lista de lojas selecionadas.
+    """
+    from dashboard.components.data_loader import get_unique_stores
+
+    stores = get_unique_stores(df, store_column)
+
+    if not stores:
+        st.warning(f"Coluna '{store_column}' não encontrada ou vazia.")
+        return []
+
+    col1, col2 = st.columns([3, 1])
+
+    with col1:
+        selected_stores = st.multiselect(
+            label,
+            options=stores,
+            default=stores,  # Todas selecionadas por padrão
+            key=key,
+        )
+
+    with col2:
+        if st.button("Limpar Filtros", key=f"{key}_clear"):
+            st.session_state[key] = stores
+            st.rerun()
+
+    return selected_stores if selected_stores else stores
 

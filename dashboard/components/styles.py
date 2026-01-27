@@ -400,6 +400,205 @@ def get_css() -> str:
         .js-plotly-plot .plotly .modebar-btn:hover path {
             fill: #C41E3A !important;
         }
+
+        /* === TABELA HIERÁRQUICA DRE === */
+        .dre-table-header {
+            background: linear-gradient(135deg, #C41E3A 0%, #8B0000 100%) !important;
+            color: white !important;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 0.5px;
+            padding: 0.75rem !important;
+            text-align: center;
+        }
+
+        .dre-row-revenue {
+            color: #2ECC71 !important;
+            font-weight: 500;
+        }
+
+        .dre-row-cost {
+            color: #E74C3C !important;
+            font-weight: 500;
+        }
+
+        .dre-row-total {
+            background: rgba(52, 152, 219, 0.15) !important;
+            color: #FAFAFA !important;
+            font-weight: 700;
+            border-top: 2px solid #3498DB !important;
+            border-bottom: 2px solid #3498DB !important;
+        }
+
+        .dre-row-percentage {
+            color: #8E8E8E !important;
+            font-style: italic;
+            font-size: 0.85rem;
+            background: rgba(255, 255, 255, 0.02) !important;
+        }
+
+        .dre-indent-level-1 {
+            padding-left: 1.5rem !important;
+        }
+
+        .dre-indent-level-2 {
+            padding-left: 3rem !important;
+        }
+
+        .dre-indent-level-3 {
+            padding-left: 4.5rem !important;
+        }
+
+        /* Estilo para células de valor negativo */
+        .dre-negative-value {
+            color: #E74C3C !important;
+        }
+
+        .dre-positive-value {
+            color: #2ECC71 !important;
+        }
+
+        /* === TABELA DRE ESTILIZADA (Visão Geral) === */
+        .dre-styled-container {
+            overflow-x: auto;
+            border-radius: 8px;
+            border: 1px solid #3D3D4D;
+            background: #1E1E2E;
+            margin: 1rem 0;
+        }
+
+        .dre-styled-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 0.85rem;
+        }
+
+        .dre-styled-table thead {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .dre-styled-table th {
+            background: linear-gradient(135deg, #C41E3A 0%, #8B0000 100%);
+            color: #FFFFFF;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 0.5px;
+            padding: 0.75rem 0.5rem;
+            text-align: right;
+            border-bottom: 2px solid #8B0000;
+            white-space: nowrap;
+        }
+
+        .dre-styled-table th:first-child {
+            text-align: left;
+            position: sticky;
+            left: 0;
+            z-index: 11;
+            background: linear-gradient(135deg, #C41E3A 0%, #8B0000 100%);
+            min-width: 200px;
+        }
+
+        .dre-styled-table td {
+            padding: 0.6rem 0.5rem;
+            border-bottom: 1px solid #3D3D4D;
+            text-align: right;
+            color: #FAFAFA;
+            white-space: nowrap;
+        }
+
+        .dre-styled-table td:first-child {
+            text-align: left;
+            font-weight: 500;
+            position: sticky;
+            left: 0;
+            background: inherit;
+            z-index: 5;
+            min-width: 200px;
+        }
+
+        /* Zebra striping */
+        .dre-styled-table tbody tr:nth-child(odd) {
+            background: #1E1E2E;
+        }
+
+        .dre-styled-table tbody tr:nth-child(even) {
+            background: #262730;
+        }
+
+        .dre-styled-table tbody tr:nth-child(odd) td:first-child {
+            background: #1E1E2E;
+        }
+
+        .dre-styled-table tbody tr:nth-child(even) td:first-child {
+            background: #262730;
+        }
+
+        /* Hover effect */
+        .dre-styled-table tbody tr:hover {
+            background: #2D2D3D !important;
+        }
+
+        .dre-styled-table tbody tr:hover td:first-child {
+            background: #2D2D3D !important;
+        }
+
+        /* Linha de totalizador */
+        .dre-styled-table tr.dre-total-row {
+            background: rgba(52, 152, 219, 0.15) !important;
+            font-weight: 700;
+        }
+
+        .dre-styled-table tr.dre-total-row td {
+            border-top: 2px solid #3498DB;
+            border-bottom: 2px solid #3498DB;
+            color: #FAFAFA;
+        }
+
+        .dre-styled-table tr.dre-total-row td:first-child {
+            background: rgba(52, 152, 219, 0.15) !important;
+            color: #3498DB;
+        }
+
+        /* Linha de resultado (lucro/prejuízo) */
+        .dre-styled-table tr.dre-result-row {
+            background: rgba(212, 175, 55, 0.12) !important;
+            font-weight: 700;
+        }
+
+        .dre-styled-table tr.dre-result-row td {
+            border-top: 2px solid #D4AF37;
+            border-bottom: 2px solid #D4AF37;
+        }
+
+        .dre-styled-table tr.dre-result-row td:first-child {
+            background: rgba(212, 175, 55, 0.12) !important;
+            color: #D4AF37;
+        }
+
+        /* Valores negativos */
+        .dre-styled-table .valor-negativo {
+            color: #E74C3C !important;
+        }
+
+        /* Valores positivos */
+        .dre-styled-table .valor-positivo {
+            color: #2ECC71 !important;
+        }
+
+        /* Linha de receita */
+        .dre-styled-table tr.dre-receita-row td:first-child {
+            color: #2ECC71;
+        }
+
+        /* Linha de custo/despesa */
+        .dre-styled-table tr.dre-custo-row td:first-child {
+            color: #E74C3C;
+        }
     </style>
     """
 
