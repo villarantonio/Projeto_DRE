@@ -129,25 +129,65 @@ def filter_dataframe(
 ) -> pd.DataFrame:
     """
     Filtra DataFrame por grupos e meses.
-    
+
     Args:
         df: DataFrame original.
         grupos: Lista de grupos para filtrar.
         meses: Lista de meses para filtrar.
-        
+
     Returns:
         DataFrame filtrado.
     """
     filtered = df.copy()
-    
+
     col_grupo = config.COLUMN_NOME_GRUPO
     col_mes = config.COLUMN_MES
-    
+
     if grupos and col_grupo in filtered.columns:
         filtered = filtered[filtered[col_grupo].isin(grupos)]
-    
+
     if meses and col_mes in filtered.columns:
         filtered = filtered[filtered[col_mes].isin(meses)]
-    
+
     return filtered
+
+
+def get_unique_stores(df: pd.DataFrame, store_column: str = "Loja") -> list[str]:
+    """
+    Retorna lista de lojas únicas no DataFrame.
+
+    Args:
+        df: DataFrame com dados.
+        store_column: Nome da coluna de lojas.
+
+    Returns:
+        Lista de lojas únicas ordenadas.
+    """
+    if store_column not in df.columns:
+        return []
+
+    stores = df[store_column].dropna().unique().tolist()
+    return sorted([str(s) for s in stores])
+
+
+def filter_by_stores(
+    df: pd.DataFrame,
+    stores: list[str] | None,
+    store_column: str = "Loja"
+) -> pd.DataFrame:
+    """
+    Filtra DataFrame por lojas selecionadas.
+
+    Args:
+        df: DataFrame original.
+        stores: Lista de lojas para filtrar (None = todas).
+        store_column: Nome da coluna de lojas.
+
+    Returns:
+        DataFrame filtrado.
+    """
+    if not stores or store_column not in df.columns:
+        return df
+
+    return df[df[store_column].isin(stores)]
 
