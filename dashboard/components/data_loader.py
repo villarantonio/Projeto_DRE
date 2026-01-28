@@ -19,6 +19,55 @@ sys.path.insert(0, str(ROOT_DIR))
 import config
 
 
+def clean_text(text: str) -> str:
+    """
+    Normaliza texto removendo caracteres corrompidos por encoding.
+
+    Aplica as substituições definidas em config.TEXT_REPLACEMENTS
+    para corrigir problemas de encoding UTF-8/Latin-1.
+
+    Args:
+        text: Texto a ser normalizado.
+
+    Returns:
+        Texto normalizado com caracteres corrigidos.
+    """
+    if not isinstance(text, str):
+        return str(text) if text is not None else ""
+
+    result = text
+    for old, new in config.TEXT_REPLACEMENTS.items():
+        result = result.replace(old, new)
+
+    return result
+
+
+def clean_dataframe_text(df: pd.DataFrame, columns: list[str] | None = None) -> pd.DataFrame:
+    """
+    Aplica limpeza de texto em colunas específicas do DataFrame.
+
+    Args:
+        df: DataFrame original.
+        columns: Lista de colunas para limpar (None = todas as colunas de texto).
+
+    Returns:
+        DataFrame com texto normalizado.
+    """
+    df_clean = df.copy()
+
+    if columns is None:
+        # Identificar colunas de texto automaticamente
+        columns = df_clean.select_dtypes(include=['object']).columns.tolist()
+
+    for col in columns:
+        if col in df_clean.columns:
+            df_clean[col] = df_clean[col].apply(
+                lambda x: clean_text(x) if isinstance(x, str) else x
+            )
+
+    return df_clean
+
+
 @st.cache_data(ttl=300)  # Cache por 5 minutos
 def load_processed_data() -> pd.DataFrame:
     """
@@ -190,4 +239,45 @@ def filter_by_stores(
         return df
 
     return df[df[store_column].isin(stores)]
+
+
+def get_unique_months(df: pd.DataFrame, month_column: str = "Mês") -> list:
+    """
+    Retorna lista de meses únicos no DataFrame.
+
+    Args:
+        df: DataFrame com dados.
+        month_column: Nome da coluna de meses.
+
+    Returns:
+        Lista de meses únicos ordenados.
+    """
+    if month_column not in df.columns:
+        return []
+
+    months = df[month_column].dropna().unique().tolist()
+    # Ordenar meses cronologicamente
+    return sorted(months)
+
+
+def filter_by_months(
+    df: pd.DataFrame,
+    months: list | None,
+    month_column: str = "Mês"
+) -> pd.DataFrame:
+    """
+    Filtra DataFrame por meses selecionados.
+
+    Args:
+        df: DataFrame original.
+        months: Lista de meses para filtrar (None = todos).
+        month_column: Nome da coluna de meses.
+
+    Returns:
+        DataFrame filtrado.
+    """
+    if not months or month_column not in df.columns:
+        return df
+
+    return df[df[month_column].isin(months)]
 

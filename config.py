@@ -88,7 +88,15 @@ MONTH_MAPPING: dict[str, int] = {
 
 # Common encoding errors in Brazilian CSV exports and their corrections
 # Note: The corrupted cedilla character may appear as different bytes depending on encoding
+# The ï¿½ character is the Unicode replacement character (U+FFFD) from failed decoding
 TEXT_REPLACEMENTS: dict[str, str] = {
+    # Specific patterns found in DRE data (ï¿½ = U+FFFD replacement character)
+    "VARIï¿½VEIS": "VARIÁVEIS",
+    "DEDUï¿½ï¿½ES": "DEDUÇÕES",
+    "SERVIï¿½OS": "SERVIÇOS",
+    "Sï¿½CIOS": "SÓCIOS",
+    "Sï¿½cios": "Sócios",
+    # Generic word fixes (missing accents)
     "Vrios": "Vários",
     "Ms": "Mês",
     "VARIVEIS": "VARIÁVEIS",
@@ -99,12 +107,17 @@ TEXT_REPLACEMENTS: dict[str, str] = {
     "FRIAS": "FÉRIAS",
     "SALRIO": "SALÁRIO",
     "RESCISES": "RESCISÕES",
-    "Ã§": "ç",  # UTF-8 mojibake for cedilla
-    "Ã£": "ã",  # UTF-8 mojibake for a-tilde
-    "Ã©": "é",  # UTF-8 mojibake for e-acute
-    "Ã¡": "á",  # UTF-8 mojibake for a-acute
-    "Ã³": "ó",  # UTF-8 mojibake for o-acute
-    "Ãº": "ú",  # UTF-8 mojibake for u-acute
+    # UTF-8 mojibake patterns (double-encoding issues)
+    "Ã§": "ç",
+    "Ã£": "ã",
+    "Ã©": "é",
+    "Ã¡": "á",
+    "Ã³": "ó",
+    "Ãº": "ú",
+    "Ã­": "í",
+    "Ãµ": "õ",
+    # Fallback: remove replacement character if still present
+    "ï¿½": "",
 }
 
 # =============================================================================
